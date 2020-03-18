@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+            type: 'POST',
+            url: './getOnlineHistoryPeople.php',
+            data: {
+                data: '123'
+            },
+            success: function (response) {
+                var data = JSON.parse(response);
+                var sideBar = $('#sideBar');
+                sideBar.text('瀏覽人次：' + data[0] + '人');
+                sideBar.attr('title', '上個使用者使用時間為：' + data[1]);
+            },
+            error: function () {
+                //alert('error: unable to connect');
+            }
+        });
+    </script>
+</head>
+
+<body style="margin:0px;background-color:#eeeeee;">
+    <div class="header3">
+        <div class="head">
+            <div class="main" style="margin-top: -10px;">
+                <ul>
+                    <li><a href="index.html">Home</a> </li>
+                    <li><a href="game.html">Programs</a> </li>
+                    <li class="active"><a href="blog.html">Blog</a></li>
+                    <li><a href="aboutme.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <h2 class="title"><a href="index.html" style="text-decoration: none; color: #000">Cyt's Website</a></h2>
+            </div>
+        </div>
+        <div class="main">
+            <div class="box2" style="margin-top:20px;margin-left: -1%;">
+                <h2>關於對或錯</h2>
+                <div style="margin-top: 10px;margin-left: 20px;font-family:Microsoft JhengHei;">
+                    <p>我總有一種想法，覺得所有的問題都可以拆分成對或錯的問題</p>
+                    <p>舉例來說，像是 "今天要吃甚麼呢?" 這個千古難題</p>
+                    <p>實際上也可以拆分成，"你要吃炸機嗎?" + "你要吃雞肉飯嗎?" + "你要吃pizza嗎?"... </p>
+                    <p>由各種yes/no問題所組成的組合問題</p>
+                    <p>那有趣的事情發生了</p>
+                    <p>那我們平常思考的所有問題跟煩惱，其實都可以拆分為0跟1的問題?</p>
+                    <br>
+                    <p>那為甚麼機器人不能思考?</p>
+                    <p>機器不是只能明白0跟1嗎?</p>
+                    <p>說白了我們的思考不就是大腦把一大堆yes/no問題搞複雜了嗎?</p>
+                    <p>思考著"我存在的意義是甚麼"，不就是 "生命有目的性嗎?" + "生命是為了其他人事物而存在嗎?" + ...</p>
+                    <p>而且這個問題還是假定上述答案是yes的狀態才能繼續討論的</p>
+                    <p>"你是為了遇見這女生而存在嗎?" "你是為了救這條狗存在嗎?" "你是為了不讓別人踩到大便而存在嗎?" ...</p>
+                    <p>這種打破砂鍋問到底的方式最後就會得出一個結論，而這過程我們稱作"思考"</p>
+                    <br>
+                    <p>那回到原題，機器不能思考嗎?</p>
+                    <p>我們集結大量人類所撰寫的回答當作資料</p>
+                    <p>遇到任何問題就不斷查表找答案</p>
+                    <p>這樣的機器人行為，不算在思考嗎?</p>
+                    <p>你可能會覺得，這是大家賦予他的答案阿，不算他自己的回答</p>
+                    <p>那你有沒有想過，我們的想法也可能是被寫在DNA code裡面阿</p>
+                    <p>搞不好你的DNA就是你父母、你長輩、你祖先，所有人(甚至god?)對於問題的回答阿</p>
+                    <p>最後再透過不斷的接觸外界來學習，來改變</p>
+                    <p>那機器也是一樣阿(我們就是機器人的god?)</p>
+                    <p>總有一天我們會創造出比自己更聰明的物種的。</p>
+                    <p>他們可以比我們更快找到問題的答案。</p>
+                    <br>
+                    <p>這是我一直覺得蠻有趣的問題xD</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="side" id="sideBar" href="blog.html" style="text-decoration: none;"><a href="blog.html"
+            style="text-decoration: none;">無法知道</a></div>
+</body>
+
+</html>

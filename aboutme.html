@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+            type: 'POST',
+            url: './getOnlineHistoryPeople.php',
+            data: {
+                data: '123'
+            },
+            success: function (response) {
+                var data = JSON.parse(response);
+                var sideBar = $('#sideBar');
+                sideBar.text('瀏覽人次：' + data[0] + '人');
+                sideBar.attr('title', '上個使用者使用時間為：' + data[1]);
+            },
+            error: function () {
+                //alert('error: unable to connect');
+            }
+        });
+        function openn(number) {
+            var menu = document.getElementById("show-" + number);
+            if (menu.style.display == "none") {
+                menu.style.display = "block";
+            }
+            else {
+                menu.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body style="margin:0px;background-color:#eeeeee;">
+    <div class="header3">
+        <div class="head">
+            <div class="main" style="margin-top: -10px;">
+                <ul>
+                    <li><a href="index.html">Home</a> </li>
+                    <li><a href="game.html">Programs</a> </li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li class="active"><a href="aboutme.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <h2 class="title"><a href="index.html" style="text-decoration: none; color: #000">Cyt's Website</a></h2>
+            </div>
+        </div>
+        <div class="main">
+            <div class="box" style="margin-top: 20px;margin-left: -1%;">
+                <img src="1.jpg" style="margin-left:15px;margin-top: 20px;width:220px;"></img>
+                <h3 style="margin-left:20px;color:black;">我是陳昱廷</h3>
+                <h3 style="margin-left:20px;color:black;">Yu-Ting Chen</h3>
+                <a href="https://www.facebook.com/profile.php?id=100003963670423" target="_blank"><img src="fb.jpg"
+                        style="width: 45px;margin-left:18px;"></img></a>
+                <a href="https://www.instagram.com/___._._._.__.____.__._._._.___/?hl=zh-tw" target="_blank"><img
+                        src="ig.jpg" style="width: 45px;"></img></a>
+                <a href="https://www.youtube.com/channel/UCDj4j4qIs57GtVu6r4crRxQ?view_as=subscriber"
+                    target="_blank"><img src="yt.ico" style="margin-left:5px;margin-top:5px;width: 42px;"></img></a>
+                <p style="font-size: 12px;margin-left: 25px;font-family: Century Gothic;margin-top:-8px;">
+                    tim376755000@gmail.com</p>
+                <div style="font-size:20px;margin-left: 260px;margin-top: -320px;">
+                    <p>1997年出生，目前為東海資工系大四學生，</p>
+                    <p>桃園人，曾就讀復旦高中。</p>
+                    <hr>
+                    <p>興趣: 寫程式，玩遊戲，打球</p>
+                    <p>害怕: 蟲子，黑，鬼，高</p>
+                    <p>喜好: 錢，貓，女朋友</p>
+                    <hr>
+                    <p>左邊為我社群網站的連結，有興趣可以來逛逛</p>
+                    <hr>
+                    <p>今年22歲的我，一事無成，努力學習，渴望改變。</p>
+                    <p>人生嘛，短短幾個秋呢(X</p>
+                    <p>常常為了一些小事糾纏真的好累</p>
+                    <p>我的專長就是浪費時間，該做的事不做</p>
+                    <p>浪費了歲月到現在自傳寫不出東西來</p>
+                    <p>可憐啊可憐= =</p>
+                    <p>大家有能力可以包養我，感恩。</p>
+                </div>
+            </div>
+            <div class="box2" style="margin-left: -1%;">
+                <h3 onclick="openn(1);" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">
+                    第24屆大專校院資訊應用服務創新競賽(資訊應用組第三名) (2019/10/07 ~ 2019/11/02)
+                </h3>
+                <p id="show-1" style="margin-left:20px;display:none;">
+                    大四專題表現優良，指導教授推薦參加比賽。在研究中，與教授一起改良了演算法，採用創新的分離結構加密法，使加/解密的方法得到了革新。從中學習到團隊合作，以及實作專題的技巧。能夠想出全新的演算法，並實踐之，讓我產生許多的成就感，並增加更多對程式寫作的熱忱。(資訊應用組第三名)
+                </p>
+
+                <h3 onclick="openn(2);" style="margin-top: 10px;" onmouseover="this.style.color='blue'"
+                    onmouseout="this.style.color='black'">程式設計課程助教 (2019/10 ~ 現在)</h3>
+                <p id="show-2" style="margin-left:20px;display:none;">
+                    本學期擔任程式設計助教，教導外系的同學Java以及程式設計技巧。學習教導對程式語言一無所知的同學，培養細心以及耐心。能夠教導別人一項技能，能力被同儕肯定，這也使我有更多成就感。</p>
+
+                <h3 onclick="openn(3);" style="margin-top: 10px;" onmouseover="this.style.color='blue'"
+                    onmouseout="this.style.color='black'">專題研究 (2018/03 ~ 2019/09)</h3>
+                <p id="show-3" style="margin-left:20px;display:none;">
+                    專題主題為訊息加/解密，是我首次與別人合作開發，實作出能夠抵禦明文/密文對攻擊的加/解密方法，雖然研究過程中和伙伴有時會想法不同，但是經過討論之後，最後都能取得共識，並且找出對方找不到的bug，讓我了解合作的成果會大於只有一個人的努力。我們的研究成果改良了現有的加/解密模式，提升17.5倍的效能。
+                </p>
+
+                <h3 onclick="openn(4);" style="margin-top: 10px;" onmouseover="this.style.color='blue'"
+                    onmouseout="this.style.color='black'">系學會 (2017 ~ 2018)</h3>
+                <p id="show-4" style="margin-left:20px;display:none;">
+                    參與系學會活動，學習如何跟同儕相處，並且與大家一同合作，曾擔任系學會活動攝影組、電競比賽總召，以及系露隊輔。由於個性較內向，辦活動以及與人社交，對我來說是一項非常大的挑戰，但在這些活動中，結交了許多新朋友，讓先前的壓力還有不安都轉化成愉快的回憶。
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="side" id="sideBar">無法知道</div>
+</body>
+
+</html>

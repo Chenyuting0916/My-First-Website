@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+            type: 'POST',
+            url: './getOnlineHistoryPeople.php',
+            data: {
+                data: '123'
+            },
+            success: function (response) {
+                var data = JSON.parse(response);
+                var sideBar = $('#sideBar');
+                sideBar.text('瀏覽人次：' + data[0] + '人');
+                sideBar.attr('title', '上個使用者使用時間為：' + data[1]);
+            },
+            error: function () {
+                //alert('error: unable to connect');
+            }
+        });
+    </script>
+</head>
+
+<body style="margin:0px;background-color:#eeeeee;">
+    <div class="header3">
+        <div class="head">
+            <div class="main" style="margin-top: -10px;">
+                <ul>
+                    <li><a href="index.html">Home</a> </li>
+                    <li><a href="game.html">Programs</a> </li>
+                    <li class="active"><a href="blog.html">Blog</a></li>
+                    <li><a href="aboutme.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <h2 class="title"><a href="index.html" style="text-decoration: none; color: #000">Cyt's Website</a></h2>
+            </div>
+        </div>
+        <div class="main">
+            <div class="box2" style="margin-top:20px;margin-left: -1%;">
+                <h2>關於那種根本不存在的壓力</h2>
+                <div style="margin-top: 10px;margin-left: 20px;font-family:Microsoft JhengHei;">
+                    <p>最近有時候會產生一種無力感</p>
+                    <p>覺得事情好多好煩</p>
+                    <p>但一點都不想去做，然後自甘墮落</p>
+                    <p>又或者是做了一點事，就覺得自己已經做了很多</p>
+                    <p>一種假想的充實，其實啥都沒做完</p>
+                    <p>就會覺得 "吼 壓力好大，好煩喔..."</p>
+                    <p>就覺得自己欠了好多事沒做</p>
+                    <p>但是又不想做...</p>
+                    <p>一種心態上積極向上，但實際上宛如廢人一樣</p>
+                    <br>
+                    <p>就一直給自己心理壓力: "你這個還沒做，你這個之後要交，你這些還沒弄完"</p>
+                    <p>然後就覺得壓力好大，好想逃離這一切</p>
+                    <p>有時候只想逃得遠遠的</p>
+                    <p>完全不想解決一堆鳥事</p>
+                    <br>
+                    <p>然而問題還是在那，根本沒辦法改善狀況</p>
+                    <p>東西越積越多，壓力越來越大</p>
+                    <p>其實那些壓力都是自己給自己的</p>
+                    <p>只要想著我現在能做甚麼，然後去做</p>
+                    <p>做不到的事，在努力去煩惱也沒辦法啊</p>
+                    <p>把自己能做的做好，剩下發生甚麼事</p>
+                    <p>就看天吧</p>
+                    <br>
+                    <br>
+                    <p>說是這麼說，但我還是一樣，一直給自己壓力，然後啥都不做= =</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="side" id="sideBar" href="blog.html" style="text-decoration: none;"><a href="blog.html"
+            style="text-decoration: none;">無法知道</a></div>
+</body>
+
+</html>

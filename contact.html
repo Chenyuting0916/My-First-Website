@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+            type: 'POST',
+            url: './getOnlineHistoryPeople.php',
+            data: {
+                data: '123'
+            },
+            success: function (response) {
+                var data = JSON.parse(response);
+                var sideBar = $('#sideBar');
+                sideBar.text('瀏覽人次：' + data[0] + '人');
+                sideBar.attr('title', '上個使用者使用時間為：' + data[1]);
+            },
+            error: function () {
+                //alert('error: unable to connect');
+            }
+        });
+    </script>
+</head>
+
+<body style="margin:0px;background-color:#eeeeee;">
+    <div class="header2">
+        <div class="head">
+            <div class="main" style="margin-top: -10px;">
+                <ul>
+                    <li><a href="index.html">Home</a> </li>
+                    <li><a href="game.html">Programs</a> </li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="aboutme.html">About</a></li>
+                    <li class="active"><a href="contact.html">Contact</a></li>
+                </ul>
+                <h2 class="title"><a href="index.html" style="text-decoration: none; color: #000">Cyt's Website</a></h2>
+            </div>
+        </div>
+        <div class="main">
+            <div align="center" class="box" style="margin-top:10%;margin-left: -1%;">
+                <div>
+                    <form align="center" id="contact" action="form_process.php" method="POST">
+                        <h2>Contact Me</h2>
+                        <fieldset>
+                            <input placeholder="Your Name" type="text" tabindex="1" name="name" required autofocus>
+                        </fieldset>
+                        <fieldset>
+                            <input placeholder="Your Email Address" type="email" tabindex="2" name="email" required>
+                        </fieldset>
+                        <fieldset>
+                            <textarea placeholder="Type Your Message Here" tabindex="3" name="message"
+                                required></textarea>
+                        </fieldset>
+                        <fieldset>
+                            <button class="button3" name="submit" type="submit" id="contact-submit"
+                                data-submit="...Sending">Submit</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="side" id="sideBar">無法知道</div>
+</body>
+
+</html>
