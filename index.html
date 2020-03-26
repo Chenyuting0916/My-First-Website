@@ -5,107 +5,29 @@
 	<meta charset="utf-8" />
 	<title>Cyt's Homepage</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		$.ajax({
-			type: 'POST',
-			url: './getOnlineHistoryPeople.php',
-			data: {
-				data: '123'
-			},
-			success: function (response) {
-				var data = JSON.parse(response);
-				var sideBar = $('#sideBar');
-				sideBar.text('瀏覽人次：' + data[0] + '人');
-				sideBar.attr('title', '使用者使用時間為：' + data[1]);
-			},
-			error: function () {
-				//alert('error: unable to connect');
-			}
-		});
-	</script>
+	<script src="ajax.js"></script>
 </head>
 
-<body style="margin:0px;background-color:#eeeeee;">
-	<div class="header2">
-		<div class="head">
-			<div class="main" style="margin-top: -10px;">
-				<ul>
-					<li class="active"><a href="index.html">Home</a> </li>
-					<li><a href="game.html">Programs</a> </li>
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="aboutme.html">About</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-				<h2 class="title"><a href="index.html" style="text-decoration: none; color: #000">Cyt's Website</a></h2>
-			</div>
-		</div>
-		<canvas></canvas>
-		<script src="with_menu.js"></script>
-		<!--
-			<div class="main">
-			<div class="box2" style="margin-top:10%;margin-left: -1%;">
-					<slider style="margin-left: 12px;">
-						<slide><p></p></slide>
-						<slide><p></p></slide>
-						<slide><p></p></slide>
-						<slide><p></p></slide>
-					</slider>
-					<div style="margin-top:460px; margin-left: 2%;">
-					<h3>這是陳昱廷的個人網站</h3>
-					</div>
-			</div>
-			-->
-		<!--
-			<div class="slidershow middle" style="margin-top: -35px;">
-				<div class="slides">
-					<input style="position: absolute;visibility: hidden;" type="radio" name="r" id="r1" checked>
-					<input style="position: absolute;visibility: hidden;" type="radio" name="r" id="r2">
-					<input style="position: absolute;visibility: hidden;" type="radio" name="r" id="r3">
-					<input style="position: absolute;visibility: hidden;" type="radio" name="r" id="r4">
-					<div class="slide s1">
-						<img src="005.jpg" alt="">
-					</div>
-					<div class="slide">
-						<img src="002.jpg" alt="">
-					</div>
-					<div class="slide">
-						<img src="007.jpg" alt="">
-					</div>
-					<div class="slide">
-						<img src="004.jpg" alt="">
-					</div>
-				</div>
+<body>
+	<div class="head">
+		<div class="main ">
+			<h2><a href="index.html" class="title">Cyt's Website</a></h2>
+			<ul>
+				<li class="active"><a href="index.html">Home</a> </li>
+				<li><a href="game.html">Programs</a> </li>
+				<li><a href="blog.html">Blog</a></li>
+				<li><a href="aboutme.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
 
-				<div class="navigation">
-					<label for="r1" class="bar"></label>
-					<label for="r2" class="bar"></label>
-					<label for="r3" class="bar"></label>
-					<label for="r4" class="bar"></label>
-				</div>
-			</div>
 		</div>
-	-->
-		<!--
-	<div style="position:absolute; bottom:0px; text-align:center; width:100%;">
-		<div >123456789</div>
-	</div>
-	<div class="home" style="margin-top: 65px;">
-		<header>
-			<h1>Cyt's Website</h1>
-			<p>陳昱廷的網站</p>
-		</header>
-	</div>
-	-->
 	</div>
 	<div class="side" id="sideBar">無法知道</div>
 	<div class="message">
 		<h3>版本更新:</h3>
-		<p>10/24:</p>
-		<p>每次CSS都會出事，我上傳之後就變了= =</p>
-		<p>我真的心很累</p>
-		<p>結果我還是想要有blog來寫一點東西(心情吧..)</p>
-		<p>所以就把resume跟about合併了&微調一下字體</p>
 		<p>11/23</p>
 		<p>這陣子都在用面試，沒空用你</p>
 		<p>寫了新文章!</p>
@@ -114,15 +36,10 @@
 		<p>最近都沒啥時間做想做的事..</p>
 		<p>最近專題報告太麻煩了..</p>
 		<p>我把首頁東西刪掉，因為我想放別的東西</p>
+		<p>3/26:</p>
+		<p>隔一段時間回去看自己code，好羞恥阿..</p>
+		<p>但要改的東西太多，有點太累</p>
 	</div>
 </body>
 
 </html>
-
-<!--
-	/*******************************************************/
-	<p>10/23:</p>
-	<p>總是搞不懂封面放甚麼好...</p>
-	<p>新增了點擊換照片</p>
-
--->
