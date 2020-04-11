@@ -4,41 +4,80 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Cyt's Homepage</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css"> -->
-	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="ajax.js"></script>
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+	<!-- js -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 
-<body>
-	<div class="head">
-		<div class="main ">
-			<h2><a href="index.html" class="title">Cyt's Website</a></h2>
-			<ul>
-				<li class="active"><a href="index.html">Home</a> </li>
-				<li><a href="game.html">Programs</a> </li>
-				<li><a href="blog.html">Blog</a></li>
-				<li><a href="aboutme.html">About</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-
+<body style="background-color: #f6f6f6;">
+	<!-- Navigation -->
+	<div id="nav">
+		<nav class="navbar navbar-custom">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-main-collapse">
+					<ul class="nav navbar-nav">
+						<li> <a class="page-scroll" href="index.html">Cyt's Website</a> </li>
+						<li class="active"> <a class="page-scroll" href="#about">About</a> </li>
+						<li> <a class="page-scroll" href="Portfolio.html">Portfolio</a> </li>
+						<li> <a class="page-scroll" href="blog.html">Blog</a> </li>
+						<li> <a class="page-scroll" href="contact.html">Contact</a> </li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<!-- about -->
+	<div id="about">
+		<div class="container">
+			<div class="text-center center"><!-- section-title -->
+				<h2>About Me</h2>
+				<hr>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-md-6"> <img src="img/about.jpg" class="img-responsive" alt=""> </div>
+				<div class="col-xs-12 col-md-6">
+					<div class="about-text">
+						<h3>陳昱廷 - Yu-Ting Chen</h3>
+						<p>1997年出生，目前為東海資工系大四學生，</p>
+						<p>桃園人，曾就讀復旦高中。</p>
+						<p>認真學習寫程式中....</p>
+						<a href="Portfolio.html" class="btn btn-primary btn-lg page-scroll">My Portfolio</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div class="side" id="sideBar">無法知道</div>
-	<div class="message">
-		<h3>版本更新:</h3>
-		<p>11/23</p>
-		<p>這陣子都在用面試，沒空用你</p>
-		<p>寫了新文章!</p>
-		<p>哀 沒公司要用我，我好爛QQ</p>
-		<p>12/17:</p>
-		<p>最近都沒啥時間做想做的事..</p>
-		<p>最近專題報告太麻煩了..</p>
-		<p>我把首頁東西刪掉，因為我想放別的東西</p>
-		<p>3/26:</p>
-		<p>隔一段時間回去看自己code，好羞恥阿..</p>
-		<p>但要改的東西太多，有點太累</p>
+	<!-- footer -->
+	<div id="footer">
+		<div class="container text-center">
+			<div class="fnav">
+				<div class="social ">
+					<ul class="list-inline">
+						<li><a href="https://www.facebook.com/profile.php?id=100003963670423"><i
+									class="fa fa-facebook"></i></a></li>
+						<li><a href="https://www.youtube.com/channel/UCDj4j4qIs57GtVu6r4crRxQ?view_as=subscriber"><i
+									class="fa fa-youtube"></i></a></li>
+						<!-- <li><a href="https://store.line.me/stickershop/product/10363859/zh-Hant?ref=Desktop"><i class="fa fa-line"></i></a></li> -->
+						<li><a href="mailto:tim376755000@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+						<li><a href="https://github.com/Chenyuting0916"><i class="fa fa-github"></i></a></li>
+						<li><a href="https://www.instagram.com/___._._._.__.____.__._._._.___/"><i
+									class="fa fa-instagram"></i></a></li>
+					</ul>
+				</div>
+				<p>-Chen Yu Ting-</p>
+			</div>
+		</div>
 	</div>
 </body>
 
