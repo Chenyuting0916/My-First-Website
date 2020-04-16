@@ -5,23 +5,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cyt's Website</title>
-    <link rel="Shortcut Icon" type="image/x-icon" href="" />
+    <!-- <link rel="Shortcut Icon" type="image/x-icon" href="" /> -->
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/timeline.css">
+    <link rel="stylesheet" type="text/css" href="css/skill.css">
     <link rel="stylesheet" href="fonts/fontawesome/css/all.css">
     <!-- js -->
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/time-line.js"></script>
-    <!-- <script type="text/javascript" src="js/SmoothScroll.js"></script> -->
+    <script type="text/javascript" src="js/showDetail.js"></script>
 </head>
 
-<body>
+<body style="background-color:#f6f6f6">
     <!-- Navigation -->
     <div id="nav">
         <nav class="navbar navbar-custom">
@@ -43,20 +43,20 @@
         </nav>
     </div>
     <!-- about -->
-    <div style="background-color:#f6f6f6">
+    <div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-4" style="padding: 30px;">
+                <div class="col-sm-5" style="padding: 30px;">
                     <h2>About Me</h2>
-                    <div class="col-sm"> <img src="img/about.jpg" class="img-responsive" alt=""> </div>
-                    <div class="col-sm">
-                        <div class="">
+                    <img src="img/about.jpg" class="img-responsive">
+                    <div>
+                        <a target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/">
                             <h3>陳昱廷 - Yu-Ting Chen</h3>
-                            <p>1997年出生，目前為東海資工系大四學生，</p>
-                            <p>台灣人，曾就讀復旦高中。</p>
-                            <p>認真學習寫程式中....</p>
-                            <a href="Portfolio.html" class="btn btn-primary btn-lg page-scroll">My Portfolio</a>
-                        </div>
+                        </a>
+                        <p>1997年出生，目前為東海資工系大四學生，</p>
+                        <p>台灣人，曾就讀復旦高中。</p>
+                        <p>認真學習寫程式中....</p>
+                        <a href="Portfolio.html" class="btn btn-primary btn-lg page-scroll">My Portfolio</a>
                     </div>
                 </div>
                 <!-- simple timeline -->
@@ -85,7 +85,55 @@
                             </li>
                         </ul>
                     </div>
+
+                    <div style="margin-top: 10px">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h4 style="width: 200px;">Html</h4>
+                                <div class="c100 p55">
+                                    <span>55%</span>
+                                    <div class="slice">
+                                        <div class="bar"></div>
+                                        <div class="fill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <h4 style="width: 200px;">Css</h4>
+                                <div class="c100 p35">
+                                    <span>35%</span>
+                                    <div class="slice">
+                                        <div class="bar"></div>
+                                        <div class="fill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <h4 style="width: 200px;">jquery</h4>
+                                <div class="c100 p45">
+                                    <span>45%</span>
+                                    <div class="slice">
+                                        <div class="bar"></div>
+                                        <div class="fill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <h4 style="width: 200px;">C#</h4>
+                                <div class="c100 p60">
+                                    <span>60%</span>
+                                    <div class="slice">
+                                        <div class="bar"></div>
+                                        <div class="fill"></div>
+                                    </div>
+                                </div>
+                                <a id="showSkill" style="color:cadetblue;cursor: pointer;">Read More...</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
         </div>
     </div>
@@ -168,25 +216,34 @@
             </ul>
         </div>
     </div>
+    <!-- skill -->
+    <div style="background-color:#666666;">
+        <div id="skillDetail" class="container">
+            <div class="text-center center" style="padding:30px;margin-top: 30px;">
+                <h2 style="color:white;">Skills</h2>
+            </div>
+
+        </div>
+    </div>
     <!-- footer -->
-    <div id="footer">
+    <div id="footer" class="navbar-fixed-bottom">
         <div class="container text-center">
             <div class="fnav">
                 <div class="social ">
                     <ul class="list-inline">
-                        <li><a href="https://www.facebook.com/profile.php?id=100003963670423"><i class="fab fa-facebook"></i></a>
+                        <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100003963670423"><i class="fab fa-facebook"></i></a>
                         </li>
-                        <li><a href="https://www.youtube.com/channel/UCDj4j4qIs57GtVu6r4crRxQ?view_as=subscriber"><i
+                        <li><a target="_blank" href="https://www.youtube.com/channel/UCDj4j4qIs57GtVu6r4crRxQ?view_as=subscriber"><i
                   class="fab fa-youtube"></i></a></li>
-                        <li><a href="https://store.line.me/stickershop/product/10363859/zh-Hant?ref=Desktop"><i
+                        <li><a target="_blank" href="https://store.line.me/stickershop/product/10363859/zh-Hant?ref=Desktop"><i
                   class="fas fa-shopping-cart"></i></a></li>
-                        <li><a href="mailto:tim376755000@gmail.com"><i class="far fa-envelope"></i></a></li>
-                        <li><a href="https://github.com/Chenyuting0916"><i class="fab fa-github"></i></a></li>
-                        <li><a href="https://www.instagram.com/___._._._.__.____.__._._._.___/"><i class="fab fa-instagram"></i></a>
+                        <li><a target="_blank" href="mailto:tim376755000@gmail.com"><i class="far fa-envelope"></i></a></li>
+                        <li><a target="_blank" href="https://github.com/Chenyuting0916"><i class="fab fa-github"></i></a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/"><i class="fab fa-instagram"></i></a>
                         </li>
                     </ul>
                 </div>
-                <p><a href="https://www.instagram.com/___._._._.__.____.__._._._.___/">-Chen Yu Ting-</a></p>
+                <p><a target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/">-Chen Yu Ting-</a></p>
             </div>
         </div>
     </div>

@@ -5,7 +5,8 @@ html {
     -webkit-font-smoothing: antialiased !important;
     color: #666;
     width: 100% !important;
-    height: 100% !important;
+    /* height: 100% !important; */
+    padding-bottom: 70px;
 }
 
 h1 {
