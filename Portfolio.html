@@ -3,27 +3,35 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Cyt's Homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cyt's Website</title>
+    <!-- <link rel="Shortcut Icon" type="image/x-icon" href="" /> -->
+    <meta name="description" content="">
+    <meta name="author" content="">
     <!-- css -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/lightbox.css">
     <!-- js -->
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/lightbox.js"></script>
 </head>
 
-<body style="background-color: #f6f6f6;">
+<body style="background-color:#f6f6f6">
     <!-- Navigation -->
     <div id="nav">
         <nav class="navbar navbar-custom">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i
+              class="fas fa-bars"></i> </button>
                 </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-main-collapse">
                     <ul class="nav navbar-nav">
                         <li> <a class="page-scroll" href="index.html">Cyt's Website</a> </li>
@@ -36,130 +44,67 @@
             </div>
         </nav>
     </div>
-    <!-- Portfolio Section -->
-    <div id="portfolio">
-        <div class="container">
-            <div class="section-title text-center center">
-                <h2>Portfolio</h2>
-                <hr>
-            </div>
-            <div class="categories">
-                <ul class="cat">
-                    <li>
-                        <ol class="type">
-                            <li><a href="#" data-filter="*" class="active">All</a></li>
-                            <li><a href="#" data-filter=".web">Web Design</a></li>
-                            <li><a href="#" data-filter=".app">App Development</a></li>
-                            <li><a href="#" data-filter=".branding">Branding</a></li>
-                        </ol>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-            </div>
-            <div class="row">
-                <div class="portfolio-items">
-                    <div class="col-sm-6 col-md-3 col-lg-3 web">
-                        <div class="portfolio-item">
-                            <div class="hover-bg">
-                                <a href="img/portfolio/01-large.jpg" title="Project description" rel="prettyPhoto">
-                                    <div class="hover-text">
-                                        <h4>Project Title</h4>
-                                        <small>Web Design</small>
-                                    </div>
-                                    <img src="img/portfolio/01-small.jpg" class="img-responsive" alt="Project Title">
-                                </a>
-                            </div>
+    <!-- portfolio -->
+    <div class="container clearfix">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="text-center center" style="margin-top: 30px;">
+                            <h2>Portfolio</h2>
+                        </div>
+                        <p>Put your portfolio or gallery images here for example. Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy. Without
+                            farther she exposed saw man led. Along on happy could cease green oh. </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="box">
+                            <a href="img/work-1.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-1.jpg" alt="image" class="img-fluid" width="200"></a>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 app">
-                        <div class="portfolio-item">
-                            <div class="hover-bg">
-                                <a href="img/portfolio/02-large.jpg" title="Project description" rel="prettyPhoto">
-                                    <div class="hover-text">
-                                        <h4>Project Title</h4>
-                                        <small>App Development</small>
-                                    </div>
-                                    <img src="img/portfolio/02-small.jpg" class="img-responsive" alt="Project Title">
-                                </a>
-                            </div>
+                    <div class="col-sm-4">
+                        <div class="box">
+                            <a href="img/work-2.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-2.jpg" alt="image" class="img-fluid"></a>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 web">
-                        <div class="portfolio-item">
-                            <div class="hover-bg">
-                                <a href="img/portfolio/03-large.jpg" title="Project description" rel="prettyPhoto">
-                                    <div class="hover-text">
-                                        <h4>Project Title</h4>
-                                        <small>Web Design</small>
-                                    </div>
-                                    <img src="img/portfolio/03-small.jpg" class="img-responsive" alt="Project Title">
-                                </a>
-                            </div>
+                    <div class="col-sm-4">
+                        <div class="box">
+                            <a href="img/work-3.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-3.jpg" alt="image" class="img-fluid"></a>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 web">
-                        <div class="portfolio-item">
-                            <div class="hover-bg">
-                                <a href="img/portfolio/04-large.jpg" title="Project description" rel="prettyPhoto">
-                                    <div class="hover-text">
-                                        <h4>Project Title</h4>
-                                        <small>Web Design</small>
-                                    </div>
-                                    <img src="img/portfolio/04-small.jpg" class="img-responsive" alt="Project Title">
-                                </a>
-                            </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="box">
+                            <a href="img/work-4.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-4.jpg" alt="image" class="img-fluid"></a>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 app">
-                        <div class="portfolio-item">
-                            <div class="hover-bg">
-                                <a href="img/portfolio/05-large.jpg" title="Project description" rel="prettyPhoto">
-                                    <div class="hover-text">
-                                        <h4>Project Title</h4>
-                                        <small>App Development</small>
-                                    </div>
-                                    <img src="img/portfolio/05-small.jpg" class="img-responsive" alt="Project Title">
-                                </a>
-                            </div>
+                    <div class="col-sm-4">
+                        <div class="box">
+                            <a href="img/work-5.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-5.jpg" alt="image" class="img-fluid"></a>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                        <div class="portfolio-item">
-                            <div class="hover-bg">
-                                <a href="img/portfolio/06-large.jpg" title="Project description" rel="prettyPhoto">
-                                    <div class="hover-text">
-                                        <h4>Project Title</h4>
-                                        <small>Branding</small>
-                                    </div>
-                                    <img src="img/portfolio/06-small.jpg" class="img-responsive" alt="Project Title">
-                                </a>
-                            </div>
+                    <div class="col-sm-4">
+                        <div class="box">
+                            <a href="img/work-6.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-6.jpg" alt="image" class="img-fluid"></a>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 branding app">
-                        <div class="portfolio-item">
-                            <div class="hover-bg">
-                                <a href="img/portfolio/07-large.jpg" title="Project description" rel="prettyPhoto">
-                                    <div class="hover-text">
-                                        <h4>Project Title</h4>
-                                        <small>App Development, Branding</small>
-                                    </div>
-                                    <img src="img/portfolio/07-small.jpg" class="img-responsive" alt="Project Title">
-                                </a>
-                            </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="box">
+                            <a href="img/work-7.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-7.jpg" alt="image" class="img-fluid"></a>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 web">
-                        <div class="portfolio-item">
-                            <div class="hover-bg">
-                                <a href="img/portfolio/08-large.jpg" title="Project description" rel="prettyPhoto">
-                                    <div class="hover-text">
-                                        <h4>Project Title</h4>
-                                        <small>Web Design</small>
-                                    </div>
-                                    <img src="img/portfolio/08-small.jpg" class="img-responsive" alt="Project Title">
-                                </a>
-                            </div>
+                    <div class="col-sm-4">
+                        <div class="box">
+                            <a href="img/work-8.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-8.jpg" alt="image" class="img-fluid"></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="box">
+                            <a href="img/work-9.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-9.jpg" alt="image" class="img-fluid"></a>
                         </div>
                     </div>
                 </div>
@@ -167,23 +112,27 @@
         </div>
     </div>
     <!-- footer -->
-    <div id="footer">
+    <div id="footer" class="navbar-fixed-bottom">
         <div class="container text-center">
             <div class="fnav">
                 <div class="social ">
                     <ul class="list-inline">
-                        <li><a href="https://www.facebook.com/profile.php?id=100003963670423"><i
-									class="fa fa-facebook"></i></a></li>
-                        <li><a href="https://www.youtube.com/channel/UCDj4j4qIs57GtVu6r4crRxQ?view_as=subscriber"><i
-									class="fa fa-youtube"></i></a></li>
-                        <!-- <li><a href="https://store.line.me/stickershop/product/10363859/zh-Hant?ref=Desktop"><i class="fa fa-line"></i></a></li> -->
-                        <li><a href="mailto:tim376755000@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
-                        <li><a href="https://github.com/Chenyuting0916"><i class="fa fa-github"></i></a></li>
-                        <li><a href="https://www.instagram.com/___._._._.__.____.__._._._.___/"><i
-									class="fa fa-instagram"></i></a></li>
+                        <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100003963670423"><i class="fab fa-facebook"></i></a>
+                        </li>
+                        <li><a target="_blank" href="https://www.youtube.com/channel/UCDj4j4qIs57GtVu6r4crRxQ?view_as=subscriber"><i
+                  class="fab fa-youtube"></i></a></li>
+                        <li><a target="_blank" href="https://store.line.me/stickershop/product/10363859/zh-Hant?ref=Desktop"><i
+                  class="fas fa-shopping-cart"></i></a></li>
+                        <li><a target="_blank" href="mailto:tim376755000@gmail.com"><i class="far fa-envelope"></i></a></li>
+                        <li><a target="_blank" href="https://github.com/Chenyuting0916"><i class="fab fa-github"></i></a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/"><i class="fab fa-instagram"></i></a>
+                        </li>
                     </ul>
                 </div>
-                <p>-Chen Yu Ting-</p>
+                <p>
+                    <a target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/">- Chen Yu Ting &nbsp;&nbsp;</a>
+                    <a target="_blank" href="https://www.facebook.com/profile.php?id=100003963670423" id="sideBar"></a>
+                </p>
             </div>
         </div>
     </div>
