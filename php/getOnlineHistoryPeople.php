@@ -1,5 +1,5 @@
 <?php
-	 include('connect1.php');
+	 include('connect.php');
 	
 	$ip = $_SERVER["REMOTE_ADDR"];
 	date_default_timezone_set("Asia/Taipei");
@@ -17,6 +17,6 @@
 
 	$rtnData = array();
 	$rtnData[0] = $num;
-	$rtnData[1] = $var1;
+	$rtnData[1] = $nowdate;
 	echo json_encode($rtnData);
 ?>
