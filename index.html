@@ -19,6 +19,7 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/showDetail.js"></script>
+    <script type="text/javascript" src="ajax.js"></script>
 </head>
 
 <body style="background-color:#f6f6f6">
@@ -66,30 +67,34 @@
                         <ul class="timeline2">
                             <li>
                                 <a href="#">新加坡商鈦坦科技實習生</a>
-                                <a href="#" class="float-right">February, 2020</a>
+                                <a>February, 2020</a>
                             </li>
                             <li>
                                 <a href="#">程式設計課程助教</a>
-                                <a href="#" class="float-right">October, 2019</a>
+                                <a>October, 2019</a>
                             </li>
                             <li>
                                 <a href="#">第24屆大專校院資訊應用服務創新競賽</a>
-                                <a href="#" class="float-right">02 November, 2019</a>
+                                <a>02 November, 2019</a>
                             </li>
                             <li>
                                 <a href="#">專題研究</a>
-                                <a href="#" class="float-right">September, 2019</a>
+                                <a>September, 2019</a>
                             </li>
                             <li>
                                 <a id="showTimeLine" style="color:cadetblue;cursor: pointer;">Read More...</a>
                             </li>
                         </ul>
                     </div>
+                    <div style="margin-top: 10px;">
+                        <h2>Skills</h2>
+                        <a id="showSkill" style="color:cadetblue;cursor: pointer;">Read More...</a>
+                    </div>
 
-                    <div style="margin-top: 10px">
+                    <!-- <div style="margin-top: 10px">
                         <div class="row">
                             <div class="col-sm-3">
-                                <h4 style="width: 200px;">Html</h4>
+                                <h4 class="col-sm-3">Html</h4>
                                 <div class="c100 p55">
                                     <span>55%</span>
                                     <div class="slice">
@@ -99,7 +104,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <h4 style="width: 200px;">Css</h4>
+                                <h4 class="col-sm-3">Css</h4>
                                 <div class="c100 p35">
                                     <span>35%</span>
                                     <div class="slice">
@@ -109,7 +114,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <h4 style="width: 200px;">jquery</h4>
+                                <h4 class="col-sm-3">jquery</h4>
                                 <div class="c100 p45">
                                     <span>45%</span>
                                     <div class="slice">
@@ -119,7 +124,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-3">
-                                <h4 style="width: 200px;">C#</h4>
+                                <h4 class="col-sm-3">C#</h4>
                                 <div class="c100 p60">
                                     <span>60%</span>
                                     <div class="slice">
@@ -130,10 +135,9 @@
                                 <a id="showSkill" style="color:cadetblue;cursor: pointer;">Read More...</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
-
             </div>
         </div>
     </div>
@@ -219,10 +223,36 @@
     <!-- skill -->
     <div style="background-color:#666666;">
         <div id="skillDetail" class="container">
-            <div class="text-center center" style="padding:30px;margin-top: 30px;">
-                <h2 style="color:white;">Skills</h2>
+            <div style="padding:30px;margin-top: 30px;">
+                <div class="text-center center">
+                    <h2 style="color:white;">Skills</h2>
+                </div>
+                <h3 style="color:white;">css</h3>
+                <div class="progress">
+                    <div class="progress-value1"></div>
+                </div>
+                <h3 style="color:white;">html</h3>
+                <div class="progress">
+                    <div class="progress-value2"></div>
+                </div>
+                <h3 style="color:white;">javascript</h3>
+                <div class="progress">
+                    <div class="progress-value3"></div>
+                </div>
+                <h3 style="color:white;">asp.net</h3>
+                <div class="progress">
+                    <div class="progress-value4"></div>
+                </div>
+                <h3 style="color:white;">mssql</h3>
+                <div class="progress">
+                    <div class="progress-value5"></div>
+                </div>
+                <h3 style="color:white;">C++</h3>
+                <div class="progress">
+                    <div class="progress-value6"></div>
+                </div>
+                <div id="closeDetailSkill" class="timeline-badge text-center" style="cursor: pointer;color: white;"><i class="fas fa-angle-double-up"></i></div>
             </div>
-
         </div>
     </div>
     <!-- footer -->
@@ -243,6 +273,7 @@
                         </li>
                     </ul>
                 </div>
+                <p id="sideBar"></p>
                 <p><a target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/">-Chen Yu Ting-</a></p>
             </div>
         </div>

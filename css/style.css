@@ -331,43 +331,6 @@ a:focus,
     margin-bottom: 30px;
 }
 
-
-/* Skills Section */
-
-#skills {
-    padding: 100px 0;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6b4da8+0,4977c2+100 */
-    background: rgb(107, 77, 168);
-    /* Old browsers */
-    background: -moz-linear-gradient(left, rgba(107, 77, 168, 1) 0%, rgba(73, 119, 194, 1) 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, rgba(107, 77, 168, 1) 0%, rgba(73, 119, 194, 1) 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, rgba(107, 77, 168, 1) 0%, rgba(73, 119, 194, 1) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#6b4da8', endColorstr='#4977c2', GradientType=1);
-    /* IE6-9 */
-}
-
-#skills h2 {
-    color: #fff;
-}
-
-#skills hr {
-    background: rgba(255, 255, 255, 0.3);
-}
-
-#skills .skill {
-    margin-bottom: 40px;
-    text-align: center;
-    padding: 0px;
-}
-
-#skills .skill h4 {
-    font-weight: 600;
-    color: #fff;
-}
-
 .chart {
     position: relative;
     display: inline-block;

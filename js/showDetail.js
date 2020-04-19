@@ -39,5 +39,8 @@ $(document).ready(function() {
             }, 1000);
         }
     });
-
+    $('#closeDetailSkill').click(function() {
+        $('#skillDetail').hide('slow');
+        $('#showSkill').text('Read More...')
+    });
 });
