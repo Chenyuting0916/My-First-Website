@@ -1,3 +1,7 @@
+.lb-content {
+    padding-bottom: 50px;
+}
+
 html.lb-disable-scrolling {
     overflow: hidden;
     /* Position fixed required for iOS. Just putting overflow: hidden; on the body is not enough. */

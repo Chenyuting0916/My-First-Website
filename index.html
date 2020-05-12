@@ -18,28 +18,29 @@
     <!-- js -->
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/showDetail.js"></script>
     <script type="text/javascript" src="js/ajax.js"></script>
     <script type="text/javascript" src="js/lightbox.js"></script>
+    <!-- google AdSense -->
+    <script data-ad-client="ca-pub-8569537755937952" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body style="background-color:#f6f6f6">
     <!-- Navigation -->
     <div id="nav">
-        <nav class="navbar navbar-custom">
+        <nav class="navbar  navbar-expand-sm  navbar-custom">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i
-              class="fas fa-bars"></i> </button>
-                </div>
-                <div class="collapse navbar-collapse navbar-main-collapse">
-                    <ul class="nav navbar-nav">
-                        <li> <a class="page-scroll" href="index.html">Cyt's Website</a> </li>
-                        <li class="active"> <a class="page-scroll" href="index.html">About</a> </li>
-                        <li> <a class="page-scroll" href="Portfolio.html">Portfolio</a> </li>
-                        <li> <a class="page-scroll" href="blog.html">Blog</a> </li>
-                        <li> <a class="page-scroll" href="contact.html">Contact</a> </li>
+                <!-- <a class="navbar-brand" href="index.html">Cyt's Website</a> -->
+                <button style="float: right;" class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ">
+                        <a class="navbar-brand" href="index.html">Cyt's Website</a>
+                        <li class="nav-item active"> <a class="nav-link" href="index.html">About</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="Portfolio.html">Portfolio</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="blog.html">Blog</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="contact.html">Contact</a> </li>
                     </ul>
                 </div>
             </div>
@@ -69,19 +70,19 @@
                         <ul class="timeline2">
                             <li>
                                 <a href="img/timeline/timeline-1.jpg" data-lightbox="image-1" data-title="在鈦坦實習一個月的我" class="has-border">新加坡商鈦坦科技實習生</a>
+                                <a href="img/timeline/timeline-2.jpg" data-lightbox="image-1" data-title="我與我快樂的實習夥伴們" class="has-border hide"></a>
+                                <a href="img/timeline/timeline-3.jpg" data-lightbox="image-1" data-title="因為疫情，最後一天在公司的我們" class="has-border hide"></a>
                                 <a>February, 2020</a>
                             </li>
-                            <a href="img/timeline/timeline-2.jpg" data-lightbox="image-1" data-title="我與我快樂的實習夥伴們" class="has-border hide"></a>
-                            <a href="img/timeline/timeline-3.jpg" data-lightbox="image-1" data-title="因為疫情，最後一天在公司的我們" class="has-border hide"></a>
                             <li>
                                 <a>程式設計課程助教</a>
                                 <a>October, 2019</a>
                             </li>
                             <li>
-                                <a href="img/timeline/timeline-4.jpg" data-lightbox="image-1" data-title="得了第三名的我" class="has-border">第24屆大專校院資訊應用服務創新競賽</a>
+                                <a href="img/timeline/timeline-4.jpg" data-lightbox="image-2" data-title="得了第三名的我" class="has-border">第24屆大專校院資訊應用服務創新競賽</a>
+                                <a href="img/timeline/timeline-5.jpg" data-lightbox="image-2" data-title="我很罩的Parter" class="has-border hide"></a>
                                 <a>02 November, 2019</a>
                             </li>
-                            <a href="img/timeline/timeline-5.jpg" data-lightbox="image-1" data-title="我很罩的Parter" class="has-border hide"></a>
                             <li>
                                 <a>專題研究</a>
                                 <a>September, 2019</a>
@@ -261,30 +262,28 @@
         </div>
     </div>
     <!-- footer -->
-    <div id="footer" class="navbar-fixed-bottom">
-        <div class="container text-center">
-            <div class="fnav">
-                <div class="social ">
-                    <ul class="list-inline">
-                        <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100003963670423"><i class="fab fa-facebook"></i></a>
-                        </li>
-                        <li><a target="_blank" href="https://www.youtube.com/channel/UCDj4j4qIs57GtVu6r4crRxQ?view_as=subscriber"><i
+    <nav id="footer" class="navbar fixed-bottom">
+        <div class="container text-center justify-content-center">
+            <div>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a title="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100003963670423"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a title="youtube" target="_blank" href="https://www.youtube.com/channel/UCDj4j4qIs57GtVu6r4crRxQ?view_as=subscriber"><i
                   class="fab fa-youtube"></i></a></li>
-                        <li><a target="_blank" href="https://store.line.me/stickershop/product/10363859/zh-Hant?ref=Desktop"><i
+                    <li class="list-inline-item"><a title="line-sticker" target="_blank" href="https://store.line.me/stickershop/product/10363859/zh-Hant?ref=Desktop"><i
                   class="fas fa-shopping-cart"></i></a></li>
-                        <li><a target="_blank" href="mailto:tim376755000@gmail.com"><i class="far fa-envelope"></i></a></li>
-                        <li><a target="_blank" href="https://github.com/Chenyuting0916"><i class="fab fa-github"></i></a></li>
-                        <li><a target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/"><i class="fab fa-instagram"></i></a>
-                        </li>
-                    </ul>
-                </div>
+                    <li class="list-inline-item"><a title="mail" target="_blank" href="mailto:tim376755000@gmail.com"><i class="far fa-envelope"></i></a></li>
+                    <li class="list-inline-item"><a title="github" target="_blank" href="https://github.com/Chenyuting0916"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a title="instagram" target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/"><i class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
                 <p>
-                    <a target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/">- Chen Yu Ting &nbsp;&nbsp;</a>
+                    <a title="instagram" target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/">- Chen Yu Ting &nbsp;&nbsp;</a>
                     <a target="_blank" href="https://www.facebook.com/profile.php?id=100003963670423" id="sideBar"></a>
                 </p>
             </div>
         </div>
-    </div>
+    </nav>
 </body>
 
 </html>

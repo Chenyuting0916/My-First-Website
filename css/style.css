@@ -29,6 +29,7 @@ h2 {
 
 h3,
 h4 {
+    margin-top: 20px;
     color: #333;
     font-size: 20px;
     font-weight: 600;
@@ -137,7 +138,6 @@ hr {
 }
 
 .navbar .navbar-nav {
-    display: inline-block;
     float: none;
     vertical-align: top;
 }
@@ -721,7 +721,7 @@ label {
 #footer {
     background: #222;
     color: #777;
-    padding: 30px 0 25px 0;
+    padding: 20px 0 10px 0;
 }
 
 #footer p {

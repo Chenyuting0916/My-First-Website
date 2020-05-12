@@ -9,36 +9,38 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- css -->
-    <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/timeline.css">
+    <link rel="stylesheet" type="text/css" href="css/skill.css">
+    <link rel="stylesheet" type="text/css" href="css/lightbox.css">
     <link rel="stylesheet" href="fonts/fontawesome/css/all.css">
-    <link rel="stylesheet" href="css/lightbox.css">
     <!-- js -->
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/showDetail.js"></script>
     <script type="text/javascript" src="js/ajax.js"></script>
-    <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/lightbox.js"></script>
+    <script type="text/javascript" src="js/lightbox.js"></script>
+    <!-- google AdSense -->
+    <script data-ad-client="ca-pub-8569537755937952" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body style="background-color:#f6f6f6">
     <!-- Navigation -->
     <div id="nav">
-        <nav class="navbar navbar-custom">
+        <nav class="navbar  navbar-expand-sm  navbar-custom">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i
-              class="fas fa-bars"></i> </button>
-                </div>
-                <div class="collapse navbar-collapse navbar-main-collapse">
-                    <ul class="nav navbar-nav">
-                        <li> <a class="page-scroll" href="index.html">Cyt's Website</a> </li>
-                        <li> <a class="page-scroll" href="index.html">About</a> </li>
-                        <li class="active"> <a class="page-scroll" href="Portfolio.html">Portfolio</a> </li>
-                        <li> <a class="page-scroll" href="blog.html">Blog</a> </li>
-                        <li> <a class="page-scroll" href="contact.html">Contact</a> </li>
+                <!-- <a class="navbar-brand" href="index.html">Cyt's Website</a> -->
+                <button style="float: right;" class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ">
+                        <a class="navbar-brand" href="index.html">Cyt's Website</a>
+                        <li class="nav-item"> <a class="nav-link" href="index.html">About</a> </li>
+                        <li class="nav-item active"> <a class="nav-link" href="Portfolio.html">Portfolio</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="blog.html">Blog</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="contact.html">Contact</a> </li>
                     </ul>
                 </div>
             </div>
@@ -52,59 +54,42 @@
                     <div class="col-sm-12">
                         <div class="text-center center" style="margin-top: 30px;">
                             <h2>Portfolio</h2>
-                        </div>
-                        <p>Put your portfolio or gallery images here for example. Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy. Without
-                            farther she exposed saw man led. Along on happy could cease green oh. </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="box">
-                            <a href="img/work-1.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-1.jpg" alt="image" class="img-fluid" width="200"></a>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="box">
-                            <a href="img/work-2.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-2.jpg" alt="image" class="img-fluid"></a>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="box">
-                            <a href="img/work-3.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-3.jpg" alt="image" class="img-fluid"></a>
+                            <p>這些是我的作品集，都是寫一些取悅自己的玩具~</p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" style="padding-bottom: 30px;">
                         <div class="box">
-                            <a href="img/work-4.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-4.jpg" alt="image" class="img-fluid"></a>
+                            <a href="img/portfolio/protfolio-1.jpg" data-lightbox="image-1" data-content="這是我大三寫的聊天機器人，一個很簡單的小玩具" data-title="Some footer information" class="has-border"><img src="img/portfolio/protfolio-1.jpg" alt="image" class="img-fluid" style="height: 200px;width: 100%;"></a>
+                            <a href="img/portfolio/protfolio-2.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border hide"></a>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" style="padding-bottom: 30px;">
                         <div class="box">
-                            <a href="img/work-5.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-5.jpg" alt="image" class="img-fluid"></a>
+                            <a href="img/portfolio/protfolio-3.jpg" data-lightbox="image-2" data-title="Some footer information" class="has-border"><img src="img/portfolio/protfolio-3.jpg" alt="image" class="img-fluid" style="height: 200px;width: 100%;"></a>
+                            <a href="img/portfolio/protfolio-4.jpg" data-lightbox="image-2" data-title="Some footer information" class="has-border hide"></a>
+                            <a href="img/portfolio/protfolio-5.jpg" data-lightbox="image-2" data-title="Some footer information" class="has-border hide"></a>
+                            <a href="img/portfolio/protfolio-6.jpg" data-lightbox="image-2" data-title="Some footer information" class="has-border hide"></a>
+                            <a href="img/portfolio/protfolio-7.jpg" data-lightbox="image-2" data-title="Some footer information" class="has-border hide"></a>
+                            <a href="img/portfolio/protfolio-8.jpg" data-lightbox="image-2" data-title="Some footer information" class="has-border hide"></a>
+                            <a href="img/portfolio/protfolio-9.jpg" data-lightbox="image-2" data-title="Some footer information" class="has-border hide"></a>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" style="padding-bottom: 30px;">
                         <div class="box">
-                            <a href="img/work-6.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-6.jpg" alt="image" class="img-fluid"></a>
+                            <a href="img/portfolio/protfolio-10.jpg" data-lightbox="image-3" data-title="Some footer information" class="has-border"><img src="img/portfolio/protfolio-10.jpg" alt="image" class="img-fluid" style="height: 200px;width: 100%;"></a>
+                            <a href="img/portfolio/protfolio-11.jpg" data-lightbox="image-3" data-title="Some footer information" class="has-border hide"></a>
+                            <a href="img/portfolio/protfolio-12.jpg" data-lightbox="image-3" data-title="Some footer information" class="has-border hide"></a>
+                            <a href="img/portfolio/protfolio-13.jpg" data-lightbox="image-3" data-title="Some footer information" class="has-border hide"></a>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" style="padding-bottom: 30px;">
                         <div class="box">
-                            <a href="img/work-7.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-7.jpg" alt="image" class="img-fluid"></a>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="box">
-                            <a href="img/work-8.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-8.jpg" alt="image" class="img-fluid"></a>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="box">
-                            <a href="img/work-9.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/work-9.jpg" alt="image" class="img-fluid"></a>
+                            <a href="img/portfolio/protfolio-14.jpg" data-lightbox="image-4" data-title="Some footer information" class="has-border"><img src="img/portfolio/protfolio-14.jpg" alt="image" class="img-fluid" style="height: 200px;width: 100%;"></a>
+                            <a href="img/portfolio/protfolio-15.jpg" data-lightbox="image-4" data-title="Some footer information" class="has-border hide"></a>
                         </div>
                     </div>
                 </div>
@@ -112,30 +97,28 @@
         </div>
     </div>
     <!-- footer -->
-    <div id="footer" class="navbar-fixed-bottom">
-        <div class="container text-center">
-            <div class="fnav">
-                <div class="social ">
-                    <ul class="list-inline">
-                        <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100003963670423"><i class="fab fa-facebook"></i></a>
-                        </li>
-                        <li><a target="_blank" href="https://www.youtube.com/channel/UCDj4j4qIs57GtVu6r4crRxQ?view_as=subscriber"><i
+    <nav id="footer" class="navbar fixed-bottom">
+        <div class="container text-center justify-content-center">
+            <div>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a title="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100003963670423"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li class="list-inline-item"><a title="youtube" target="_blank" href="https://www.youtube.com/channel/UCDj4j4qIs57GtVu6r4crRxQ?view_as=subscriber"><i
                   class="fab fa-youtube"></i></a></li>
-                        <li><a target="_blank" href="https://store.line.me/stickershop/product/10363859/zh-Hant?ref=Desktop"><i
+                    <li class="list-inline-item"><a title="line-sticker" target="_blank" href="https://store.line.me/stickershop/product/10363859/zh-Hant?ref=Desktop"><i
                   class="fas fa-shopping-cart"></i></a></li>
-                        <li><a target="_blank" href="mailto:tim376755000@gmail.com"><i class="far fa-envelope"></i></a></li>
-                        <li><a target="_blank" href="https://github.com/Chenyuting0916"><i class="fab fa-github"></i></a></li>
-                        <li><a target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/"><i class="fab fa-instagram"></i></a>
-                        </li>
-                    </ul>
-                </div>
+                    <li class="list-inline-item"><a title="mail" target="_blank" href="mailto:tim376755000@gmail.com"><i class="far fa-envelope"></i></a></li>
+                    <li class="list-inline-item"><a title="github" target="_blank" href="https://github.com/Chenyuting0916"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a title="instagram" target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/"><i class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
                 <p>
-                    <a target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/">- Chen Yu Ting &nbsp;&nbsp;</a>
+                    <a title="instagram" target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/">- Chen Yu Ting &nbsp;&nbsp;</a>
                     <a target="_blank" href="https://www.facebook.com/profile.php?id=100003963670423" id="sideBar"></a>
                 </p>
             </div>
         </div>
-    </div>
+    </nav>
 </body>
 
 </html>
