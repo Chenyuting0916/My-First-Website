@@ -16,8 +16,6 @@
 
   $header = "From: $email_from \r\n";
 
- // $header .= "Reply-To: $visitor_email";
-
   mail($to, $email_subject, $email_body, $header);
   mail($to2, $email_subject, $email_body, $header);
 
