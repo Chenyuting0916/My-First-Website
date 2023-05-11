@@ -12,5 +12,3 @@
 先這樣吧= =
 
 https://chenyuting0916.github.io/My-First-Website/
-
-已經轉移到git static page了，heroku收錢了
