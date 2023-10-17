@@ -12,3 +12,13 @@
 先這樣吧= =
 
 https://chenyuting0916.github.io/My-First-Website/
+
+後來改成用github static page
+但我就沒有再更新了
+
+2023/10/17
+今天想說來加一點自我介紹好了，
+給特別有心的面試官
+簡單介紹一下自己，順便整理一下近況。
+
+這網頁很多duplicate code我知道，但我懶QQ
