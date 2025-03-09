@@ -21,21 +21,10 @@
     <script type="text/javascript" src="js/showDetail.js"></script>
     <script type="text/javascript" src="js/ajax.js"></script>
     <script type="text/javascript" src="js/lightbox.js"></script>
+    <script type="text/javascript" src="js/i18n.js"></script>
     <!-- google AdSense -->
     <script data-ad-client="ca-pub-8569537755937952" async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        function changeLanguage() {
-            var langSelect = document.getElementById("langSelect");
-            var selectedValue = langSelect.options[langSelect.selectedIndex].value;
-            if (selectedValue === "en") {
-                window.location.href = "index_en.html";
-            } else {
-                window.location.href = "index.html";
-            }
-        }
-    </script>
-
 </head>
 
 <body style="background-color:#f6f6f6">
@@ -50,14 +39,21 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav ">
-                        <a class="navbar-brand" href="index.html">Cyt's Website</a>
-                        <li class="nav-item"> <a class="nav-link" href="about.html">About</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="Portfolio.html">Portfolio</a> </li>
-                        <li class="nav-item align-items-center d-flex"><select id="langSelect"
-                                onchange="changeLanguage()">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a class="navbar-brand" href="index.html">Cyt's Website</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html" data-i18n="nav.about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item align-items-center d-flex">
+                            <select id="langSelect" onchange="i18n.setLanguage(this.value)">
                                 <option value="zh" selected>中文</option>
                                 <option value="en">English</option>
+                                <option value="ja">日本語</option>
                             </select>
                         </li>
                     </ul>
@@ -70,60 +66,56 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-5" style="padding: 30px;">
-                    <h2>About Me</h2>
+                    <h2 data-i18n="about.title">About Me</h2>
                     <img src="img/about.jpg" class="img-responsive">
                     <div>
                         <a target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/">
-                            <h3>陳昱廷 - Yu-Ting Chen</h3>
+                            <h3 data-i18n="about.name">Yu-Ting Chen</h3>
                         </a>
-                        <p>1997年出生，目前畢業且工作兩年</p>
-                        <p>軟體工程師、台灣人。</p>
-                        <p>認真學習寫程式中....</p>
+                        <p data-i18n="about.description"></p>
+                        <p data-i18n="about.occupation"></p>
+                        <p data-i18n="about.status"></p>
                         <a target="_blank" href="https://github.com/Chenyuting0916"
-                            class="btn btn-primary btn-lg page-scroll">My Portfolio</a>
+                            class="btn btn-primary btn-lg page-scroll" data-i18n="about.portfolio">My Portfolio</a>
                     </div>
                 </div>
                 <!-- simple timeline -->
                 <div class="col-sm-6" style="padding: 30px;">
-                    <h2>Time Line</h2>
+                    <h2 data-i18n="timeline.title">Timeline</h2>
                     <div class="row">
                         <ul class="timeline2">
                             <li>
-                                <a>新加坡商鈦坦科技 產品開發工程師</a>
-                                <a>August, 2020</a>
+                                <a data-i18n="timeline.items.titansoft_engineer.title"></a>
+                                <a data-i18n="timeline.items.titansoft_engineer.date"></a>
                             </li>
                             <li>
                                 <a href="img/timeline/timeline-1.jpg" data-lightbox="image-1" data-title="在鈦坦實習一個月的我"
-                                    class="has-border">新加坡商鈦坦科技實習生</a>
+                                    class="has-border" data-i18n="timeline.items.titansoft_intern.title"></a>
                                 <a href="img/timeline/timeline-2.jpg" data-lightbox="image-1" data-title="我與我快樂的實習夥伴們"
                                     class="has-border hide"></a>
                                 <a href="img/timeline/timeline-3.jpg" data-lightbox="image-1"
                                     data-title="因為疫情，最後一天在公司的我們" class="has-border hide"></a>
-                                <a>February, 2020</a>
+                                <a data-i18n="timeline.items.titansoft_intern.date"></a>
                             </li>
                             <li>
-                                <a>程式設計課程助教</a>
-                                <a>October, 2019</a>
+                                <a data-i18n="timeline.items.ta.title"></a>
+                                <a data-i18n="timeline.items.ta.date"></a>
                             </li>
                             <li>
                                 <a href="img/timeline/timeline-4.jpg" data-lightbox="image-2" data-title="得了第三名的我"
-                                    class="has-border">第24屆大專校院資訊應用服務創新競賽</a>
+                                    class="has-border" data-i18n="timeline.items.competition.title"></a>
                                 <a href="img/timeline/timeline-5.jpg" data-lightbox="image-2" data-title="我很罩的Parter"
                                     class="has-border hide"></a>
-                                <a>02 November, 2019</a>
+                                <a data-i18n="timeline.items.competition.date"></a>
                             </li>
                             <li>
-                                <a>專題研究</a>
-                                <a>September, 2019</a>
-                            </li>
-                            <li>
-                                <a id="showTimeLine" style="color:cadetblue;cursor: pointer;">Read More...</a>
+                                <a id="showTimeLine" style="color:cadetblue;cursor: pointer;" data-i18n="timeline.readMore">Read More...</a>
                             </li>
                         </ul>
                     </div>
                     <div style="margin-top: 10px;">
-                        <h2>Skills</h2>
-                        <a id="showSkill" style="color:cadetblue;cursor: pointer;">Read More...</a>
+                        <h2 data-i18n="skills.title">Skills</h2>
+                        <a id="showSkill" style="color:cadetblue;cursor: pointer;" data-i18n="timeline.readMore">Read More...</a>
                     </div>
                 </div>
             </div>
@@ -133,21 +125,19 @@
     <div style="background-color:#666666;">
         <div id="timelineDetail" class="container">
             <div class="text-center center" style="padding:30px;margin-top: 30px;">
-                <h2 style="color:white;">Time Line</h2>
+                <h2 style="color:white;" data-i18n="timeline.title">Timeline</h2>
             </div>
             <ul class="timeline">
                 <li class="timeline-inverted">
                     <div class="timeline-badge"><i class="far fa-building"></i></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="timeline-title">新加坡商鈦坦科技 產品開發工程師 (2020/08 ~ 2023/04)</h4>
+                            <h4 class="timeline-title" data-i18n="timeline.items.titansoft_engineer.title"></h4>
+                            <p><small class="text-muted" data-i18n="timeline.items.titansoft_engineer.fullDate"></small></p>
                         </div>
                         <div class="timeline-body">
-                            <p>轉為正職工程師之後學習到了許多，敏捷開發(scrum)，產業的domain，microservices，撰寫過了api(REST, gRPC)，也學習寫了unit
-                                test(xUnit, NUnit, fluent Assertion), integration test(specflow)，前端也使用過vue3.0。
-                            </p>
-                            <p>寫程式也變得好看了一些，讀了clean code，了解一些code smell並改善他們，雖然還是有許多不足，但比之前好太多了...
-                            </p>
+                            <p data-i18n="timeline.items.titansoft_engineer.description.0"></p>
+                            <p data-i18n="timeline.items.titansoft_engineer.description.1"></p>
                         </div>
                     </div>
                 </li>
@@ -155,14 +145,12 @@
                     <div class="timeline-badge"><i class="far fa-building"></i></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="timeline-title">新加坡商鈦坦科技實習生 (2020/02 ~ 2020/08)</h4>
+                            <h4 class="timeline-title" data-i18n="timeline.items.titansoft_intern.title"></h4>
+                            <p><small class="text-muted" data-i18n="timeline.items.titansoft_intern.fullDate"></small></p>
                         </div>
                         <div class="timeline-body">
-                            <p>因為疫情(武漢肺炎)的關係，只在公司待了一個月，就在家工作了。有幸能當2020鈦坦的實習生，雖然我還是一樣寫很多大便code，但我學到了很多。
-                            </p>
-                            <p>學習到了.net core
-                                mvc的開發，以及mssql的用法，這些都是學校沒學過的事，很新鮮。也嘗試了linq、jquery等好用的東西，在寫code上也更加督促自己寫好，並與團隊共同努力。是一個很不錯的經驗！
-                            </p>
+                            <p data-i18n="timeline.items.titansoft_intern.description.0"></p>
+                            <p data-i18n="timeline.items.titansoft_intern.description.1"></p>
                         </div>
                     </div>
                 </li>
@@ -170,11 +158,11 @@
                     <div class="timeline-badge warning"><i class="fas fa-chalkboard-teacher"></i></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="timeline-title">程式設計課程助教 (2019/10 ~ 2019/12)</h4>
+                            <h4 class="timeline-title" data-i18n="timeline.items.ta.title"></h4>
+                            <p><small class="text-muted" data-i18n="timeline.items.ta.fullDate"></small></p>
                         </div>
                         <div class="timeline-body">
-                            <p>本學期擔任程式設計助教，教導外系的同學Java以及程式設計技巧。學習教導對程式語言一無所知的同學，培養細心以及耐心。能夠教導別人一項技能，能力被同儕肯定，這也使我有更多成就感。
-                            </p>
+                            <p data-i18n="timeline.items.ta.description.0"></p>
                         </div>
                     </div>
                 </li>
@@ -182,40 +170,12 @@
                     <div class="timeline-badge danger"><i class="fas fa-laptop-code"></i></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="timeline-title">第24屆大專校院資訊應用服務創新競賽</h4>
-                            <h4 class="timeline-title"> (2019/10/07 ~ 2019/11/02)&nbsp; (資訊應用組第三名)</h4>
+                            <h4 class="timeline-title" data-i18n="timeline.items.competition.title"></h4>
+                            <h4 class="timeline-title" data-i18n="timeline.items.competition.subtitle"></h4>
+                            <p><small class="text-muted" data-i18n="timeline.items.competition.fullDate"></small></p>
                         </div>
                         <div class="timeline-body">
-                            <p>
-                                大四專題表現優良，指導教授推薦參加比賽。在研究中，與教授一起改良了演算法，採用創新的分離結構加密法，使加/解密的方法得到了革新。從中學習到團隊合作，以及實作專題的技巧。能夠想出全新的演算法，並實踐之，讓我產生許多的成就感，並增加更多對程式寫作的熱忱。
-                                (資訊應用組第三名)
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="timeline-inverted">
-                    <div class="timeline-badge success"><i class="fas fa-user-graduate"></i></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4 class="timeline-title">專題研究 (2018/03 ~ 2019/09)</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p>
-                                專題主題為訊息加/解密，是我首次與別人合作開發，實作出能夠抵禦明文/密文對攻擊的加/解密方法，雖然研究過程中和伙伴有時會想法不同，但是經過討論之後，最後都能取得共識，並且找出對方找不到的bug，讓我了解合作的成果會大於只有一個人的努力。我們的研究成果改良了現有的加/解密模式，提升17.5倍的效能。
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="timeline-badge info"><i class="fas fa-user-friends"></i></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4 class="timeline-title">系學會 (2017 ~ 2018)</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p>
-                                參與系學會活動，學習如何跟同儕相處，並且與大家一同合作，曾擔任系學會活動攝影組、電競比賽總召，以及系露隊輔。由於個性較內向，辦活動以及與人社交，對我來說是一項非常大的挑戰，但在這些活動中，結交了許多新朋友，讓先前的壓力還有不安都轉化成愉快的回憶。
-                            </p>
+                            <p data-i18n="timeline.items.competition.description.0"></p>
                         </div>
                     </div>
                 </li>
@@ -260,76 +220,71 @@
             </div>
             <div class="row">
                 <div class="card col-sm m-1" style="width: 18rem;">
-                    <div class="card-header">
+                    <div class="card-header" data-i18n="skills.frontend.title">
                         front-end
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">HTML, CSS, JavaScript</li>
-                        <li class="list-group-item">Vue3</li>
-                        <li class="list-group-item">jQuery</li>
+                        <li class="list-group-item" data-i18n="skills.frontend.items.0">HTML, CSS, JavaScript</li>
+                        <li class="list-group-item" data-i18n="skills.frontend.items.1">Vue3</li>
+                        <li class="list-group-item" data-i18n="skills.frontend.items.2">jQuery</li>
                     </ul>
                 </div>
                 <div class="card col-sm m-1" style="width: 18rem;">
-                    <div class="card-header">
+                    <div class="card-header" data-i18n="skills.backend.title">
                         back-end
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">.NET core</li>
-                        <li class="list-group-item">.NET Framework</li>
-                        <li class="list-group-item">ASP.NET MVC</li>
-                        <li class="list-group-item">RESTful APIs</li>
-                        <li class="list-group-item">gRPC </li>
+                        <li class="list-group-item" data-i18n="skills.backend.items.0">.NET core</li>
+                        <li class="list-group-item" data-i18n="skills.backend.items.1">.NET Framework</li>
+                        <li class="list-group-item" data-i18n="skills.backend.items.2">ASP.NET MVC</li>
+                        <li class="list-group-item" data-i18n="skills.backend.items.3">RESTful APIs</li>
+                        <li class="list-group-item" data-i18n="skills.backend.items.4">gRPC</li>
                     </ul>
                 </div>
                 <div class="card col-sm m-1" style="width: 18rem;">
-                    <div class="card-header">
+                    <div class="card-header" data-i18n="skills.database.title">
                         database
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">MS SQL</li>
-                        <li class="list-group-item">Firebase</li>
-                        <li class="list-group-item">Redis</li>
+                        <li class="list-group-item" data-i18n="skills.database.items.0">MS SQL</li>
+                        <li class="list-group-item" data-i18n="skills.database.items.1">Firebase</li>
+                        <li class="list-group-item" data-i18n="skills.database.items.2">Redis</li>
                     </ul>
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="card col-sm m-1" style="width: 18rem;">
-                    <div class="card-header">
+                    <div class="card-header" data-i18n="skills.test.title">
                         test
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Unit Test (NUnit, xUnit)</li>
-                        <li class="list-group-item">Integration Test (SpecFlow)</li>
+                        <li class="list-group-item" data-i18n="skills.test.items.0">Unit Test (NUnit, xUnit)</li>
+                        <li class="list-group-item" data-i18n="skills.test.items.1">Integration Test (SpecFlow)</li>
                     </ul>
                 </div>
 
 
                 <div class="card col-sm m-1" style="width: 18rem;">
-                    <div class="card-header">
+                    <div class="card-header" data-i18n="skills.orm.title">
                         orm
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Entity Framework</li>
-                        <li class="list-group-item">Dapper</li>
+                        <li class="list-group-item" data-i18n="skills.orm.items.0">Entity Framework</li>
+                        <li class="list-group-item" data-i18n="skills.orm.items.1">Dapper</li>
                     </ul>
                 </div>
                 <div class="card col-sm m-1" style="width: 18rem;">
-                    <div class="card-header">
+                    <div class="card-header" data-i18n="skills.others.title">
                         others
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><u><a target="_blank"
-                                    href="https://github.com/Chenyuting0916/Level">Flutter</a></u>
-                        </li>
-                        <li class="list-group-item">Kafka</li>
-                        <li class="list-group-item">K8s</li>
-                        <li class="list-group-item">Java</li>
-                        <li class="list-group-item"><u><a target="_blank"
-                                    href="https://github.com/Chenyuting0916/flappy-bird">Unity</a></u>
-                        </li>
-                        <li class="list-group-item">Git</li>
-                        <li class="list-group-item"><u><a target="_blank"
-                                    href="https://github.com/Chenyuting0916/MinerMVC">Azure</a></u></li>
+                        <li class="list-group-item"><u><a target="_blank" href="https://github.com/Chenyuting0916/Level" data-i18n="skills.others.items.0">Flutter</a></u></li>
+                        <li class="list-group-item" data-i18n="skills.others.items.1">Kafka</li>
+                        <li class="list-group-item" data-i18n="skills.others.items.2">K8s</li>
+                        <li class="list-group-item" data-i18n="skills.others.items.3">Java</li>
+                        <li class="list-group-item"><u><a target="_blank" href="https://github.com/Chenyuting0916/flappy-bird" data-i18n="skills.others.items.4">Unity</a></u></li>
+                        <li class="list-group-item" data-i18n="skills.others.items.5">Git</li>
+                        <li class="list-group-item"><u><a target="_blank" href="https://github.com/Chenyuting0916/MinerMVC" data-i18n="skills.others.items.6">Azure</a></u></li>
                     </ul>
                 </div>
             </div>

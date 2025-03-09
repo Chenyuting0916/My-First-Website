@@ -1,0 +1,163 @@
+{
+    "nav": {
+        "about": "關於",
+        "portfolio": "作品集"
+    },
+    "about": {
+        "title": "關於我",
+        "name": "陳昱廷 - Yu-Ting Chen",
+        "description": "1997年出生，目前畢業且工作兩年",
+        "occupation": "軟體工程師、台灣人。",
+        "status": "認真學習寫程式中....",
+        "portfolio": "我的作品集",
+        "page": {
+            "title": "自我介紹",
+            "intro_name": "我叫陳昱廷。",
+            "intro_work": "1997年出生，從2020/2年在鈦坦工作，從實習生做到正職，2023/4離職，前前後後大概工作快3年。",
+            "belief": "我認為技術是用來解決問題的工具，所以如果有想解決的問題，甚麼技術我都願意學習。",
+            "challenge_intro": "我喜歡挑戰新鮮的事物，並努力嘗試一切能夠讓自己變更好的事物。",
+            "timeline_2016": "2016 騎腳踏車環台灣",
+            "timeline_2017": "2017 13公里路跑、淨灘、捐血",
+            "timeline_2018": "2018 參加系學會、當隊輔、腳踏車環台灣(第二次)、參加音樂祭",
+            "timeline_2019": "2019 參加全國資訊應用比賽、飛行傘",
+            "timeline_2020": "2020 鈦坦實習、衝浪",
+            "timeline_2021": "2021 當兵、鈦坦正職",
+            "timeline_2022_1": "2022 爬玉山、",
+            "timeline_2022_2": "GOLF短演講",
+            "timeline_2022_3": "、資訊應用比賽短演講、接觸正念",
+            "timeline_2023_1": "2023 當youtuber剪輯影片、嘗試創業、考到日檢N2、",
+            "timeline_2023_2": "寫了自己的app",
+            "timeline_2024": "2024 去日本留學一年，讀語言學校",
+            "timeline_future": "... (接下來會去哪都是緣分)",
+            "closing": "請錄取我，我技術不是最強的，但我一定能為公司帶來價值。"
+        }
+    },
+    "timeline": {
+        "title": "時間軸",
+        "readMore": "閱讀更多...",
+        "items": {
+            "titansoft_engineer": {
+                "title": "新加坡商鈦坦科技 產品開發工程師",
+                "date": "2020年8月",
+                "fullDate": "2020/08 ~ 2023/04",
+                "description": [
+                    "轉為正職工程師之後學習到了許多，敏捷開發(scrum)，產業的domain，microservices，撰寫過了api(REST, gRPC)，也學習寫了unit test(xUnit, NUnit, fluent Assertion), integration test(specflow)，前端也使用過vue3.0。",
+                    "寫程式也變得好看了一些，讀了clean code，了解一些code smell並改善他們，雖然還是有許多不足，但比之前好太多了..."
+                ]
+            },
+            "titansoft_intern": {
+                "title": "新加坡商鈦坦科技實習生",
+                "date": "2020年2月",
+                "fullDate": "2020/02 ~ 2020/08",
+                "description": [
+                    "因為疫情(武漢肺炎)的關係，只在公司待了一個月，就在家工作了。有幸能當2020鈦坦的實習生，雖然我還是一樣寫很多大便code，但我學到了很多。",
+                    "學習到了.net core mvc的開發，以及mssql的用法，這些都是學校沒學過的事，很新鮮。也嘗試了linq、jquery等好用的東西，在寫code上也更加督促自己寫好，並與團隊共同努力。是一個很不錯的經驗！"
+                ]
+            },
+            "ta": {
+                "title": "程式設計課程助教",
+                "date": "2019年10月",
+                "fullDate": "2019/10 ~ 2019/12",
+                "description": [
+                    "本學期擔任程式設計助教，教導外系的同學Java以及程式設計技巧。學習教導對程式語言一無所知的同學，培養細心以及耐心。能夠教導別人一項技能，能力被同儕肯定，這也使我有更多成就感。"
+                ]
+            },
+            "competition": {
+                "title": "第24屆大專校院資訊應用服務創新競賽",
+                "subtitle": "資訊應用組第三名",
+                "date": "2019年11月2日",
+                "fullDate": "2019/10/07 ~ 2019/11/02",
+                "description": [
+                    "大四專題表現優良，指導教授推薦參加比賽。在研究中，與教授一起改良了演算法，採用創新的分離結構加密法，使加/解密的方法得到了革新。從中學習到團隊合作，以及實作專題的技巧。能夠想出全新的演算法，並實踐之，讓我產生許多的成就感，並增加更多對程式寫作的熱忱。"
+                ]
+            }
+        }
+    },
+    "skills": {
+        "title": "技能",
+        "frontend": {
+            "title": "前端",
+            "items": [
+                "HTML, CSS, JavaScript",
+                "Vue3",
+                "jQuery"
+            ]
+        },
+        "backend": {
+            "title": "後端",
+            "items": [
+                ".NET core",
+                ".NET Framework",
+                "ASP.NET MVC",
+                "RESTful APIs",
+                "gRPC"
+            ]
+        },
+        "database": {
+            "title": "資料庫",
+            "items": [
+                "MS SQL",
+                "Firebase",
+                "Redis"
+            ]
+        },
+        "test": {
+            "title": "測試",
+            "items": [
+                "Unit Test (NUnit, xUnit)",
+                "Integration Test (SpecFlow)"
+            ]
+        },
+        "orm": {
+            "title": "ORM",
+            "items": [
+                "Entity Framework",
+                "Dapper"
+            ]
+        },
+        "others": {
+            "title": "其他",
+            "items": [
+                "Flutter",
+                "Kafka",
+                "K8s",
+                "Java",
+                "Unity",
+                "Git",
+                "Azure"
+            ]
+        }
+    },
+    "portfolio": {
+        "section_2020": {
+            "title": "2020年以後",
+            "projects": {
+                "azure": {
+                    "description": "這是一個使用Azure的簡單網站，支持CRUD（創建、讀取、更新、刪除）操作。"
+                },
+                "level": {
+                    "description": "這個項目使用Flutter和Firebase開發，並已在Google Play上發布。其主要目標是幫助人們培養自律習慣。"
+                }
+            }
+        },
+        "section_college": {
+            "title": "大學時期作品（2016～2020）",
+            "projects": {
+                "encryption": {
+                    "description": "這是大四專題研究寫的加解密系統，改良了現有的AES演算法，以及獨創新的加解密方法，並與伙伴參加比賽，拿到了不錯的成績。"
+                },
+                "java_game": {
+                    "description": "這是我大一java程式課寫的作業，算是一種最初寫程式的感動吧，那時真的寫這個遊戲蠻快樂的，雖然他蠻爛的。"
+                },
+                "desktop_pet": {
+                    "description": "這是大二寫的桌面寵物，就覺得想要一隻療育的，就去寫了。"
+                }
+            }
+        },
+        "common": {
+            "demo": "演示",
+            "source": "原始碼",
+            "more": "更多作品..."
+        }
+    }
+} 

@@ -1,0 +1,16 @@
+.timeline-link {
+    color: blue;
+    text-decoration: none;
+}
+
+.timeline-link:hover {
+    text-decoration: underline;
+}
+
+.about-section {
+    margin-bottom: 100px;
+}
+
+.timeline-section p {
+    margin-bottom: 0.5rem;
+} 

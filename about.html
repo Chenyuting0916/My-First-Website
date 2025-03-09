@@ -20,42 +20,32 @@
     <script type="text/javascript" src="js/showDetail.js"></script>
     <script type="text/javascript" src="js/ajax.js"></script>
     <script type="text/javascript" src="js/lightbox.js"></script>
+    <script type="text/javascript" src="js/i18n.js"></script>
     <!-- google AdSense -->
     <script data-ad-client="ca-pub-8569537755937952" async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        function changeLanguage() {
-            var langSelect = document.getElementById("langSelect");
-            var selectedValue = langSelect.options[langSelect.selectedIndex].value;
-            if (selectedValue === "en") {
-                window.location.href = "about_en.html";
-            } else {
-                window.location.href = "about.html";
-            }
-        }
-    </script>
 </head>
 
 <body style="background-color:#f6f6f6">
     <!-- Navigation -->
     <div id="nav">
-        <nav class="navbar  navbar-expand-sm  navbar-custom">
+        <nav class="navbar navbar-expand-sm navbar-custom">
             <div class="container">
-                <!-- <a class="navbar-brand" href="index.html">Cyt's Website</a> -->
                 <button style="float: right;" class="navbar-toggler text-white" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav ">
+                    <ul class="nav navbar-nav">
                         <a class="navbar-brand" href="index.html">Cyt's Website</a>
-                        <li class="nav-item"> <a class="nav-link" href="about.html">About</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="Portfolio.html">Portfolio</a> </li>
-                        <li class="nav-item align-items-center d-flex"><select id="langSelect"
-                                onchange="changeLanguage()">
-                                <option value="zh" selected>中文</option>
+                        <li class="nav-item"> <a class="nav-link" href="about.html" data-i18n="nav.about">About</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="Portfolio.html" data-i18n="nav.portfolio">Portfolio</a> </li>
+                        <li class="nav-item align-items-center d-flex">
+                            <select id="langSelect" onchange="i18n.setLanguage(this.value)">
+                                <option value="zh">中文</option>
                                 <option value="en">English</option>
+                                <option value="ja">日本語</option>
                             </select>
                         </li>
                     </ul>
@@ -63,64 +53,85 @@
             </div>
         </nav>
     </div>
-    <!-- body -->
 
-    <body>
-        <div class="container">
-            <h3>自我介紹</h3>
-            <hr style="width: 100%;">
-            <p>我叫陳昱廷。<br>
-                1997年出生，從2020/2年在鈦坦工作，<br>
-                從實習生做到正職，2023/4離職，前前後後大概工作快3年。</p>
-            <p>我認為技術是用來解決問題的工具，所以如果有想解決的問題，甚麼技術我都願意學習。</p>
-            <hr style="width: 100%;">
-            <p>我喜歡挑戰新鮮的事物，並努力嘗試一切能夠讓自己變更好的事物。</p>
-            <p>2016 騎腳踏車環台灣<br>
-                2017 13公里路跑、淨灘、捐血<br>
-                2018 參加系學會、當隊輔、腳踏車環台灣(第二次)、參加音樂祭<br>
-                2019 參加全國資訊應用比賽、飛行傘<br>
-                2020 鈦坦實習、衝浪<br>
-                2021 當兵、鈦坦正職<br>
-                2022 爬玉山、<a target="_blank" href="https://youtu.be/fJRynBXYFto?si=3Wouim0S6mCeNkSk&t=1019" style="color: blue;">GOLF短演講</a>、資訊應用比賽短演講、接觸正念<br>
-                2023 當youtuber剪輯影片、嘗試創業、考到日檢N2、<a target="_blank" href="https://play.google.com/store/apps/details?id=com.inosisi.level" style="color: blue;">寫了自己的app</a><br>
-                2024 去日本留學一年，讀語言學校<br>
-                ... (接下來會去哪都是緣分)
+    <!-- Main Content -->
+    <main class="container mt-4">
+        <h3 data-i18n="about.page.title">自我介紹</h3>
+        <hr>
+        
+        <div class="about-section">
+            <p>
+                <span data-i18n="about.page.intro_name"></span>
+                <span data-i18n="about.page.intro_work"></span>
             </p>
-            <hr style="width: 100%;">
-            <p>請錄取我，我技術不是最強的，但我一定能為公司帶來價值。</p>
+            
+            <p data-i18n="about.page.belief"></p>
+            
+            <hr>
+            
+            <p data-i18n="about.page.challenge_intro"></p>
+            
+            <div class="timeline-section">
+                <p data-i18n="about.page.timeline_2016"></p>
+                <p data-i18n="about.page.timeline_2017"></p>
+                <p data-i18n="about.page.timeline_2018"></p>
+                <p data-i18n="about.page.timeline_2019"></p>
+                <p data-i18n="about.page.timeline_2020"></p>
+                <p data-i18n="about.page.timeline_2021"></p>
+                <p>
+                    <span data-i18n="about.page.timeline_2022_1"></span>
+                    <a target="_blank" href="https://youtu.be/fJRynBXYFto?si=3Wouim0S6mCeNkSk&t=1019" class="timeline-link" data-i18n="about.page.timeline_2022_2"></a>
+                    <span data-i18n="about.page.timeline_2022_3"></span>
+                </p>
+                <p>
+                    <span data-i18n="about.page.timeline_2023_1"></span>
+                    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.inosisi.level" class="timeline-link" data-i18n="about.page.timeline_2023_2"></a>
+                </p>
+                <p data-i18n="about.page.timeline_2024"></p>
+                <p data-i18n="about.page.timeline_future"></p>
+            </div>
+            
+            <hr>
+            
+            <p data-i18n="about.page.closing"></p>
         </div>
-    </body>
-    <!-- footer -->
+    </main>
+
+    <!-- Footer -->
     <nav id="footer" class="navbar fixed-bottom">
         <div class="container text-center justify-content-center">
             <div>
                 <ul class="list-inline">
-                    <li class="list-inline-item"><a title="facebook" target="_blank"
-                            href="https://www.facebook.com/profile.php?id=100003963670423"><i
-                                class="fab fa-facebook"></i></a>
+                    <li class="list-inline-item">
+                        <a title="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100003963670423">
+                            <i class="fab fa-facebook"></i>
+                        </a>
                     </li>
-                    <li class="list-inline-item"><a title="youtube" target="_blank"
-                            href="https://www.youtube.com/channel/UCDj4j4qIs57GtVu6r4crRxQ?view_as=subscriber"><i
-                                class="fab fa-youtube"></i></a></li>
-                    <li class="list-inline-item"><a title="line-sticker" target="_blank"
-                            href="https://store.line.me/stickershop/product/10363859/zh-Hant?ref=Desktop"><i
-                                class="fas fa-shopping-cart"></i></a></li>
-                    <li class="list-inline-item"><a title="mail" target="_blank" href="mailto:tim376755000@gmail.com"><i
-                                class="far fa-envelope"></i></a></li>
-                    <li class="list-inline-item"><a title="github" target="_blank"
-                            href="https://github.com/Chenyuting0916"><i class="fab fa-github"></i></a></li>
-                    <li class="list-inline-item"><a title="instagram" target="_blank"
-                            href="https://www.instagram.com/tim_learn_software/"><i class="fab fa-instagram"></i></a>
+                    <li class="list-inline-item">
+                        <a title="youtube" target="_blank" href="https://www.youtube.com/channel/UCDj4j4qIs57GtVu6r4crRxQ">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a title="line-sticker" target="_blank" href="https://store.line.me/stickershop/product/10363859/zh-Hant">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a title="mail" target="_blank" href="mailto:tim376755000@gmail.com">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a title="github" target="_blank" href="https://github.com/Chenyuting0916">
+                            <i class="fab fa-github"></i>
+                        </a>
                     </li>
                 </ul>
-                <p>
-                    <a title="instagram" target="_blank" href="https://www.instagram.com/tim_learn_software/">- Chen Yu
-                        Ting &nbsp;&nbsp;</a>
-                    <a target="_blank" href="https://www.facebook.com/profile.php?id=100003963670423" id="sideBar"></a>
-                </p>
             </div>
         </div>
     </nav>
-</body>
 
+    <link rel="stylesheet" href="css/about.css">
+</body>
 </html>

@@ -1,0 +1,163 @@
+{
+    "nav": {
+        "about": "About",
+        "portfolio": "Portfolio"
+    },
+    "about": {
+        "title": "About Me",
+        "name": "Yu-Ting Chen",
+        "description": "Born in 1997, graduated and worked for two years",
+        "occupation": "Software Engineer, Taiwanese",
+        "status": "Learning programming seriously....",
+        "portfolio": "My Portfolio",
+        "page": {
+            "title": "Self Introduction",
+            "intro_name": "My name is Yu-Ting Chen.",
+            "intro_work": "Born in 1997, I started working at Titansoft in February 2020, progressing from intern to full-time employee until April 2023, working for nearly 3 years in total.",
+            "belief": "I believe technology is a tool for solving problems, so I'm willing to learn any technology if there's a problem that needs to be solved.",
+            "challenge_intro": "I love challenging myself with new experiences and always strive to try anything that can make me better.",
+            "timeline_2016": "2016 Cycled around Taiwan",
+            "timeline_2017": "2017 13km run, beach cleaning, blood donation",
+            "timeline_2018": "2018 Joined student association, became a team leader, cycled around Taiwan (second time), attended music festivals",
+            "timeline_2019": "2019 Participated in National IT Application Competition, paragliding",
+            "timeline_2020": "2020 Titansoft internship, surfing",
+            "timeline_2021": "2021 Military service, full-time at Titansoft",
+            "timeline_2022_1": "2022 Climbed Mt. Jade, ",
+            "timeline_2022_2": "short talk at GOLF",
+            "timeline_2022_3": ", IT competition presentation, explored mindfulness",
+            "timeline_2023_1": "2023 Started YouTube content creation, entrepreneurship attempt, passed JLPT N2, ",
+            "timeline_2023_2": "developed my own app",
+            "timeline_2024": "2024 Studying in Japan for a year at a language school",
+            "timeline_future": "... (The future is full of possibilities)",
+            "closing": "Please hire me. While I may not be the strongest technically, I will definitely bring value to the company."
+        }
+    },
+    "timeline": {
+        "title": "Timeline",
+        "readMore": "Read More...",
+        "items": {
+            "titansoft_engineer": {
+                "title": "Product Development Engineer at Titansoft",
+                "date": "August 2020",
+                "fullDate": "2020/08 ~ 2023/04",
+                "description": [
+                    "After becoming a full-time engineer, I learned a lot about agile development (scrum), industry domain knowledge, microservices, and developed APIs (REST, gRPC). I also learned unit testing (xUnit, NUnit, fluent Assertion), integration testing (SpecFlow), and worked with Vue 3.0 for frontend development.",
+                    "My code quality has improved after reading Clean Code and understanding code smells. While there's still room for improvement, it's much better than before..."
+                ]
+            },
+            "titansoft_intern": {
+                "title": "Intern at Titansoft",
+                "date": "February 2020",
+                "fullDate": "2020/02 ~ 2020/08",
+                "description": [
+                    "Due to the COVID-19 pandemic, I only worked in the office for a month before switching to remote work. I was fortunate to be a 2020 Titansoft intern, and although I still wrote some messy code, I learned a lot.",
+                    "I learned .NET Core MVC development and MSSQL, which were new to me as they weren't taught in school. I also tried useful tools like LINQ and jQuery, focused on writing better code, and collaborated with the team. It was a great experience!"
+                ]
+            },
+            "ta": {
+                "title": "Programming Course Teaching Assistant",
+                "date": "October 2019",
+                "fullDate": "2019/10 ~ 2019/12",
+                "description": [
+                    "I served as a teaching assistant for the programming course, teaching Java and programming techniques to non-CS majors. Teaching students with no programming background helped me develop patience and attention to detail. Being recognized by peers for my ability to teach gave me a great sense of achievement."
+                ]
+            },
+            "competition": {
+                "title": "24th College Information Application Service Innovation Competition",
+                "subtitle": "3rd Place in Information Application Category",
+                "date": "November 2, 2019",
+                "fullDate": "2019/10/07 ~ 2019/11/02",
+                "description": [
+                    "Due to excellent performance in my senior project, my professor recommended me for the competition. During the research, we improved the algorithm with the professor, adopting an innovative separated structure encryption method that revolutionized encryption/decryption. I learned about teamwork and project implementation. Creating a new algorithm and implementing it gave me a sense of achievement and increased my enthusiasm for programming."
+                ]
+            }
+        }
+    },
+    "skills": {
+        "title": "Skills",
+        "frontend": {
+            "title": "Frontend",
+            "items": [
+                "HTML, CSS, JavaScript",
+                "Vue3",
+                "jQuery"
+            ]
+        },
+        "backend": {
+            "title": "Backend",
+            "items": [
+                ".NET core",
+                ".NET Framework",
+                "ASP.NET MVC",
+                "RESTful APIs",
+                "gRPC"
+            ]
+        },
+        "database": {
+            "title": "Database",
+            "items": [
+                "MS SQL",
+                "Firebase",
+                "Redis"
+            ]
+        },
+        "test": {
+            "title": "Testing",
+            "items": [
+                "Unit Test (NUnit, xUnit)",
+                "Integration Test (SpecFlow)"
+            ]
+        },
+        "orm": {
+            "title": "ORM",
+            "items": [
+                "Entity Framework",
+                "Dapper"
+            ]
+        },
+        "others": {
+            "title": "Others",
+            "items": [
+                "Flutter",
+                "Kafka",
+                "K8s",
+                "Java",
+                "Unity",
+                "Git",
+                "Azure"
+            ]
+        }
+    },
+    "portfolio": {
+        "section_2020": {
+            "title": "After 2020",
+            "projects": {
+                "azure": {
+                    "description": "This is a simple website using Azure that supports CRUD (Create, Read, Update, Delete) operations."
+                },
+                "level": {
+                    "description": "This project was developed using Flutter and Firebase and has been published on Google Play. Its main goal is to help people become more self-disciplined."
+                }
+            }
+        },
+        "section_college": {
+            "title": "College Projects (2016-2020)",
+            "projects": {
+                "encryption": {
+                    "description": "This is an encryption system developed for my senior project. We improved the existing AES algorithm and created an innovative encryption method. We participated in a competition with this project and achieved good results."
+                },
+                "java_game": {
+                    "description": "This was my first-year Java programming assignment. It represents my initial excitement about programming. I really enjoyed creating this game, even though it was quite basic."
+                },
+                "desktop_pet": {
+                    "description": "This is a desktop pet application I created in my sophomore year. I wanted a therapeutic companion, so I decided to program one."
+                }
+            }
+        },
+        "common": {
+            "demo": "Demo",
+            "source": "Source",
+            "more": "Read more..."
+        }
+    }
+} 
