@@ -130,13 +130,16 @@
     },
     "portfolio": {
         "section_2020": {
-            "title": "2020年以後",
+            "title": "2020年之後",
             "projects": {
                 "azure": {
-                    "description": "這是一個使用Azure的簡單網站，支持CRUD（創建、讀取、更新、刪除）操作。"
+                    "description": "使用Azure搭建的簡單網站，支持CRUD（創建、讀取、更新、刪除）操作。"
                 },
                 "level": {
-                    "description": "這個項目使用Flutter和Firebase開發，並已在Google Play上發布。其主要目標是幫助人們培養自律習慣。"
+                    "description": "使用Flutter和Firebase開發的專案，已經在Google Play上發布。主要目標是幫助人們提高自律性。"
+                },
+                "japanese": {
+                    "description": "利用Python Flask框架製作的日文單字學習網站，讓學習日語更有效率。"
                 }
             }
         },

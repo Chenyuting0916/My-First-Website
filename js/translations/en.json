@@ -137,6 +137,9 @@
                 },
                 "level": {
                     "description": "This project was developed using Flutter and Firebase and has been published on Google Play. Its main goal is to help people become more self-disciplined."
+                },
+                "japanese": {
+                    "description": "A Japanese vocabulary learning website created using the Python Flask framework, making Japanese language learning more efficient."
                 }
             }
         },

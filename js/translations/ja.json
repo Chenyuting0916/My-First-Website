@@ -137,6 +137,9 @@
                 },
                 "level": {
                     "description": "FlutterとFirebaseを使用して開発し、Google Playで公開されているプロジェクトです。自己規律を高めることを主な目的としています。"
+                },
+                "japanese": {
+                    "description": "Python Flaskフレームワークを使用して作成した日本語単語学習ウェブサイトで、日本語学習をより効率的にします。"
                 }
             }
         },
