@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-i18n="tools.pageTitle">常用工具 - Cyt's Website</title>
+    <link rel="icon" type="image/x-icon" href="img/happy.ico">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/tools.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/all.css">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/vendor/js-yaml.min.js"></script>
+    <script type="text/javascript" src="js/tools-core.js"></script>
+    <script type="text/javascript" src="js/i18n.js"></script>
+    <script type="text/javascript" src="js/tools.js"></script>
+</head>
+
+<body class="tools-page">
+    <div id="nav">
+        <nav class="navbar navbar-expand-sm navbar-custom">
+            <div class="container">
+                <button style="float: right;" class="navbar-toggler text-white" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a class="navbar-brand" href="index.html">Cyt's Website</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html" data-i18n="nav.about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="tools.html" data-i18n="nav.tools" aria-current="page">Tools</a>
+                        </li>
+                        <li class="nav-item align-items-center d-flex">
+                            <select id="langSelect" onchange="i18n.setLanguage(this.value)">
+                                <option value="zh" selected>中文</option>
+                                <option value="en">English</option>
+                                <option value="ja">日本語</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="tk-wrap">
+        <header class="tk-hero">
+            <div>
+                <p class="tk-kicker" data-i18n="tools.kicker">離線可用</p>
+                <h1 class="tk-title" data-i18n="tools.title">常用工具</h1>
+                <p class="tk-lead" data-i18n="tools.lead">時間戳、JSON、YAML、MD5、Base64 / Hex、JWT。全部在這台瀏覽器裡算完，那些網站掛了也能用。</p>
+            </div>
+            <div class="tk-privacy">
+                <i class="fas fa-lock" aria-hidden="true"></i>
+                <span data-i18n="tools.privacy">資料不會離開這台瀏覽器</span>
+            </div>
+        </header>
+
+        <div class="tk-shell">
+            <div class="tk-tabs" role="tablist" aria-label="tools">
+                <button type="button" class="tk-tab is-feature is-active" role="tab" id="tab-timestamp" data-tool="timestamp" aria-selected="true" aria-controls="panel-timestamp">
+                    <i class="fas fa-clock" aria-hidden="true"></i>
+                    <span>
+                        <strong><span data-i18n="tools.nav.timestamp">時間戳</span><em class="tk-badge" data-i18n="tools.badge">常用</em></strong>
+                        <small data-i18n="tools.nav.timestampHint">Unix time ↔ 日期</small>
+                    </span>
+                </button>
+                <button type="button" class="tk-tab" role="tab" id="tab-json" data-tool="json" aria-selected="false" aria-controls="panel-json">
+                    <i class="fas fa-code" aria-hidden="true"></i>
+                    <span>
+                        <strong data-i18n="tools.nav.json">JSON</strong>
+                        <small data-i18n="tools.nav.jsonHint">格式化、壓縮、驗證</small>
+                    </span>
+                </button>
+                <button type="button" class="tk-tab" role="tab" id="tab-yaml" data-tool="yaml" aria-selected="false" aria-controls="panel-yaml">
+                    <i class="fas fa-file-code" aria-hidden="true"></i>
+                    <span>
+                        <strong data-i18n="tools.nav.yaml">YAML</strong>
+                        <small data-i18n="tools.nav.yamlHint">檢查，並和 JSON 互轉</small>
+                    </span>
+                </button>
+                <button type="button" class="tk-tab" role="tab" id="tab-md5" data-tool="md5" aria-selected="false" aria-controls="panel-md5">
+                    <i class="fas fa-fingerprint" aria-hidden="true"></i>
+                    <span>
+                        <strong data-i18n="tools.nav.md5">MD5</strong>
+                        <small data-i18n="tools.nav.md5Hint">文字與檔案校驗</small>
+                    </span>
+                </button>
+                <button type="button" class="tk-tab" role="tab" id="tab-codec" data-tool="codec" aria-selected="false" aria-controls="panel-codec">
+                    <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                    <span>
+                        <strong data-i18n="tools.nav.codec">編碼轉換</strong>
+                        <small data-i18n="tools.nav.codecHint">Base64 ↔ Hex</small>
+                    </span>
+                </button>
+                <button type="button" class="tk-tab" role="tab" id="tab-jwt" data-tool="jwt" aria-selected="false" aria-controls="panel-jwt">
+                    <i class="fas fa-key" aria-hidden="true"></i>
+                    <span>
+                        <strong data-i18n="tools.nav.jwt">JWT</strong>
+                        <small data-i18n="tools.nav.jwtHint">解碼與簽章驗證</small>
+                    </span>
+                </button>
+            </div>
+
+            <div class="tk-stage">
+                <div id="panel-timestamp" data-panel="timestamp" role="tabpanel" aria-labelledby="tab-timestamp">
+                    <div class="tk-now">
+                        <div class="tk-now-top">
+                            <div>
+                                <p class="tk-eyebrow"><span class="tk-live" aria-hidden="true"></span><span data-i18n="tools.timestamp.live">每秒更新</span></p>
+                                <button type="button" class="tk-now-value" id="nowSec" data-raw="">—</button>
+                                <p class="tk-now-unit" data-i18n="tools.timestamp.unixSeconds">Unix timestamp（秒）</p>
+                            </div>
+                            <div class="tk-now-actions">
+                                <button type="button" class="tk-btn ghost" id="copyNowSec" data-i18n="tools.timestamp.copySeconds">複製秒</button>
+                                <button type="button" class="tk-btn ghost" id="copyNowMs" data-i18n="tools.timestamp.copyMs">複製毫秒</button>
+                            </div>
+                        </div>
+                        <div class="tk-meta">
+                            <span data-i18n="tools.timestamp.local">本地</span>
+                            <code id="nowLocal"></code>
+                            <button type="button" class="tk-btn ghost tk-icon-btn" data-copy-from="nowLocal" aria-label="copy"><i class="fas fa-copy"></i></button>
+                            <span data-i18n="tools.timestamp.utc">UTC</span>
+                            <code id="nowUtc"></code>
+                            <button type="button" class="tk-btn ghost tk-icon-btn" data-copy-from="nowUtc" aria-label="copy"><i class="fas fa-copy"></i></button>
+                            <span data-i18n="tools.timestamp.iso">ISO</span>
+                            <code id="nowIso"></code>
+                            <button type="button" class="tk-btn ghost tk-icon-btn" data-copy-from="nowIso" aria-label="copy"><i class="fas fa-copy"></i></button>
+                            <span data-i18n="tools.timestamp.zone">時區</span>
+                            <code id="nowZone"></code>
+                            <button type="button" class="tk-btn ghost tk-icon-btn" data-copy-from="nowZone" aria-label="copy"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="tk-split">
+                        <div class="tk-card">
+                            <h2 data-i18n="tools.timestamp.toDate">時間戳 → 日期</h2>
+                            <label class="tk-label" for="tsInput" data-i18n="tools.nav.timestamp">時間戳</label>
+                            <input class="tk-field" id="tsInput" autocomplete="off" spellcheck="false" data-i18n-placeholder="tools.timestamp.tsPlaceholder" placeholder="貼上 1700000000 或 1700000000000">
+                            <div class="tk-seg" id="tsUnits" role="radiogroup" aria-label="unit">
+                                <button type="button" data-unit="auto" class="is-on" data-i18n="tools.timestamp.units.auto">自動</button>
+                                <button type="button" data-unit="s" data-i18n="tools.timestamp.units.s">秒</button>
+                                <button type="button" data-unit="ms" data-i18n="tools.timestamp.units.ms">毫秒</button>
+                                <button type="button" data-unit="us" data-i18n="tools.timestamp.units.us">微秒</button>
+                                <button type="button" data-unit="ns" data-i18n="tools.timestamp.units.ns">奈秒</button>
+                            </div>
+                            <p class="tk-banner err" id="tsError" hidden></p>
+                            <div class="tk-result" id="tsResult"></div>
+                            <p class="tk-hint" id="tsHint" data-i18n="tools.timestamp.pasteHint">貼上數字就會換算。10 位以內當成秒，13 位左右當成毫秒。</p>
+                        </div>
+                        <div class="tk-card">
+                            <h2 data-i18n="tools.timestamp.toUnix">日期 → 時間戳</h2>
+                            <label class="tk-label" for="dateInput" data-i18n="tools.timestamp.local">本地</label>
+                            <input class="tk-field" id="dateInput" autocomplete="off" spellcheck="false" data-i18n-placeholder="tools.timestamp.datePlaceholder" placeholder="2024-01-02 15:04:05">
+                            <div class="tk-row">
+                                <input class="tk-field" id="datePicker" type="datetime-local" step="1">
+                                <button type="button" class="tk-btn" id="dateNow" data-i18n="tools.timestamp.useNow">填入現在</button>
+                            </div>
+                            <p class="tk-banner err" id="dateError" hidden></p>
+                            <div class="tk-result" id="dateResult"></div>
+                            <p class="tk-hint" data-i18n="tools.timestamp.dateHint">沒寫時區時，當成你電腦的本地時間。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="panel-json" data-panel="json" role="tabpanel" aria-labelledby="tab-json" hidden>
+                    <div class="tk-card">
+                        <h2 class="tk-panel-title" data-i18n="tools.nav.json">JSON</h2>
+                        <div class="tk-toolbar">
+                            <button type="button" class="tk-btn primary" id="jsonFormat" data-i18n="tools.json.format">格式化</button>
+                            <button type="button" class="tk-btn" id="jsonMinify" data-i18n="tools.json.minify">壓縮</button>
+                            <label class="tk-check"><input type="checkbox" id="jsonSort"> <span data-i18n="tools.json.sort">排序鍵</span></label>
+                            <div class="tk-seg" id="jsonIndent">
+                                <button type="button" data-indent="2" class="is-on" data-i18n="tools.json.indent2">2 空格</button>
+                                <button type="button" data-indent="4" data-i18n="tools.json.indent4">4 空格</button>
+                            </div>
+                            <button type="button" class="tk-btn" id="jsonCopy" data-i18n="tools.json.copy">複製結果</button>
+                            <button type="button" class="tk-btn" id="jsonSample" data-i18n="tools.sample">範例</button>
+                            <button type="button" class="tk-btn" id="jsonClear" data-i18n="tools.clear">清空</button>
+                        </div>
+                        <p class="tk-banner" id="jsonBanner" hidden></p>
+                        <div class="tk-editors">
+                            <div>
+                                <div class="tk-editor-head"><span data-i18n="tools.input">輸入</span></div>
+                                <textarea class="tk-area" id="jsonInput" spellcheck="false" data-i18n-placeholder="tools.json.placeholder" placeholder="貼上 JSON"></textarea>
+                            </div>
+                            <div>
+                                <div class="tk-editor-head"><span data-i18n="tools.output">結果</span></div>
+                                <textarea class="tk-area" id="jsonOutput" spellcheck="false" readonly></textarea>
+                            </div>
+                        </div>
+                        <p class="tk-hint" data-i18n="tools.json.shortcut">Ctrl 或 ⌘ + Enter 也可以格式化</p>
+                    </div>
+                </div>
+
+                <div id="panel-yaml" data-panel="yaml" role="tabpanel" aria-labelledby="tab-yaml" hidden>
+                    <div class="tk-card">
+                        <h2 class="tk-panel-title" data-i18n="tools.nav.yaml">YAML</h2>
+                        <div class="tk-toolbar">
+                            <button type="button" class="tk-btn primary" id="yamlCheck" data-i18n="tools.yaml.check">檢查</button>
+                            <button type="button" class="tk-btn" id="yamlPretty" data-i18n="tools.yaml.pretty">整理</button>
+                            <button type="button" class="tk-btn" id="yamlToJson" data-i18n="tools.yaml.toJson">轉成 JSON</button>
+                            <button type="button" class="tk-btn" id="yamlFromJson" data-i18n="tools.yaml.fromJson">JSON 轉 YAML</button>
+                            <button type="button" class="tk-btn" id="yamlCopy" data-i18n="tools.yaml.copy">複製結果</button>
+                            <button type="button" class="tk-btn" id="yamlSample" data-i18n="tools.sample">範例</button>
+                            <button type="button" class="tk-btn" id="yamlBadSample" data-i18n="tools.yaml.badSample">錯誤範例</button>
+                            <button type="button" class="tk-btn" id="yamlClear" data-i18n="tools.clear">清空</button>
+                        </div>
+                        <p class="tk-banner" id="yamlBanner" hidden></p>
+                        <div class="tk-editors">
+                            <div>
+                                <div class="tk-editor-head"><span data-i18n="tools.input">輸入</span></div>
+                                <textarea class="tk-area" id="yamlInput" spellcheck="false" data-i18n-placeholder="tools.yaml.placeholder" placeholder="貼上 YAML。若要轉 YAML，也可以直接貼 JSON"></textarea>
+                            </div>
+                            <div>
+                                <div class="tk-editor-head"><span data-i18n="tools.output">結果</span></div>
+                                <textarea class="tk-area" id="yamlOutput" spellcheck="false" readonly></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="panel-md5" data-panel="md5" role="tabpanel" aria-labelledby="tab-md5" hidden>
+                    <div class="tk-card">
+                        <h2 class="tk-panel-title" data-i18n="tools.nav.md5">MD5</h2>
+                        <label class="tk-check"><input type="checkbox" id="md5Upper"> <span data-i18n="tools.md5.upper">輸出大寫</span></label>
+                        <div class="tk-editor-head" style="margin-top:12px;"><span data-i18n="tools.md5.text">文字</span></div>
+                        <textarea class="tk-area" id="md5Text" spellcheck="false" data-i18n-placeholder="tools.md5.placeholder" placeholder="輸入文字，立刻算出 MD5"></textarea>
+                        <div class="tk-hash" id="md5TextHashes"></div>
+                        <div class="tk-drop" id="md5Drop" tabindex="0" role="button">
+                            <strong data-i18n="tools.md5.drop">把檔案拖進來，或點這裡選擇</strong>
+                            <span data-i18n="tools.md5.dropHint">只在這台瀏覽器計算，不會上傳</span>
+                            <input id="md5File" type="file" hidden>
+                        </div>
+                        <p class="tk-banner info" id="md5FileBanner" hidden></p>
+                        <div class="tk-hash" id="md5FileHashes"></div>
+                    </div>
+                </div>
+
+                <div id="panel-codec" data-panel="codec" role="tabpanel" aria-labelledby="tab-codec" hidden>
+                    <div class="tk-card">
+                        <h2 class="tk-panel-title" data-i18n="tools.nav.codec">編碼轉換</h2>
+                        <div class="tk-codec-bar">
+                            <select class="tk-select" id="codecFrom" aria-label="from">
+                                <option value="text" data-i18n="tools.codec.text">文字</option>
+                                <option value="base64" selected data-i18n="tools.codec.base64">Base64</option>
+                                <option value="base64url" data-i18n="tools.codec.base64url">Base64URL</option>
+                                <option value="hex" data-i18n="tools.codec.hex">Hex</option>
+                            </select>
+                            <button type="button" class="tk-btn" id="codecSwap" data-i18n="tools.codec.swap">對調方向</button>
+                            <select class="tk-select" id="codecTo" aria-label="to">
+                                <option value="text" data-i18n="tools.codec.text">文字</option>
+                                <option value="base64" data-i18n="tools.codec.base64">Base64</option>
+                                <option value="base64url" data-i18n="tools.codec.base64url">Base64URL</option>
+                                <option value="hex" selected data-i18n="tools.codec.hex">Hex</option>
+                            </select>
+                        </div>
+                        <div class="tk-presets">
+                            <button type="button" class="tk-btn" data-preset="base64:hex" data-i18n="tools.codec.presetB64Hex">Base64 → Hex</button>
+                            <button type="button" class="tk-btn" data-preset="hex:base64" data-i18n="tools.codec.presetHexB64">Hex → Base64</button>
+                            <button type="button" class="tk-btn" data-preset="text:base64" data-i18n="tools.codec.presetTextB64">文字 → Base64</button>
+                            <button type="button" class="tk-btn" data-preset="base64:text" data-i18n="tools.codec.presetB64Text">Base64 → 文字</button>
+                        </div>
+                        <div class="tk-row" style="margin-top:0;margin-bottom:12px;">
+                            <label class="tk-check"><input type="checkbox" id="hexUpper"> <span data-i18n="tools.codec.upper">Hex 大寫</span></label>
+                            <label class="tk-check"><input type="checkbox" id="hexSpace"> <span data-i18n="tools.codec.spaced">Hex 每兩個字空一格</span></label>
+                        </div>
+                        <p class="tk-banner err" id="codecBanner" hidden></p>
+                        <div class="tk-editors">
+                            <div>
+                                <div class="tk-editor-head"><span data-i18n="tools.input">輸入</span></div>
+                                <textarea class="tk-area" id="codecIn" spellcheck="false" data-i18n-placeholder="tools.codec.inPlaceholder" placeholder="貼上要轉換的內容"></textarea>
+                            </div>
+                            <div>
+                                <div class="tk-editor-head"><span data-i18n="tools.output">結果</span><button type="button" class="tk-btn tiny" id="codecCopy" data-i18n="tools.copy">複製</button></div>
+                                <textarea class="tk-area" id="codecOut" spellcheck="false" readonly></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="panel-jwt" data-panel="jwt" role="tabpanel" aria-labelledby="tab-jwt" hidden>
+                    <div class="tk-card">
+                        <h2 class="tk-panel-title" data-i18n="tools.nav.jwt">JWT</h2>
+                        <textarea class="tk-area" id="jwtInput" spellcheck="false" data-i18n-placeholder="tools.jwt.placeholder" placeholder="貼上 JWT。前面的 Bearer 會自動拿掉"></textarea>
+                        <div class="tk-row">
+                            <button type="button" class="tk-btn" id="jwtSample" data-i18n="tools.jwt.sample">有效範例</button>
+                            <button type="button" class="tk-btn" id="jwtExpired" data-i18n="tools.jwt.expiredSample">過期範例</button>
+                            <button type="button" class="tk-btn" id="jwtClear" data-i18n="tools.clear">清空</button>
+                        </div>
+                        <p class="tk-hint" data-i18n="tools.jwt.sampleHint">兩個範例的密鑰都是 secret</p>
+                        <p class="tk-banner err" id="jwtBanner" hidden></p>
+                        <div class="tk-jwt-preview" id="jwtPreview" hidden></div>
+                        <div class="tk-jwt-grid">
+                            <article class="tk-jwt header">
+                                <div class="tk-jwt-head">
+                                    <h3 data-i18n="tools.jwt.header">HEADER</h3>
+                                    <button type="button" class="tk-btn tiny" id="jwtCopyHeader" data-i18n="tools.jwt.copyPart">複製</button>
+                                </div>
+                                <pre id="jwtHeader"></pre>
+                            </article>
+                            <article class="tk-jwt payload">
+                                <div class="tk-jwt-head">
+                                    <h3 data-i18n="tools.jwt.payload">PAYLOAD</h3>
+                                    <button type="button" class="tk-btn tiny" id="jwtCopyPayload" data-i18n="tools.jwt.copyPart">複製</button>
+                                </div>
+                                <pre id="jwtPayload"></pre>
+                            </article>
+                            <article class="tk-jwt signature">
+                                <div class="tk-jwt-head">
+                                    <h3 data-i18n="tools.jwt.signature">SIGNATURE</h3>
+                                    <button type="button" class="tk-btn tiny" id="jwtCopySig" data-i18n="tools.jwt.copyPart">複製</button>
+                                </div>
+                                <pre id="jwtSignature"></pre>
+                            </article>
+                        </div>
+                        <div class="tk-claims" id="jwtClaims"></div>
+                        <div class="tk-card" style="margin-top:12px;box-shadow:none;">
+                            <label class="tk-label" for="jwtSecret" data-i18n="tools.jwt.secret">HMAC 密鑰</label>
+                            <div class="tk-row" style="margin-top:0;">
+                                <input class="tk-field" id="jwtSecret" type="password" autocomplete="off" spellcheck="false" data-i18n-placeholder="tools.jwt.secretPlaceholder" placeholder="驗證 HS256 / HS384 / HS512 時才需要">
+                                <button type="button" class="tk-btn" id="jwtToggleSecret" data-i18n="tools.jwt.showSecret">顯示密鑰</button>
+                                <button type="button" class="tk-btn primary" id="jwtVerify" data-i18n="tools.jwt.verify">驗證簽章</button>
+                            </div>
+                            <p class="tk-banner" id="jwtVerifyBanner" hidden></p>
+                            <p class="tk-hint" data-i18n="tools.jwt.algNote">解碼不需要密鑰，也不會把 token 送出去。驗證目前只支援 HMAC。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tk-toast" id="tkToast" role="status" aria-live="polite"></div>
+
+    <nav id="footer" class="navbar fixed-bottom">
+        <div class="container text-center justify-content-center">
+            <div>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a title="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100003963670423"><i class="fab fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a title="linkedin" target="_blank" href="https://www.linkedin.com/in/yuting-chen-63738b135/"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a title="github" target="_blank" href="https://github.com/Chenyuting0916"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a title="mail" target="_blank" href="mailto:tim376755000@gmail.com"><i class="far fa-envelope"></i></a></li>
+                </ul>
+                <p><a target="_blank" href="https://github.com/Chenyuting0916">Chen Yu Ting</a></p>
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>

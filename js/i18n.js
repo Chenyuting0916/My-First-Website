@@ -22,18 +22,22 @@ const i18n = {
     },
 
     t(key) {
-        return key.split('.').reduce((obj, i) => obj[i], this.translations) || key;
+        const value = key.split('.').reduce((obj, part) => (obj == null ? undefined : obj[part]), this.translations);
+        return typeof value === 'string' ? value : key;
     },
 
     updateContent() {
         document.querySelectorAll('[data-i18n]').forEach(element => {
-            const key = element.getAttribute('data-i18n');
-            if (element.tagName === 'INPUT' && element.type === 'placeholder') {
-                element.placeholder = this.t(key);
-            } else {
-                element.textContent = this.t(key);
-            }
+            const value = this.t(element.getAttribute('data-i18n'));
+            if (typeof value === 'string') element.textContent = value;
         });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+            const value = this.t(element.getAttribute('data-i18n-placeholder'));
+            if (typeof value === 'string') element.placeholder = value;
+        });
+        const htmlLang = { zh: 'zh-Hant', en: 'en', ja: 'ja' }[this.currentLang] || 'zh-Hant';
+        document.documentElement.lang = htmlLang;
+        document.dispatchEvent(new CustomEvent('i18n:updated'));
     },
 
     updateImageTitles() {

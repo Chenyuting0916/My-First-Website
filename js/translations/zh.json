@@ -1,7 +1,8 @@
 {
     "nav": {
         "about": "關於",
-        "portfolio": "作品集"
+        "portfolio": "作品集",
+        "tools": "工具"
     },
     "about": {
         "title": "關於我",
@@ -162,5 +163,168 @@
             "source": "原始碼",
             "more": "更多作品..."
         }
+    },
+    "tools": {
+        "pageTitle": "常用工具 - Cyt's Website",
+        "title": "常用工具",
+        "lead": "時間戳、JSON、YAML、MD5、Base64 / Hex、JWT。全部在這台瀏覽器裡算完，那些網站掛了也能用。",
+        "kicker": "離線可用",
+        "privacy": "資料不會離開這台瀏覽器",
+        "badge": "常用",
+        "copy": "複製",
+        "copied": "已複製",
+        "copyEmpty": "沒有可以複製的內容",
+        "clear": "清空",
+        "sample": "範例",
+        "input": "輸入",
+        "output": "結果",
+        "nav": {
+            "timestamp": "時間戳",
+            "timestampHint": "Unix time ↔ 日期",
+            "json": "JSON",
+            "jsonHint": "格式化、壓縮、驗證",
+            "yaml": "YAML",
+            "yamlHint": "檢查，並和 JSON 互轉",
+            "md5": "MD5",
+            "md5Hint": "文字與檔案校驗",
+            "codec": "編碼轉換",
+            "codecHint": "Base64 ↔ Hex",
+            "jwt": "JWT",
+            "jwtHint": "解碼與簽章驗證"
+        },
+        "timestamp": {
+            "nowLabel": "現在",
+            "live": "每秒更新",
+            "unixSeconds": "Unix timestamp（秒）",
+            "copySeconds": "複製秒",
+            "copyMs": "複製毫秒",
+            "local": "本地",
+            "utc": "UTC",
+            "iso": "ISO",
+            "zone": "時區",
+            "toDate": "時間戳 → 日期",
+            "toUnix": "日期 → 時間戳",
+            "tsPlaceholder": "貼上 1700000000 或 1700000000000",
+            "datePlaceholder": "2024-01-02 15:04:05",
+            "unitLabel": "單位",
+            "useNow": "填入現在",
+            "pasteHint": "貼上數字就會換算。10 位以內當成秒，13 位左右當成毫秒。",
+            "dateHint": "沒寫時區時，當成你電腦的本地時間。",
+            "detected": "自動判斷為{unit}",
+            "weekday": "星期",
+            "relative": "相對",
+            "seconds": "秒",
+            "milliseconds": "毫秒",
+            "units": {
+                "auto": "自動",
+                "s": "秒",
+                "ms": "毫秒",
+                "us": "微秒",
+                "ns": "奈秒"
+            }
+        },
+        "rel": {
+            "now": "剛剛",
+            "ago": "{n} {unit}前",
+            "in": "{n} {unit}後",
+            "units": {
+                "second": "秒",
+                "minute": "分鐘",
+                "hour": "小時",
+                "day": "天",
+                "month": "個月",
+                "year": "年"
+            }
+        },
+        "json": {
+            "format": "格式化",
+            "minify": "壓縮",
+            "sort": "排序鍵",
+            "indent2": "2 空格",
+            "indent4": "4 空格",
+            "copy": "複製結果",
+            "placeholder": "貼上 JSON",
+            "valid": "JSON 正確",
+            "shortcut": "Ctrl 或 ⌘ + Enter 也可以格式化"
+        },
+        "yaml": {
+            "check": "檢查",
+            "pretty": "整理",
+            "toJson": "轉成 JSON",
+            "fromJson": "JSON 轉 YAML",
+            "copy": "複製結果",
+            "placeholder": "貼上 YAML。若要轉 YAML，也可以直接貼 JSON",
+            "valid": "YAML 正確",
+            "emptyDoc": "這份 YAML 是空的",
+            "docs": "共 {count} 份文件，都正確",
+            "errorAt": "第 {line} 行、第 {column} 欄：{message}",
+            "badSample": "錯誤範例"
+        },
+        "md5": {
+            "placeholder": "輸入文字，立刻算出 MD5",
+            "upper": "輸出大寫",
+            "text": "文字",
+            "file": "檔案",
+            "drop": "把檔案拖進來，或點這裡選擇",
+            "dropHint": "只在這台瀏覽器計算，不會上傳",
+            "working": "計算中…",
+            "sha": "SHA-256",
+            "fileMeta": "{name} · {size}"
+        },
+        "codec": {
+            "text": "文字",
+            "base64": "Base64",
+            "base64url": "Base64URL",
+            "hex": "Hex",
+            "swap": "對調方向",
+            "inPlaceholder": "貼上要轉換的內容",
+            "upper": "Hex 大寫",
+            "spaced": "Hex 每兩個字空一格",
+            "presetB64Hex": "Base64 → Hex",
+            "presetHexB64": "Hex → Base64",
+            "presetTextB64": "文字 → Base64",
+            "presetB64Text": "Base64 → 文字"
+        },
+        "jwt": {
+            "placeholder": "貼上 JWT。前面的 Bearer 會自動拿掉",
+            "header": "HEADER",
+            "payload": "PAYLOAD",
+            "signature": "SIGNATURE",
+            "secret": "HMAC 密鑰",
+            "secretPlaceholder": "驗證 HS256 / HS384 / HS512 時才需要",
+            "showSecret": "顯示密鑰",
+            "hideSecret": "隱藏密鑰",
+            "verify": "驗證簽章",
+            "sample": "有效範例",
+            "expiredSample": "過期範例",
+            "sampleHint": "兩個範例的密鑰都是 secret",
+            "verified": "簽章正確",
+            "invalidSig": "簽章不符",
+            "expired": "已過期",
+            "notYet": "尚未生效",
+            "valid": "有效",
+            "claimExp": "到期 exp",
+            "claimNbf": "生效 nbf",
+            "claimIat": "簽發 iat",
+            "algNote": "解碼不需要密鑰，也不會把 token 送出去。驗證目前只支援 HMAC。",
+            "copyPart": "複製"
+        },
+        "errors": {
+            "empty": "請先貼上內容",
+            "invalid-number": "這不是時間戳。日期請用右邊的欄位。",
+            "invalid-date": "沒辦法讀這個日期。可以試 2024-01-02 15:04:05",
+            "invalid-hex": "Hex 格式不對",
+            "invalid-base64": "Base64 格式不對",
+            "invalid-utf8": "轉成文字時遇到不是 UTF-8 的位元組",
+            "invalid-json": "JSON 格式不對",
+            "invalid-jwt": "這不像 JWT。需要 header.payload.signature 三段",
+            "out-of-range": "這個時間超出可以表示的範圍",
+            "unsupported-alg": "目前只驗證 HS256、HS384、HS512",
+            "no-signature": "這個 token 沒有簽章",
+            "empty-secret": "請輸入密鑰",
+            "no-webcrypto": "這個環境不能驗證簽章",
+            "generic": "沒辦法處理這份內容",
+            "yaml-missing": "YAML 解析器沒有載入"
+        }
     }
-} 
+}
