@@ -167,7 +167,7 @@
     "tools": {
         "pageTitle": "常用工具 - Cyt's Website",
         "title": "常用工具",
-        "lead": "時間戳、JSON、YAML、MD5、Base64 / Hex、JWT。全部在這台瀏覽器裡算完，那些網站掛了也能用。",
+        "lead": "時間戳、JSON、YAML、MD5、編碼、JWT，另外還有 URL、UUID、正規表示式和進位轉換。全部在這台瀏覽器裡算完，那些網站掛了也能用。",
         "kicker": "離線可用",
         "privacy": "資料不會離開這台瀏覽器",
         "badge": "常用",
@@ -190,7 +190,15 @@
             "codec": "編碼轉換",
             "codecHint": "Base64 ↔ Hex",
             "jwt": "JWT",
-            "jwtHint": "解碼與簽章驗證"
+            "jwtHint": "解碼與簽章驗證",
+            "url": "URL",
+            "urlHint": "編碼、解碼、解析參數",
+            "uuid": "UUID",
+            "uuidHint": "產生隨機識別碼",
+            "regex": "正規表示式",
+            "regexHint": "找符合的片段",
+            "radix": "進位轉換",
+            "radixHint": "二、八、十、十六進位"
         },
         "timestamp": {
             "nowLabel": "現在",
@@ -245,7 +253,7 @@
             "copy": "複製結果",
             "placeholder": "貼上 JSON",
             "valid": "JSON 正確",
-            "shortcut": "Ctrl 或 ⌘ + Enter 也可以格式化"
+            "shortcut": "貼上 JSON 會直接排版。Ctrl 或 ⌘ + Enter 也可以。"
         },
         "yaml": {
             "check": "檢查",
@@ -324,7 +332,43 @@
             "empty-secret": "請輸入密鑰",
             "no-webcrypto": "這個環境不能驗證簽章",
             "generic": "沒辦法處理這份內容",
-            "yaml-missing": "YAML 解析器沒有載入"
+            "yaml-missing": "YAML 解析器沒有載入",
+            "invalid-url": "這段內容解不開",
+            "invalid-regex": "這個正規表示式不正確"
+        },
+        "more": "其他工具",
+        "group": {
+            "common": "常用"
+        },
+        "url": {
+            "encode": "編碼參數",
+            "decode": "解碼",
+            "encodeUri": "編碼整段",
+            "placeholder": "貼上文字、URL，或 a=1&b=2",
+            "protocol": "協定",
+            "host": "主機",
+            "path": "路徑",
+            "params": "參數"
+        },
+        "uuid": {
+            "generate": "產生一組",
+            "generateMany": "產生 5 組",
+            "hint": "使用這台瀏覽器的隨機數，不會送到別的地方。"
+        },
+        "regex": {
+            "pattern": "表示式",
+            "text": "測試文字",
+            "placeholderPattern": "例如 (\\w+)=(\\d+)",
+            "placeholderText": "把要搜尋的文字貼在這裡",
+            "count": "找到 {count} 個"
+        },
+        "radix": {
+            "from": "來源進位",
+            "placeholder": "貼上數字，例如 255 或 0xff",
+            "bin": "二進位",
+            "oct": "八進位",
+            "dec": "十進位",
+            "hex": "十六進位"
         }
     }
 }

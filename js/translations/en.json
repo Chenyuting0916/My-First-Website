@@ -167,7 +167,7 @@
     "tools": {
         "pageTitle": "Tools - Cyt's Website",
         "title": "Tools",
-        "lead": "Timestamp, JSON, YAML, MD5, Base64 / Hex, and JWT. Everything runs in this browser, so you still have them if those sites go down.",
+        "lead": "Timestamp, JSON, YAML, MD5, encoding, and JWT, plus URL, UUID, regex, and base conversion. Everything runs in this browser.",
         "kicker": "WORKS OFFLINE",
         "privacy": "Nothing leaves this browser",
         "badge": "Often",
@@ -190,7 +190,15 @@
             "codec": "Encode",
             "codecHint": "Base64 ↔ Hex",
             "jwt": "JWT",
-            "jwtHint": "Decode and verify"
+            "jwtHint": "Decode and verify",
+            "url": "URL",
+            "urlHint": "Encode, decode, parse query",
+            "uuid": "UUID",
+            "uuidHint": "Generate random IDs",
+            "regex": "Regex",
+            "regexHint": "Find matches",
+            "radix": "Base",
+            "radixHint": "Bin, oct, dec, hex"
         },
         "timestamp": {
             "nowLabel": "NOW",
@@ -245,7 +253,7 @@
             "copy": "Copy result",
             "placeholder": "Paste JSON",
             "valid": "Valid JSON",
-            "shortcut": "Ctrl or ⌘ + Enter also formats"
+            "shortcut": "Pasting JSON formats it immediately. Ctrl or ⌘ + Enter works too."
         },
         "yaml": {
             "check": "Check",
@@ -324,7 +332,43 @@
             "empty-secret": "Enter a secret",
             "no-webcrypto": "This browser cannot verify signatures",
             "generic": "Could not process that",
-            "yaml-missing": "The YAML parser did not load"
+            "yaml-missing": "The YAML parser did not load",
+            "invalid-url": "Could not decode that",
+            "invalid-regex": "That regular expression is invalid"
+        },
+        "more": "More tools",
+        "group": {
+            "common": "Often"
+        },
+        "url": {
+            "encode": "Encode component",
+            "decode": "Decode",
+            "encodeUri": "Encode full URL",
+            "placeholder": "Paste text, a URL, or a=1&b=2",
+            "protocol": "Protocol",
+            "host": "Host",
+            "path": "Path",
+            "params": "Query"
+        },
+        "uuid": {
+            "generate": "Generate one",
+            "generateMany": "Generate 5",
+            "hint": "Uses this browser’s random numbers. Nothing is sent away."
+        },
+        "regex": {
+            "pattern": "Pattern",
+            "text": "Test text",
+            "placeholderPattern": "For example (\\w+)=(\\d+)",
+            "placeholderText": "Paste the text to search",
+            "count": "{count} matches"
+        },
+        "radix": {
+            "from": "Source base",
+            "placeholder": "Paste a number, such as 255 or 0xff",
+            "bin": "Binary",
+            "oct": "Octal",
+            "dec": "Decimal",
+            "hex": "Hex"
         }
     }
 }

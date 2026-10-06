@@ -1,6 +1,7 @@
 (function () {
     var core = window.ToolsCore;
-    var TOOLS = ['timestamp', 'json', 'yaml', 'md5', 'codec', 'jwt'];
+    var TOOLS = ['timestamp', 'json', 'yaml', 'md5', 'codec', 'jwt', 'url', 'uuid', 'regex', 'radix'];
+    var MORE_TOOLS = { url: true, uuid: true, regex: true, radix: true };
     var JSON_SAMPLE = '{"name":"Cyt","ok":true,"tools":["timestamp","json","yaml"]}';
     var YAML_SAMPLE = 'name: Cyt\nrole: engineer\ntools:\n  - timestamp\n  - json\n  - yaml\nactive: true\n';
     var YAML_BAD = 'name: Cyt\ntools: [\n';
@@ -13,7 +14,10 @@
         file: null,
         jwt: null,
         jwtVerify: null,
-        nowMs: 0
+        nowMs: 0,
+        urlMode: 'encode',
+        radixBase: 10,
+        regexFlags: { i: false, m: false }
     };
     var toastTimer = 0;
 
@@ -77,7 +81,18 @@
         'tools.errors.empty-secret': '請輸入密鑰',
         'tools.errors.no-webcrypto': '這個環境不能驗證簽章',
         'tools.errors.generic': '沒辦法處理這份內容',
-        'tools.errors.yaml-missing': 'YAML 解析器沒有載入'
+        'tools.errors.yaml-missing': 'YAML 解析器沒有載入',
+        'tools.errors.invalid-url': '這段內容解不開',
+        'tools.errors.invalid-regex': '這個正規表示式不正確',
+        'tools.url.protocol': '協定',
+        'tools.url.host': '主機',
+        'tools.url.path': '路徑',
+        'tools.url.params': '參數',
+        'tools.regex.count': '找到 {count} 個',
+        'tools.radix.bin': '二進位',
+        'tools.radix.oct': '八進位',
+        'tools.radix.dec': '十進位',
+        'tools.radix.hex': '十六進位'
     };
 
     function lang() {
@@ -205,8 +220,18 @@
         el.textContent = message;
     }
 
+    function setMoreOpen(open) {
+        var panel = byId('moreToolsPanel');
+        var button = byId('moreTools');
+        if (!panel || !button) return;
+        panel.classList.toggle('is-collapsed', !open);
+        button.classList.toggle('is-open', open);
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
     function selectTool(id) {
         if (TOOLS.indexOf(id) < 0) id = 'timestamp';
+        if (MORE_TOOLS[id]) setMoreOpen(true);
         state.tool = id;
         document.querySelectorAll('[data-tool]').forEach(function (btn) {
             var on = btn.getAttribute('data-tool') === id;
@@ -217,6 +242,9 @@
             panel.hidden = panel.getAttribute('data-panel') !== id;
         });
         if (location.hash !== '#' + id) history.replaceState(null, '', '#' + id);
+        var activeTab = document.getElementById('tab-' + id);
+        if (activeTab && activeTab.scrollIntoView) activeTab.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+        if (id === 'uuid' && byId('uuidOut') && !byId('uuidOut').textContent) renderUuids(1);
     }
 
     function renderNow() {
@@ -346,12 +374,14 @@
         var input = byId('jsonInput');
         var output = byId('jsonOutput');
         try {
-            output.value = core.formatJson(input.value, {
+            var formatted = core.formatJson(input.value, {
                 indent: state.jsonIndent,
                 sort: byId('jsonSort').checked,
                 minify: mode === 'minify'
             });
-            renderJsonStatus();
+            if (mode !== 'minify') input.value = formatted;
+            output.value = formatted;
+            setBanner(byId('jsonBanner'), 'ok', t('tools.json.valid'));
         } catch (err) {
             output.value = '';
             setBanner(byId('jsonBanner'), 'err', errorText(err));
@@ -703,6 +733,128 @@
         renderJwt();
     }
 
+    function prettyUrlPath(path) {
+        try { return decodeURI(path); } catch (e) { return path; }
+    }
+
+    function renderUrl() {
+        var input = byId('urlIn');
+        var output = byId('urlOut');
+        var parts = byId('urlParts');
+        if (!input || !output) return;
+        parts.replaceChildren();
+        if (!input.value) {
+            output.value = '';
+            setBanner(byId('urlBanner'), '', '');
+            return;
+        }
+        try {
+            output.value = core.transformUrl(input.value, state.urlMode);
+            setBanner(byId('urlBanner'), '', '');
+        } catch (err) {
+            output.value = '';
+            setBanner(byId('urlBanner'), 'err', errorText(err));
+        }
+        var info = core.parseUrlInfo(input.value);
+        if (!info || (!info.protocol && !info.host && !info.pathname && !info.params.length)) return;
+        var table = document.createElement('table');
+        table.className = 'tk-url-table';
+        function addRow(label, value) {
+            if (!value) return;
+            var tr = document.createElement('tr');
+            var th = document.createElement('th');
+            th.textContent = label;
+            var td = document.createElement('td');
+            td.textContent = value;
+            tr.append(th, td);
+            table.append(tr);
+        }
+        addRow(t('tools.url.protocol'), info.protocol);
+        addRow(t('tools.url.host'), info.host);
+        addRow(t('tools.url.path'), prettyUrlPath(info.pathname));
+        info.params.forEach(function (param, index) {
+            addRow(index === 0 ? t('tools.url.params') : '', param.key + ' = ' + param.value);
+        });
+        if (table.childNodes.length) parts.append(table);
+    }
+
+    function makeUuid() {
+        if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+        var bytes = new Uint8Array(16);
+        crypto.getRandomValues(bytes);
+        bytes[6] = (bytes[6] & 15) | 64;
+        bytes[8] = (bytes[8] & 63) | 128;
+        var hex = core.bytesToHex(bytes);
+        return hex.slice(0, 8) + '-' + hex.slice(8, 12) + '-' + hex.slice(12, 16) + '-' + hex.slice(16, 20) + '-' + hex.slice(20);
+    }
+
+    function renderUuids(count) {
+        var lines = [];
+        for (var i = 0; i < count; i++) lines.push(makeUuid());
+        byId('uuidOut').textContent = lines.join('\n');
+    }
+
+    function regexFlagString() {
+        return (state.regexFlags.i ? 'i' : '') + (state.regexFlags.m ? 'm' : '');
+    }
+
+    function renderRegex() {
+        var patternEl = byId('regexPattern');
+        var textEl = byId('regexText');
+        var result = byId('regexResult');
+        var count = byId('regexCount');
+        if (!patternEl || !result) return;
+        result.replaceChildren();
+        if (!patternEl.value) {
+            setBanner(byId('regexBanner'), '', '');
+            count.textContent = '';
+            return;
+        }
+        try {
+            var matches = core.testRegex(patternEl.value, regexFlagString(), textEl.value);
+            setBanner(byId('regexBanner'), '', '');
+            count.textContent = tf('tools.regex.count', { count: matches.length });
+            var text = textEl.value;
+            var cursor = 0;
+            matches.forEach(function (match) {
+                result.append(document.createTextNode(text.slice(cursor, match.index)));
+                var mark = document.createElement('mark');
+                mark.className = 'tk-regex-hit';
+                mark.textContent = match.value;
+                result.append(mark);
+                cursor = match.index + match.value.length;
+            });
+            result.append(document.createTextNode(text.slice(cursor)));
+        } catch (err) {
+            count.textContent = '';
+            setBanner(byId('regexBanner'), 'err', errorText(err));
+        }
+    }
+
+    function renderRadix() {
+        var input = byId('radixIn');
+        var result = byId('radixResult');
+        if (!input || !result) return;
+        if (!input.value.trim()) {
+            setBanner(byId('radixBanner'), '', '');
+            result.replaceChildren();
+            return;
+        }
+        try {
+            var values = core.convertRadix(input.value, state.radixBase);
+            setBanner(byId('radixBanner'), '', '');
+            fillResult(result, [
+                { label: t('tools.radix.bin'), value: values.bin },
+                { label: t('tools.radix.oct'), value: values.oct },
+                { label: t('tools.radix.dec'), value: values.dec },
+                { label: t('tools.radix.hex'), value: values.hex }
+            ]);
+        } catch (err) {
+            result.replaceChildren();
+            setBanner(byId('radixBanner'), 'err', errorText(err));
+        }
+    }
+
     function debounce(fn, ms) {
         var timer = 0;
         return function () {
@@ -717,6 +869,9 @@
             btn.addEventListener('click', function () {
                 selectTool(btn.getAttribute('data-tool'));
             });
+        });
+        byId('moreTools').addEventListener('click', function () {
+            setMoreOpen(byId('moreToolsPanel').classList.contains('is-collapsed'));
         });
         window.addEventListener('hashchange', function () {
             selectTool(location.hash.replace('#', ''));
@@ -778,6 +933,18 @@
             byId('jsonInput').value = '';
             byId('jsonOutput').value = '';
             renderJsonStatus();
+        });
+        byId('jsonInput').addEventListener('paste', function (event) {
+            var clip = event.clipboardData || window.clipboardData;
+            if (!clip) return;
+            var text = clip.getData('text');
+            if (!text) return;
+            event.preventDefault();
+            var el = byId('jsonInput');
+            var start = el.selectionStart || 0;
+            var end = el.selectionEnd || 0;
+            el.value = el.value.slice(0, start) + text + el.value.slice(end);
+            runJson('format');
         });
         byId('jsonInput').addEventListener('input', debounce(renderJsonStatus, 120));
         byId('jsonInput').addEventListener('keydown', function (event) {
@@ -886,6 +1053,48 @@
             copyText(state.jwt ? state.jwt.signature : '');
         });
         byId('jwtVerify').addEventListener('click', verifyJwt);
+        byId('urlMode').addEventListener('click', function (event) {
+            var button = event.target.closest('[data-mode]');
+            if (!button) return;
+            state.urlMode = button.getAttribute('data-mode');
+            byId('urlMode').querySelectorAll('[data-mode]').forEach(function (el) {
+                el.classList.toggle('is-on', el === button);
+            });
+            renderUrl();
+        });
+        byId('urlIn').addEventListener('input', debounce(renderUrl, 80));
+        byId('urlCopy').addEventListener('click', function () { copyText(byId('urlOut').value); });
+        byId('urlClear').addEventListener('click', function () {
+            byId('urlIn').value = '';
+            renderUrl();
+        });
+
+        byId('uuidNew').addEventListener('click', function () { renderUuids(1); });
+        byId('uuidMany').addEventListener('click', function () { renderUuids(5); });
+        byId('uuidCopy').addEventListener('click', function () { copyText(byId('uuidOut').textContent); });
+
+        byId('regexFlags').addEventListener('click', function (event) {
+            var button = event.target.closest('[data-flag]');
+            if (!button) return;
+            var flag = button.getAttribute('data-flag');
+            state.regexFlags[flag] = !state.regexFlags[flag];
+            button.classList.toggle('is-on', state.regexFlags[flag]);
+            renderRegex();
+        });
+        byId('regexPattern').addEventListener('input', debounce(renderRegex, 80));
+        byId('regexText').addEventListener('input', debounce(renderRegex, 80));
+
+        byId('radixFrom').addEventListener('click', function (event) {
+            var button = event.target.closest('[data-base]');
+            if (!button) return;
+            state.radixBase = Number(button.getAttribute('data-base'));
+            byId('radixFrom').querySelectorAll('[data-base]').forEach(function (el) {
+                el.classList.toggle('is-on', el === button);
+            });
+            renderRadix();
+        });
+        byId('radixIn').addEventListener('input', debounce(renderRadix, 60));
+
         byId('jwtToggleSecret').addEventListener('click', function () {
             var input = byId('jwtSecret');
             var show = input.type === 'password';
@@ -910,6 +1119,9 @@
         renderCodec();
         renderJwt();
         paintVerify();
+        renderUrl();
+        renderRegex();
+        renderRadix();
         var secretBtn = byId('jwtToggleSecret');
         if (secretBtn && byId('jwtSecret')) {
             secretBtn.textContent = t(byId('jwtSecret').type === 'password' ? 'tools.jwt.showSecret' : 'tools.jwt.hideSecret');
