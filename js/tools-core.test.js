@@ -115,6 +115,33 @@ test('relative time buckets', () => {
     assert.deepEqual(core.relativeParts(7200000, 0), { key: 'in', unit: 'hour', n: 2 });
 });
 
+test('url encode, decode, and query parse', () => {
+    assert.equal(core.transformUrl('a b', 'encode'), 'a%20b');
+    assert.equal(core.transformUrl('a%20b', 'decode'), 'a b');
+    assert.equal(core.transformUrl('https://example.com/a b', 'encode-uri'), 'https://example.com/a%20b');
+    const info = core.parseUrlInfo('https://example.com/path?name=Cyt&q=a%20b');
+    assert.equal(info.host, 'example.com');
+    assert.equal(info.pathname, '/path');
+    assert.deepEqual(info.params, [{ key: 'name', value: 'Cyt' }, { key: 'q', value: 'a b' }]);
+    assert.deepEqual(core.parseUrlInfo('name=Cyt&ok=1').params, [{ key: 'name', value: 'Cyt' }, { key: 'ok', value: '1' }]);
+    assert.throws(() => core.transformUrl('%', 'decode'), (err) => err.code === 'invalid-url');
+});
+
+test('regex lists matches and rejects a bad pattern', () => {
+    const matches = core.testRegex('(\\w+)=(\\d+)', 'g', 'a=1 b=2');
+    assert.equal(matches.length, 2);
+    assert.deepEqual(matches[0].groups, ['a', '1']);
+    assert.equal(matches[1].index, 4);
+    assert.throws(() => core.testRegex('(', '', 'abc'), (err) => err.code === 'invalid-regex');
+});
+
+test('radix conversion keeps big integers exact', () => {
+    assert.deepEqual(core.convertRadix('255', 10), { bin: '11111111', oct: '377', dec: '255', hex: 'ff' });
+    assert.equal(core.convertRadix('0xff', 16).dec, '255');
+    assert.equal(core.convertRadix('17000000000000000000', 10).hex, BigInt('17000000000000000000').toString(16));
+    assert.throws(() => core.convertRadix('12', 2), (err) => err.code === 'invalid-number');
+});
+
 test('vendored js-yaml loads and rejects broken documents', () => {
     const yaml = require('./vendor/js-yaml.min.js');
     const doc = yaml.load('name: Cyt\ntools:\n  - timestamp\n');

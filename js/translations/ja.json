@@ -167,7 +167,7 @@
     "tools": {
         "pageTitle": "ツール - Cyt's Website",
         "title": "ツール",
-        "lead": "タイムスタンプ、JSON、YAML、MD5、Base64 / Hex、JWT。すべてこのブラウザの中で計算するので、外部サイトが落ちても使えます。",
+        "lead": "タイムスタンプ、JSON、YAML、MD5、エンコード、JWT に加えて、URL、UUID、正規表現、進数変換もこのブラウザの中で計算します。",
         "kicker": "オフラインで動く",
         "privacy": "データはこのブラウザの外に出ません",
         "badge": "よく使う",
@@ -190,7 +190,15 @@
             "codec": "エンコード",
             "codecHint": "Base64 ↔ Hex",
             "jwt": "JWT",
-            "jwtHint": "デコードと署名検証"
+            "jwtHint": "デコードと署名検証",
+            "url": "URL",
+            "urlHint": "エンコード、デコード、パラメータ解析",
+            "uuid": "UUID",
+            "uuidHint": "ランダムな ID を作る",
+            "regex": "正規表現",
+            "regexHint": "一致した部分を探す",
+            "radix": "進数変換",
+            "radixHint": "2 / 8 / 10 / 16 進数"
         },
         "timestamp": {
             "nowLabel": "いま",
@@ -245,7 +253,7 @@
             "copy": "結果をコピー",
             "placeholder": "JSON を貼り付け",
             "valid": "正しい JSON です",
-            "shortcut": "Ctrl または ⌘ + Enter でも整形できます"
+            "shortcut": "JSON を貼り付けるとその場で整形します。Ctrl または ⌘ + Enter でもできます。"
         },
         "yaml": {
             "check": "チェック",
@@ -324,7 +332,43 @@
             "empty-secret": "シークレットを入力してください",
             "no-webcrypto": "この環境では署名を検証できません",
             "generic": "処理できませんでした",
-            "yaml-missing": "YAML パーサーを読み込めませんでした"
+            "yaml-missing": "YAML パーサーを読み込めませんでした",
+            "invalid-url": "この内容は復号できません",
+            "invalid-regex": "正規表現が正しくありません"
+        },
+        "more": "その他のツール",
+        "group": {
+            "common": "よく使う"
+        },
+        "url": {
+            "encode": "パラメータを符号化",
+            "decode": "復号",
+            "encodeUri": "URL 全体を符号化",
+            "placeholder": "文字、URL、または a=1&b=2 を貼り付け",
+            "protocol": "プロトコル",
+            "host": "ホスト",
+            "path": "パス",
+            "params": "パラメータ"
+        },
+        "uuid": {
+            "generate": "1つ作る",
+            "generateMany": "5つ作る",
+            "hint": "このブラウザの乱数を使います。外には送りません。"
+        },
+        "regex": {
+            "pattern": "パターン",
+            "text": "テスト文字",
+            "placeholderPattern": "例 (\\w+)=(\\d+)",
+            "placeholderText": "検索する文字を貼り付け",
+            "count": "{count} 件見つかりました"
+        },
+        "radix": {
+            "from": "元の進数",
+            "placeholder": "255 や 0xff のような数字を貼り付け",
+            "bin": "2進数",
+            "oct": "8進数",
+            "dec": "10進数",
+            "hex": "16進数"
         }
     }
 }
