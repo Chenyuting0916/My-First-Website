@@ -35,6 +35,14 @@ const i18n = {
             const value = this.t(element.getAttribute('data-i18n-placeholder'));
             if (typeof value === 'string') element.placeholder = value;
         });
+        document.querySelectorAll('[data-i18n-content]').forEach(element => {
+            const value = this.t(element.getAttribute('data-i18n-content'));
+            if (typeof value === 'string') element.setAttribute('content', value);
+        });
+        document.querySelectorAll('[data-i18n-alt]').forEach(element => {
+            const value = this.t(element.getAttribute('data-i18n-alt'));
+            if (typeof value === 'string') element.alt = value;
+        });
         const htmlLang = { zh: 'zh-Hant', en: 'en', ja: 'ja' }[this.currentLang] || 'zh-Hant';
         document.documentElement.lang = htmlLang;
         document.dispatchEvent(new CustomEvent('i18n:updated'));

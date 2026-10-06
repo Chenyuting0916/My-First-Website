@@ -15,6 +15,7 @@ function siteLessLabel() {
 }
 
 $(document).ready(function() {
+    if (!$('#showTimeLine').length || !$('#timelineDetail').length) return;
     $('#showTimeLine').click(function() {
         if ($('#timelineDetail').is(':visible')) {
             $('#timelineDetail').hide('slow');

@@ -1,176 +1,25 @@
 {
     "nav": {
         "about": "プロフィール",
-        "portfolio": "ポートフォリオ",
+        "portfolio": "実績",
         "tools": "ツール"
     },
     "about": {
-        "title": "プロフィール",
-        "name": "陳昱廷 - Yu-Ting Chen",
-        "description": "1997年生まれ、卒業後3年間勤務",
-        "occupation": "ソフトウェアエンジニア、台湾人",
-        "status": "プログラミングを真剣に学習中....",
-        "portfolio": "ポートフォリオを見る",
-        "page": {
-            "title": "自己紹介",
-            "intro_name": "陳昱廷と申します。",
-            "intro_work": "1997年生まれ、2020年2月からTitansoftで働き始め、インターンから正社員まで昇進し、2023年4月まで約3年間勤務しました。",
-            "belief": "技術は問題解決のためのツールだと考えています。解決したい問題があれば、どんな技術でも学ぶ意欲があります。",
-            "challenge_intro": "新しいことに挑戦することが好きで、自己成長につながることには何でも積極的に取り組んでいます。",
-            "timeline_2016": "2016年 台湾一周サイクリング",
-            "timeline_2017": "2017年 13kmマラソン、ビーチクリーン、献血",
-            "timeline_2018": "2018年 学生会加入、チームリーダー就任、台湾一周サイクリング（2回目）、音楽フェス参加",
-            "timeline_2019": "2019年 全国IT応用コンペ参加、パラグライダー",
-            "timeline_2020": "2020年 Titansoftインターン、サーフィン",
-            "timeline_2021": "2021年 兵役、Titansoft正社員",
-            "timeline_2022_1": "2022年 玉山登山、",
-            "timeline_2022_2": "GOLFでショートトーク",
-            "timeline_2022_3": "、IT応用コンペプレゼン、マインドフルネス実践",
-            "timeline_2023_1": "2023年 YouTuber活動開始、起業挑戦、JLPT N2取得、",
-            "timeline_2023_2": "独自アプリ開発",
-            "timeline_2024": "2024年 日本の語学学校で1年間留学",
-            "timeline_future": "... (これからの道のりは縁次第)",
-            "closing": "採用していただければ、技術面で最強ではないかもしれませんが、必ず会社に価値をもたらすことができます。"
-        }
-    },
-    "timeline": {
-        "title": "タイムライン",
-        "readMore": "もっと見る...",
-        "showLess": "閉じる",
-        "items": {
-            "titansoft_engineer": {
-                "title": "Titansoft プロダクト開発エンジニア",
-                "date": "2020年8月",
-                "fullDate": "2020/08 ~ 2023/04",
-                "description": [
-                    "正社員エンジニアとして、アジャイル開発(scrum)、業界知識、マイクロサービス、API開発(REST, gRPC)など多くを学びました。また、ユニットテスト(xUnit, NUnit, fluent Assertion)、統合テスト(SpecFlow)の作成、フロントエンドではVue 3.0の使用も経験しました。",
-                    "Clean Codeを読み、コードスメルを理解して改善することで、コードの品質も向上しました。まだ改善の余地はありますが、以前よりもずっと良くなりました..."
-                ]
-            },
-            "titansoft_intern": {
-                "title": "Titansoft インターン",
-                "date": "2020年2月",
-                "fullDate": "2020/02 ~ 2020/08",
-                "description": [
-                    "新型コロナウイルスの影響で、オフィスでの勤務は1ヶ月のみでリモートワークに移行しました。2020年のTitansoftインターンとして、まだ粗いコードを書いていましたが、多くのことを学ぶことができました。",
-                    ".NET Core MVCの開発やMSSQLの使用方法など、大学では学ばなかった新しいことを学びました。LINQやjQueryなどの便利なツールも試し、より良いコードを書くよう心がけ、チームと協力しました。とても良い経験でした！"
-                ]
-            },
-            "ta": {
-                "title": "プログラミング講座TA",
-                "date": "2019年10月",
-                "fullDate": "2019/10 ~ 2019/12",
-                "description": [
-                    "プログラミング講座のTAとして、非情報系の学生にJavaとプログラミング技術を教えました。プログラミング未経験の学生を教えることで、細やかな配慮と忍耐力を養いました。他者にスキルを教えることができ、仲間から認められたことで、大きな達成感を得ることができました。"
-                ]
-            },
-            "competition": {
-                "title": "第24回大学情報応用サービス革新コンペティション",
-                "subtitle": "情報応用部門 第3位",
-                "date": "2019年11月2日",
-                "fullDate": "2019/10/07 ~ 2019/11/02",
-                "description": [
-                    "卒業研究での優れた成果により、指導教授からコンペティションへの参加を推薦されました。研究では、教授と共にアルゴリズムを改良し、革新的な分離構造暗号化方式を採用して暗号化/復号化の方法を革新しました。チームワークとプロジェクト実装について学び、新しいアルゴリズムを考案して実装できたことで、大きな達成感を得、プログラミングへの熱意が一層高まりました。"
-                ]
-            }
-        }
-    },
-    "skills": {
-        "title": "スキル",
-        "frontend": {
-            "title": "フロントエンド",
-            "items": [
-                "HTML, CSS, JavaScript",
-                "Vue3",
-                "jQuery"
-            ]
-        },
-        "backend": {
-            "title": "バックエンド",
-            "items": [
-                ".NET core",
-                ".NET Framework",
-                "ASP.NET MVC",
-                "RESTful APIs",
-                "gRPC"
-            ]
-        },
-        "database": {
-            "title": "データベース",
-            "items": [
-                "MS SQL",
-                "Firebase",
-                "Redis"
-            ]
-        },
-        "test": {
-            "title": "テスト",
-            "items": [
-                "Unit Test (NUnit, xUnit)",
-                "Integration Test (SpecFlow)"
-            ]
-        },
-        "orm": {
-            "title": "ORM",
-            "items": [
-                "Entity Framework",
-                "Dapper"
-            ]
-        },
-        "others": {
-            "title": "その他",
-            "items": [
-                "Flutter",
-                "Kafka",
-                "K8s",
-                "Java",
-                "Unity",
-                "Git",
-                "Azure"
-            ]
-        }
-    },
-    "portfolio": {
-        "section_2020": {
-            "title": "2020年以降",
-            "projects": {
-                "azure": {
-                    "description": "Azureを使用したシンプルなウェブサイトで、CRUD（作成、読み取り、更新、削除）操作をサポートしています。"
-                },
-                "level": {
-                    "description": "FlutterとFirebaseを使用して開発し、Google Playで公開されているプロジェクトです。自己規律を高めることを主な目的としています。"
-                },
-                "japanese": {
-                    "description": "Python Flaskフレームワークを使用して作成した日本語単語学習ウェブサイトで、日本語学習をより効率的にします。"
-                }
-            }
-        },
-        "section_college": {
-            "title": "大学時代の作品（2016～2020）",
-            "projects": {
-                "encryption": {
-                    "description": "これは卒業研究で開発した暗号化システムです。既存のAESアルゴリズムを改良し、新しい暗号化方式を考案しました。このプロジェクトでコンペティションに参加し、良い成績を収めることができました。"
-                },
-                "java_game": {
-                    "description": "1年生のJavaプログラミングの課題として作成したゲームです。プログラミングを始めた頃の感動が詰まった作品で、とても楽しく開発しました。まだ荒削りな出来でしたが。"
-                },
-                "desktop_pet": {
-                    "description": "2年生の時に作ったデスクトップペットです。癒しが欲しいと思い、自分で作ることにしました。"
-                }
-            }
-        },
-        "common": {
-            "demo": "デモ",
-            "source": "ソース",
-            "more": "もっと見る..."
-        }
+        "title": "プロフィール — Tim Chen",
+        "description": "Tim Chen は C#／.NET のバックエンドエンジニアです。仕事の進め方、日本の語学留学と JLPT N1、読書会について書いています。",
+        "heading": "プロフィール",
+        "lead": "陳昱廷／Yu-Ting Chen。C#／.NET で、既存のバックエンドをより速く、より安定させ、安全に変更しやすくしています。",
+        "engineering": "2026 年 3 月から Gogoro で .NET のバックエンドサービス開発と既存システムの改善をしています。その前は 2020 年 8 月から 2023 年 4 月まで Titansoft の Product Developer として REST／gRPC のマイクロサービスに参加しました。2020 年には同じ会社でインターンもしています。",
+        "japan": "2024–2025 年に日本の語学学校へ留学し、JLPT N1 を取得しています。これは異文化での学習と日本語力であり、日本での職務経験や、ビジネス場面での母語レベルを意味しません。",
+        "sharing": "Titansoft ではエンジニアリングの読書会を開き、現場の問題を言葉にしてやり方を比べていました。",
+        "life": "仕事の外では自転車と山歩きをします。一つのことを最後まで進めるのも好きです。"
     },
     "tools": {
-        "pageTitle": "ツール - Cyt's Website",
-        "title": "ツール",
-        "lead": "タイムスタンプ、JSON、YAML、MD5、エンコード、JWT に加えて、URL、UUID、正規表現、進数変換もこのブラウザの中で計算します。",
-        "kicker": "オフラインで動く",
-        "privacy": "データはこのブラウザの外に出ません",
+        "pageTitle": "開発ツール — Tim Chen",
+        "title": "開発ツール",
+        "lead": "タイムスタンプ、JSON、YAML、MD5、エンコード、JWT に加えて、URL、UUID、正規表現、進数変換があります。ページを読み込んだあと、計算はこのブラウザの中で行います。",
+        "kicker": "ブラウザ内で計算",
+        "privacy": "入力はこのブラウザで処理し、遠隔の計算には送りません",
         "badge": "よく使う",
         "copy": "コピー",
         "copied": "コピーしました",
@@ -370,6 +219,89 @@
             "oct": "8進数",
             "dec": "10進数",
             "hex": "16進数"
-        }
+        },
+        "pageDescription": "ブラウザで使うタイムスタンプ、JSON、YAML、ハッシュ、エンコード、JWT、URL、UUID、正規表現、進数変換です。入力は遠隔の計算には送りません。"
+    },
+    "home": {
+        "title": "Tim Chen — バックエンドエンジニア",
+        "description": "Tim Chen（陳昱廷）は C#／.NET を中心とするバックエンドエンジニアです。API の性能、信頼性、既存システムの保守性に取り組んでいます。",
+        "kicker": "バックエンドエンジニア",
+        "lead": "陳昱廷／Yu-Ting Chen。C#／.NET で、バックエンドの性能、信頼性、そして既存システムの保守性を改善しています。",
+        "ctaWork": "実績を見る",
+        "ctaContact": "連絡する",
+        "resultsTitle": "主な成果",
+        "result1Title": "不要な fallback 呼び出しを減らした",
+        "result1Body": "checksum の不一致を直したあと、その fallback API の 1 日あたりの呼び出しは約 75,000 回から 50 回未満になりました。",
+        "result1Scope": "これは特定の fallback の呼び出し回数であり、システム全体のエラー率や全 API トラフィックではありません。",
+        "result2Title": "一部 API の応答時間を短くした",
+        "result2Body": "実際に改善した API は、応答時間が 2 秒超から約 200 ミリ秒になりました。",
+        "result2Scope": "対象はそれらの API だけで、プラットフォーム全体ではありません。パーセンタイルや測定条件は示していません。",
+        "result3Title": "既存テストを増やし、失敗を直した",
+        "result3Body": "既存のユニットテストスイートを 41 個から 240 個に増やし、落ちていたテストを修正しました。240 は 2026-10-01 時点の総数です。",
+        "result3Scope": "既存の振る舞いを守り、安全にリファクタするためのものです。カバレッジではなく、ゼロから 240 個書いたわけでもありません。",
+        "casesTitle": "仕事の事例",
+        "casesLead": "問題、自分が行った判断、確認できる結果をそれぞれ書いています。",
+        "case1Title": "Checksum と fallback",
+        "case1Summary": "checksum の不一致が余分な fallback API を呼んでいました。修正後、その 1 日あたりの呼び出しは約 75,000 回から 50 回未満になりました。",
+        "case2Title": "API の応答時間",
+        "case2Summary": "一部の API は応答に 2 秒以上かかっていました。改善後、それらの API は約 200 ミリ秒で応答します。",
+        "case3Title": "メンテナンス告知のテストしやすさ",
+        "case3Summary": "ステーションのメンテナンス告知で計算とサービスを分離し、時刻を注入して、区間の結合とキャッシュをテストで守るようにしました。",
+        "readCase": "事例を読む",
+        "experienceTitle": "経歴",
+        "gogoroWhen": "2026/03–現在",
+        "gogoroRole": ".NET バックエンド開発",
+        "gogoroBody": ".NET のバックエンドサービス開発、既存システムの改善、性能と信頼性に関する仕事をしています。",
+        "titansoftWhen": "2020/08–2023/04",
+        "titansoftRole": "Product Developer",
+        "titansoftBody": "C#／.NET のバックエンドと REST／gRPC のマイクロサービスに参加し、SQL Server、Redis、Kafka を使いました。チームで integration testing を導入し、エンジニアリングの読書会も開きました。2020 年のインターンもこの期間に含みます。",
+        "schoolName": "東海大学 情報工学",
+        "schoolWhen": "2016–2020",
+        "schoolBody": "情報工学の学士。",
+        "also": "ほかには WCF のテストツール、開発環境の異常ログ通知、監視指標の整理、GitLab Runner と PowerShell の手順、N+1 クエリとコード品質の修正があります。",
+        "skillsTitle": "中心となる技能",
+        "skillBackend": "Backend",
+        "skillData": "Data／Integration",
+        "skillQuality": "Quality",
+        "skillIntegration": "integration testing",
+        "skillPerf": "性能分析",
+        "skillDelivery": "Delivery／Operations",
+        "skillK8s": "Docker／Kubernetes の使用経験",
+        "contactTitle": "連絡先",
+        "contactLead": "GitHub、LinkedIn、メールで連絡できます。日本、海外、リモートでの協業にも関心があります。"
+    },
+    "work": {
+        "pageTitle": "実績 — Tim Chen",
+        "description": "Tim Chen のバックエンド事例です。checksum の fallback、一部 API の応答時間、ステーションのメンテナンス告知をテストしやすくした再構成をまとめています。",
+        "title": "実績",
+        "lead": "社内情報を外した仕事の事例です。公開ソースがないものに GitHub ボタンは置いていません。",
+        "problem": "問題",
+        "action": "対応",
+        "result": "結果",
+        "case1Title": "checksum の不一致が余分な fallback を呼んでいた",
+        "case1Problem": "checksum が一致しないと、システムは fallback API をもう一度呼んでいました。その呼び出しは 1 日約 75,000 回で、多くは本来不要でした。",
+        "case1Action": "checksum の不一致を見つけて直し、不要な fallback を出さないようにしました。",
+        "case1Result": "この fallback の 1 日あたりの呼び出しは約 75,000 回から 50 回未満になりました。",
+        "case1Scope": "指標はこの fallback の呼び出し回数であり、システム全体のエラー率、運用コスト、全 API トラフィックではありません。",
+        "case2Title": "一部の API が 2 秒を超えていた",
+        "case2Problem": "一部の API は応答に 2 秒以上かかり、呼び出す側が待たされていました。",
+        "case2Action": "実際に遅かった API の性能を改善しました。",
+        "case2Result": "改善後の応答時間は約 200 ミリ秒です。",
+        "case2Scope": "変更した API だけの話で、すべての API やプラットフォーム全体ではありません。p95／p99、サンプル数、測定条件は示していません。",
+        "case3Title": "メンテナンス告知を単体でテストしにくかった",
+        "case3Problem": "計算とサービスの責務が混ざり、時刻も差し替えにくかったため、ステーションデータの集約、時間区間の結合、キャッシュを単独で確認しにくい状態でした。",
+        "case3Action": "計算とサービスを分離し、時刻を注入して、集約、区間の結合、キャッシュにテストを足しました。",
+        "case3Result": "この振る舞いはテストで守れるようになり、その後の変更で手作業の回帰に頼りにくくなりました。同じ時期に、既存のユニットテストスイートは 41 個から 240 個（2026-10-01 の総数）になり、落ちていたテストも直しました。",
+        "case3Scope": "240 はスイートの総数であり、ゼロから 240 個書いたという意味でも、カバレッジでもありません。API パス、内部サービス名、ステーション識別子は公開していません。",
+        "historyTitle": "以前の個人プロジェクト",
+        "historyLead": "以前の side project と学生時代の作品です。今の代表実績ではありません。デモは今も開けるサイトだけ残しています。",
+        "japanese": "Python Flask で作った日本語単語の練習サイトです。",
+        "azure": "Azure 上の簡単な CRUD サイトです。",
+        "level": "Flutter と Firebase で作った自律の練習アプリです。Google Play に公開したことがあります。",
+        "encryption": "大学の卒業研究で作った暗号システムです。既存の AES の処理を調整し、同学と情報応用のコンテストに参加しました。",
+        "javaGame": "1 年次の Java の授業で作った小さなゲームです。",
+        "pet": "2 年次に作ったデスクトップペットです。",
+        "demo": "デモ",
+        "source": "ソース"
     }
 }

@@ -4,35 +4,24 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cyt's Website</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- css -->
+    <title data-i18n="about.title">關於 — Tim Chen</title>
+    <link rel="icon" type="image/x-icon" href="img/happy.ico">
+    <meta name="description" data-i18n-content="about.description" content="Tim Chen 是 C#／.NET 後端工程師。這裡簡述工作取向、日本留學與 JLPT N1，以及工程讀書會。">
+    <meta name="author" content="Tim Chen">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/site.css">
-    <link rel="stylesheet" type="text/css" href="css/timeline.css">
-    <link rel="stylesheet" type="text/css" href="css/skill.css">
-    <link rel="stylesheet" type="text/css" href="css/lightbox.css">
     <link rel="stylesheet" href="fonts/fontawesome/css/all.css">
-    <!-- js -->
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/showDetail.js"></script>
-    <script type="text/javascript" src="js/ajax.js"></script>
-    <script type="text/javascript" src="js/lightbox.js"></script>
     <script type="text/javascript" src="js/i18n.js"></script>
-    <!-- google AdSense -->
-    <script data-ad-client="ca-pub-8569537755937952" async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body class="site-page">
-    <!-- Navigation -->
     <div id="nav">
         <nav class="navbar navbar-expand-sm navbar-custom">
             <div class="container">
-                <button style="float: right;" class="navbar-toggler text-white" type="button" data-toggle="collapse"
+                <button class="navbar-toggler text-white" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
@@ -40,20 +29,20 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                     <ul class="nav navbar-nav">
                         <li class="nav-item">
-                            <a class="navbar-brand" href="index.html">Cyt's Website</a>
+                            <a class="navbar-brand" href="index.html">Tim Chen</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="about.html" data-i18n="nav.about" aria-current="page">About</a>
+                            <a class="nav-link" href="about.html" data-i18n="nav.about" aria-current="page">關於</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+                            <a class="nav-link" href="Portfolio.html" data-i18n="nav.portfolio">作品集</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="tools.html" data-i18n="nav.tools">Tools</a>
+                            <a class="nav-link" href="tools.html" data-i18n="nav.tools">工具</a>
                         </li>
                         <li class="nav-item align-items-center d-flex">
-                            <select id="langSelect" onchange="i18n.setLanguage(this.value)">
-                                <option value="zh">中文</option>
+                            <select id="langSelect" onchange="i18n.setLanguage(this.value)" aria-label="Language">
+                                <option value="zh" selected>中文</option>
                                 <option value="en">English</option>
                                 <option value="ja">日本語</option>
                             </select>
@@ -66,80 +55,36 @@
 
     <main class="site-wrap">
         <header class="site-hero">
-            <h1 data-i18n="about.page.title">自我介紹</h1>
+            <p class="site-kicker">Tim Chen</p>
+            <h1 data-i18n="about.heading">關於</h1>
+            <p class="site-lead" data-i18n="about.lead">陳昱廷／Yu-Ting Chen。我用 C#／.NET 把既有後端改得更快、更穩，也更容易安全地修改。</p>
         </header>
         <article class="site-card site-prose">
-            <p>
-                <span data-i18n="about.page.intro_name"></span>
-                <span data-i18n="about.page.intro_work"></span>
-            </p>
-            
-            <p data-i18n="about.page.belief"></p>
-            
-            <hr>
-            
-            <p data-i18n="about.page.challenge_intro"></p>
-            
-            <div class="site-years">
-                <p data-i18n="about.page.timeline_2016"></p>
-                <p data-i18n="about.page.timeline_2017"></p>
-                <p data-i18n="about.page.timeline_2018"></p>
-                <p data-i18n="about.page.timeline_2019"></p>
-                <p data-i18n="about.page.timeline_2020"></p>
-                <p data-i18n="about.page.timeline_2021"></p>
-                <p>
-                    <span data-i18n="about.page.timeline_2022_1"></span>
-                    <a target="_blank" href="https://youtu.be/fJRynBXYFto?si=3Wouim0S6mCeNkSk&t=1019" class="timeline-link" data-i18n="about.page.timeline_2022_2"></a>
-                    <span data-i18n="about.page.timeline_2022_3"></span>
-                </p>
-                <p>
-                    <span data-i18n="about.page.timeline_2023_1"></span>
-                    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.inosisi.level" class="timeline-link" data-i18n="about.page.timeline_2023_2"></a>
-                </p>
-                <p data-i18n="about.page.timeline_2024"></p>
-                <p data-i18n="about.page.timeline_future"></p>
+            <p data-i18n="about.engineering">2026 年 3 月起在 Gogoro 做 .NET 後端服務開發與既有系統改善。在那之前，2020 年 8 月到 2023 年 4 月於 Titansoft 擔任 Product Developer，參與 REST／gRPC 微服務；2020 年也在同一間公司實習。</p>
+            <p data-i18n="about.japan">2024–2025 年在日本語言學校留學，已取得 JLPT N1。這是跨文化學習和日語能力，不是日本工作經驗，也不表示商務場合的母語程度。</p>
+            <p data-i18n="about.sharing">在 Titansoft 時組織過工程讀書會，把實務上遇到的問題拿出來講清楚、一起對做法。</p>
+            <p data-i18n="about.life">工作之外會騎車、爬山，也喜歡把一件事慢慢做完。</p>
+            <p><a class="site-text-link" href="Portfolio.html#work" data-i18n="home.ctaWork">查看工程成果</a></p>
+            <div class="site-contact-links">
+                <a class="site-btn" href="mailto:tim376755000@gmail.com">tim376755000@gmail.com</a>
+                <a class="site-btn ghost" href="https://github.com/Chenyuting0916" target="_blank" rel="noopener">GitHub</a>
+                <a class="site-btn ghost" href="https://www.linkedin.com/in/yuting-chen-63738b135/" target="_blank" rel="noopener">LinkedIn</a>
             </div>
-            <hr>
-            <p data-i18n="about.page.closing"></p>
         </article>
     </main>
 
-    <!-- Footer -->
     <nav id="footer" class="navbar">
         <div class="container text-center justify-content-center">
             <div>
                 <ul class="list-inline">
-                    <li class="list-inline-item">
-                        <a title="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100003963670423">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a title="youtube" target="_blank" href="https://www.youtube.com/channel/UCDj4j4qIs57GtVu6r4crRxQ">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a title="line-sticker" target="_blank" href="https://store.line.me/stickershop/product/10363859/zh-Hant">
-                            <i class="fas fa-shopping-cart"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a title="mail" target="_blank" href="mailto:tim376755000@gmail.com">
-                            <i class="far fa-envelope"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a title="github" target="_blank" href="https://github.com/Chenyuting0916">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </li>
+                    <li class="list-inline-item"><a title="GitHub" target="_blank" rel="noopener" href="https://github.com/Chenyuting0916"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a title="LinkedIn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/yuting-chen-63738b135/"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a title="Email" href="mailto:tim376755000@gmail.com"><i class="far fa-envelope"></i></a></li>
                 </ul>
-                <p><a target="_blank" href="https://github.com/Chenyuting0916">Chen Yu Ting</a></p>
+                <p>Tim Chen</p>
             </div>
         </div>
     </nav>
-
-    <link rel="stylesheet" href="css/about.css">
 </body>
+
 </html>
