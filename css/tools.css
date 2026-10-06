@@ -1,3 +1,9 @@
+html.tools-root {
+    padding-bottom: 0 !important;
+    width: auto !important;
+    scrollbar-gutter: stable;
+}
+
 body.tools-page {
     background:
         radial-gradient(920px 420px at -10% -20%, rgba(107, 77, 168, 0.18), transparent 60%),
