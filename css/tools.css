@@ -1,17 +1,41 @@
+html.tools-root {
+    padding-bottom: 0 !important;
+    width: auto !important;
+    scrollbar-gutter: stable;
+}
+
 body.tools-page {
     background:
         radial-gradient(920px 420px at -10% -20%, rgba(107, 77, 168, 0.18), transparent 60%),
         radial-gradient(760px 380px at 110% -10%, rgba(61, 116, 208, 0.16), transparent 55%),
         #f3f5fb;
     color: #172033;
-    padding-bottom: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0 !important;
+    width: auto !important;
+    overflow-x: clip;
     font-family: "Segoe UI", "PingFang TC", "Hiragino Sans", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
 }
 
-body.tools-page #footer.fixed-bottom {
-    position: static;
-    margin-top: 28px;
-    z-index: 1;
+body.tools-page #nav {
+    flex: 0 0 auto;
+}
+
+body.tools-page .container {
+    max-width: 1440px;
+}
+
+body.tools-page #footer {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    margin-top: 40px;
+    flex: 0 0 auto;
 }
 
 body.tools-page h1,
@@ -55,8 +79,9 @@ body.tools-page [hidden] {
 }
 
 .tk-wrap {
-    width: min(1140px, calc(100% - 32px));
+    width: min(1440px, calc(100% - 48px));
     margin: 28px auto 0;
+    flex: 1 0 auto;
 }
 
 .tk-hero {
@@ -115,6 +140,53 @@ body.tools-page [hidden] {
     gap: 8px;
     position: sticky;
     top: 16px;
+    max-height: calc(100vh - 32px);
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 4px;
+}
+
+.tk-group-label {
+    margin: 2px 8px 0;
+    color: #8b95a7;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.tk-more {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 4px;
+    border: 0;
+    background: transparent;
+    color: #526178;
+    border-radius: 12px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.tk-more i {
+    transition: transform 0.15s ease;
+}
+
+.tk-more.is-open i {
+    transform: rotate(180deg);
+}
+
+.tk-more-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tk-more-panel.is-collapsed {
+    display: none;
 }
 
 .tk-tab {
@@ -744,6 +816,47 @@ body.tools-page [hidden] {
     color: #b45309;
 }
 
+.tk-uuid {
+    margin: 14px 0 0;
+    padding: 16px;
+    border-radius: 14px;
+    background: #f6f8fc;
+    color: #172033;
+    font-size: 18px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.tk-regex-hit {
+    background: #efe7ff;
+    color: #4c1d95;
+    border-radius: 4px;
+    padding: 0 2px;
+}
+
+.tk-url-table {
+    width: 100%;
+    margin-top: 12px;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.tk-url-table th,
+.tk-url-table td {
+    text-align: left;
+    padding: 8px 10px;
+    border-top: 1px solid #e7edf5;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+}
+
+.tk-url-table th {
+    width: 140px;
+    color: #7b8798;
+    font-weight: 700;
+}
+
 .tk-toast {
     position: fixed;
     left: 50%;
@@ -788,10 +901,22 @@ body.tools-page [hidden] {
         top: 0;
         z-index: 20;
         flex-direction: row;
+        max-height: none;
         overflow-x: auto;
+        overflow-y: hidden;
         padding: 8px 0;
         background: rgba(243, 245, 251, 0.94);
         margin: 0 -4px;
+    }
+
+    .tk-group-label,
+    .tk-more {
+        display: none;
+    }
+
+    .tk-more-panel,
+    .tk-more-panel.is-collapsed {
+        display: contents;
     }
 
     .tk-tab {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" class="tools-root">
 
 <head>
     <meta charset="utf-8" />
@@ -59,7 +59,7 @@
             <div>
                 <p class="tk-kicker" data-i18n="tools.kicker">離線可用</p>
                 <h1 class="tk-title" data-i18n="tools.title">常用工具</h1>
-                <p class="tk-lead" data-i18n="tools.lead">時間戳、JSON、YAML、MD5、Base64 / Hex、JWT。全部在這台瀏覽器裡算完，那些網站掛了也能用。</p>
+                <p class="tk-lead" data-i18n="tools.lead">時間戳、JSON、YAML、MD5、編碼、JWT，另外還有 URL、UUID、正規表示式和進位轉換。全部在這台瀏覽器裡算完，那些網站掛了也能用。</p>
             </div>
             <div class="tk-privacy">
                 <i class="fas fa-lock" aria-hidden="true"></i>
@@ -69,6 +69,7 @@
 
         <div class="tk-shell">
             <div class="tk-tabs" role="tablist" aria-label="tools">
+                <p class="tk-group-label" data-i18n="tools.group.common">常用</p>
                 <button type="button" class="tk-tab is-feature is-active" role="tab" id="tab-timestamp" data-tool="timestamp" aria-selected="true" aria-controls="panel-timestamp">
                     <i class="fas fa-clock" aria-hidden="true"></i>
                     <span>
@@ -111,6 +112,40 @@
                         <small data-i18n="tools.nav.jwtHint">解碼與簽章驗證</small>
                     </span>
                 </button>
+                <button type="button" class="tk-more" id="moreTools" aria-expanded="false" aria-controls="moreToolsPanel">
+                    <span data-i18n="tools.more">其他工具</span>
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div id="moreToolsPanel" class="tk-more-panel is-collapsed">
+                    <button type="button" class="tk-tab" role="tab" id="tab-url" data-tool="url" aria-selected="false" aria-controls="panel-url">
+                        <i class="fas fa-link" aria-hidden="true"></i>
+                        <span>
+                            <strong data-i18n="tools.nav.url">URL</strong>
+                            <small data-i18n="tools.nav.urlHint">編碼、解碼、解析參數</small>
+                        </span>
+                    </button>
+                    <button type="button" class="tk-tab" role="tab" id="tab-uuid" data-tool="uuid" aria-selected="false" aria-controls="panel-uuid">
+                        <i class="fas fa-id-card" aria-hidden="true"></i>
+                        <span>
+                            <strong data-i18n="tools.nav.uuid">UUID</strong>
+                            <small data-i18n="tools.nav.uuidHint">產生隨機識別碼</small>
+                        </span>
+                    </button>
+                    <button type="button" class="tk-tab" role="tab" id="tab-regex" data-tool="regex" aria-selected="false" aria-controls="panel-regex">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <span>
+                            <strong data-i18n="tools.nav.regex">正規表示式</strong>
+                            <small data-i18n="tools.nav.regexHint">找符合的片段</small>
+                        </span>
+                    </button>
+                    <button type="button" class="tk-tab" role="tab" id="tab-radix" data-tool="radix" aria-selected="false" aria-controls="panel-radix">
+                        <i class="fas fa-calculator" aria-hidden="true"></i>
+                        <span>
+                            <strong data-i18n="tools.nav.radix">進位轉換</strong>
+                            <small data-i18n="tools.nav.radixHint">二、八、十、十六進位</small>
+                        </span>
+                    </button>
+                </div>
             </div>
 
             <div class="tk-stage">
@@ -200,7 +235,7 @@
                                 <textarea class="tk-area" id="jsonOutput" spellcheck="false" readonly></textarea>
                             </div>
                         </div>
-                        <p class="tk-hint" data-i18n="tools.json.shortcut">Ctrl 或 ⌘ + Enter 也可以格式化</p>
+                        <p class="tk-hint" data-i18n="tools.json.shortcut">貼上 JSON 會直接排版。Ctrl 或 ⌘ + Enter 也可以。</p>
                     </div>
                 </div>
 
@@ -338,13 +373,86 @@
                         </div>
                     </div>
                 </div>
+
+                <div id="panel-url" data-panel="url" role="tabpanel" aria-labelledby="tab-url" hidden>
+                    <div class="tk-card">
+                        <h2 class="tk-panel-title" data-i18n="tools.nav.url">URL</h2>
+                        <div class="tk-toolbar">
+                            <div class="tk-seg" id="urlMode">
+                                <button type="button" data-mode="encode" class="is-on" data-i18n="tools.url.encode">編碼參數</button>
+                                <button type="button" data-mode="decode" data-i18n="tools.url.decode">解碼</button>
+                                <button type="button" data-mode="encode-uri" data-i18n="tools.url.encodeUri">編碼整段</button>
+                            </div>
+                            <button type="button" class="tk-btn" id="urlCopy" data-i18n="tools.copy">複製</button>
+                            <button type="button" class="tk-btn" id="urlClear" data-i18n="tools.clear">清空</button>
+                        </div>
+                        <p class="tk-banner err" id="urlBanner" hidden></p>
+                        <div class="tk-editors">
+                            <div>
+                                <div class="tk-editor-head"><span data-i18n="tools.input">輸入</span></div>
+                                <textarea class="tk-area" id="urlIn" spellcheck="false" data-i18n-placeholder="tools.url.placeholder" placeholder="貼上文字、URL，或 a=1&amp;b=2"></textarea>
+                            </div>
+                            <div>
+                                <div class="tk-editor-head"><span data-i18n="tools.output">結果</span></div>
+                                <textarea class="tk-area" id="urlOut" spellcheck="false" readonly></textarea>
+                            </div>
+                        </div>
+                        <div id="urlParts"></div>
+                    </div>
+                </div>
+
+                <div id="panel-uuid" data-panel="uuid" role="tabpanel" aria-labelledby="tab-uuid" hidden>
+                    <div class="tk-card">
+                        <h2 class="tk-panel-title" data-i18n="tools.nav.uuid">UUID</h2>
+                        <div class="tk-toolbar">
+                            <button type="button" class="tk-btn primary" id="uuidNew" data-i18n="tools.uuid.generate">產生一組</button>
+                            <button type="button" class="tk-btn" id="uuidMany" data-i18n="tools.uuid.generateMany">產生 5 組</button>
+                            <button type="button" class="tk-btn" id="uuidCopy" data-i18n="tools.copy">複製</button>
+                        </div>
+                        <p class="tk-hint" data-i18n="tools.uuid.hint">使用這台瀏覽器的隨機數，不會送到別的地方。</p>
+                        <pre class="tk-uuid" id="uuidOut"></pre>
+                    </div>
+                </div>
+
+                <div id="panel-regex" data-panel="regex" role="tabpanel" aria-labelledby="tab-regex" hidden>
+                    <div class="tk-card">
+                        <h2 class="tk-panel-title" data-i18n="tools.nav.regex">正規表示式</h2>
+                        <label class="tk-label" for="regexPattern" data-i18n="tools.regex.pattern">表示式</label>
+                        <input class="tk-field" id="regexPattern" autocomplete="off" spellcheck="false" data-i18n-placeholder="tools.regex.placeholderPattern" placeholder="例如 (\w+)=(\d+)">
+                        <div class="tk-seg" id="regexFlags" style="margin-top:10px;">
+                            <button type="button" data-flag="i">i</button>
+                            <button type="button" data-flag="m">m</button>
+                        </div>
+                        <p class="tk-banner err" id="regexBanner" hidden></p>
+                        <label class="tk-label" for="regexText" data-i18n="tools.regex.text">測試文字</label>
+                        <textarea class="tk-area" id="regexText" spellcheck="false" data-i18n-placeholder="tools.regex.placeholderText" placeholder="把要搜尋的文字貼在這裡"></textarea>
+                        <div class="tk-editor-head" style="margin-top:12px;"><span id="regexCount"></span></div>
+                        <pre class="tk-uuid" id="regexResult"></pre>
+                    </div>
+                </div>
+
+                <div id="panel-radix" data-panel="radix" role="tabpanel" aria-labelledby="tab-radix" hidden>
+                    <div class="tk-card">
+                        <h2 class="tk-panel-title" data-i18n="tools.nav.radix">進位轉換</h2>
+                        <label class="tk-label" data-i18n="tools.radix.from">來源進位</label>
+                        <div class="tk-seg" id="radixFrom">
+                            <button type="button" data-base="2" data-i18n="tools.radix.bin">二進位</button>
+                            <button type="button" data-base="8" data-i18n="tools.radix.oct">八進位</button>
+                            <button type="button" data-base="10" class="is-on" data-i18n="tools.radix.dec">十進位</button>
+                            <button type="button" data-base="16" data-i18n="tools.radix.hex">十六進位</button>
+                        </div>
+                        <input class="tk-field" id="radixIn" autocomplete="off" spellcheck="false" data-i18n-placeholder="tools.radix.placeholder" placeholder="貼上數字，例如 255 或 0xff">
+                        <p class="tk-banner err" id="radixBanner" hidden></p>
+                        <div class="tk-result" id="radixResult"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="tk-toast" id="tkToast" role="status" aria-live="polite"></div>
 
-    <nav id="footer" class="navbar fixed-bottom">
+    <nav id="footer" class="navbar">
         <div class="container text-center justify-content-center">
             <div>
                 <ul class="list-inline">

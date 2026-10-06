@@ -391,6 +391,126 @@
         return JSON.stringify(value, null, indent);
     }
 
+    function transformUrl(text, mode) {
+        var raw = String(text);
+        if (!raw) throw fail('empty');
+        if (mode === 'encode') return encodeURIComponent(raw);
+        if (mode === 'encode-uri') return encodeURI(raw);
+        if (mode === 'decode') {
+            try {
+                return decodeURIComponent(raw.replace(/\+/g, ' '));
+            } catch (e) {
+                throw fail('invalid-url');
+            }
+        }
+        throw fail('invalid-input');
+    }
+
+    function parseUrlInfo(text) {
+        var raw = String(text).trim();
+        if (!raw) return null;
+        var info = { protocol: '', host: '', pathname: '', params: [] };
+        var query = '';
+        if (/^[a-z][a-z0-9+.-]*:/i.test(raw)) {
+            var url;
+            try {
+                url = new URL(raw);
+            } catch (e) {
+                return null;
+            }
+            info.protocol = url.protocol;
+            info.host = url.host;
+            info.pathname = url.pathname;
+            query = url.search.replace(/^\?/, '');
+        } else if (raw.indexOf('=') >= 0) {
+            var qPos = raw.indexOf('?');
+            if (qPos >= 0) {
+                info.pathname = raw.slice(0, qPos);
+                query = raw.slice(qPos + 1);
+            } else {
+                query = raw.replace(/^\?/, '');
+            }
+        } else {
+            return null;
+        }
+        if (!query) return info;
+        query.split('&').forEach(function (part) {
+            if (!part) return;
+            var eq = part.indexOf('=');
+            var key = eq >= 0 ? part.slice(0, eq) : part;
+            var value = eq >= 0 ? part.slice(eq + 1) : '';
+            try { key = decodeURIComponent(key.replace(/\+/g, ' ')); } catch (e) {}
+            try { value = decodeURIComponent(value.replace(/\+/g, ' ')); } catch (e) {}
+            info.params.push({ key: key, value: value });
+        });
+        return info;
+    }
+
+    function testRegex(pattern, flags, text) {
+        if (!String(pattern)) throw fail('empty');
+        var safeFlags = String(flags || '').replace(/[^gimsuy]/g, '');
+        var scanFlags = safeFlags.indexOf('g') >= 0 ? safeFlags : safeFlags + 'g';
+        var re;
+        try {
+            re = new RegExp(pattern, scanFlags);
+        } catch (e) {
+            throw fail('invalid-regex', e.message);
+        }
+        var matches = [];
+        var found;
+        var guard = 0;
+        while ((found = re.exec(String(text))) && guard < 200) {
+            matches.push({
+                index: found.index,
+                value: found[0],
+                groups: found.slice(1)
+            });
+            if (found[0] === '') re.lastIndex += 1;
+            guard += 1;
+        }
+        return matches;
+    }
+
+    function convertRadix(text, fromBase) {
+        var raw = String(text).trim().replace(/[\s_]/g, '');
+        if (!raw) throw fail('empty');
+        var neg = raw.charAt(0) === '-';
+        if (neg || raw.charAt(0) === '+') raw = raw.slice(1);
+        var base = Number(fromBase);
+        if (base === 16 && /^0x/i.test(raw)) raw = raw.slice(2);
+        if (base === 2 && /^0b/i.test(raw)) raw = raw.slice(2);
+        if (base === 8 && /^0o/i.test(raw)) raw = raw.slice(2);
+        if (!raw || !/^[0-9a-z]+$/i.test(raw)) throw fail('invalid-number');
+        var digits = '0123456789abcdefghijklmnopqrstuvwxyz';
+        for (var i = 0; i < raw.length; i++) {
+            if (digits.indexOf(raw.charAt(i).toLowerCase()) >= base) throw fail('invalid-number');
+        }
+        var value;
+        try {
+            if (base === 16) value = BigInt('0x' + raw);
+            else if (base === 2) value = BigInt('0b' + raw);
+            else if (base === 8) value = BigInt('0o' + raw);
+            else if (base === 10) value = BigInt(raw);
+            else throw fail('invalid-number');
+        } catch (e) {
+            throw fail('invalid-number');
+        }
+        if (neg) value = -value;
+        function write(baseOut) {
+            var n = value < 0n ? -value : value;
+            if (n === 0n) return value < 0n ? '-0' : '0';
+            var alphabet = '0123456789abcdef';
+            var out = '';
+            var b = BigInt(baseOut);
+            while (n > 0n) {
+                out = alphabet[Number(n % b)] + out;
+                n = n / b;
+            }
+            return value < 0n ? '-' + out : out;
+        }
+        return { bin: write(2), oct: write(8), dec: write(10), hex: write(16) };
+    }
+
     async function verifyJwtHmac(decoded, secret) {
         const alg = decoded && decoded.header ? decoded.header.alg : '';
         const hashes = { HS256: 'SHA-256', HS384: 'SHA-384', HS512: 'SHA-512' };
@@ -424,6 +544,10 @@
         parseDateInput: parseDateInput,
         relativeParts: relativeParts,
         formatJson: formatJson,
-        sortJson: sortJson
+        sortJson: sortJson,
+        transformUrl: transformUrl,
+        parseUrlInfo: parseUrlInfo,
+        testRegex: testRegex,
+        convertRadix: convertRadix
     };
 });
