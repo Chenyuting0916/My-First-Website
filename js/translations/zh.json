@@ -36,6 +36,7 @@
     "timeline": {
         "title": "時間軸",
         "readMore": "閱讀更多...",
+        "showLess": "收合",
         "items": {
             "titansoft_engineer": {
                 "title": "新加坡商鈦坦科技 產品開發工程師",
