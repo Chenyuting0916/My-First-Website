@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant" class="site-root">
 
 <head>
     <meta charset="utf-8" />
@@ -11,6 +11,7 @@
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
     <link rel="stylesheet" type="text/css" href="css/timeline.css">
     <link rel="stylesheet" type="text/css" href="css/skill.css">
     <link rel="stylesheet" type="text/css" href="css/lightbox.css">
@@ -27,7 +28,7 @@
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
-<body style="background-color:#f6f6f6">
+<body class="site-page">
     <!-- Navigation -->
     <div id="nav">
         <nav class="navbar  navbar-expand-sm  navbar-custom">
@@ -64,72 +65,57 @@
             </div>
         </nav>
     </div>
-    <!-- about -->
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5" style="padding: 30px;">
-                    <h2 data-i18n="about.title">About Me</h2>
-                    <img src="img/about.jpg" class="img-responsive">
-                    <div>
-                        <a target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/">
-                            <h3 data-i18n="about.name">Yu-Ting Chen</h3>
-                        </a>
-                        <p data-i18n="about.description"></p>
-                        <p data-i18n="about.occupation"></p>
-                        <p data-i18n="about.status"></p>
-                        <a target="_blank" href="https://github.com/Chenyuting0916"
-                            class="btn btn-primary btn-lg page-scroll" data-i18n="about.portfolio">My Portfolio</a>
-                    </div>
-                </div>
-                <!-- simple timeline -->
-                <div class="col-sm-6" style="padding: 30px;">
-                    <h2 data-i18n="timeline.title">Timeline</h2>
-                    <div class="row">
-                        <ul class="timeline2">
-                            <li>
-                                <a data-i18n="timeline.items.titansoft_engineer.title"></a>
-                                <a data-i18n="timeline.items.titansoft_engineer.date"></a>
-                            </li>
-                            <li>
-                                <a href="img/timeline/timeline-1.jpg" data-lightbox="image-1" data-title="在鈦坦實習一個月的我"
-                                    class="has-border" data-i18n="timeline.items.titansoft_intern.title"></a>
-                                <a href="img/timeline/timeline-2.jpg" data-lightbox="image-1" data-title="我與我快樂的實習夥伴們"
-                                    class="has-border hide"></a>
-                                <a href="img/timeline/timeline-3.jpg" data-lightbox="image-1"
-                                    data-title="因為疫情，最後一天在公司的我們" class="has-border hide"></a>
-                                <a data-i18n="timeline.items.titansoft_intern.date"></a>
-                            </li>
-                            <li>
-                                <a data-i18n="timeline.items.ta.title"></a>
-                                <a data-i18n="timeline.items.ta.date"></a>
-                            </li>
-                            <li>
-                                <a href="img/timeline/timeline-4.jpg" data-lightbox="image-2" data-title="得了第三名的我"
-                                    class="has-border" data-i18n="timeline.items.competition.title"></a>
-                                <a href="img/timeline/timeline-5.jpg" data-lightbox="image-2" data-title="我很罩的Parter"
-                                    class="has-border hide"></a>
-                                <a data-i18n="timeline.items.competition.date"></a>
-                            </li>
-                            <li>
-                                <a id="showTimeLine" style="color:cadetblue;cursor: pointer;" data-i18n="timeline.readMore">Read More...</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div style="margin-top: 10px;">
-                        <h2 data-i18n="skills.title">Skills</h2>
-                        <a id="showSkill" style="color:cadetblue;cursor: pointer;" data-i18n="timeline.readMore">Read More...</a>
-                    </div>
-                </div>
-            </div>
+    <main class="site-wrap">
+        <header class="site-hero">
+            <h1 data-i18n="about.title">關於我</h1>
+            <p class="site-lead" data-i18n="about.description"></p>
+        </header>
+        <div class="site-grid">
+            <article class="site-card">
+                <img src="img/about.jpg" class="site-photo" alt="">
+                <a class="site-name" target="_blank" href="https://www.instagram.com/___._._._.__.____.__._._._.___/">
+                    <span data-i18n="about.name">陳昱廷 - Yu-Ting Chen</span>
+                </a>
+                <p class="site-meta" data-i18n="about.occupation"></p>
+                <p class="site-meta" data-i18n="about.status"></p>
+                <a target="_blank" href="https://github.com/Chenyuting0916" class="site-btn" data-i18n="about.portfolio">我的作品集</a>
+            </article>
+            <article class="site-card">
+                <h2 data-i18n="timeline.title">時間軸</h2>
+                <ul class="timeline2">
+                    <li>
+                        <a data-i18n="timeline.items.titansoft_engineer.title"></a>
+                        <a class="site-when" data-i18n="timeline.items.titansoft_engineer.date"></a>
+                    </li>
+                    <li>
+                        <a href="img/timeline/timeline-1.jpg" data-lightbox="image-1" data-title="在鈦坦實習一個月的我"
+                            class="has-border" data-i18n="timeline.items.titansoft_intern.title"></a>
+                        <a href="img/timeline/timeline-2.jpg" data-lightbox="image-1" data-title="我與我快樂的實習夥伴們"
+                            class="has-border hide"></a>
+                        <a href="img/timeline/timeline-3.jpg" data-lightbox="image-1"
+                            data-title="因為疫情，最後一天在公司的我們" class="has-border hide"></a>
+                        <a class="site-when" data-i18n="timeline.items.titansoft_intern.date"></a>
+                    </li>
+                    <li>
+                        <a data-i18n="timeline.items.ta.title"></a>
+                        <a class="site-when" data-i18n="timeline.items.ta.date"></a>
+                    </li>
+                    <li>
+                        <a href="img/timeline/timeline-4.jpg" data-lightbox="image-2" data-title="得了第三名的我"
+                            class="has-border" data-i18n="timeline.items.competition.title"></a>
+                        <a href="img/timeline/timeline-5.jpg" data-lightbox="image-2" data-title="我很罩的Parter"
+                            class="has-border hide"></a>
+                        <a class="site-when" data-i18n="timeline.items.competition.date"></a>
+                    </li>
+                </ul>
+                <button type="button" id="showTimeLine" class="site-more" data-i18n="timeline.readMore">閱讀更多...</button>
+                <hr class="site-split">
+                <h2 data-i18n="skills.title">技能</h2>
+                <button type="button" id="showSkill" class="site-more" data-i18n="timeline.readMore">閱讀更多...</button>
+            </article>
         </div>
-    </div>
-    <!-- time-line detail-->
-    <div style="background-color:#666666;">
-        <div id="timelineDetail" class="container">
-            <div class="text-center center" style="padding:30px;margin-top: 30px;">
-                <h2 style="color:white;" data-i18n="timeline.title">Timeline</h2>
-            </div>
+        <section id="timelineDetail" class="site-detail">
+            <h2 data-i18n="timeline.title">時間軸</h2>
             <ul class="timeline">
                 <li class="timeline-inverted">
                     <div class="timeline-badge"><i class="far fa-building"></i></div>
@@ -182,121 +168,71 @@
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div id="closeDetailTimeline" class="timeline-badge" style="cursor: pointer;"><i
-                            class="fas fa-angle-double-up"></i></div>
-                </li>
             </ul>
-        </div>
-    </div>
-    <!-- skill -->
-    <div style="background-color:#666666;">
-        <div id="skillDetail" class="container">
-            <div style="padding:30px;margin-top: 30px;">
-                <div class="text-center center">
-                    <h2 style="color:white;">Skills</h2>
-                </div>
-                <!-- <h3 style="color:white;">Vue3</h3>
-                <div class="progress">
-                    <div class="progress-value1"></div>
-                </div>
-                <h3 style="color:white;">Flutter</h3>
-                <div class="progress">
-                    <div class="progress-value2"></div>
-                </div>
-                <h3 style="color:white;">REST APIs</h3>
-                <div class="progress">
-                    <div class="progress-value3"></div>
-                </div>
-                <h3 style="color:white;">.NET</h3>
-                <div class="progress">
-                    <div class="progress-value4"></div>
-                </div>
-                <h3 style="color:white;">Test (unit, integration)</h3>
-                <div class="progress">
-                    <div class="progress-value5"></div>
-                </div>
-                <h3 style="color:white;">C#</h3>
-                <div class="progress">
-                    <div class="progress-value6"></div>
-                </div> -->
+            <button type="button" id="closeDetailTimeline" class="site-close" aria-label="收合"><i class="fas fa-angle-double-up"></i></button>
+        </section>
+        <section id="skillDetail" class="site-detail">
+            <h2 data-i18n="skills.title">技能</h2>
+            <div class="site-skills">
+                <article class="site-skill">
+                    <h3 data-i18n="skills.frontend.title">前端</h3>
+                    <ul>
+                        <li data-i18n="skills.frontend.items.0">HTML, CSS, JavaScript</li>
+                        <li data-i18n="skills.frontend.items.1">Vue3</li>
+                        <li data-i18n="skills.frontend.items.2">jQuery</li>
+                    </ul>
+                </article>
+                <article class="site-skill">
+                    <h3 data-i18n="skills.backend.title">後端</h3>
+                    <ul>
+                        <li data-i18n="skills.backend.items.0">.NET core</li>
+                        <li data-i18n="skills.backend.items.1">.NET Framework</li>
+                        <li data-i18n="skills.backend.items.2">ASP.NET MVC</li>
+                        <li data-i18n="skills.backend.items.3">RESTful APIs</li>
+                        <li data-i18n="skills.backend.items.4">gRPC</li>
+                    </ul>
+                </article>
+                <article class="site-skill">
+                    <h3 data-i18n="skills.database.title">資料庫</h3>
+                    <ul>
+                        <li data-i18n="skills.database.items.0">MS SQL</li>
+                        <li data-i18n="skills.database.items.1">Firebase</li>
+                        <li data-i18n="skills.database.items.2">Redis</li>
+                    </ul>
+                </article>
+                <article class="site-skill">
+                    <h3 data-i18n="skills.test.title">測試</h3>
+                    <ul>
+                        <li data-i18n="skills.test.items.0">Unit Test (NUnit, xUnit)</li>
+                        <li data-i18n="skills.test.items.1">Integration Test (SpecFlow)</li>
+                    </ul>
+                </article>
+                <article class="site-skill">
+                    <h3 data-i18n="skills.orm.title">ORM</h3>
+                    <ul>
+                        <li data-i18n="skills.orm.items.0">Entity Framework</li>
+                        <li data-i18n="skills.orm.items.1">Dapper</li>
+                    </ul>
+                </article>
+                <article class="site-skill">
+                    <h3 data-i18n="skills.others.title">其他</h3>
+                    <ul>
+                        <li><a target="_blank" href="https://github.com/Chenyuting0916/Level" data-i18n="skills.others.items.0">Flutter</a></li>
+                        <li data-i18n="skills.others.items.1">Kafka</li>
+                        <li data-i18n="skills.others.items.2">K8s</li>
+                        <li data-i18n="skills.others.items.3">Java</li>
+                        <li><a target="_blank" href="https://github.com/Chenyuting0916/flappy-bird" data-i18n="skills.others.items.4">Unity</a></li>
+                        <li data-i18n="skills.others.items.5">Git</li>
+                        <li><a target="_blank" href="https://github.com/Chenyuting0916/MinerMVC" data-i18n="skills.others.items.6">Azure</a></li>
+                    </ul>
+                </article>
             </div>
-            <div class="row">
-                <div class="card col-sm m-1" style="width: 18rem;">
-                    <div class="card-header" data-i18n="skills.frontend.title">
-                        front-end
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item" data-i18n="skills.frontend.items.0">HTML, CSS, JavaScript</li>
-                        <li class="list-group-item" data-i18n="skills.frontend.items.1">Vue3</li>
-                        <li class="list-group-item" data-i18n="skills.frontend.items.2">jQuery</li>
-                    </ul>
-                </div>
-                <div class="card col-sm m-1" style="width: 18rem;">
-                    <div class="card-header" data-i18n="skills.backend.title">
-                        back-end
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item" data-i18n="skills.backend.items.0">.NET core</li>
-                        <li class="list-group-item" data-i18n="skills.backend.items.1">.NET Framework</li>
-                        <li class="list-group-item" data-i18n="skills.backend.items.2">ASP.NET MVC</li>
-                        <li class="list-group-item" data-i18n="skills.backend.items.3">RESTful APIs</li>
-                        <li class="list-group-item" data-i18n="skills.backend.items.4">gRPC</li>
-                    </ul>
-                </div>
-                <div class="card col-sm m-1" style="width: 18rem;">
-                    <div class="card-header" data-i18n="skills.database.title">
-                        database
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item" data-i18n="skills.database.items.0">MS SQL</li>
-                        <li class="list-group-item" data-i18n="skills.database.items.1">Firebase</li>
-                        <li class="list-group-item" data-i18n="skills.database.items.2">Redis</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="card col-sm m-1" style="width: 18rem;">
-                    <div class="card-header" data-i18n="skills.test.title">
-                        test
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item" data-i18n="skills.test.items.0">Unit Test (NUnit, xUnit)</li>
-                        <li class="list-group-item" data-i18n="skills.test.items.1">Integration Test (SpecFlow)</li>
-                    </ul>
-                </div>
+            <button type="button" id="closeDetailSkill" class="site-close" aria-label="收合"><i class="fas fa-angle-double-up"></i></button>
+        </section>
+    </main>
 
-
-                <div class="card col-sm m-1" style="width: 18rem;">
-                    <div class="card-header" data-i18n="skills.orm.title">
-                        orm
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item" data-i18n="skills.orm.items.0">Entity Framework</li>
-                        <li class="list-group-item" data-i18n="skills.orm.items.1">Dapper</li>
-                    </ul>
-                </div>
-                <div class="card col-sm m-1" style="width: 18rem;">
-                    <div class="card-header" data-i18n="skills.others.title">
-                        others
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><u><a target="_blank" href="https://github.com/Chenyuting0916/Level" data-i18n="skills.others.items.0">Flutter</a></u></li>
-                        <li class="list-group-item" data-i18n="skills.others.items.1">Kafka</li>
-                        <li class="list-group-item" data-i18n="skills.others.items.2">K8s</li>
-                        <li class="list-group-item" data-i18n="skills.others.items.3">Java</li>
-                        <li class="list-group-item"><u><a target="_blank" href="https://github.com/Chenyuting0916/flappy-bird" data-i18n="skills.others.items.4">Unity</a></u></li>
-                        <li class="list-group-item" data-i18n="skills.others.items.5">Git</li>
-                        <li class="list-group-item"><u><a target="_blank" href="https://github.com/Chenyuting0916/MinerMVC" data-i18n="skills.others.items.6">Azure</a></u></li>
-                    </ul>
-                </div>
-            </div>
-            <div id="closeDetailSkill" class="timeline-badge text-center" style="cursor: pointer;color: white;"><i
-                    class="fas fa-angle-double-up"></i></div>
-        </div>
-    </div>
     <!-- footer -->
-    <nav id="footer" class="navbar fixed-bottom">
+    <nav id="footer" class="navbar">
         <div class="container text-center justify-content-center">
             <div>
                 <ul class="list-inline">
@@ -318,11 +254,7 @@
                             href="https://www.instagram.com/tim_learn_software/"><i class="fab fa-instagram"></i></a>
                     </li>
                 </ul>
-                <p>
-                    <a title="instagram" target="_blank" href="https://www.instagram.com/tim_learn_software/">- Chen Yu
-                        Ting &nbsp;&nbsp;</a>
-                    <a target="_blank" href="https://www.facebook.com/profile.php?id=100003963670423" id="sideBar"></a>
-                </p>
+                <p><a target="_blank" href="https://github.com/Chenyuting0916">Chen Yu Ting</a></p>
             </div>
         </div>
     </nav>

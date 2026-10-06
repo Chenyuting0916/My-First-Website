@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant" class="site-root">
 
 <head>
     <meta charset="utf-8" />
@@ -10,6 +10,7 @@
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
     <link rel="stylesheet" type="text/css" href="css/timeline.css">
     <link rel="stylesheet" type="text/css" href="css/skill.css">
     <link rel="stylesheet" type="text/css" href="css/lightbox.css">
@@ -26,7 +27,7 @@
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
-<body style="background-color:#f6f6f6">
+<body class="site-page">
     <!-- Navigation -->
     <div id="nav">
         <nav class="navbar  navbar-expand-sm  navbar-custom">
@@ -44,8 +45,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="about.html" data-i18n="nav.about">About</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="Portfolio.html" data-i18n="nav.portfolio" aria-current="page">Portfolio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="tools.html" data-i18n="nav.tools">Tools</a>
@@ -62,179 +63,96 @@
             </div>
         </nav>
     </div>
-    <!-- portfolio -->
-    <div class="container clearfix">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="text-center center" style="margin-top: 30px;">
-                            <h3 data-i18n="portfolio.section_2020.title">2020以降</h3>
-                        </div>
+    <main class="site-wrap">
+        <header class="site-hero">
+            <h1 data-i18n="nav.portfolio">作品集</h1>
+        </header>
+        <section class="site-section">
+            <h2 data-i18n="portfolio.section_2020.title">2020年之後</h2>
+            <div class="site-projects">
+                <article class="site-project">
+                    <a href="img/portfolio/protfolio-29.png" data-lightbox="image-6" data-title="Japanese Vocabulary Website" class="site-shot has-border">
+                        <img src="img/portfolio/protfolio-29.png" alt="Japanese Vocabulary Website">
+                    </a>
+                    <a href="img/portfolio/protfolio-28.png" data-lightbox="image-6" data-title="Japanese Vocabulary Website" class="has-border hide"></a>
+                    <a href="img/portfolio/protfolio-27.png" data-lightbox="image-6" data-title="Japanese Vocabulary Website" class="has-border hide"></a>
+                    <a href="img/portfolio/protfolio-26.png" data-lightbox="image-6" data-title="Japanese Vocabulary Website" class="has-border hide"></a>
+                    <a href="img/portfolio/protfolio-25.png" data-lightbox="image-6" data-title="Japanese Vocabulary Website" class="has-border hide"></a>
+                    <a href="img/portfolio/protfolio-24.png" data-lightbox="image-6" data-title="Japanese Vocabulary Website" class="has-border hide"></a>
+                    <a href="img/portfolio/protfolio-23.png" data-lightbox="image-6" data-title="Japanese Vocabulary Website" class="has-border hide"></a>
+                    <a href="img/portfolio/protfolio-22.png" data-lightbox="image-6" data-title="Japanese Vocabulary Website" class="has-border hide"></a>
+                    <p data-i18n="portfolio.section_2020.projects.japanese.description">利用Python Flask框架製作的日文單字學習網站，讓學習日語更有效率。</p>
+                    <div class="site-links">
+                        <a target="_blank" href="https://cyt.pythonanywhere.com/japanese/" data-i18n="portfolio.common.demo">演示</a>
+                        <a target="_blank" href="https://github.com/Chenyuting0916/LearnFlask" data-i18n="portfolio.common.source">原始碼</a>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4" style="padding-bottom: 30px;">
-                        <div class="box">
-                            <a href="img/portfolio/protfolio-29.png" data-lightbox="image-6"
-                                data-title="Japanese Vocabulary Website" class="has-border">
-                                <img src="img/portfolio/protfolio-29.png" alt="Japanese Vocabulary Website"
-                                    class="img-fluid" style="height: 200px;width: 100%;">
-                            </a>
-                            <a href="img/portfolio/protfolio-28.png" data-lightbox="image-6"
-                                data-title="Japanese Vocabulary Website" class="has-border hide"></a>
-                            <a href="img/portfolio/protfolio-27.png" data-lightbox="image-6"
-                                data-title="Japanese Vocabulary Website" class="has-border hide"></a>
-                            <a href="img/portfolio/protfolio-26.png" data-lightbox="image-6"
-                                data-title="Japanese Vocabulary Website" class="has-border hide"></a>
-                            <a href="img/portfolio/protfolio-25.png" data-lightbox="image-6"
-                                data-title="Japanese Vocabulary Website" class="has-border hide"></a>
-                            <a href="img/portfolio/protfolio-24.png" data-lightbox="image-6"
-                                data-title="Japanese Vocabulary Website" class="has-border hide"></a>
-                            <a href="img/portfolio/protfolio-23.png" data-lightbox="image-6"
-                                data-title="Japanese Vocabulary Website" class="has-border hide"></a>
-                            <a href="img/portfolio/protfolio-22.png" data-lightbox="image-6"
-                                data-title="Japanese Vocabulary Website" class="has-border hide"></a>
-                            <p style="text-align: center; margin: 10px 0; font-size: 14px; color: #333;"
-                                data-i18n="portfolio.section_2020.projects.japanese.description">
-                                利用Python Flask框架製作的日文單字學習網站，讓學習日語更有效率。
-                            </p>
-                            <div style="text-align: right; margin-top: 10px;">
-                                <a target="_blank" href="https://cyt.pythonanywhere.com/japanese/"
-                                    style="color: blue; text-decoration: none; margin-right: 10px;"
-                                    data-i18n="portfolio.common.demo">Demo</a>
-                                <a target="_blank" href="https://github.com/Chenyuting0916/LearnFlask"
-                                    style="color: blue; text-decoration: none;"
-                                    data-i18n="portfolio.common.source">Github</a>
-                            </div>
-                        </div>
+                </article>
+                <article class="site-project">
+                    <a href="img/portfolio/protfolio-16.png" data-lightbox="image-4" data-title="Azure CRUD Website" class="site-shot has-border">
+                        <img src="img/portfolio/protfolio-16.png" alt="Azure CRUD Website">
+                    </a>
+                    <a href="img/portfolio/protfolio-21.png" data-lightbox="image-4" data-title="Level App Features" class="has-border hide"></a>
+                    <p data-i18n="portfolio.section_2020.projects.azure.description">使用Azure搭建的簡單網站，支持CRUD（創建、讀取、更新、刪除）操作。</p>
+                    <div class="site-links">
+                        <a target="_blank" href="https://timeminer.azurewebsites.net/" data-i18n="portfolio.common.demo">演示</a>
+                        <a target="_blank" href="https://github.com/Chenyuting0916/MinerMVC/blob/master/MinerMVC/Controllers/CustomExcelController.cs" data-i18n="portfolio.common.source">原始碼</a>
                     </div>
-                    <div class="col-sm-4" style="padding-bottom: 30px;">
-                        <div class="box">
-                            <a href="img/portfolio/protfolio-16.png" data-lightbox="image-4"
-                                data-title="Azure CRUD Website" class="has-border">
-                                <img src="img/portfolio/protfolio-16.png" alt="image" class="img-fluid"
-                                    style="height: 200px;width: 100%;">
-                            </a>
-                            <a href="img/portfolio/protfolio-21.png" data-lightbox="image-4"
-                                data-title="Level App Features" class="has-border hide"></a>
-                            <p style="text-align: center; margin: 10px 0; font-size: 14px; color: #333;"
-                                data-i18n="portfolio.section_2020.projects.azure.description">
-                                This is a simple website using Azure that supports CRUD (Create, Read, Update, Delete)
-                                operations.
-                            </p>
-                            <div style="text-align: right; margin-top: 10px;">
-                                <a target="_blank" href="https://timeminer.azurewebsites.net/"
-                                    style="color: blue; text-decoration: none; margin-right: 10px;"
-                                    data-i18n="portfolio.common.demo">Link</a>
-                                <a target="_blank"
-                                    href="https://github.com/Chenyuting0916/MinerMVC/blob/master/MinerMVC/Controllers/CustomExcelController.cs"
-                                    style="color: blue; text-decoration: none;"
-                                    data-i18n="portfolio.common.source">Github</a>
-                            </div>
-                        </div>
+                </article>
+                <article class="site-project">
+                    <a href="img/portfolio/protfolio-17.jpg" data-lightbox="image-5" data-title="Level App" class="site-shot has-border">
+                        <img src="img/portfolio/protfolio-17.jpg" alt="Level App">
+                    </a>
+                    <a href="img/portfolio/protfolio-18.jpg" data-lightbox="image-5" data-title="Level App Features" class="has-border hide"></a>
+                    <a href="img/portfolio/protfolio-19.jpg" data-lightbox="image-5" data-title="Level App UI" class="has-border hide"></a>
+                    <a href="img/portfolio/protfolio-20.jpg" data-lightbox="image-5" data-title="Level App Settings" class="has-border hide"></a>
+                    <p data-i18n="portfolio.section_2020.projects.level.description">使用Flutter和Firebase開發的專案，已經在Google Play上發布。主要目標是幫助人們提高自律性。</p>
+                    <div class="site-links">
+                        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.inosisi.level" data-i18n="portfolio.common.demo">演示</a>
+                        <a target="_blank" href="https://github.com/Chenyuting0916/Level" data-i18n="portfolio.common.source">原始碼</a>
                     </div>
-                    <div class="col-sm-4" style="padding-bottom: 30px;">
-                        <div class="box">
-                            <a href="img/portfolio/protfolio-17.jpg" data-lightbox="image-5" data-title="Level App"
-                                class="has-border">
-                                <img src="img/portfolio/protfolio-17.jpg" alt="image" class="img-fluid"
-                                    style="height: 200px;width: 100%;">
-                            </a>
-                            <a href="img/portfolio/protfolio-18.jpg" data-lightbox="image-5"
-                                data-title="Level App Features" class="has-border hide"></a>
-                            <a href="img/portfolio/protfolio-19.jpg" data-lightbox="image-5" data-title="Level App UI"
-                                class="has-border hide"></a>
-                            <a href="img/portfolio/protfolio-20.jpg" data-lightbox="image-5"
-                                data-title="Level App Settings" class="has-border hide"></a>
-                            <p style="text-align: center; margin: 10px 0; font-size: 14px; color: #333;"
-                                data-i18n="portfolio.section_2020.projects.level.description">
-                                This project was developed using Flutter and Firebase and has been published on Google
-                                Play. Its main goal is to help people become more self-disciplined.
-                            </p>
-                            <div style="text-align: right; margin-top: 10px;">
-                                <a target="_blank"
-                                    href="https://play.google.com/store/apps/details?id=com.inosisi.level"
-                                    style="color: blue; text-decoration: none; margin-right: 10px;"
-                                    data-i18n="portfolio.common.demo">Link</a>
-                                <a target="_blank" href="https://github.com/Chenyuting0916/Level"
-                                    style="color: blue; text-decoration: none;"
-                                    data-i18n="portfolio.common.source">Github</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </article>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="text-center center" style="margin-top: 30px;">
-                            <h3 data-i18n="portfolio.section_college.title">大学時代の作品（2016～2020）</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4" style="padding-bottom: 30px;">
-                        <div class="box">
-                            <a href="img/portfolio/protfolio-14.jpg" data-lightbox="image-1"
-                                data-i18n="portfolio.section_college.projects.encryption.description"
-                                class="has-border">
-                                <img src="img/portfolio/protfolio-14.jpg" alt="image" class="img-fluid"
-                                    style="height: 200px;width: 100%;">
-                            </a>
-                            <a href="img/portfolio/protfolio-15.jpg" data-lightbox="image-1"
-                                data-title="Encryption System Demo" class="has-border hide"></a>
-                        </div>
-                    </div>
-                    <div class="col-sm-4" style="padding-bottom: 30px;">
-                        <div class="box">
-                            <a href="img/portfolio/protfolio-3.jpg" data-lightbox="image-2"
-                                data-i18n="portfolio.section_college.projects.java_game.description" class="has-border">
-                                <img src="img/portfolio/protfolio-3.jpg" alt="image" class="img-fluid"
-                                    style="height: 200px;width: 100%;">
-                            </a>
-                            <a href="img/portfolio/protfolio-4.jpg" data-lightbox="image-2"
-                                data-title="Java Game Screenshot 1" class="has-border hide"></a>
-                            <a href="img/portfolio/protfolio-5.jpg" data-lightbox="image-2"
-                                data-title="Java Game Screenshot 2" class="has-border hide"></a>
-                            <a href="img/portfolio/protfolio-6.jpg" data-lightbox="image-2"
-                                data-title="Java Game Screenshot 3" class="has-border hide"></a>
-                            <a href="img/portfolio/protfolio-7.jpg" data-lightbox="image-2"
-                                data-title="Java Game Screenshot 4" class="has-border hide"></a>
-                            <a href="img/portfolio/protfolio-8.jpg" data-lightbox="image-2"
-                                data-title="Java Game Screenshot 5" class="has-border hide"></a>
-                            <a href="img/portfolio/protfolio-9.jpg" data-lightbox="image-2"
-                                data-title="Java Game Screenshot 6" class="has-border hide"></a>
-                        </div>
-                    </div>
-                    <div class="col-sm-4" style="padding-bottom: 30px;">
-                        <div class="box">
-                            <a href="img/portfolio/protfolio-10.jpg" data-lightbox="image-3"
-                                data-i18n="portfolio.section_college.projects.desktop_pet.description"
-                                class="has-border">
-                                <img src="img/portfolio/protfolio-10.jpg" alt="image" class="img-fluid"
-                                    style="height: 200px;width: 100%;">
-                            </a>
-                            <a href="img/portfolio/protfolio-11.jpg" data-lightbox="image-3"
-                                data-title="Desktop Pet Screenshot 1" class="has-border hide"></a>
-                            <a href="img/portfolio/protfolio-12.jpg" data-lightbox="image-3"
-                                data-title="Desktop Pet Screenshot 2" class="has-border hide"></a>
-                            <a href="img/portfolio/protfolio-13.jpg" data-lightbox="image-3"
-                                data-title="Desktop Pet Screenshot 3" class="has-border hide"></a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <a target="_blank" href="https://github.com/Chenyuting0916" data-i18n="portfolio.common.more">read
-                        more...</a>
-                </div>
+        </section>
+        <section class="site-section">
+            <h2 data-i18n="portfolio.section_college.title">大學時期作品（2016～2020）</h2>
+            <div class="site-projects">
+                <article class="site-project">
+                    <a href="img/portfolio/protfolio-14.jpg" data-lightbox="image-1" class="site-shot has-border">
+                        <img src="img/portfolio/protfolio-14.jpg" alt="">
+                    </a>
+                    <a href="img/portfolio/protfolio-15.jpg" data-lightbox="image-1" data-title="Encryption System Demo" class="has-border hide"></a>
+                    <p data-i18n="portfolio.section_college.projects.encryption.description"></p>
+                </article>
+                <article class="site-project">
+                    <a href="img/portfolio/protfolio-3.jpg" data-lightbox="image-2" class="site-shot has-border">
+                        <img src="img/portfolio/protfolio-3.jpg" alt="">
+                    </a>
+                    <a href="img/portfolio/protfolio-4.jpg" data-lightbox="image-2" data-title="Java Game Screenshot 1" class="has-border hide"></a>
+                    <a href="img/portfolio/protfolio-5.jpg" data-lightbox="image-2" data-title="Java Game Screenshot 2" class="has-border hide"></a>
+                    <a href="img/portfolio/protfolio-6.jpg" data-lightbox="image-2" data-title="Java Game Screenshot 3" class="has-border hide"></a>
+                    <a href="img/portfolio/protfolio-7.jpg" data-lightbox="image-2" data-title="Java Game Screenshot 4" class="has-border hide"></a>
+                    <a href="img/portfolio/protfolio-8.jpg" data-lightbox="image-2" data-title="Java Game Screenshot 5" class="has-border hide"></a>
+                    <a href="img/portfolio/protfolio-9.jpg" data-lightbox="image-2" data-title="Java Game Screenshot 6" class="has-border hide"></a>
+                    <p data-i18n="portfolio.section_college.projects.java_game.description"></p>
+                </article>
+                <article class="site-project">
+                    <a href="img/portfolio/protfolio-10.jpg" data-lightbox="image-3" class="site-shot has-border">
+                        <img src="img/portfolio/protfolio-10.jpg" alt="">
+                    </a>
+                    <a href="img/portfolio/protfolio-11.jpg" data-lightbox="image-3" data-title="Desktop Pet Screenshot 1" class="has-border hide"></a>
+                    <a href="img/portfolio/protfolio-12.jpg" data-lightbox="image-3" data-title="Desktop Pet Screenshot 2" class="has-border hide"></a>
+                    <a href="img/portfolio/protfolio-13.jpg" data-lightbox="image-3" data-title="Desktop Pet Screenshot 3" class="has-border hide"></a>
+                    <p data-i18n="portfolio.section_college.projects.desktop_pet.description"></p>
+                </article>
             </div>
-        </div>
-    </div>
+            <p class="site-more-row">
+                <a class="site-btn" target="_blank" href="https://github.com/Chenyuting0916" data-i18n="portfolio.common.more">更多作品...</a>
+            </p>
+        </section>
+    </main>
+
     <!-- footer -->
-    <nav id="footer" class="navbar fixed-bottom">
+    <nav id="footer" class="navbar">
         <div class="container text-center justify-content-center">
             <div>
                 <ul class="list-inline">
@@ -256,11 +174,7 @@
                             href="https://www.instagram.com/tim_learn_software/"><i class="fab fa-instagram"></i></a>
                     </li>
                 </ul>
-                <p>
-                    <a title="instagram" target="_blank" href="https://www.instagram.com/tim_learn_software/">- Chen Yu
-                        Ting &nbsp;&nbsp;</a>
-                    <a target="_blank" href="https://www.facebook.com/profile.php?id=100003963670423" id="sideBar"></a>
-                </p>
+                <p><a target="_blank" href="https://github.com/Chenyuting0916">Chen Yu Ting</a></p>
             </div>
         </div>
     </nav>

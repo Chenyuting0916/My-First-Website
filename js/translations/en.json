@@ -36,6 +36,7 @@
     "timeline": {
         "title": "Timeline",
         "readMore": "Read More...",
+        "showLess": "Show less",
         "items": {
             "titansoft_engineer": {
                 "title": "Product Development Engineer at Titansoft",
