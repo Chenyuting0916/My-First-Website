@@ -76,6 +76,22 @@ body.site-page .navbar-custom .nav li a {
     border-radius: 999px;
 }
 
+body.site-page .navbar-custom .nav li a.navbar-brand,
+body.tools-page .navbar-custom .nav li a.navbar-brand {
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+body.site-page a:focus-visible,
+body.tools-page a:focus-visible,
+body.site-page button:focus-visible,
+body.tools-page button:focus-visible,
+body.site-page #langSelect:focus-visible,
+body.tools-page #langSelect:focus-visible {
+    outline: 2px solid #3d74d0;
+    outline-offset: 3px;
+}
+
 body.site-page .navbar-custom .nav li.active a,
 body.tools-page .navbar-custom .nav li.active a {
     color: #fff;
@@ -92,9 +108,155 @@ body.tools-page .navbar-custom .nav li.active a {
     margin-bottom: 22px;
 }
 
+.site-kicker {
+    margin: 0 0 8px;
+    color: #5b4b9a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
 .site-hero h1 {
-    font-size: 36px;
+    font-size: 40px;
     letter-spacing: -0.04em;
+}
+
+.site-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.site-actions .site-btn,
+.site-actions .site-text-link {
+    margin-top: 0;
+}
+
+.site-btn.ghost {
+    background: #fff;
+    color: #24324a !important;
+    border: 1px solid #d7e0ec;
+}
+
+.site-btn.ghost:hover,
+.site-btn.ghost:focus {
+    color: #24324a !important;
+    filter: none;
+    border-color: #b9c6ea;
+}
+
+.site-text-link {
+    color: #4c3d86;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.site-text-link:hover {
+    color: #3d74d0;
+    text-decoration: underline;
+}
+
+.site-block {
+    margin-top: 36px;
+}
+
+.site-block > h2 {
+    font-size: 22px;
+}
+
+.site-note {
+    max-width: 720px;
+    margin: 0 0 14px;
+}
+
+.site-metrics,
+.site-cases {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.site-scope {
+    margin: 12px 0 0;
+    color: #667084;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.site-role + .site-role {
+    margin-top: 14px;
+}
+
+.site-role-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: baseline;
+}
+
+body.site-page .site-role-top h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.site-role-top h3 a {
+    color: #172033;
+    text-decoration: none;
+}
+
+.site-role-top h3 a:hover {
+    color: #4c3d86;
+}
+
+.site-when {
+    color: #667084;
+    font-size: 13px;
+    font-weight: 650;
+    white-space: nowrap;
+}
+
+.site-skill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.site-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-chips li {
+    background: #f3f0fb;
+    color: #3c3170;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.site-contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.site-contact-links a {
+    margin-top: 0;
+}
+
+.site-label {
+    margin: 0 0 6px;
+    color: #5b4b9a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
 }
 
 .site-hero .site-lead {
@@ -239,7 +401,7 @@ body.site-page ul.timeline2 a:hover {
 
 body.site-page ul.timeline2 .site-when {
     margin-top: 2px;
-    color: #6b7890;
+    color: #667084;
     font-size: 13px;
     font-weight: 500;
 }
@@ -284,7 +446,7 @@ body.site-page .timeline-title {
 }
 
 body.site-page .text-muted {
-    color: #6b7890 !important;
+    color: #667084 !important;
 }
 
 .site-skills {
@@ -467,8 +629,15 @@ body.site-page .timeline-link:hover {
 
     .site-grid,
     .site-projects,
-    .site-skills {
+    .site-skills,
+    .site-metrics,
+    .site-cases,
+    .site-skill-grid {
         grid-template-columns: 1fr;
+    }
+
+    .site-when {
+        white-space: normal;
     }
 
     .site-photo {

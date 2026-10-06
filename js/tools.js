@@ -2,9 +2,9 @@
     var core = window.ToolsCore;
     var TOOLS = ['timestamp', 'json', 'yaml', 'md5', 'codec', 'jwt', 'url', 'uuid', 'regex', 'radix'];
     var MORE_TOOLS = { url: true, uuid: true, regex: true, radix: true };
-    var JSON_SAMPLE = '{"name":"Cyt","ok":true,"tools":["timestamp","json","yaml"]}';
-    var YAML_SAMPLE = 'name: Cyt\nrole: engineer\ntools:\n  - timestamp\n  - json\n  - yaml\nactive: true\n';
-    var YAML_BAD = 'name: Cyt\ntools: [\n';
+    var JSON_SAMPLE = '{"name":"Ada","ok":true,"tools":["timestamp","json","yaml"]}';
+    var YAML_SAMPLE = 'name: Ada\nrole: engineer\ntools:\n  - timestamp\n  - json\n  - yaml\nactive: true\n';
+    var YAML_BAD = 'name: Ada\ntools: [\n';
     var JWT_VALID = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkN5dCIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjo0MTAyNDQ0ODAwfQ.90v3uD-D8KsofR_uE6VNqrk6n_zUHXUHEm5Hylr9uDw';
     var JWT_EXPIRED = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkN5dCIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNTE2MjM5MDIzfQ.YF6G-VZUtTAL27p6J0SUn98ix0NCBzvTlIMCAVEI8_E';
     var state = {

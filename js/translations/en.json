@@ -1,176 +1,25 @@
 {
     "nav": {
         "about": "About",
-        "portfolio": "Portfolio",
+        "portfolio": "Work",
         "tools": "Tools"
     },
     "about": {
-        "title": "About Me",
-        "name": "Yu-Ting Chen",
-        "description": "Born in 1997, graduated and worked for three years",
-        "occupation": "Software Engineer, Taiwanese",
-        "status": "Learning programming seriously....",
-        "portfolio": "My Portfolio",
-        "page": {
-            "title": "Self Introduction",
-            "intro_name": "My name is Yu-Ting Chen.",
-            "intro_work": "Born in 1997, I started working at Titansoft in February 2020, progressing from intern to full-time employee until April 2023, working for nearly 3 years in total.",
-            "belief": "I believe technology is a tool for solving problems, so I'm willing to learn any technology if there's a problem that needs to be solved.",
-            "challenge_intro": "I love challenging myself with new experiences and always strive to try anything that can make me better.",
-            "timeline_2016": "2016 Cycled around Taiwan",
-            "timeline_2017": "2017 13km run, beach cleaning, blood donation",
-            "timeline_2018": "2018 Joined student association, became a team leader, cycled around Taiwan (second time), attended music festivals",
-            "timeline_2019": "2019 Participated in National IT Application Competition, paragliding",
-            "timeline_2020": "2020 Titansoft internship, surfing",
-            "timeline_2021": "2021 Military service, full-time at Titansoft",
-            "timeline_2022_1": "2022 Climbed Mt. Jade, ",
-            "timeline_2022_2": "short talk at GOLF",
-            "timeline_2022_3": ", IT competition presentation, explored mindfulness",
-            "timeline_2023_1": "2023 Started YouTube content creation, entrepreneurship attempt, passed JLPT N2, ",
-            "timeline_2023_2": "developed my own app",
-            "timeline_2024": "2024 Studying in Japan for a year at a language school",
-            "timeline_future": "... (The future is full of possibilities)",
-            "closing": "Please hire me. While I may not be the strongest technically, I will definitely bring value to the company."
-        }
-    },
-    "timeline": {
-        "title": "Timeline",
-        "readMore": "Read More...",
-        "showLess": "Show less",
-        "items": {
-            "titansoft_engineer": {
-                "title": "Product Development Engineer at Titansoft",
-                "date": "August 2020",
-                "fullDate": "2020/08 ~ 2023/04",
-                "description": [
-                    "After becoming a full-time engineer, I learned a lot about agile development (scrum), industry domain knowledge, microservices, and developed APIs (REST, gRPC). I also learned unit testing (xUnit, NUnit, fluent Assertion), integration testing (SpecFlow), and worked with Vue 3.0 for frontend development.",
-                    "My code quality has improved after reading Clean Code and understanding code smells. While there's still room for improvement, it's much better than before..."
-                ]
-            },
-            "titansoft_intern": {
-                "title": "Intern at Titansoft",
-                "date": "February 2020",
-                "fullDate": "2020/02 ~ 2020/08",
-                "description": [
-                    "Due to the COVID-19 pandemic, I only worked in the office for a month before switching to remote work. I was fortunate to be a 2020 Titansoft intern, and although I still wrote some messy code, I learned a lot.",
-                    "I learned .NET Core MVC development and MSSQL, which were new to me as they weren't taught in school. I also tried useful tools like LINQ and jQuery, focused on writing better code, and collaborated with the team. It was a great experience!"
-                ]
-            },
-            "ta": {
-                "title": "Programming Course Teaching Assistant",
-                "date": "October 2019",
-                "fullDate": "2019/10 ~ 2019/12",
-                "description": [
-                    "I served as a teaching assistant for the programming course, teaching Java and programming techniques to non-CS majors. Teaching students with no programming background helped me develop patience and attention to detail. Being recognized by peers for my ability to teach gave me a great sense of achievement."
-                ]
-            },
-            "competition": {
-                "title": "24th College Information Application Service Innovation Competition",
-                "subtitle": "3rd Place in Information Application Category",
-                "date": "November 2, 2019",
-                "fullDate": "2019/10/07 ~ 2019/11/02",
-                "description": [
-                    "Due to excellent performance in my senior project, my professor recommended me for the competition. During the research, we improved the algorithm with the professor, adopting an innovative separated structure encryption method that revolutionized encryption/decryption. I learned about teamwork and project implementation. Creating a new algorithm and implementing it gave me a sense of achievement and increased my enthusiasm for programming."
-                ]
-            }
-        }
-    },
-    "skills": {
-        "title": "Skills",
-        "frontend": {
-            "title": "Frontend",
-            "items": [
-                "HTML, CSS, JavaScript",
-                "Vue3",
-                "jQuery"
-            ]
-        },
-        "backend": {
-            "title": "Backend",
-            "items": [
-                ".NET core",
-                ".NET Framework",
-                "ASP.NET MVC",
-                "RESTful APIs",
-                "gRPC"
-            ]
-        },
-        "database": {
-            "title": "Database",
-            "items": [
-                "MS SQL",
-                "Firebase",
-                "Redis"
-            ]
-        },
-        "test": {
-            "title": "Testing",
-            "items": [
-                "Unit Test (NUnit, xUnit)",
-                "Integration Test (SpecFlow)"
-            ]
-        },
-        "orm": {
-            "title": "ORM",
-            "items": [
-                "Entity Framework",
-                "Dapper"
-            ]
-        },
-        "others": {
-            "title": "Others",
-            "items": [
-                "Flutter",
-                "Kafka",
-                "K8s",
-                "Java",
-                "Unity",
-                "Git",
-                "Azure"
-            ]
-        }
-    },
-    "portfolio": {
-        "section_2020": {
-            "title": "After 2020",
-            "projects": {
-                "azure": {
-                    "description": "This is a simple website using Azure that supports CRUD (Create, Read, Update, Delete) operations."
-                },
-                "level": {
-                    "description": "This project was developed using Flutter and Firebase and has been published on Google Play. Its main goal is to help people become more self-disciplined."
-                },
-                "japanese": {
-                    "description": "A Japanese vocabulary learning website created using the Python Flask framework, making Japanese language learning more efficient."
-                }
-            }
-        },
-        "section_college": {
-            "title": "College Projects (2016-2020)",
-            "projects": {
-                "encryption": {
-                    "description": "This is an encryption system developed for my senior project. We improved the existing AES algorithm and created an innovative encryption method. We participated in a competition with this project and achieved good results."
-                },
-                "java_game": {
-                    "description": "This was my first-year Java programming assignment. It represents my initial excitement about programming. I really enjoyed creating this game, even though it was quite basic."
-                },
-                "desktop_pet": {
-                    "description": "This is a desktop pet application I created in my sophomore year. I wanted a therapeutic companion, so I decided to program one."
-                }
-            }
-        },
-        "common": {
-            "demo": "Demo",
-            "source": "Source",
-            "more": "Read more..."
-        }
+        "title": "About — Tim Chen",
+        "description": "Tim Chen is a C#/.NET backend engineer. This page covers how he works, language study in Japan and JLPT N1, and an engineering reading group.",
+        "heading": "About",
+        "lead": "Yu-Ting Chen. I use C# and .NET to make existing backends faster, more reliable, and safer to change.",
+        "engineering": "Since March 2026 I have been developing .NET backend services and improving existing systems at Gogoro. Before that, from August 2020 to April 2023, I was a Product Developer at Titansoft, working on REST and gRPC microservices. I also interned there in 2020.",
+        "japan": "From 2024 to 2025 I studied at a Japanese language school and have passed JLPT N1. That is language study and cross-cultural learning. It is not Japanese work experience, and it is not native business fluency.",
+        "sharing": "At Titansoft I organized an engineering reading group so we could talk through practical problems and compare approaches.",
+        "life": "Outside work I ride, hike, and like seeing one thing through."
     },
     "tools": {
-        "pageTitle": "Tools - Cyt's Website",
-        "title": "Tools",
-        "lead": "Timestamp, JSON, YAML, MD5, encoding, and JWT, plus URL, UUID, regex, and base conversion. Everything runs in this browser.",
-        "kicker": "WORKS OFFLINE",
-        "privacy": "Nothing leaves this browser",
+        "pageTitle": "Developer tools — Tim Chen",
+        "title": "Developer tools",
+        "lead": "Timestamp, JSON, YAML, MD5, encoding, JWT, plus URL, UUID, regex, and base conversion. After the page loads, the calculations run in this browser.",
+        "kicker": "Runs in the browser",
+        "privacy": "Inputs are processed in this browser and are not sent away for calculation",
         "badge": "Often",
         "copy": "Copy",
         "copied": "Copied",
@@ -370,6 +219,89 @@
             "oct": "Octal",
             "dec": "Decimal",
             "hex": "Hex"
-        }
+        },
+        "pageDescription": "Timestamp, JSON, YAML, hashes, encoding, JWT, URL, UUID, regex, and base conversion in the browser. Inputs are not sent away for processing."
+    },
+    "home": {
+        "title": "Tim Chen — Backend Software Engineer",
+        "description": "Tim Chen (Yu-Ting Chen) is a backend engineer focused on C#/.NET, API performance, service reliability, and making existing systems safer to change.",
+        "kicker": "Backend Software Engineer",
+        "lead": "Yu-Ting Chen. I use C# and .NET to improve the performance, reliability, and maintainability of existing backend systems.",
+        "ctaWork": "View engineering work",
+        "ctaContact": "Contact",
+        "resultsTitle": "Selected results",
+        "result1Title": "Fewer unnecessary fallback calls",
+        "result1Body": "After fixing a checksum mismatch, daily calls to that fallback API fell from about 75,000 to fewer than 50.",
+        "result1Scope": "This is the call volume of one fallback, not the system-wide error rate or all API traffic.",
+        "result2Title": "Shorter responses for some APIs",
+        "result2Body": "The APIs I actually improved went from over 2 seconds to about 200 milliseconds.",
+        "result2Scope": "This covers those APIs only, not the whole platform. Percentiles and test conditions were not provided.",
+        "result3Title": "A larger, passing test suite",
+        "result3Body": "The existing unit-test suite grew from 41 to 240, and tests that had been failing were fixed. 240 is the suite total on 2026-10-01.",
+        "result3Scope": "The tests protect existing behavior and make refactoring safer. This is not coverage, and not 240 tests written from scratch.",
+        "casesTitle": "Work cases",
+        "casesLead": "Each note states the problem, what I changed, and a result that can be checked.",
+        "case1Title": "Checksum and fallback",
+        "case1Summary": "A checksum mismatch triggered extra fallback API calls. After the fix, those daily calls fell from about 75,000 to fewer than 50.",
+        "case2Title": "API response time",
+        "case2Summary": "Some APIs took over 2 seconds. After the improvement, those APIs respond in about 200 milliseconds.",
+        "case3Title": "Testable maintenance notices",
+        "case3Summary": "I separated calculation from the service, injected time, and covered interval merging and caching with tests.",
+        "readCase": "Read the case",
+        "experienceTitle": "Experience",
+        "gogoroWhen": "2026/03–present",
+        "gogoroRole": ".NET backend development",
+        "gogoroBody": ".NET backend services, improvements to existing systems, and work related to performance and reliability.",
+        "titansoftWhen": "2020/08–2023/04",
+        "titansoftRole": "Product Developer",
+        "titansoftBody": "C#/.NET backends and REST/gRPC microservices, with SQL Server, Redis, and Kafka. I helped the team adopt integration testing and organized an engineering reading group. A 2020 internship at the same company is part of this period.",
+        "schoolName": "Tunghai University, Computer Science",
+        "schoolWhen": "2016–2020",
+        "schoolBody": "B.S. in Computer Science and Engineering.",
+        "also": "Other contributions include a WCF test tool, alerts for abnormal development-environment logs, monitoring metrics, GitLab Runner and PowerShell workflows, and fixes for N+1 queries and code quality.",
+        "skillsTitle": "Core skills",
+        "skillBackend": "Backend",
+        "skillData": "Data / Integration",
+        "skillQuality": "Quality",
+        "skillIntegration": "integration testing",
+        "skillPerf": "performance analysis",
+        "skillDelivery": "Delivery / Operations",
+        "skillK8s": "hands-on Docker / Kubernetes",
+        "contactTitle": "Contact",
+        "contactLead": "GitHub, LinkedIn, and email are the best ways to reach me. I am also interested in collaboration in Japan, overseas, and remote settings."
+    },
+    "work": {
+        "pageTitle": "Engineering work — Tim Chen",
+        "description": "Backend cases from Tim Chen: a checksum fallback, response time for specific APIs, and a testability refactor of station maintenance notices.",
+        "title": "Engineering work",
+        "lead": "These are de-identified work cases. There is no GitHub button when the source is not public.",
+        "problem": "Problem",
+        "action": "What I did",
+        "result": "Result",
+        "case1Title": "A checksum mismatch caused extra fallback calls",
+        "case1Problem": "When the checksum did not match, the system called a fallback API again. Those calls were about 75,000 a day, and most of them were unnecessary.",
+        "case1Action": "I found and fixed the checksum mismatch so those fallback calls were no longer sent.",
+        "case1Result": "Daily calls for this fallback fell from about 75,000 to fewer than 50.",
+        "case1Scope": "The metric is the call volume of this fallback, not the system-wide error rate, operating cost, or all API traffic.",
+        "case2Title": "Some APIs took over 2 seconds",
+        "case2Problem": "Some API responses took over 2 seconds, so callers had to wait.",
+        "case2Action": "I improved the performance of the APIs that were actually slow.",
+        "case2Result": "After the change, those responses were about 200 milliseconds.",
+        "case2Scope": "This covers only the APIs that were changed, not every API and not the whole platform. p95/p99, sample size, and test conditions were not provided.",
+        "case3Title": "Station maintenance notices were hard to test",
+        "case3Problem": "Calculation and service responsibilities were mixed together, and time was hard to replace, so aggregating station data, merging time ranges, and caching were difficult to check on their own.",
+        "case3Action": "I separated calculation from the service, injected a time dependency, and added tests around aggregation, range merging, and caching.",
+        "case3Result": "That behavior can now be protected by tests, so later changes rely less on manual regression. Over the same period the existing unit-test suite grew from 41 to 240 (the total on 2026-10-01), and tests that had been failing were fixed.",
+        "case3Scope": "240 is the suite total, not 240 tests written from scratch, and not a coverage percentage. Internal API paths, service names, and station identifiers are not published here.",
+        "historyTitle": "Earlier personal projects",
+        "historyLead": "These are older side projects and student work, not current representative results. Demo links are kept only when the site still opens.",
+        "japanese": "A Japanese vocabulary practice site built with Python and Flask.",
+        "azure": "A small CRUD site hosted on Azure.",
+        "level": "A self-discipline practice app built with Flutter and Firebase. It was published on Google Play.",
+        "encryption": "A university encryption project that adjusted an existing AES flow. I entered an IT application contest with classmates.",
+        "javaGame": "A small game from a first-year Java course.",
+        "pet": "A desktop pet from my second year.",
+        "demo": "Demo",
+        "source": "Source"
     }
 }
