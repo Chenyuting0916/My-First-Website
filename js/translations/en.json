@@ -1,7 +1,8 @@
 {
     "nav": {
         "about": "About",
-        "portfolio": "Portfolio"
+        "portfolio": "Portfolio",
+        "tools": "Tools"
     },
     "about": {
         "title": "About Me",
@@ -162,5 +163,168 @@
             "source": "Source",
             "more": "Read more..."
         }
+    },
+    "tools": {
+        "pageTitle": "Tools - Cyt's Website",
+        "title": "Tools",
+        "lead": "Timestamp, JSON, YAML, MD5, Base64 / Hex, and JWT. Everything runs in this browser, so you still have them if those sites go down.",
+        "kicker": "WORKS OFFLINE",
+        "privacy": "Nothing leaves this browser",
+        "badge": "Often",
+        "copy": "Copy",
+        "copied": "Copied",
+        "copyEmpty": "Nothing to copy",
+        "clear": "Clear",
+        "sample": "Sample",
+        "input": "Input",
+        "output": "Output",
+        "nav": {
+            "timestamp": "Timestamp",
+            "timestampHint": "Unix time ↔ date",
+            "json": "JSON",
+            "jsonHint": "Format, minify, validate",
+            "yaml": "YAML",
+            "yamlHint": "Check and convert JSON",
+            "md5": "MD5",
+            "md5Hint": "Text and file checksums",
+            "codec": "Encode",
+            "codecHint": "Base64 ↔ Hex",
+            "jwt": "JWT",
+            "jwtHint": "Decode and verify"
+        },
+        "timestamp": {
+            "nowLabel": "NOW",
+            "live": "Updates every second",
+            "unixSeconds": "Unix timestamp (seconds)",
+            "copySeconds": "Copy seconds",
+            "copyMs": "Copy milliseconds",
+            "local": "Local",
+            "utc": "UTC",
+            "iso": "ISO",
+            "zone": "Zone",
+            "toDate": "Timestamp → date",
+            "toUnix": "Date → timestamp",
+            "tsPlaceholder": "Paste 1700000000 or 1700000000000",
+            "datePlaceholder": "2024-01-02 15:04:05",
+            "unitLabel": "Unit",
+            "useNow": "Use now",
+            "pasteHint": "Paste a number to convert. Up to 10 digits is seconds; around 13 digits is milliseconds.",
+            "dateHint": "Without a timezone, this is your computer's local time.",
+            "detected": "Detected as {unit}",
+            "weekday": "Weekday",
+            "relative": "Relative",
+            "seconds": "Seconds",
+            "milliseconds": "Milliseconds",
+            "units": {
+                "auto": "Auto",
+                "s": "Seconds",
+                "ms": "Milliseconds",
+                "us": "Microseconds",
+                "ns": "Nanoseconds"
+            }
+        },
+        "rel": {
+            "now": "Just now",
+            "ago": "{n} {unit} ago",
+            "in": "in {n} {unit}",
+            "units": {
+                "second": "second",
+                "minute": "minute",
+                "hour": "hour",
+                "day": "day",
+                "month": "month",
+                "year": "year"
+            }
+        },
+        "json": {
+            "format": "Format",
+            "minify": "Minify",
+            "sort": "Sort keys",
+            "indent2": "2 spaces",
+            "indent4": "4 spaces",
+            "copy": "Copy result",
+            "placeholder": "Paste JSON",
+            "valid": "Valid JSON",
+            "shortcut": "Ctrl or ⌘ + Enter also formats"
+        },
+        "yaml": {
+            "check": "Check",
+            "pretty": "Tidy",
+            "toJson": "To JSON",
+            "fromJson": "JSON to YAML",
+            "copy": "Copy result",
+            "placeholder": "Paste YAML. You can also paste JSON and convert it",
+            "valid": "Valid YAML",
+            "emptyDoc": "This YAML document is empty",
+            "docs": "{count} documents, all valid",
+            "errorAt": "Line {line}, column {column}: {message}",
+            "badSample": "Broken sample"
+        },
+        "md5": {
+            "placeholder": "Type anything to hash it",
+            "upper": "Uppercase",
+            "text": "Text",
+            "file": "File",
+            "drop": "Drop a file here, or click to choose",
+            "dropHint": "Hashed in this browser. Nothing is uploaded",
+            "working": "Hashing…",
+            "sha": "SHA-256",
+            "fileMeta": "{name} · {size}"
+        },
+        "codec": {
+            "text": "Text",
+            "base64": "Base64",
+            "base64url": "Base64URL",
+            "hex": "Hex",
+            "swap": "Swap direction",
+            "inPlaceholder": "Paste the value to convert",
+            "upper": "Uppercase hex",
+            "spaced": "Space hex every two characters",
+            "presetB64Hex": "Base64 → Hex",
+            "presetHexB64": "Hex → Base64",
+            "presetTextB64": "Text → Base64",
+            "presetB64Text": "Base64 → Text"
+        },
+        "jwt": {
+            "placeholder": "Paste a JWT. A leading Bearer prefix is removed",
+            "header": "HEADER",
+            "payload": "PAYLOAD",
+            "signature": "SIGNATURE",
+            "secret": "HMAC secret",
+            "secretPlaceholder": "Only needed to verify HS256 / HS384 / HS512",
+            "showSecret": "Show secret",
+            "hideSecret": "Hide secret",
+            "verify": "Verify signature",
+            "sample": "Valid sample",
+            "expiredSample": "Expired sample",
+            "sampleHint": "Both samples use the secret: secret",
+            "verified": "Signature matches",
+            "invalidSig": "Signature does not match",
+            "expired": "Expired",
+            "notYet": "Not yet valid",
+            "valid": "Valid",
+            "claimExp": "Expires exp",
+            "claimNbf": "Not before nbf",
+            "claimIat": "Issued iat",
+            "algNote": "Decoding needs no secret, and the token stays on this device. Verification supports HMAC only.",
+            "copyPart": "Copy"
+        },
+        "errors": {
+            "empty": "Paste something first",
+            "invalid-number": "That is not a timestamp. Put dates in the field on the right.",
+            "invalid-date": "Could not read that date. Try 2024-01-02 15:04:05",
+            "invalid-hex": "Invalid hex",
+            "invalid-base64": "Invalid Base64",
+            "invalid-utf8": "Those bytes are not valid UTF-8 text",
+            "invalid-json": "Invalid JSON",
+            "invalid-jwt": "That does not look like a JWT. It needs header.payload.signature",
+            "out-of-range": "That time is outside the supported range",
+            "unsupported-alg": "Only HS256, HS384, and HS512 can be verified",
+            "no-signature": "This token has no signature",
+            "empty-secret": "Enter a secret",
+            "no-webcrypto": "This browser cannot verify signatures",
+            "generic": "Could not process that",
+            "yaml-missing": "The YAML parser did not load"
+        }
     }
-} 
+}

@@ -1,7 +1,8 @@
 {
     "nav": {
         "about": "プロフィール",
-        "portfolio": "ポートフォリオ"
+        "portfolio": "ポートフォリオ",
+        "tools": "ツール"
     },
     "about": {
         "title": "プロフィール",
@@ -162,5 +163,168 @@
             "source": "ソース",
             "more": "もっと見る..."
         }
+    },
+    "tools": {
+        "pageTitle": "ツール - Cyt's Website",
+        "title": "ツール",
+        "lead": "タイムスタンプ、JSON、YAML、MD5、Base64 / Hex、JWT。すべてこのブラウザの中で計算するので、外部サイトが落ちても使えます。",
+        "kicker": "オフラインで動く",
+        "privacy": "データはこのブラウザの外に出ません",
+        "badge": "よく使う",
+        "copy": "コピー",
+        "copied": "コピーしました",
+        "copyEmpty": "コピーするものがありません",
+        "clear": "クリア",
+        "sample": "サンプル",
+        "input": "入力",
+        "output": "結果",
+        "nav": {
+            "timestamp": "時刻",
+            "timestampHint": "Unix time ↔ 日時",
+            "json": "JSON",
+            "jsonHint": "整形、圧縮、検証",
+            "yaml": "YAML",
+            "yamlHint": "チェックと JSON 変換",
+            "md5": "MD5",
+            "md5Hint": "文字とファイルの照合",
+            "codec": "エンコード",
+            "codecHint": "Base64 ↔ Hex",
+            "jwt": "JWT",
+            "jwtHint": "デコードと署名検証"
+        },
+        "timestamp": {
+            "nowLabel": "いま",
+            "live": "1秒ごとに更新",
+            "unixSeconds": "Unix timestamp（秒）",
+            "copySeconds": "秒をコピー",
+            "copyMs": "ミリ秒をコピー",
+            "local": "ローカル",
+            "utc": "UTC",
+            "iso": "ISO",
+            "zone": "タイムゾーン",
+            "toDate": "タイムスタンプ → 日時",
+            "toUnix": "日時 → タイムスタンプ",
+            "tsPlaceholder": "1700000000 か 1700000000000 を貼り付け",
+            "datePlaceholder": "2024-01-02 15:04:05",
+            "unitLabel": "単位",
+            "useNow": "いまを入れる",
+            "pasteHint": "数字を貼り付けると変換します。10桁以内は秒、13桁前後はミリ秒です。",
+            "dateHint": "タイムゾーンが無いときは、このパソコンのローカル時刻として読みます。",
+            "detected": "{unit}として解釈",
+            "weekday": "曜日",
+            "relative": "相対",
+            "seconds": "秒",
+            "milliseconds": "ミリ秒",
+            "units": {
+                "auto": "自動",
+                "s": "秒",
+                "ms": "ミリ秒",
+                "us": "マイクロ秒",
+                "ns": "ナノ秒"
+            }
+        },
+        "rel": {
+            "now": "たった今",
+            "ago": "{n}{unit}前",
+            "in": "{n}{unit}後",
+            "units": {
+                "second": "秒",
+                "minute": "分",
+                "hour": "時間",
+                "day": "日",
+                "month": "か月",
+                "year": "年"
+            }
+        },
+        "json": {
+            "format": "整形",
+            "minify": "圧縮",
+            "sort": "キーを並べる",
+            "indent2": "スペース2",
+            "indent4": "スペース4",
+            "copy": "結果をコピー",
+            "placeholder": "JSON を貼り付け",
+            "valid": "正しい JSON です",
+            "shortcut": "Ctrl または ⌘ + Enter でも整形できます"
+        },
+        "yaml": {
+            "check": "チェック",
+            "pretty": "整える",
+            "toJson": "JSON にする",
+            "fromJson": "JSON を YAML に",
+            "copy": "結果をコピー",
+            "placeholder": "YAML を貼り付け。JSON を貼って変換することもできます",
+            "valid": "正しい YAML です",
+            "emptyDoc": "この YAML は空です",
+            "docs": "{count} 件のドキュメントはすべて正しいです",
+            "errorAt": "{line} 行、{column} 列: {message}",
+            "badSample": "壊れた例"
+        },
+        "md5": {
+            "placeholder": "文字を入れるとすぐ MD5 を計算します",
+            "upper": "大文字で出す",
+            "text": "文字",
+            "file": "ファイル",
+            "drop": "ファイルをドロップするか、クリックして選択",
+            "dropHint": "このブラウザの中だけで計算し、アップロードしません",
+            "working": "計算中…",
+            "sha": "SHA-256",
+            "fileMeta": "{name} · {size}"
+        },
+        "codec": {
+            "text": "文字",
+            "base64": "Base64",
+            "base64url": "Base64URL",
+            "hex": "Hex",
+            "swap": "方向を入れ替え",
+            "inPlaceholder": "変換する内容を貼り付け",
+            "upper": "Hex を大文字に",
+            "spaced": "Hex を2文字ごとに区切る",
+            "presetB64Hex": "Base64 → Hex",
+            "presetHexB64": "Hex → Base64",
+            "presetTextB64": "文字 → Base64",
+            "presetB64Text": "Base64 → 文字"
+        },
+        "jwt": {
+            "placeholder": "JWT を貼り付け。先頭の Bearer は自動で外します",
+            "header": "HEADER",
+            "payload": "PAYLOAD",
+            "signature": "SIGNATURE",
+            "secret": "HMAC シークレット",
+            "secretPlaceholder": "HS256 / HS384 / HS512 の検証時だけ必要です",
+            "showSecret": "シークレットを表示",
+            "hideSecret": "シークレットを隠す",
+            "verify": "署名を検証",
+            "sample": "有効な例",
+            "expiredSample": "期限切れの例",
+            "sampleHint": "どちらの例もシークレットは secret です",
+            "verified": "署名は一致しています",
+            "invalidSig": "署名が一致しません",
+            "expired": "期限切れ",
+            "notYet": "まだ有効ではありません",
+            "valid": "有効",
+            "claimExp": "期限 exp",
+            "claimNbf": "開始 nbf",
+            "claimIat": "発行 iat",
+            "algNote": "デコードにシークレットは不要で、トークンは外に送りません。検証は HMAC のみです。",
+            "copyPart": "コピー"
+        },
+        "errors": {
+            "empty": "先に内容を貼り付けてください",
+            "invalid-number": "タイムスタンプではありません。日時は右の欄に入れてください。",
+            "invalid-date": "日時を読めません。2024-01-02 15:04:05 を試してください",
+            "invalid-hex": "Hex の形式が正しくありません",
+            "invalid-base64": "Base64 の形式が正しくありません",
+            "invalid-utf8": "UTF-8 ではないバイト列です",
+            "invalid-json": "JSON の形式が正しくありません",
+            "invalid-jwt": "JWT の形式ではありません。header.payload.signature の3つが必要です",
+            "out-of-range": "表現できる時刻の範囲を超えています",
+            "unsupported-alg": "検証できるのは HS256、HS384、HS512 だけです",
+            "no-signature": "このトークンに署名がありません",
+            "empty-secret": "シークレットを入力してください",
+            "no-webcrypto": "この環境では署名を検証できません",
+            "generic": "処理できませんでした",
+            "yaml-missing": "YAML パーサーを読み込めませんでした"
+        }
     }
-} 
+}
