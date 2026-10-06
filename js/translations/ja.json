@@ -36,6 +36,7 @@
     "timeline": {
         "title": "タイムライン",
         "readMore": "もっと見る...",
+        "showLess": "閉じる",
         "items": {
             "titansoft_engineer": {
                 "title": "Titansoft プロダクト開発エンジニア",
