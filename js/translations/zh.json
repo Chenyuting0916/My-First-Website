@@ -2,7 +2,8 @@
     "nav": {
         "about": "關於",
         "portfolio": "作品集",
-        "tools": "工具"
+        "tools": "工具",
+        "skip": "跳到內容"
     },
     "about": {
         "title": "關於 — Tim Chen",

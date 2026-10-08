@@ -21,19 +21,18 @@
 </head>
 
 <body class="tools-page">
+    <a class="skip-link" href="#content" data-i18n="nav.skip">跳到內容</a>
     <div id="nav">
-        <nav class="navbar navbar-expand-sm navbar-custom">
+        <nav class="navbar navbar-expand-md navbar-custom">
             <div class="container">
-                <button style="float: right;" class="navbar-toggler text-white" type="button" data-toggle="collapse"
+                <a class="navbar-brand" href="index.html">Tim Chen</a>
+                <button class="navbar-toggler ml-auto text-white" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav">
-                        <li class="nav-item">
-                            <a class="navbar-brand" href="index.html">Tim Chen</a>
-                        </li>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-md-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="about.html" data-i18n="nav.about">關於</a>
                         </li>
@@ -44,7 +43,7 @@
                             <a class="nav-link" href="tools.html" data-i18n="nav.tools" aria-current="page">工具</a>
                         </li>
                         <li class="nav-item align-items-center d-flex">
-                            <select id="langSelect" onchange="i18n.setLanguage(this.value)">
+                            <select id="langSelect" onchange="i18n.setLanguage(this.value)" aria-label="Language">
                                 <option value="zh" selected>中文</option>
                                 <option value="en">English</option>
                                 <option value="ja">日本語</option>
@@ -56,7 +55,7 @@
         </nav>
     </div>
 
-    <div class="tk-wrap">
+    <div class="tk-wrap" id="content">
         <header class="tk-hero">
             <div>
                 <p class="tk-kicker" data-i18n="tools.kicker">瀏覽器內運算</p>
