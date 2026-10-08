@@ -2,6 +2,25 @@ html.site-root {
     padding-bottom: 0 !important;
     width: auto !important;
     scrollbar-gutter: stable;
+    overflow-x: clip;
+    scroll-padding-top: 76px;
+    scrollbar-color: #b7c0d4 #eef1f8;
+}
+
+html.site-root::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+html.site-root::-webkit-scrollbar-track {
+    background: #eef1f8;
+    box-shadow: none;
+}
+
+html.site-root::-webkit-scrollbar-thumb {
+    background: #b7c0d4;
+    border-radius: 99px;
+    box-shadow: none;
 }
 
 body.site-page {
@@ -20,18 +39,59 @@ body.site-page {
     font-family: "Segoe UI", "PingFang TC", "Hiragino Sans", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
 }
 
+body.site-page section,
+body.tools-page section {
+    padding: 0;
+}
+
 body.site-page #nav,
+body.tools-page #nav,
 body.site-page #footer {
     flex: 0 0 auto;
 }
 
-body.site-page #footer {
+body.site-page #nav,
+body.tools-page #nav {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
+body.site-page #footer,
+body.tools-page #footer {
     position: relative !important;
     left: auto !important;
     right: auto !important;
     bottom: auto !important;
     width: 100% !important;
     margin-top: 48px;
+    color: #d7deea;
+}
+
+body.site-page #footer p,
+body.tools-page #footer p {
+    margin: 0;
+    color: #d7deea;
+    font-size: 14px;
+}
+
+body.site-page #footer a,
+body.tools-page #footer a {
+    color: #d7deea;
+}
+
+body.site-page #footer .list-inline-item a,
+body.tools-page #footer .list-inline-item a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+}
+
+body.site-page #footer a:hover,
+body.tools-page #footer a:hover {
+    color: #fff;
 }
 
 body.site-page h1,
@@ -68,12 +128,58 @@ body.tools-page #langSelect option {
     color: #172033;
 }
 
-body.site-page .navbar .container {
+body.site-page .navbar .container,
+body.tools-page .navbar .container {
     max-width: 1120px;
 }
 
-body.site-page .navbar-custom .nav li a {
+body.site-page .navbar-brand,
+body.tools-page .navbar-brand {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+body.site-page .navbar-brand:hover,
+body.site-page .navbar-brand:focus,
+body.tools-page .navbar-brand:hover,
+body.tools-page .navbar-brand:focus {
+    color: #fff;
+}
+
+body.site-page .navbar-brand[aria-current="page"],
+body.tools-page .navbar-brand[aria-current="page"] {
+    box-shadow: inset 0 -2px 0 #fff;
+}
+
+body.site-page .navbar-toggler,
+body.tools-page .navbar-toggler {
+    min-width: 44px;
+    min-height: 44px;
+    border: 0;
+    border-radius: 10px;
+}
+
+body.site-page .navbar-custom .nav li a,
+body.tools-page .navbar-custom .nav li a {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 4px;
+    padding: 8px 12px;
     border-radius: 999px;
+    color: #d5dbe6;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+body.site-page .navbar-custom .nav li a:hover,
+body.site-page .navbar-custom .nav li a:focus,
+body.tools-page .navbar-custom .nav li a:hover,
+body.tools-page .navbar-custom .nav li a:focus {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 body.site-page .navbar-custom .nav li a.navbar-brand,
@@ -134,6 +240,29 @@ body.tools-page .navbar-custom .nav li.active a {
     margin-top: 0;
 }
 
+.site-actions .site-text-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 8px 4px;
+}
+
+.skip-link {
+    position: absolute;
+    left: 12px;
+    top: -48px;
+    z-index: 2000;
+    background: #fff;
+    color: #172033;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
 .site-btn.ghost {
     background: #fff;
     color: #24324a !important;
@@ -178,11 +307,34 @@ body.tools-page .navbar-custom .nav li.active a {
     gap: 18px;
 }
 
+.site-metrics .site-card,
+.site-cases .site-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.site-cases .site-text-link {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+.site-cases .site-text-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
 .site-scope {
     margin: 12px 0 0;
     color: #667084;
     font-size: 13px;
     line-height: 1.55;
+}
+
+.site-metrics .site-scope {
+    margin-top: auto;
+    padding-top: 12px;
 }
 
 .site-role + .site-role {
@@ -574,8 +726,9 @@ body.site-page .timeline-link:hover {
 .site-shot img {
     display: block;
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
+    object-position: top center;
     transition: transform 0.35s ease;
 }
 
@@ -617,6 +770,23 @@ body.site-page .timeline-link:hover {
     margin: 8px 0 0;
 }
 
+.site-block,
+.site-role,
+#contact {
+    scroll-margin-top: 76px;
+}
+
+@media (max-width: 1100px) {
+    .site-metrics,
+    .site-cases {
+        grid-template-columns: 1fr;
+    }
+
+    .site-projects {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 900px) {
     .site-wrap {
         width: min(1120px, calc(100% - 28px));
@@ -628,11 +798,9 @@ body.site-page .timeline-link:hover {
     }
 
     .site-grid,
-    .site-projects,
     .site-skills,
     .site-metrics,
-    .site-cases,
-    .site-skill-grid {
+    .site-cases {
         grid-template-columns: 1fr;
     }
 
@@ -642,5 +810,45 @@ body.site-page .timeline-link:hover {
 
     .site-photo {
         height: 240px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    body.site-page .navbar-custom,
+    body.tools-page .navbar-custom {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    body.site-page .navbar-collapse .navbar-nav,
+    body.tools-page .navbar-collapse .navbar-nav {
+        align-items: stretch;
+        padding: 4px 0 10px;
+    }
+
+    body.site-page .navbar-custom .nav li a,
+    body.tools-page .navbar-custom .nav li a {
+        justify-content: center;
+        margin: 2px 0;
+        min-height: 44px;
+    }
+
+    body.site-page #langSelect,
+    body.tools-page #langSelect {
+        margin: 8px auto 0;
+        min-height: 44px;
+    }
+}
+
+@media (max-width: 680px) {
+    .site-projects,
+    .site-skill-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-shot img {
+        transition: none;
     }
 }

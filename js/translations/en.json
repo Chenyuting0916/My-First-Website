@@ -2,7 +2,8 @@
     "nav": {
         "about": "About",
         "portfolio": "Work",
-        "tools": "Tools"
+        "tools": "Tools",
+        "skip": "Skip to content"
     },
     "about": {
         "title": "About — Tim Chen",

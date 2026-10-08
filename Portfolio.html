@@ -20,19 +20,18 @@
 </head>
 
 <body class="site-page">
+    <a class="skip-link" href="#content" data-i18n="nav.skip">跳到內容</a>
     <div id="nav">
-        <nav class="navbar navbar-expand-sm navbar-custom">
+        <nav class="navbar navbar-expand-md navbar-custom">
             <div class="container">
-                <button class="navbar-toggler text-white" type="button" data-toggle="collapse"
+                <a class="navbar-brand" href="index.html">Tim Chen</a>
+                <button class="navbar-toggler ml-auto text-white" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav">
-                        <li class="nav-item">
-                            <a class="navbar-brand" href="index.html">Tim Chen</a>
-                        </li>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-md-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="about.html" data-i18n="nav.about">關於</a>
                         </li>
@@ -55,7 +54,7 @@
         </nav>
     </div>
 
-    <main class="site-wrap">
+    <main class="site-wrap" id="content">
         <header class="site-hero">
             <p class="site-kicker">Tim Chen</p>
             <h1 data-i18n="work.title">工程成果</h1>

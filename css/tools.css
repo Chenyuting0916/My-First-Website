@@ -2,6 +2,8 @@ html.tools-root {
     padding-bottom: 0 !important;
     width: auto !important;
     scrollbar-gutter: stable;
+    overflow-x: clip;
+    scroll-padding-top: 76px;
 }
 
 body.tools-page {
@@ -82,6 +84,7 @@ body.tools-page [hidden] {
     width: min(1440px, calc(100% - 48px));
     margin: 28px auto 0;
     flex: 1 0 auto;
+    min-width: 0;
 }
 
 .tk-hero {
@@ -132,24 +135,43 @@ body.tools-page [hidden] {
     grid-template-columns: 232px minmax(0, 1fr);
     gap: 18px;
     align-items: start;
+    min-width: 0;
 }
 
 .tk-tabs {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #c5cde0 transparent;
     position: sticky;
-    top: 16px;
-    max-height: calc(100vh - 32px);
-    max-height: calc(100dvh - 32px);
+    top: 76px;
+    max-height: calc(100vh - 92px);
+    max-height: calc(100dvh - 92px);
     overflow-y: auto;
     overscroll-behavior: contain;
     padding-right: 4px;
 }
 
+.tk-tabs::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.tk-tabs::-webkit-scrollbar-track {
+    background: transparent;
+    box-shadow: none;
+}
+
+.tk-tabs::-webkit-scrollbar-thumb {
+    background: #c5cde0;
+    border-radius: 99px;
+    box-shadow: none;
+}
+
 .tk-group-label {
     margin: 2px 8px 0;
-    color: #8b95a7;
+    color: #526178;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -226,7 +248,7 @@ body.tools-page [hidden] {
 .tk-tab small {
     display: block;
     margin-top: 2px;
-    color: #7b8798;
+    color: #526178;
     font-size: 12px;
     font-weight: 500;
 }
@@ -361,7 +383,7 @@ body.tools-page [hidden] {
 .tk-meta code {
     color: #fff;
     font-size: 13px;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
     white-space: pre-line;
 }
 
@@ -528,7 +550,7 @@ body.tools-page [hidden] {
 
 .tk-hint {
     margin: 8px 0 0;
-    color: #7b8798;
+    color: #526178;
     font-size: 12px;
     line-height: 1.5;
 }
@@ -894,19 +916,31 @@ body.tools-page [hidden] {
     .tk-codec-bar {
         display: flex;
         flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tk-stage,
+    .tk-now,
+    .tk-split,
+    .tk-card {
+        width: 100%;
+        max-width: 100%;
     }
 
     .tk-tabs {
         position: sticky;
-        top: 0;
+        top: 64px;
         z-index: 20;
         flex-direction: row;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
         max-height: none;
         overflow-x: auto;
         overflow-y: hidden;
         padding: 8px 0;
         background: rgba(243, 245, 251, 0.94);
-        margin: 0 -4px;
+        margin: 0;
     }
 
     .tk-group-label,
@@ -938,6 +972,21 @@ body.tools-page [hidden] {
 
     .tk-area {
         min-height: 220px;
+    }
+}
+
+@media (max-width: 560px) {
+    .tk-meta {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .tk-meta > span {
+        grid-column: 1 / -1;
+        margin-top: 8px;
+    }
+
+    .tk-meta > span:first-of-type {
+        margin-top: 0;
     }
 }
 
