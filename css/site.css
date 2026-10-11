@@ -766,6 +766,15 @@ body.site-page .timeline-link:hover {
     text-decoration: none;
 }
 
+.site-card .site-links {
+    justify-content: flex-start;
+    padding: 14px 0 0;
+}
+
+.site-award {
+    margin-top: 14px;
+}
+
 .site-more-row {
     margin: 8px 0 0;
 }
