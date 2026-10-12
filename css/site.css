@@ -300,6 +300,37 @@ body.tools-page .navbar-custom .nav li.active a {
     margin: 0 0 14px;
 }
 
+.site-now {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(36, 52, 97, 0.05);
+}
+
+.site-now li {
+    display: grid;
+    grid-template-columns: 148px minmax(0, 1fr);
+    gap: 12px 20px;
+    align-items: baseline;
+    margin: 0;
+    padding: 16px 20px;
+    border-top: 1px solid #e7edf6;
+}
+
+.site-now li:first-child {
+    border-top: 0;
+}
+
+.site-now p {
+    margin: 0;
+}
+
+.site-now a {
+    margin-left: 8px;
+}
+
 .site-metrics,
 .site-cases {
     display: grid;
@@ -851,7 +882,8 @@ body.site-page .timeline-link:hover {
 
 @media (max-width: 680px) {
     .site-projects,
-    .site-skill-grid {
+    .site-skill-grid,
+    .site-now li {
         grid-template-columns: 1fr;
     }
 }

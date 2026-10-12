@@ -1,7 +1,7 @@
 (function () {
     var core = window.ToolsCore;
-    var TOOLS = ['timestamp', 'json', 'yaml', 'md5', 'codec', 'jwt', 'url', 'uuid', 'regex', 'radix'];
-    var MORE_TOOLS = { url: true, uuid: true, regex: true, radix: true };
+    var TOOLS = ['timestamp', 'json', 'yaml', 'md5', 'codec', 'jwt', 'url', 'uuid', 'regex', 'radix', 'diff'];
+    var MORE_TOOLS = { url: true, uuid: true, regex: true, radix: true, diff: true };
     var JSON_SAMPLE = '{"name":"Ada","ok":true,"tools":["timestamp","json","yaml"]}';
     var YAML_SAMPLE = 'name: Ada\nrole: engineer\ntools:\n  - timestamp\n  - json\n  - yaml\nactive: true\n';
     var YAML_BAD = 'name: Ada\ntools: [\n';
@@ -84,6 +84,9 @@
         'tools.errors.yaml-missing': 'YAML 解析器沒有載入',
         'tools.errors.invalid-url': '這段內容解不開',
         'tools.errors.invalid-regex': '這個正規表示式不正確',
+        'tools.errors.too-large': '超過 400 行，請先縮短再比對',
+        'tools.diff.summary': '多了 {added} 行，少了 {removed} 行',
+        'tools.diff.same': '兩段一樣',
         'tools.url.protocol': '協定',
         'tools.url.host': '主機',
         'tools.url.path': '路徑',
@@ -96,11 +99,11 @@
     };
 
     function lang() {
-        return (window.i18n && i18n.currentLang) || 'zh';
+        return (typeof i18n !== 'undefined' && i18n.currentLang) || 'zh';
     }
 
     function t(key) {
-        if (window.i18n && i18n.translations && i18n.t) {
+        if (typeof i18n !== 'undefined' && i18n.translations && i18n.t) {
             var value = i18n.t(key);
             if (value && value !== key) return value;
         }
@@ -831,6 +834,37 @@
         }
     }
 
+    function renderDiff() {
+        var left = byId('diffLeft');
+        var right = byId('diffRight');
+        var result = byId('diffResult');
+        if (!left || !right || !result) return;
+        result.replaceChildren();
+        if (!left.value && !right.value) {
+            setBanner(byId('diffBanner'), '', '');
+            return;
+        }
+        try {
+            var diff = core.diffLines(left.value, right.value);
+            var summary = diff.added === 0 && diff.removed === 0
+                ? t('tools.diff.same')
+                : tf('tools.diff.summary', { added: diff.added, removed: diff.removed });
+            setBanner(byId('diffBanner'), diff.added === 0 && diff.removed === 0 ? 'ok' : 'info', summary);
+            diff.rows.forEach(function (row) {
+                var line = document.createElement('div');
+                line.className = 'tk-diff-line is-' + row.type;
+                var mark = document.createElement('span');
+                mark.textContent = row.type === 'add' ? '+' : row.type === 'remove' ? '−' : ' ';
+                var text = document.createElement('code');
+                text.textContent = row.text === '' ? ' ' : row.text;
+                line.append(mark, text);
+                result.append(line);
+            });
+        } catch (err) {
+            setBanner(byId('diffBanner'), 'err', errorText(err));
+        }
+    }
+
     function renderRadix() {
         var input = byId('radixIn');
         var result = byId('radixResult');
@@ -1095,6 +1129,19 @@
         });
         byId('radixIn').addEventListener('input', debounce(renderRadix, 60));
 
+        byId('diffLeft').addEventListener('input', debounce(renderDiff, 80));
+        byId('diffRight').addEventListener('input', debounce(renderDiff, 80));
+        byId('diffSample').addEventListener('click', function () {
+            byId('diffLeft').value = 'alpha\nbeta\ngamma';
+            byId('diffRight').value = 'alpha\nBETA\ngamma\ndelta';
+            renderDiff();
+        });
+        byId('diffClear').addEventListener('click', function () {
+            byId('diffLeft').value = '';
+            byId('diffRight').value = '';
+            renderDiff();
+        });
+
         byId('jwtToggleSecret').addEventListener('click', function () {
             var input = byId('jwtSecret');
             var show = input.type === 'password';
@@ -1122,6 +1169,7 @@
         renderUrl();
         renderRegex();
         renderRadix();
+        renderDiff();
         var secretBtn = byId('jwtToggleSecret');
         if (secretBtn && byId('jwtSecret')) {
             secretBtn.textContent = t(byId('jwtSecret').type === 'password' ? 'tools.jwt.showSecret' : 'tools.jwt.hideSecret');

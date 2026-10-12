@@ -613,6 +613,47 @@ body.tools-page [hidden] {
     color: #172033;
 }
 
+.tk-diff {
+    margin-top: 12px;
+    max-height: 360px;
+    overflow: auto;
+    border-radius: 12px;
+    background: #f7f8fc;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13px;
+}
+
+.tk-diff-line {
+    display: grid;
+    grid-template-columns: 1.4rem minmax(0, 1fr);
+    gap: 8px;
+    padding: 2px 10px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.tk-diff-line span {
+    font-weight: 700;
+}
+
+.tk-diff-line code {
+    font-family: inherit;
+}
+
+.tk-diff-line.is-add {
+    background: #e5f6ea;
+    color: #146c36;
+}
+
+.tk-diff-line.is-remove {
+    background: #fdecec;
+    color: #9f2430;
+}
+
+.tk-diff-line.is-same {
+    color: #667084;
+}
+
 .tk-toolbar {
     display: flex;
     flex-wrap: wrap;
