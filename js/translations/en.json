@@ -19,7 +19,7 @@
     "tools": {
         "pageTitle": "Developer tools — Tim Chen",
         "title": "Developer tools",
-        "lead": "Timestamp, JSON, YAML, MD5, encoding, JWT, plus URL, UUID, regex, and base conversion. After the page loads, the calculations run in this browser.",
+        "lead": "Timestamp, JSON, YAML, MD5, encoding, JWT, plus URL, UUID, regex, base conversion, and a text diff. After the page loads, the calculations run in this browser.",
         "kicker": "Runs in the browser",
         "privacy": "Inputs are processed in this browser and are not sent away for calculation",
         "badge": "Often",
@@ -50,7 +50,9 @@
             "regex": "Regex",
             "regexHint": "Find matches",
             "radix": "Base",
-            "radixHint": "Bin, oct, dec, hex"
+            "radixHint": "Bin, oct, dec, hex",
+            "diff": "Text diff",
+            "diffHint": "Compare two texts"
         },
         "timestamp": {
             "nowLabel": "NOW",
@@ -186,7 +188,8 @@
             "generic": "Could not process that",
             "yaml-missing": "The YAML parser did not load",
             "invalid-url": "Could not decode that",
-            "invalid-regex": "That regular expression is invalid"
+            "invalid-regex": "That regular expression is invalid",
+            "too-large": "More than 400 lines. Shorten the text before comparing."
         },
         "more": "More tools",
         "group": {
@@ -222,7 +225,16 @@
             "dec": "Decimal",
             "hex": "Hex"
         },
-        "pageDescription": "Timestamp, JSON, YAML, hashes, encoding, JWT, URL, UUID, regex, and base conversion in the browser. Inputs are not sent away for processing."
+        "pageDescription": "Timestamp, JSON, YAML, hashes, encoding, JWT, URL, UUID, regex, base conversion, and text diff in the browser. Inputs are not sent away for processing.",
+        "diff": {
+            "left": "Left",
+            "right": "Right",
+            "leftPlaceholder": "Paste the original text",
+            "rightPlaceholder": "Paste the changed text",
+            "summary": "{added} added, {removed} removed",
+            "same": "The two texts match",
+            "hint": "Compared line by line. Newlines are normalized first, and a final newline does not count as a difference."
+        }
     },
     "home": {
         "title": "Tim Chen — Backend Software Engineer",
@@ -232,6 +244,14 @@
         "ctaWork": "View engineering work",
         "ctaPublic": "Public projects",
         "ctaContact": "Contact",
+        "nowTitle": "Now",
+        "nowWorkWhen": "2026/03–",
+        "nowWork": "At Gogoro, working on .NET backends: performance and reliability of existing systems.",
+        "nowSiteWhen": "This site",
+        "nowSite": "The tools are still growing. Text diff runs in this browser.",
+        "nowSiteLink": "Open the diff",
+        "nowJaWhen": "2024–2025",
+        "nowJa": "Finished language school in Tokyo. JLPT N1.",
         "resultsTitle": "Selected results",
         "result1Title": "Fewer unnecessary fallback calls",
         "result1Body": "After fixing a checksum mismatch, daily calls to that fallback API fell from about 75,000 to fewer than 50.",

@@ -142,6 +142,23 @@ test('radix conversion keeps big integers exact', () => {
     assert.throws(() => core.convertRadix('12', 2), (err) => err.code === 'invalid-number');
 });
 
+test('line diff marks inserts, deletes, and matching line endings', () => {
+    const same = core.diffLines('a\nb\nc', 'a\r\nb\nc\n');
+    assert.equal(same.added, 0);
+    assert.equal(same.removed, 0);
+    assert.deepEqual(same.rows.map((row) => row.type), ['same', 'same', 'same']);
+
+    const changed = core.diffLines('a\nb\nc', 'a\nB\nc\nd');
+    assert.equal(changed.removed, 1);
+    assert.equal(changed.added, 2);
+    assert.deepEqual(changed.rows.map((row) => row.type), ['same', 'remove', 'add', 'same', 'add']);
+    assert.equal(changed.rows[2].text, 'B');
+
+    assert.deepEqual(core.diffLines('', 'hi').rows, [{ type: 'add', text: 'hi' }]);
+    assert.equal(core.diffLines('', '').rows.length, 0);
+    assert.throws(() => core.diffLines(('x\n').repeat(401), 'y'), (err) => err.code === 'too-large');
+});
+
 test('vendored js-yaml loads and rejects broken documents', () => {
     const yaml = require('./vendor/js-yaml.min.js');
     const doc = yaml.load('name: Cyt\ntools:\n  - timestamp\n');

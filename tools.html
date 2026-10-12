@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title data-i18n="tools.pageTitle">開發工具 — Tim Chen</title>
-    <meta name="description" data-i18n-content="tools.pageDescription" content="在瀏覽器裡使用的時間戳、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式與進位轉換。輸入內容不會送到遠端計算。">
+    <meta name="description" data-i18n-content="tools.pageDescription" content="在瀏覽器裡使用的時間戳、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換與文字差異。輸入內容不會送到遠端計算。">
     <link rel="icon" type="image/x-icon" href="img/happy.ico">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -60,7 +60,7 @@
             <div>
                 <p class="tk-kicker" data-i18n="tools.kicker">瀏覽器內運算</p>
                 <h1 class="tk-title" data-i18n="tools.title">開發工具</h1>
-                <p class="tk-lead" data-i18n="tools.lead">時間戳、JSON、YAML、MD5、編碼、JWT，另外還有 URL、UUID、正規表示式和進位轉換。頁面載入後，這些計算在這台瀏覽器裡完成。</p>
+                <p class="tk-lead" data-i18n="tools.lead">時間戳、JSON、YAML、MD5、編碼、JWT，另外還有 URL、UUID、正規表示式、進位轉換和文字差異。頁面載入後，這些計算在這台瀏覽器裡完成。</p>
             </div>
             <div class="tk-privacy">
                 <i class="fas fa-lock" aria-hidden="true"></i>
@@ -144,6 +144,13 @@
                         <span>
                             <strong data-i18n="tools.nav.radix">進位轉換</strong>
                             <small data-i18n="tools.nav.radixHint">二、八、十、十六進位</small>
+                        </span>
+                    </button>
+                    <button type="button" class="tk-tab" role="tab" id="tab-diff" data-tool="diff" aria-selected="false" aria-controls="panel-diff">
+                        <i class="fas fa-not-equal" aria-hidden="true"></i>
+                        <span>
+                            <strong data-i18n="tools.nav.diff">文字差異</strong>
+                            <small data-i18n="tools.nav.diffHint">比對兩段文字</small>
                         </span>
                     </button>
                 </div>
@@ -445,6 +452,29 @@
                         <input class="tk-field" id="radixIn" autocomplete="off" spellcheck="false" data-i18n-placeholder="tools.radix.placeholder" placeholder="貼上數字，例如 255 或 0xff">
                         <p class="tk-banner err" id="radixBanner" hidden></p>
                         <div class="tk-result" id="radixResult"></div>
+                    </div>
+                </div>
+
+                <div id="panel-diff" data-panel="diff" role="tabpanel" aria-labelledby="tab-diff" hidden>
+                    <div class="tk-card">
+                        <h2 class="tk-panel-title" data-i18n="tools.nav.diff">文字差異</h2>
+                        <div class="tk-toolbar">
+                            <button type="button" class="tk-btn" id="diffSample" data-i18n="tools.sample">範例</button>
+                            <button type="button" class="tk-btn" id="diffClear" data-i18n="tools.clear">清空</button>
+                        </div>
+                        <p class="tk-hint" data-i18n="tools.diff.hint">以行為單位比較。換行會先整理成同一種，最後一行後面的換行不算差異。</p>
+                        <div class="tk-split">
+                            <div>
+                                <label class="tk-label" for="diffLeft" data-i18n="tools.diff.left">左邊</label>
+                                <textarea class="tk-area" id="diffLeft" spellcheck="false" data-i18n-placeholder="tools.diff.leftPlaceholder" placeholder="貼上原本的文字"></textarea>
+                            </div>
+                            <div>
+                                <label class="tk-label" for="diffRight" data-i18n="tools.diff.right">右邊</label>
+                                <textarea class="tk-area" id="diffRight" spellcheck="false" data-i18n-placeholder="tools.diff.rightPlaceholder" placeholder="貼上改過的文字"></textarea>
+                            </div>
+                        </div>
+                        <p class="tk-banner" id="diffBanner" hidden></p>
+                        <div class="tk-diff" id="diffResult"></div>
                     </div>
                 </div>
             </div>

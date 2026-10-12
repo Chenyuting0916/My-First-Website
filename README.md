@@ -27,6 +27,7 @@ This repository is a static site. It introduces a C#/.NET backend engineer and h
 | UUID | Random UUID v4 via `crypto.randomUUID`. |
 | Regex | Find matches. The scan is always global; `i` and `m` can be toggled. |
 | Radix | Convert an integer among base 2, 8, 10, and 16 with `BigInt`. |
+| Text diff | Line diff of two texts. Newlines are normalized, a trailing newline is ignored, and inputs over 400 lines are refused. |
 
 Tool inputs are not sent to a remote calculator. Loading the site still requests HTML, CSS, JavaScript, and translation JSON. There is no service worker, so the first visit is not an offline or PWA experience.
 
