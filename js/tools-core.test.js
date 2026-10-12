@@ -159,6 +159,23 @@ test('line diff marks inserts, deletes, and matching line endings', () => {
     assert.throws(() => core.diffLines(('x\n').repeat(401), 'y'), (err) => err.code === 'too-large');
 });
 
+test('identifier case conversion splits camel, acronyms, and separators', () => {
+    assert.deepEqual(core.convertCase('userId'), {
+        camel: 'userId',
+        pascal: 'UserId',
+        snake: 'user_id',
+        kebab: 'user-id',
+        constant: 'USER_ID'
+    });
+    assert.equal(core.convertCase('UserID').snake, 'user_id');
+    assert.equal(core.convertCase('HTTPResponse').camel, 'httpResponse');
+    assert.equal(core.convertCase('getHTTPResponseCode').pascal, 'GetHttpResponseCode');
+    assert.equal(core.convertCase('XMLHttpRequest').kebab, 'xml-http-request');
+    assert.equal(core.convertCase('  already-kebab_case  ').constant, 'ALREADY_KEBAB_CASE');
+    assert.throws(() => core.convertCase('   '), (err) => err.code === 'empty');
+    assert.throws(() => core.convertCase('---'), (err) => err.code === 'empty');
+});
+
 test('vendored js-yaml loads and rejects broken documents', () => {
     const yaml = require('./vendor/js-yaml.min.js');
     const doc = yaml.load('name: Cyt\ntools:\n  - timestamp\n');

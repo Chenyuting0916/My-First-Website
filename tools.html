@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title data-i18n="tools.pageTitle">開發工具 — Tim Chen</title>
-    <meta name="description" data-i18n-content="tools.pageDescription" content="在瀏覽器裡使用的時間戳、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換與文字差異。輸入內容不會送到遠端計算。">
+    <meta name="description" data-i18n-content="tools.pageDescription" content="在瀏覽器裡使用的時間戳、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異與命名轉換。輸入內容不會送到遠端計算。">
     <link rel="icon" type="image/x-icon" href="img/happy.ico">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -60,7 +60,7 @@
             <div>
                 <p class="tk-kicker" data-i18n="tools.kicker">瀏覽器內運算</p>
                 <h1 class="tk-title" data-i18n="tools.title">開發工具</h1>
-                <p class="tk-lead" data-i18n="tools.lead">時間戳、JSON、YAML、MD5、編碼、JWT，另外還有 URL、UUID、正規表示式、進位轉換和文字差異。頁面載入後，這些計算在這台瀏覽器裡完成。</p>
+                <p class="tk-lead" data-i18n="tools.lead">時間戳、JSON、YAML、MD5、編碼、JWT，另外還有 URL、UUID、正規表示式、進位轉換、文字差異和命名轉換。頁面載入後，這些計算在這台瀏覽器裡完成。</p>
             </div>
             <div class="tk-privacy">
                 <i class="fas fa-lock" aria-hidden="true"></i>
@@ -151,6 +151,13 @@
                         <span>
                             <strong data-i18n="tools.nav.diff">文字差異</strong>
                             <small data-i18n="tools.nav.diffHint">比對兩段文字</small>
+                        </span>
+                    </button>
+                    <button type="button" class="tk-tab" role="tab" id="tab-case" data-tool="case" aria-selected="false" aria-controls="panel-case">
+                        <i class="fas fa-font" aria-hidden="true"></i>
+                        <span>
+                            <strong data-i18n="tools.nav.case">命名轉換</strong>
+                            <small data-i18n="tools.nav.caseHint">駝峰、底線、連字號</small>
                         </span>
                     </button>
                 </div>
@@ -475,6 +482,21 @@
                         </div>
                         <p class="tk-banner" id="diffBanner" hidden></p>
                         <div class="tk-diff" id="diffResult"></div>
+                    </div>
+                </div>
+
+                <div id="panel-case" data-panel="case" role="tabpanel" aria-labelledby="tab-case" hidden>
+                    <div class="tk-card">
+                        <h2 class="tk-panel-title" data-i18n="tools.nav.case">命名轉換</h2>
+                        <div class="tk-toolbar">
+                            <button type="button" class="tk-btn" id="caseSample" data-i18n="tools.sample">範例</button>
+                            <button type="button" class="tk-btn" id="caseClear" data-i18n="tools.clear">清空</button>
+                        </div>
+                        <label class="tk-label" for="caseIn" data-i18n="tools.case.input">識別名稱</label>
+                        <input class="tk-field" id="caseIn" autocomplete="off" spellcheck="false" data-i18n-placeholder="tools.case.placeholder" placeholder="例如 userId 或 get_user_id">
+                        <p class="tk-hint" data-i18n="tools.case.hint">連續大寫會當成一個詞，例如 HTTPResponse 會拆成 http 與 response。</p>
+                        <p class="tk-banner err" id="caseBanner" hidden></p>
+                        <div class="tk-result is-case" id="caseResult"></div>
                     </div>
                 </div>
             </div>

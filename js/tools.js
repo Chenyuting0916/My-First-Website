@@ -1,7 +1,7 @@
 (function () {
     var core = window.ToolsCore;
-    var TOOLS = ['timestamp', 'json', 'yaml', 'md5', 'codec', 'jwt', 'url', 'uuid', 'regex', 'radix', 'diff'];
-    var MORE_TOOLS = { url: true, uuid: true, regex: true, radix: true, diff: true };
+    var TOOLS = ['timestamp', 'json', 'yaml', 'md5', 'codec', 'jwt', 'url', 'uuid', 'regex', 'radix', 'diff', 'case'];
+    var MORE_TOOLS = { url: true, uuid: true, regex: true, radix: true, diff: true, case: true };
     var JSON_SAMPLE = '{"name":"Ada","ok":true,"tools":["timestamp","json","yaml"]}';
     var YAML_SAMPLE = 'name: Ada\nrole: engineer\ntools:\n  - timestamp\n  - json\n  - yaml\nactive: true\n';
     var YAML_BAD = 'name: Ada\ntools: [\n';
@@ -95,7 +95,12 @@
         'tools.radix.bin': '二進位',
         'tools.radix.oct': '八進位',
         'tools.radix.dec': '十進位',
-        'tools.radix.hex': '十六進位'
+        'tools.radix.hex': '十六進位',
+        'tools.case.camel': '小駝峰',
+        'tools.case.pascal': '大駝峰',
+        'tools.case.snake': '底線',
+        'tools.case.kebab': '連字號',
+        'tools.case.constant': '常數'
     };
 
     function lang() {
@@ -865,6 +870,31 @@
         }
     }
 
+    function renderCase() {
+        var input = byId('caseIn');
+        var result = byId('caseResult');
+        if (!input || !result) return;
+        if (!input.value.trim()) {
+            setBanner(byId('caseBanner'), '', '');
+            result.replaceChildren();
+            return;
+        }
+        try {
+            var values = core.convertCase(input.value);
+            setBanner(byId('caseBanner'), '', '');
+            fillResult(result, [
+                { label: t('tools.case.camel'), value: values.camel },
+                { label: t('tools.case.pascal'), value: values.pascal },
+                { label: t('tools.case.snake'), value: values.snake },
+                { label: t('tools.case.kebab'), value: values.kebab },
+                { label: t('tools.case.constant'), value: values.constant }
+            ]);
+        } catch (err) {
+            result.replaceChildren();
+            setBanner(byId('caseBanner'), 'err', errorText(err));
+        }
+    }
+
     function renderRadix() {
         var input = byId('radixIn');
         var result = byId('radixResult');
@@ -1142,6 +1172,16 @@
             renderDiff();
         });
 
+        byId('caseIn').addEventListener('input', debounce(renderCase, 60));
+        byId('caseSample').addEventListener('click', function () {
+            byId('caseIn').value = 'getHTTPResponseCode';
+            renderCase();
+        });
+        byId('caseClear').addEventListener('click', function () {
+            byId('caseIn').value = '';
+            renderCase();
+        });
+
         byId('jwtToggleSecret').addEventListener('click', function () {
             var input = byId('jwtSecret');
             var show = input.type === 'password';
@@ -1170,6 +1210,7 @@
         renderRegex();
         renderRadix();
         renderDiff();
+        renderCase();
         var secretBtn = byId('jwtToggleSecret');
         if (secretBtn && byId('jwtSecret')) {
             secretBtn.textContent = t(byId('jwtSecret').type === 'password' ? 'tools.jwt.showSecret' : 'tools.jwt.hideSecret');

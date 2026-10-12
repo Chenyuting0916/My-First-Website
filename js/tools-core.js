@@ -570,6 +570,30 @@
         return { rows: rows, added: added, removed: removed };
     }
 
+    function convertCase(text) {
+        var raw = String(text == null ? '' : text).trim();
+        if (!raw) throw fail('empty');
+        var split = raw
+            .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+            .replace(/([A-Z]+)([A-Z][a-z])/g, '$1 $2');
+        var words = split.split(/[^A-Za-z0-9]+/).filter(function (part) {
+            return part.length > 0;
+        }).map(function (part) {
+            return part.toLowerCase();
+        });
+        if (!words.length) throw fail('empty');
+        function cap(word) {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        }
+        return {
+            camel: words[0] + words.slice(1).map(cap).join(''),
+            pascal: words.map(cap).join(''),
+            snake: words.join('_'),
+            kebab: words.join('-'),
+            constant: words.join('_').toUpperCase()
+        };
+    }
+
     async function verifyJwtHmac(decoded, secret) {
         const alg = decoded && decoded.header ? decoded.header.alg : '';
         const hashes = { HS256: 'SHA-256', HS384: 'SHA-384', HS512: 'SHA-512' };
@@ -608,6 +632,7 @@
         parseUrlInfo: parseUrlInfo,
         testRegex: testRegex,
         convertRadix: convertRadix,
-        diffLines: diffLines
+        diffLines: diffLines,
+        convertCase: convertCase
     };
 });

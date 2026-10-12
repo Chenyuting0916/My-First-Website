@@ -19,7 +19,7 @@
     "tools": {
         "pageTitle": "Developer tools — Tim Chen",
         "title": "Developer tools",
-        "lead": "Timestamp, JSON, YAML, MD5, encoding, JWT, plus URL, UUID, regex, base conversion, and a text diff. After the page loads, the calculations run in this browser.",
+        "lead": "Timestamp, JSON, YAML, MD5, encoding, JWT, plus URL, UUID, regex, base conversion, text diff, and identifier case. After the page loads, the calculations run in this browser.",
         "kicker": "Runs in the browser",
         "privacy": "Inputs are processed in this browser and are not sent away for calculation",
         "badge": "Often",
@@ -52,7 +52,9 @@
             "radix": "Base",
             "radixHint": "Bin, oct, dec, hex",
             "diff": "Text diff",
-            "diffHint": "Compare two texts"
+            "diffHint": "Compare two texts",
+            "case": "Case",
+            "caseHint": "camel, snake, kebab"
         },
         "timestamp": {
             "nowLabel": "NOW",
@@ -225,7 +227,7 @@
             "dec": "Decimal",
             "hex": "Hex"
         },
-        "pageDescription": "Timestamp, JSON, YAML, hashes, encoding, JWT, URL, UUID, regex, base conversion, and text diff in the browser. Inputs are not sent away for processing.",
+        "pageDescription": "Timestamp, JSON, YAML, hashes, encoding, JWT, URL, UUID, regex, base conversion, text diff, and identifier case in the browser. Inputs are not sent away for processing.",
         "diff": {
             "left": "Left",
             "right": "Right",
@@ -234,6 +236,16 @@
             "summary": "{added} added, {removed} removed",
             "same": "The two texts match",
             "hint": "Compared line by line. Newlines are normalized first, and a final newline does not count as a difference."
+        },
+        "case": {
+            "input": "Identifier",
+            "placeholder": "For example, userId or get_user_id",
+            "hint": "A run of capitals stays one word, so HTTPResponse splits into http and response.",
+            "camel": "camelCase",
+            "pascal": "PascalCase",
+            "snake": "snake_case",
+            "kebab": "kebab-case",
+            "constant": "CONSTANT"
         }
     },
     "home": {
@@ -248,8 +260,9 @@
         "nowWorkWhen": "2026/03–",
         "nowWork": "At Gogoro, working on .NET backends: performance and reliability of existing systems.",
         "nowSiteWhen": "This site",
-        "nowSite": "The tools are still growing. Text diff runs in this browser.",
+        "nowSite": "The tools are still growing. Text diff and identifier case both run in this browser.",
         "nowSiteLink": "Open the diff",
+        "nowCaseLink": "Open case conversion",
         "nowJaWhen": "2024–2025",
         "nowJa": "Finished language school in Tokyo. JLPT N1.",
         "resultsTitle": "Selected results",
