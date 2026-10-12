@@ -7,11 +7,8 @@ html.tools-root {
 }
 
 body.tools-page {
-    background:
-        radial-gradient(920px 420px at -10% -20%, rgba(107, 77, 168, 0.18), transparent 60%),
-        radial-gradient(760px 380px at 110% -10%, rgba(61, 116, 208, 0.16), transparent 55%),
-        #f3f5fb;
-    color: #172033;
+    background: linear-gradient(180deg, #f7f4ec 0%, var(--paper) 220px);
+    color: var(--ink);
     min-height: 100vh;
     min-height: 100dvh;
     display: flex;
@@ -48,7 +45,7 @@ body.tools-page h4 {
     letter-spacing: 0;
     line-height: 1.35;
     margin: 0 0 12px;
-    color: #172033;
+    color: var(--ink);
     font-weight: 700;
 }
 
@@ -97,20 +94,20 @@ body.tools-page [hidden] {
 
 .tk-kicker {
     margin: 0 0 8px;
-    color: #5b4b9a;
+    color: var(--accent);
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.14em;
 }
 
 .tk-title {
-    color: #172033;
+    color: var(--ink);
 }
 
 .tk-lead {
     max-width: 680px;
     margin: 8px 0 0;
-    color: #5c6b82;
+    color: var(--muted);
     font-size: 15px;
     line-height: 1.6;
 }
@@ -120,14 +117,14 @@ body.tools-page [hidden] {
     align-items: center;
     gap: 8px;
     flex: 0 0 auto;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.95);
-    color: #31415c;
+    background: var(--card);
+    border: 1px solid var(--line);
+    color: var(--ink);
     border-radius: 999px;
     padding: 8px 12px;
     font-size: 13px;
     font-weight: 650;
-    box-shadow: 0 8px 24px rgba(36, 52, 97, 0.06);
+    box-shadow: var(--shadow);
 }
 
 .tk-shell {
@@ -143,7 +140,7 @@ body.tools-page [hidden] {
     flex-direction: column;
     gap: 8px;
     scrollbar-width: thin;
-    scrollbar-color: #c5cde0 transparent;
+    scrollbar-color: var(--scroll) transparent;
     position: sticky;
     top: 76px;
     max-height: calc(100vh - 92px);
@@ -164,14 +161,14 @@ body.tools-page [hidden] {
 }
 
 .tk-tabs::-webkit-scrollbar-thumb {
-    background: #c5cde0;
+    background: var(--scroll);
     border-radius: 99px;
     box-shadow: none;
 }
 
 .tk-group-label {
     margin: 2px 8px 0;
-    color: #526178;
+    color: var(--faint);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -185,7 +182,7 @@ body.tools-page [hidden] {
     margin-top: 4px;
     border: 0;
     background: transparent;
-    color: #526178;
+    color: var(--faint);
     border-radius: 12px;
     padding: 8px 12px;
     font-size: 13px;
@@ -218,8 +215,8 @@ body.tools-page [hidden] {
     width: 100%;
     text-align: left;
     border: 1px solid transparent;
-    background: rgba(255, 255, 255, 0.55);
-    color: #243047;
+    background: rgba(255, 252, 247, 0.72);
+    color: var(--ink);
     border-radius: 16px;
     padding: 11px 12px;
     cursor: pointer;
@@ -231,8 +228,8 @@ body.tools-page [hidden] {
     border-radius: 12px;
     display: grid;
     place-items: center;
-    background: #e8edff;
-    color: #4454b8;
+    background: var(--accent-soft);
+    color: var(--accent);
     flex: 0 0 auto;
 }
 
@@ -248,7 +245,7 @@ body.tools-page [hidden] {
 .tk-tab small {
     display: block;
     margin-top: 2px;
-    color: #526178;
+    color: var(--faint);
     font-size: 12px;
     font-weight: 500;
 }
@@ -258,14 +255,14 @@ body.tools-page [hidden] {
 }
 
 .tk-tab.is-active {
-    background: #fff;
-    border-color: #d9e2ff;
-    box-shadow: 0 10px 28px rgba(47, 63, 143, 0.08);
+    background: var(--card);
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow);
 }
 
 .tk-tab.is-active i,
 .tk-tab.is-feature.is-active i {
-    background: linear-gradient(135deg, #6b4da8, #3d74d0);
+    background: var(--accent);
     color: #fff;
 }
 
@@ -274,8 +271,8 @@ body.tools-page [hidden] {
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.04em;
-    color: #6941a8;
-    background: #efe7ff;
+    color: var(--accent);
+    background: var(--accent-soft);
     border-radius: 999px;
     padding: 1px 6px;
 }
@@ -285,13 +282,11 @@ body.tools-page [hidden] {
 }
 
 .tk-now {
-    background:
-        radial-gradient(420px 180px at 100% 0%, rgba(255, 255, 255, 0.16), transparent 60%),
-        linear-gradient(135deg, #2a2154 0%, #243e78 58%, #1a568f 100%);
+    background: var(--ink);
     color: #fff;
     border-radius: 22px;
     padding: 26px 26px 18px;
-    box-shadow: 0 18px 40px rgba(28, 42, 92, 0.18);
+    box-shadow: 0 16px 36px rgba(28, 25, 21, 0.16);
 }
 
 .tk-now-top {
@@ -399,11 +394,11 @@ body.tools-page [hidden] {
 }
 
 .tk-card {
-    background: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    border-radius: 18px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
     padding: 18px;
-    box-shadow: 0 10px 30px rgba(36, 52, 97, 0.05);
+    box-shadow: var(--shadow);
 }
 
 .tk-row .tk-field {
@@ -415,7 +410,7 @@ body.tools-page [hidden] {
 .tk-label {
     display: block;
     margin-bottom: 6px;
-    color: #526178;
+    color: var(--faint);
     font-size: 12px;
     font-weight: 700;
 }
@@ -424,9 +419,9 @@ body.tools-page [hidden] {
 .tk-select,
 .tk-area {
     width: 100%;
-    border: 1px solid #d7e0ec;
-    background: #fbfcfe;
-    color: #172033;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--ink);
     border-radius: 12px;
     font-size: 14px;
 }
@@ -455,8 +450,8 @@ body.tools-page [hidden] {
 .tk-tab:focus-visible,
 .tk-btn:focus-visible {
     outline: none;
-    border-color: #6d7fe0;
-    box-shadow: 0 0 0 4px rgba(82, 108, 187, 0.16);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(143, 61, 44, 0.16);
 }
 
 .tk-seg {
@@ -467,9 +462,9 @@ body.tools-page [hidden] {
 }
 
 .tk-seg button {
-    border: 1px solid #e1e7f0;
-    background: #fff;
-    color: #31415c;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--ink);
     border-radius: 999px;
     padding: 6px 10px;
     font-size: 12px;
@@ -478,8 +473,8 @@ body.tools-page [hidden] {
 }
 
 .tk-seg button.is-on {
-    background: #172033;
-    border-color: #172033;
+    background: var(--ink);
+    border-color: var(--ink);
     color: #fff;
 }
 
@@ -492,9 +487,9 @@ body.tools-page [hidden] {
 }
 
 .tk-btn {
-    border: 1px solid #d7e0ec;
-    background: #fff;
-    color: #24324a;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--ink);
     border-radius: 10px;
     padding: 8px 12px;
     font-size: 13px;
@@ -503,18 +498,19 @@ body.tools-page [hidden] {
 }
 
 .tk-btn:hover {
-    border-color: #b9c6ea;
-    color: #24324a;
+    border-color: var(--line-strong);
+    color: var(--ink);
 }
 
 .tk-btn.primary {
     border: 0;
-    background: linear-gradient(90deg, #6b4da8, #3d74d0);
+    background: var(--accent);
     color: #fff;
 }
 
 .tk-btn.primary:hover {
     color: #fff;
+    background: #732f22;
 }
 
 .tk-btn.ghost {
@@ -550,7 +546,7 @@ body.tools-page [hidden] {
 
 .tk-hint {
     margin: 8px 0 0;
-    color: #526178;
+    color: var(--faint);
     font-size: 12px;
     line-height: 1.5;
 }
@@ -602,7 +598,7 @@ body.tools-page [hidden] {
 }
 
 .tk-result-row span {
-    color: #7b8798;
+    color: var(--faint);
     font-size: 12px;
     font-weight: 700;
 }
@@ -610,7 +606,48 @@ body.tools-page [hidden] {
 .tk-result-row code {
     font-size: 13px;
     overflow-wrap: anywhere;
-    color: #172033;
+    color: var(--ink);
+}
+
+.tk-diff {
+    margin-top: 12px;
+    max-height: 360px;
+    overflow: auto;
+    border-radius: 12px;
+    background: var(--wash);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13px;
+}
+
+.tk-diff-line {
+    display: grid;
+    grid-template-columns: 1.4rem minmax(0, 1fr);
+    gap: 8px;
+    padding: 2px 10px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.tk-diff-line span {
+    font-weight: 700;
+}
+
+.tk-diff-line code {
+    font-family: inherit;
+}
+
+.tk-diff-line.is-add {
+    background: #e5f6ea;
+    color: #146c36;
+}
+
+.tk-diff-line.is-remove {
+    background: #fdecec;
+    color: #9f2430;
+}
+
+.tk-diff-line.is-same {
+    color: #667084;
 }
 
 .tk-toolbar {
@@ -625,7 +662,7 @@ body.tools-page [hidden] {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: #31415c;
+    color: var(--ink);
     font-size: 13px;
     font-weight: 650;
     padding: 0 4px;
@@ -643,7 +680,7 @@ body.tools-page [hidden] {
     align-items: center;
     gap: 8px;
     margin-bottom: 6px;
-    color: #526178;
+    color: var(--faint);
     font-size: 12px;
     font-weight: 700;
 }
@@ -659,12 +696,12 @@ body.tools-page [hidden] {
     gap: 8px;
     align-items: center;
     padding: 10px 0;
-    border-top: 1px solid #eef2f6;
+    border-top: 1px solid var(--line);
 }
 
 .tk-hash-row span,
 .tk-file-row span {
-    color: #7b8798;
+    color: var(--faint);
     font-size: 12px;
     font-weight: 700;
 }
@@ -673,14 +710,14 @@ body.tools-page [hidden] {
 .tk-file-row code {
     font-size: 13px;
     overflow-wrap: anywhere;
-    color: #172033;
+    color: var(--ink);
 }
 
 .tk-drop {
     margin-top: 14px;
-    border: 1.5px dashed #c9d4e5;
+    border: 1.5px dashed var(--line-strong);
     border-radius: 16px;
-    background: #fbfcfe;
+    background: var(--card);
     min-height: 120px;
     display: flex;
     flex-direction: column;
@@ -688,7 +725,7 @@ body.tools-page [hidden] {
     justify-content: center;
     gap: 4px;
     text-align: center;
-    color: #31415c;
+    color: var(--ink);
     cursor: pointer;
     padding: 18px;
 }
@@ -698,13 +735,13 @@ body.tools-page [hidden] {
 }
 
 .tk-drop span {
-    color: #7b8798;
+    color: var(--faint);
     font-size: 12px;
 }
 
 .tk-drop.is-drag {
-    border-color: #4f63c8;
-    background: #f3f6ff;
+    border-color: var(--accent);
+    background: var(--accent-soft);
 }
 
 .tk-codec-bar {
@@ -726,7 +763,7 @@ body.tools-page [hidden] {
     margin: 12px 0;
     padding: 12px;
     border-radius: 12px;
-    background: #f6f8fc;
+    background: var(--wash);
     overflow-wrap: anywhere;
     line-height: 1.6;
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -747,7 +784,7 @@ body.tools-page [hidden] {
     border-radius: 16px;
     padding: 12px;
     background: #fff;
-    border: 1px solid #e7edf5;
+    border: 1px solid var(--line);
     min-width: 0;
 }
 
@@ -778,7 +815,7 @@ body.tools-page [hidden] {
     overflow-wrap: anywhere;
     font-size: 12.5px;
     line-height: 1.5;
-    color: #172033;
+    color: var(--ink);
     min-height: 72px;
 }
 
@@ -800,14 +837,14 @@ body.tools-page [hidden] {
     gap: 8px;
     align-items: center;
     background: #fff;
-    border: 1px solid #e7edf5;
+    border: 1px solid var(--line);
     border-radius: 12px;
     padding: 10px 12px;
 }
 
 .tk-claim b {
     font-size: 12px;
-    color: #526178;
+    color: var(--faint);
 }
 
 .tk-claim span {
@@ -842,8 +879,8 @@ body.tools-page [hidden] {
     margin: 14px 0 0;
     padding: 16px;
     border-radius: 14px;
-    background: #f6f8fc;
-    color: #172033;
+    background: var(--wash);
+    color: var(--ink);
     font-size: 18px;
     line-height: 1.7;
     white-space: pre-wrap;
@@ -851,8 +888,8 @@ body.tools-page [hidden] {
 }
 
 .tk-regex-hit {
-    background: #efe7ff;
-    color: #4c1d95;
+    background: var(--accent-soft);
+    color: var(--accent);
     border-radius: 4px;
     padding: 0 2px;
 }
@@ -868,14 +905,14 @@ body.tools-page [hidden] {
 .tk-url-table td {
     text-align: left;
     padding: 8px 10px;
-    border-top: 1px solid #e7edf5;
+    border-top: 1px solid var(--line);
     vertical-align: top;
     overflow-wrap: anywhere;
 }
 
 .tk-url-table th {
     width: 140px;
-    color: #7b8798;
+    color: var(--faint);
     font-weight: 700;
 }
 
@@ -884,7 +921,7 @@ body.tools-page [hidden] {
     left: 50%;
     bottom: 24px;
     transform: translateX(-50%) translateY(8px);
-    background: #172033;
+    background: var(--ink);
     color: #fff;
     border-radius: 999px;
     padding: 10px 14px;
@@ -939,7 +976,7 @@ body.tools-page [hidden] {
         overflow-x: auto;
         overflow-y: hidden;
         padding: 8px 0;
-        background: rgba(243, 245, 251, 0.94);
+        background: rgba(243, 239, 230, 0.94);
         margin: 0;
     }
 
@@ -988,6 +1025,10 @@ body.tools-page [hidden] {
     .tk-meta > span:first-of-type {
         margin-top: 0;
     }
+}
+
+.tk-result.is-case .tk-result-row {
+    grid-template-columns: 7.5rem minmax(0, 1fr) auto;
 }
 
 @media (prefers-reduced-motion: reduce) {

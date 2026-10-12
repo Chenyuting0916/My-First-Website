@@ -511,6 +511,89 @@
         return { bin: write(2), oct: write(8), dec: write(10), hex: write(16) };
     }
 
+    var DIFF_LINE_LIMIT = 400;
+
+    function diffLines(leftText, rightText) {
+        function linesOf(text) {
+            var normalized = String(text == null ? '' : text).replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+            if (normalized.charAt(normalized.length - 1) === '\n') normalized = normalized.slice(0, -1);
+            if (!normalized) return [];
+            return normalized.split('\n');
+        }
+
+        var left = linesOf(leftText);
+        var right = linesOf(rightText);
+        if (left.length > DIFF_LINE_LIMIT || right.length > DIFF_LINE_LIMIT) throw fail('too-large');
+
+        var n = left.length;
+        var m = right.length;
+        var lcs = new Array(n + 1);
+        for (var i = 0; i <= n; i++) lcs[i] = new Uint16Array(m + 1);
+        for (var row = n - 1; row >= 0; row--) {
+            for (var col = m - 1; col >= 0; col--) {
+                lcs[row][col] = left[row] === right[col]
+                    ? lcs[row + 1][col + 1] + 1
+                    : Math.max(lcs[row + 1][col], lcs[row][col + 1]);
+            }
+        }
+
+        var rows = [];
+        var added = 0;
+        var removed = 0;
+        var leftIndex = 0;
+        var rightIndex = 0;
+        while (leftIndex < n && rightIndex < m) {
+            if (left[leftIndex] === right[rightIndex]) {
+                rows.push({ type: 'same', text: left[leftIndex] });
+                leftIndex++;
+                rightIndex++;
+            } else if (lcs[leftIndex + 1][rightIndex] >= lcs[leftIndex][rightIndex + 1]) {
+                rows.push({ type: 'remove', text: left[leftIndex] });
+                removed++;
+                leftIndex++;
+            } else {
+                rows.push({ type: 'add', text: right[rightIndex] });
+                added++;
+                rightIndex++;
+            }
+        }
+        while (leftIndex < n) {
+            rows.push({ type: 'remove', text: left[leftIndex] });
+            removed++;
+            leftIndex++;
+        }
+        while (rightIndex < m) {
+            rows.push({ type: 'add', text: right[rightIndex] });
+            added++;
+            rightIndex++;
+        }
+        return { rows: rows, added: added, removed: removed };
+    }
+
+    function convertCase(text) {
+        var raw = String(text == null ? '' : text).trim();
+        if (!raw) throw fail('empty');
+        var split = raw
+            .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+            .replace(/([A-Z]+)([A-Z][a-z])/g, '$1 $2');
+        var words = split.split(/[^A-Za-z0-9]+/).filter(function (part) {
+            return part.length > 0;
+        }).map(function (part) {
+            return part.toLowerCase();
+        });
+        if (!words.length) throw fail('empty');
+        function cap(word) {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        }
+        return {
+            camel: words[0] + words.slice(1).map(cap).join(''),
+            pascal: words.map(cap).join(''),
+            snake: words.join('_'),
+            kebab: words.join('-'),
+            constant: words.join('_').toUpperCase()
+        };
+    }
+
     async function verifyJwtHmac(decoded, secret) {
         const alg = decoded && decoded.header ? decoded.header.alg : '';
         const hashes = { HS256: 'SHA-256', HS384: 'SHA-384', HS512: 'SHA-512' };
@@ -548,6 +631,8 @@
         transformUrl: transformUrl,
         parseUrlInfo: parseUrlInfo,
         testRegex: testRegex,
-        convertRadix: convertRadix
+        convertRadix: convertRadix,
+        diffLines: diffLines,
+        convertCase: convertCase
     };
 });

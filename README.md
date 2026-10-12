@@ -9,7 +9,7 @@ This repository is a static site. It introduces a C#/.NET backend engineer and h
 
 ## What is included
 
-- **Home** (`index.html`): role, three scoped results, short case links, experience, skills, and contact.
+- **Home** (`index.html`): role, a Now section, three scoped results, short case links, experience, skills, and contact.
 - **About** (`about.html`): how Tim works, the small personal projects, Japanese language study and JLPT N1, and an engineering reading group.
 - **Work** (`Portfolio.html`): de-identified work cases, then small public projects he actually uses (Discipline App and the tools on this site), then two C# exercises (TwStock and the Yung Ching interview API). Level and TimeMiner sit below as the earlier form of the same time-and-discipline thread. The filename is case-sensitive.
 - **Tools** (`tools.html`): utilities that calculate in the browser after the page has loaded.
@@ -27,6 +27,8 @@ This repository is a static site. It introduces a C#/.NET backend engineer and h
 | UUID | Random UUID v4 via `crypto.randomUUID`. |
 | Regex | Find matches. The scan is always global; `i` and `m` can be toggled. |
 | Radix | Convert an integer among base 2, 8, 10, and 16 with `BigInt`. |
+| Text diff | Line diff of two texts. Newlines are normalized, a trailing newline is ignored, and inputs over 400 lines are refused. |
+| Case | Convert an identifier among camelCase, PascalCase, snake_case, kebab-case, and CONSTANT_CASE. Acronyms stay one word. |
 
 Tool inputs are not sent to a remote calculator. Loading the site still requests HTML, CSS, JavaScript, and translation JSON. There is no service worker, so the first visit is not an offline or PWA experience.
 

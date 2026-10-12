@@ -19,7 +19,7 @@
     "tools": {
         "pageTitle": "開発ツール — Tim Chen",
         "title": "開発ツール",
-        "lead": "タイムスタンプ、JSON、YAML、MD5、エンコード、JWT に加えて、URL、UUID、正規表現、進数変換があります。ページを読み込んだあと、計算はこのブラウザの中で行います。",
+        "lead": "タイムスタンプ、JSON、YAML、MD5、エンコード、JWT に加えて、URL、UUID、正規表現、進数変換、テキスト差分、命名変換があります。ページを読み込んだあと、計算はこのブラウザの中で行います。",
         "kicker": "ブラウザ内で計算",
         "privacy": "入力はこのブラウザで処理し、遠隔の計算には送りません",
         "badge": "よく使う",
@@ -50,7 +50,11 @@
             "regex": "正規表現",
             "regexHint": "一致した部分を探す",
             "radix": "進数変換",
-            "radixHint": "2 / 8 / 10 / 16 進数"
+            "radixHint": "2 / 8 / 10 / 16 進数",
+            "diff": "テキスト差分",
+            "diffHint": "2 つの文章を比べる",
+            "case": "命名変換",
+            "caseHint": "キャメル、スネーク、ケバブ"
         },
         "timestamp": {
             "nowLabel": "いま",
@@ -186,7 +190,8 @@
             "generic": "処理できませんでした",
             "yaml-missing": "YAML パーサーを読み込めませんでした",
             "invalid-url": "この内容は復号できません",
-            "invalid-regex": "正規表現が正しくありません"
+            "invalid-regex": "正規表現が正しくありません",
+            "too-large": "400 行を超えています。短くしてから比べてください。"
         },
         "more": "その他のツール",
         "group": {
@@ -222,7 +227,26 @@
             "dec": "10進数",
             "hex": "16進数"
         },
-        "pageDescription": "ブラウザで使うタイムスタンプ、JSON、YAML、ハッシュ、エンコード、JWT、URL、UUID、正規表現、進数変換です。入力は遠隔の計算には送りません。"
+        "pageDescription": "ブラウザで使うタイムスタンプ、JSON、YAML、ハッシュ、エンコード、JWT、URL、UUID、正規表現、進数変換、テキスト差分、命名変換です。入力は遠隔の計算には送りません。",
+        "diff": {
+            "left": "左",
+            "right": "右",
+            "leftPlaceholder": "元の文章を貼る",
+            "rightPlaceholder": "変更後の文章を貼る",
+            "summary": "{added} 行追加、{removed} 行削除",
+            "same": "2 つは同じです",
+            "hint": "行ごとに比べます。改行は先に揃え、最後の改行は差になりません。"
+        },
+        "case": {
+            "input": "識別子",
+            "placeholder": "userId や get_user_id など",
+            "hint": "連続する大文字は 1 語です。HTTPResponse は http と response に分かれます。",
+            "camel": "キャメル",
+            "pascal": "パスカル",
+            "snake": "スネーク",
+            "kebab": "ケバブ",
+            "constant": "定数"
+        }
     },
     "home": {
         "title": "Tim Chen — バックエンドエンジニア",
@@ -232,6 +256,15 @@
         "ctaWork": "実績を見る",
         "ctaPublic": "公開プロジェクト",
         "ctaContact": "連絡する",
+        "nowTitle": "今",
+        "nowWorkWhen": "2026/03–",
+        "nowWork": "Gogoro で .NET のバックエンドをしています。既存システムの性能と信頼性です。",
+        "nowSiteWhen": "このサイト",
+        "nowSite": "ツールはまだ増やしています。テキスト差分と命名変換は、このブラウザで動きます。",
+        "nowSiteLink": "差分を開く",
+        "nowCaseLink": "命名変換を開く",
+        "nowJaWhen": "2024–2025",
+        "nowJa": "東京の語学学校を終えて、JLPT N1 です。",
         "resultsTitle": "主な成果",
         "result1Title": "不要な fallback 呼び出しを減らした",
         "result1Body": "checksum の不一致を直したあと、その fallback API の 1 日あたりの呼び出しは約 75,000 回から 50 回未満になりました。",

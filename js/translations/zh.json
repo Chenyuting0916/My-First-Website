@@ -19,7 +19,7 @@
     "tools": {
         "pageTitle": "開發工具 — Tim Chen",
         "title": "開發工具",
-        "lead": "時間戳、JSON、YAML、MD5、編碼、JWT，另外還有 URL、UUID、正規表示式和進位轉換。頁面載入後，這些計算在這台瀏覽器裡完成。",
+        "lead": "時間戳、JSON、YAML、MD5、編碼、JWT，另外還有 URL、UUID、正規表示式、進位轉換、文字差異和命名轉換。頁面載入後，這些計算在這台瀏覽器裡完成。",
         "kicker": "瀏覽器內運算",
         "privacy": "輸入內容在這台瀏覽器裡處理，不會送到遠端計算",
         "badge": "常用",
@@ -50,7 +50,11 @@
             "regex": "正規表示式",
             "regexHint": "找符合的片段",
             "radix": "進位轉換",
-            "radixHint": "二、八、十、十六進位"
+            "radixHint": "二、八、十、十六進位",
+            "diff": "文字差異",
+            "diffHint": "比對兩段文字",
+            "case": "命名轉換",
+            "caseHint": "駝峰、底線、連字號"
         },
         "timestamp": {
             "nowLabel": "現在",
@@ -186,7 +190,8 @@
             "generic": "沒辦法處理這份內容",
             "yaml-missing": "YAML 解析器沒有載入",
             "invalid-url": "這段內容解不開",
-            "invalid-regex": "這個正規表示式不正確"
+            "invalid-regex": "這個正規表示式不正確",
+            "too-large": "超過 400 行，請先縮短再比對"
         },
         "more": "其他工具",
         "group": {
@@ -222,7 +227,26 @@
             "dec": "十進位",
             "hex": "十六進位"
         },
-        "pageDescription": "在瀏覽器裡使用的時間戳、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式與進位轉換。輸入內容不會送到遠端計算。"
+        "pageDescription": "在瀏覽器裡使用的時間戳、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異與命名轉換。輸入內容不會送到遠端計算。",
+        "diff": {
+            "left": "左邊",
+            "right": "右邊",
+            "leftPlaceholder": "貼上原本的文字",
+            "rightPlaceholder": "貼上改過的文字",
+            "summary": "多了 {added} 行，少了 {removed} 行",
+            "same": "兩段一樣",
+            "hint": "以行為單位比較。換行會先整理成同一種，最後一行後面的換行不算差異。"
+        },
+        "case": {
+            "input": "識別名稱",
+            "placeholder": "例如 userId 或 get_user_id",
+            "hint": "連續大寫會當成一個詞，例如 HTTPResponse 會拆成 http 與 response。",
+            "camel": "小駝峰",
+            "pascal": "大駝峰",
+            "snake": "底線",
+            "kebab": "連字號",
+            "constant": "常數"
+        }
     },
     "home": {
         "title": "Tim Chen — 後端工程師",
@@ -232,6 +256,15 @@
         "ctaWork": "查看工程成果",
         "ctaPublic": "公開專案",
         "ctaContact": "聯絡我",
+        "nowTitle": "現在",
+        "nowWorkWhen": "2026/03–",
+        "nowWork": "在 Gogoro 做 .NET 後端，處理既有系統的效能和可靠性。",
+        "nowSiteWhen": "這個網站",
+        "nowSite": "工具還在加。文字差異和命名轉換都在這台瀏覽器裡。",
+        "nowSiteLink": "打開差異比對",
+        "nowCaseLink": "打開命名轉換",
+        "nowJaWhen": "2024–2025",
+        "nowJa": "在東京讀完語言學校，JLPT N1。",
         "resultsTitle": "精選成果",
         "result1Title": "減少不必要的 fallback 呼叫",
         "result1Body": "修復 checksum 不一致之後，這類 fallback API 的每日呼叫量從約 75,000 次降到少於 50 次。",
