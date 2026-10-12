@@ -412,7 +412,7 @@ body.site-page .site-role-top h3 {
 }
 
 .site-hero .site-lead {
-    max-width: 640px;
+    max-width: 720px;
     margin: 8px 0 0;
     font-size: 16px;
 }
@@ -764,6 +764,15 @@ body.site-page .timeline-link:hover {
     color: #3d74d0;
     background: #e7eefc;
     text-decoration: none;
+}
+
+.site-card .site-links {
+    justify-content: flex-start;
+    padding: 14px 0 0;
+}
+
+.site-award {
+    margin-top: 14px;
 }
 
 .site-more-row {

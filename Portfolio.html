@@ -4,18 +4,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title data-i18n="work.pageTitle">工程成果 — Tim Chen</title>
+    <title data-i18n="work.pageTitle">作品集 — Tim Chen</title>
     <link rel="icon" type="image/x-icon" href="img/happy.ico">
-    <meta name="description" data-i18n-content="work.description" content="Tim Chen 的後端案例：checksum fallback、部分 API 的回應時間，以及站點維修公告的可測試性重構。">
+    <meta name="description" data-i18n-content="work.description" content="Tim Chen 的作品集：去識別化的後端工作案例，以及現在點得開的公開專案。">
     <meta name="author" content="Tim Chen">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/site.css">
-    <link rel="stylesheet" type="text/css" href="css/lightbox.css">
     <link rel="stylesheet" href="fonts/fontawesome/css/all.css">
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/lightbox.js"></script>
     <script type="text/javascript" src="js/i18n.js"></script>
 </head>
 
@@ -57,12 +55,12 @@
     <main class="site-wrap" id="content">
         <header class="site-hero">
             <p class="site-kicker">Tim Chen</p>
-            <h1 data-i18n="work.title">工程成果</h1>
-            <p class="site-lead" data-i18n="work.lead">這些是去識別化的工作案例。沒有公開原始碼的項目不會放上 GitHub 按鈕。</p>
+            <h1 data-i18n="work.title">作品集</h1>
+            <p class="site-lead" data-i18n="work.lead">工作上的案例在上面，數字都寫了範圍。下面是我自己的東西，規模小，但是會用。</p>
         </header>
 
         <section class="site-block" id="work" aria-labelledby="work-title">
-            <h2 id="work-title" class="sr-only" data-i18n="work.title">工程成果</h2>
+            <h2 id="work-title" data-i18n="work.casesTitle">工程成果</h2>
 
             <article class="site-card site-role" id="checksum">
                 <p class="site-label" data-i18n="work.problem">問題</p>
@@ -98,78 +96,107 @@
             </article>
         </section>
 
+        <section class="site-block" id="public" aria-labelledby="public-title">
+            <h2 id="public-title" data-i18n="work.publicTitle">公開專案</h2>
+            <p class="site-note" data-i18n="work.publicLead">前面兩個是我會打開的：專注計時，還有這頁上的小工具。後面兩個是可以看 C# 怎麼分層的練習。</p>
+
+            <article class="site-card site-role" id="discipline">
+                <div class="site-role-top">
+                    <h3>Discipline App</h3>
+                    <span class="site-when" data-i18n="work.kindPersonal">個人</span>
+                </div>
+                <p class="site-meta">ASP.NET Core · Blazor Server · .NET 7 · EF Core · SQLite</p>
+                <p data-i18n="work.disciplineBody">我想要一個自己會打開的專注計時。有番茄鐘、每天的任務，做完會累積經驗值，並接上我已經在用的 Google 日曆和 Google Tasks。用 ASP.NET Core Blazor Server、.NET 7、Entity Framework Core 和 SQLite，登入走 Google OAuth，放在 Azure App Service，用 GitHub Actions 發布。</p>
+                <p class="site-scope" data-i18n="work.disciplineScope">規模就是一個個人網站。演示目前開得了。</p>
+                <div class="site-links">
+                    <a target="_blank" rel="noopener" href="https://disciplineapp.azurewebsites.net/" data-i18n="work.demo">演示</a>
+                    <a target="_blank" rel="noopener" href="https://github.com/Chenyuting0916/DisciplineApp" data-i18n="work.source">原始碼</a>
+                </div>
+            </article>
+
+            <article class="site-card site-role" id="devtools">
+                <div class="site-role-top">
+                    <h3 data-i18n="tools.title">開發工具</h3>
+                    <span class="site-when" data-i18n="work.kindSite">本站</span>
+                </div>
+                <p class="site-meta">HTML · CSS · JavaScript</p>
+                <p data-i18n="work.toolsBody">查時間戳、排 JSON、看 JWT 的時候，我會打開這一頁。時間戳、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式和進位轉換，載入之後在瀏覽器裡算完，並有測試。</p>
+                <p class="site-scope" data-i18n="work.toolsScope">技術是 HTML、CSS、JavaScript。</p>
+                <div class="site-links">
+                    <a href="tools.html" data-i18n="work.openTool">打開工具</a>
+                    <a target="_blank" rel="noopener" href="https://github.com/Chenyuting0916/My-First-Website" data-i18n="work.source">原始碼</a>
+                </div>
+            </article>
+
+            <article class="site-card site-role" id="twstock">
+                <div class="site-role-top">
+                    <h3>TwStock</h3>
+                    <span class="site-when" data-i18n="work.kindPersonal">個人</span>
+                </div>
+                <p class="site-meta">ASP.NET Core · EF Core · SQL Server · Next.js</p>
+                <p data-i18n="work.twstockBody">台股資料的小服務。我把它分成 Api、Application、Domain、Infrastructure，把資料抓進來、存起來、再查出去。使用 ASP.NET Core、Entity Framework Core、SQL Server LocalDB 和 Swagger，資料來自證交所與 FinMind。Domain 有單元測試。前端是 Next.js。</p>
+                <p class="site-scope" data-i18n="work.twstockScope">沒有上線的網站，請看原始碼。</p>
+                <div class="site-links">
+                    <a target="_blank" rel="noopener" href="https://github.com/Chenyuting0916/TwStock" data-i18n="work.source">原始碼</a>
+                </div>
+            </article>
+
+            <article class="site-card site-role" id="yungching">
+                <div class="site-role-top">
+                    <h3>YungChing Assessment</h3>
+                    <span class="site-when" data-i18n="work.kindInterview">面試作業</span>
+                </div>
+                <p class="site-meta">ASP.NET Core 7 · EF Core · SQLite · Swagger</p>
+                <p data-i18n="work.yungchingBody">永慶房屋面試前做的產品 API。留在 GitHub，是因為對方說可以公開，這裡也看得到分層、驗證和測試。使用 ASP.NET Core 7、Entity Framework Core、SQLite、AutoMapper、FluentValidation 和 Swagger。</p>
+                <p class="site-scope" data-i18n="work.yungchingScope">對方說可以公開。</p>
+                <div class="site-links">
+                    <a target="_blank" rel="noopener" href="https://github.com/Chenyuting0916/YungChingAssessment" data-i18n="work.source">原始碼</a>
+                </div>
+            </article>
+        </section>
+
         <section class="site-block" id="earlier" aria-labelledby="earlier-title">
-            <h2 id="earlier-title" data-i18n="work.historyTitle">較早的個人作品</h2>
-            <p class="site-note" data-i18n="work.historyLead">這些是以前的 side project 和學生作品，不是目前的代表成果。演示連結只保留目前還開得了的網站。</p>
-            <div class="site-projects">
-                <article class="site-project">
-                    <a href="img/portfolio/protfolio-29.png" data-lightbox="image-6" data-title="Japanese vocabulary site" class="site-shot has-border">
-                        <img src="img/portfolio/protfolio-29.png" alt="Japanese vocabulary learning site">
-                    </a>
-                    <a href="img/portfolio/protfolio-28.png" data-lightbox="image-6" class="has-border hide"></a>
-                    <a href="img/portfolio/protfolio-27.png" data-lightbox="image-6" class="has-border hide"></a>
-                    <a href="img/portfolio/protfolio-26.png" data-lightbox="image-6" class="has-border hide"></a>
-                    <a href="img/portfolio/protfolio-25.png" data-lightbox="image-6" class="has-border hide"></a>
-                    <a href="img/portfolio/protfolio-24.png" data-lightbox="image-6" class="has-border hide"></a>
-                    <a href="img/portfolio/protfolio-23.png" data-lightbox="image-6" class="has-border hide"></a>
-                    <a href="img/portfolio/protfolio-22.png" data-lightbox="image-6" class="has-border hide"></a>
-                    <p data-i18n="work.japanese">用 Python Flask 做的日文單字練習網站。</p>
-                    <div class="site-links">
-                        <a target="_blank" rel="noopener" href="https://github.com/Chenyuting0916/LearnFlask" data-i18n="work.source">原始碼</a>
-                    </div>
-                </article>
-                <article class="site-project">
-                    <a href="img/portfolio/protfolio-16.png" data-lightbox="image-4" data-title="Azure CRUD site" class="site-shot has-border">
-                        <img src="img/portfolio/protfolio-16.png" alt="Azure CRUD website">
-                    </a>
-                    <a href="img/portfolio/protfolio-21.png" data-lightbox="image-4" class="has-border hide"></a>
-                    <p data-i18n="work.azure">用 Azure 架的簡易 CRUD 網站。</p>
-                    <div class="site-links">
-                        <a target="_blank" rel="noopener" href="https://timeminer.azurewebsites.net/" data-i18n="work.demo">演示</a>
-                        <a target="_blank" rel="noopener" href="https://github.com/Chenyuting0916/MinerMVC" data-i18n="work.source">原始碼</a>
-                    </div>
-                </article>
-                <article class="site-project">
-                    <a href="img/portfolio/protfolio-17.jpg" data-lightbox="image-5" data-title="Level app" class="site-shot has-border">
-                        <img src="img/portfolio/protfolio-17.jpg" alt="Level mobile app">
-                    </a>
-                    <a href="img/portfolio/protfolio-18.jpg" data-lightbox="image-5" class="has-border hide"></a>
-                    <a href="img/portfolio/protfolio-19.jpg" data-lightbox="image-5" class="has-border hide"></a>
-                    <a href="img/portfolio/protfolio-20.jpg" data-lightbox="image-5" class="has-border hide"></a>
-                    <p data-i18n="work.level">用 Flutter 與 Firebase 做的自律練習 app，曾上架 Google Play。</p>
-                    <div class="site-links">
-                        <a target="_blank" rel="noopener" href="https://github.com/Chenyuting0916/Level" data-i18n="work.source">原始碼</a>
-                    </div>
-                </article>
-                <article class="site-project">
-                    <a href="img/portfolio/protfolio-14.jpg" data-lightbox="image-1" class="site-shot has-border">
-                        <img src="img/portfolio/protfolio-14.jpg" alt="Encryption coursework">
-                    </a>
-                    <a href="img/portfolio/protfolio-15.jpg" data-lightbox="image-1" class="has-border hide"></a>
-                    <p data-i18n="work.encryption">大學專題的加解密系統，調整過既有 AES 流程，並和同學參加資訊應用競賽。</p>
-                </article>
-                <article class="site-project">
-                    <a href="img/portfolio/protfolio-3.jpg" data-lightbox="image-2" class="site-shot has-border">
-                        <img src="img/portfolio/protfolio-3.jpg" alt="Java course game">
-                    </a>
-                    <a href="img/portfolio/protfolio-4.jpg" data-lightbox="image-2" class="has-border hide"></a>
-                    <a href="img/portfolio/protfolio-5.jpg" data-lightbox="image-2" class="has-border hide"></a>
-                    <a href="img/portfolio/protfolio-6.jpg" data-lightbox="image-2" class="has-border hide"></a>
-                    <a href="img/portfolio/protfolio-7.jpg" data-lightbox="image-2" class="has-border hide"></a>
-                    <a href="img/portfolio/protfolio-8.jpg" data-lightbox="image-2" class="has-border hide"></a>
-                    <a href="img/portfolio/protfolio-9.jpg" data-lightbox="image-2" class="has-border hide"></a>
-                    <p data-i18n="work.javaGame">大一 Java 課的小遊戲作業。</p>
-                </article>
-                <article class="site-project">
-                    <a href="img/portfolio/protfolio-10.jpg" data-lightbox="image-3" class="site-shot has-border">
-                        <img src="img/portfolio/protfolio-10.jpg" alt="Desktop pet">
-                    </a>
-                    <a href="img/portfolio/protfolio-11.jpg" data-lightbox="image-3" class="has-border hide"></a>
-                    <a href="img/portfolio/protfolio-12.jpg" data-lightbox="image-3" class="has-border hide"></a>
-                    <a href="img/portfolio/protfolio-13.jpg" data-lightbox="image-3" class="has-border hide"></a>
-                    <p data-i18n="work.pet">大二做的桌面寵物。</p>
-                </article>
-            </div>
+            <h2 id="earlier-title" data-i18n="work.historyTitle">同一件事，做得比較早</h2>
+            <p class="site-note" data-i18n="work.historyLead">Level 和 TimeMiner 比 Discipline App 早。我想把時間和自律留在一個會打開的地方。</p>
+
+            <article class="site-card site-role" id="timeminer">
+                <div class="site-role-top">
+                    <h3>TimeMiner</h3>
+                    <span class="site-when" data-i18n="work.kindEarlier">較早</span>
+                </div>
+                <p class="site-meta">ASP.NET Core MVC · EF Core · Azure</p>
+                <p data-i18n="work.timeminerBody">先做的工時記錄。可以管理自訂表格，也可以記工作時間。用 ASP.NET Core MVC 和 Entity Framework Core，放在 Azure。</p>
+                <p class="site-scope" data-i18n="work.timeminerScope">演示目前開得了。</p>
+                <div class="site-links">
+                    <a target="_blank" rel="noopener" href="https://timeminer.azurewebsites.net/" data-i18n="work.demo">演示</a>
+                    <a target="_blank" rel="noopener" href="https://github.com/Chenyuting0916/MinerMVC" data-i18n="work.source">原始碼</a>
+                </div>
+            </article>
+
+            <article class="site-card site-role" id="level">
+                <div class="site-role-top">
+                    <h3>Level</h3>
+                    <span class="site-when" data-i18n="work.kindEarlier">較早</span>
+                </div>
+                <p class="site-meta">Flutter · Firebase</p>
+                <p data-i18n="work.levelBody">更早的自律練習 app，用 Flutter 和 Firebase，曾上架 Google Play。商店頁現在打不開，原始碼還在。</p>
+                <div class="site-links">
+                    <a target="_blank" rel="noopener" href="https://github.com/Chenyuting0916/Level" data-i18n="work.source">原始碼</a>
+                </div>
+            </article>
+
+            <p class="site-note site-award" data-i18n="work.award">2019 年大學專題參加 International ICT Innovative Services Awards，資訊應用類第三名，和同學一起做。</p>
+        </section>
+
+        <section class="site-block" id="person" aria-labelledby="person-title">
+            <h2 id="person-title" data-i18n="work.asideTitle">人也在這裡</h2>
+            <article class="site-card site-role">
+                <p data-i18n="work.asideBody">2024–2025 年在東京讀語言學校，JLPT N1。在日本讀書的時候，用 Flask 做過日文單字練習。在 Titansoft 時辦過工程讀書會。工作之外會騎車、爬山，事情會慢慢做完。</p>
+                <div class="site-links">
+                    <a href="about.html" data-i18n="work.aboutLink">關於</a>
+                    <a target="_blank" rel="noopener" href="https://github.com/Chenyuting0916/LearnFlask" data-i18n="work.japaneseLink">日文單字練習</a>
+                </div>
+            </article>
         </section>
     </main>
 
