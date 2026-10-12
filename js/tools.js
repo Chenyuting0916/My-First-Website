@@ -237,6 +237,18 @@
         button.setAttribute('aria-expanded', open ? 'true' : 'false');
     }
 
+    function scrollTabIntoView(tab) {
+        if (!tab) return;
+        var scroller = tab.closest('.tk-tabs');
+        if (!scroller) return;
+        var tabRect = tab.getBoundingClientRect();
+        var box = scroller.getBoundingClientRect();
+        if (tabRect.top < box.top) scroller.scrollTop -= box.top - tabRect.top;
+        else if (tabRect.bottom > box.bottom) scroller.scrollTop += tabRect.bottom - box.bottom;
+        if (tabRect.left < box.left) scroller.scrollLeft -= box.left - tabRect.left;
+        else if (tabRect.right > box.right) scroller.scrollLeft += tabRect.right - box.right;
+    }
+
     function selectTool(id) {
         if (TOOLS.indexOf(id) < 0) id = 'timestamp';
         if (MORE_TOOLS[id]) setMoreOpen(true);
@@ -251,7 +263,7 @@
         });
         if (location.hash !== '#' + id) history.replaceState(null, '', '#' + id);
         var activeTab = document.getElementById('tab-' + id);
-        if (activeTab && activeTab.scrollIntoView) activeTab.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+        scrollTabIntoView(activeTab);
         if (id === 'uuid' && byId('uuidOut') && !byId('uuidOut').textContent) renderUuids(1);
     }
 

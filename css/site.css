@@ -231,7 +231,7 @@ body.tools-page .navbar-custom .nav li.active a {
     margin-bottom: 22px;
 }
 
-.site-kicker {
+body.site-page .site-kicker {
     margin: 0 0 8px;
     color: var(--accent);
     font-size: 12px;
@@ -384,7 +384,7 @@ body.tools-page .navbar-custom .nav li.active a {
     inset: 0;
 }
 
-.site-scope {
+body.site-page .site-scope {
     margin: 12px 0 0;
     color: var(--faint);
     font-size: 13px;
@@ -462,7 +462,7 @@ body.site-page .site-role-top h3 {
     margin-top: 0;
 }
 
-.site-label {
+body.site-page .site-label {
     margin: 0 0 6px;
     color: var(--accent);
     font-size: 12px;
