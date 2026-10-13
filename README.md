@@ -9,9 +9,9 @@ This repository is a static site. It introduces a C#/.NET backend engineer and h
 
 ## What is included
 
-- **Home** (`index.html`): role, a Now section, three scoped results, short case links, experience, skills, and contact.
-- **About** (`about.html`): how Tim works, the small personal projects, Japanese language study and JLPT N1, and an engineering reading group.
-- **Work** (`Portfolio.html`): de-identified work cases, then small public projects he actually uses (Discipline App and the tools on this site), then two C# exercises (TwStock and the Yung Ching interview API). Level and TimeMiner sit below as the earlier form of the same time-and-discipline thread. The filename is case-sensitive.
+- **Home** (`index.html`): role, three scoped results, short case links, experience, skills, and contact.
+- **About** (`about.html`): work history, public programs, Japanese language study and JLPT N1, and an engineering reading group.
+- **Work** (`Portfolio.html`): de-identified work cases, then public programs (Discipline App, TwStock, TimeMiner, Level). The filename is case-sensitive.
 - **Tools** (`tools.html`): utilities that calculate in the browser after the page has loaded.
 - **Languages**: Traditional Chinese (default), English, and Japanese. Copy lives in `js/translations/`.
 
