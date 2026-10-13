@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title data-i18n="home.title">Tim Chen — 後端工程師</title>
     <link rel="icon" type="image/x-icon" href="img/happy.ico">
-    <meta name="description" data-i18n-content="home.description" content="Tim Chen（陳昱廷）用 C#／.NET 改善既有後端。公開專案不大，是自己會打開的工具，以及一直在做的自律練習。">
+    <meta name="description" data-i18n-content="home.description" content="Tim Chen（陳昱廷），C#／.NET 後端工程師。目前在 Gogoro 改善既有系統的效能與可靠性。">
     <meta name="author" content="Tim Chen">
     <meta property="og:title" content="Tim Chen — 後端工程師">
-    <meta property="og:description" content="用 C#／.NET 把既有後端改得更快、更穩。公開的專案不大，是自己會打開的工具，還有一直在做的自律練習。">
+    <meta property="og:description" content="目前在 Gogoro 用 C#／.NET 做後端，處理既有系統的效能和可靠性。">
     <meta property="og:url" content="https://chenyuting0916.github.io/My-First-Website/">
     <meta property="og:type" content="website">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -60,9 +60,9 @@
         <header class="site-hero">
             <p class="site-kicker" data-i18n="home.kicker">後端工程師</p>
             <h1>Tim Chen</h1>
-            <p class="site-lead" data-i18n="home.lead">陳昱廷／Yu-Ting Chen。我用 C#／.NET 把既有後端改得更快、更穩。公開的專案都不大，是我自己會打開的工具，還有一直在做的自律練習。</p>
+            <p class="site-lead" data-i18n="home.lead">陳昱廷。目前在 Gogoro 用 C#／.NET 做後端，處理既有系統的效能和可靠性。</p>
             <div class="site-actions">
-                <a class="site-btn" href="Portfolio.html#work" data-i18n="home.ctaWork">查看工程成果</a>
+                <a class="site-btn" href="Portfolio.html#work" data-i18n="home.ctaWork">工作案例</a>
                 <a class="site-btn ghost" href="Portfolio.html#public" data-i18n="home.ctaPublic">公開專案</a>
                 <a class="site-btn ghost" href="#contact" data-i18n="home.ctaContact">聯絡我</a>
                 <a class="site-text-link" href="https://github.com/Chenyuting0916" target="_blank" rel="noopener">GitHub</a>
@@ -70,66 +70,22 @@
             </div>
         </header>
 
-        <section class="site-block" id="now" aria-labelledby="now-title">
-            <h2 id="now-title" data-i18n="home.nowTitle">現在</h2>
-            <ol class="site-now">
-                <li>
-                    <span class="site-when" data-i18n="home.nowWorkWhen">2026/03–</span>
-                    <p data-i18n="home.nowWork">在 Gogoro 做 .NET 後端，處理既有系統的效能和可靠性。</p>
-                </li>
-                <li>
-                    <span class="site-when" data-i18n="home.nowSiteWhen">這個網站</span>
-                    <p>
-                        <span data-i18n="home.nowSite">工具還在加。文字差異和命名轉換都在這台瀏覽器裡。</span>
-                        <a class="site-text-link" href="tools.html#diff" data-i18n="home.nowSiteLink">打開差異比對</a>
-                        <a class="site-text-link" href="tools.html#case" data-i18n="home.nowCaseLink">打開命名轉換</a>
-                    </p>
-                </li>
-                <li>
-                    <span class="site-when" data-i18n="home.nowJaWhen">2024–2025</span>
-                    <p data-i18n="home.nowJa">在東京讀完語言學校，JLPT N1。</p>
-                </li>
-            </ol>
-        </section>
-
         <section class="site-block" id="results" aria-labelledby="results-title">
             <h2 id="results-title" data-i18n="home.resultsTitle">精選成果</h2>
             <div class="site-metrics">
                 <article class="site-card">
-                    <h3 data-i18n="home.result1Title">減少不必要的 fallback 呼叫</h3>
-                    <p data-i18n="home.result1Body">修復 checksum 不一致之後，這類 fallback API 的每日呼叫量從約 75,000 次降到少於 50 次。</p>
-                    <p class="site-scope" data-i18n="home.result1Scope">這是特定 fallback 的呼叫量，不是全系統錯誤率或全部 API 流量。</p>
-                </article>
-                <article class="site-card">
-                    <h3 data-i18n="home.result2Title">縮短部分 API 的回應時間</h3>
-                    <p data-i18n="home.result2Body">實際改善過的 API，回應時間從超過 2 秒降到約 200 毫秒。</p>
-                    <p class="site-scope" data-i18n="home.result2Scope">只涵蓋這些 API，不是整個平台。沒有附上百分位數或測試條件。</p>
-                </article>
-                <article class="site-card">
-                    <h3 data-i18n="home.result3Title">擴充並修復既有測試</h3>
-                    <p data-i18n="home.result3Body">既有單元測試套件從 41 個增加到 240 個，並修掉原本會失敗的測試。240 是 2026-10-01 的套件總數。</p>
-                    <p class="site-scope" data-i18n="home.result3Scope">用來保護既有行為、支持安全重構，不是 coverage，也不是從零新寫 240 個。</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="site-block" id="cases" aria-labelledby="cases-title">
-            <h2 id="cases-title" data-i18n="home.casesTitle">工作案例</h2>
-            <p class="site-note" data-i18n="home.casesLead">每則都寫清楚問題、我做的取捨，以及可以核對的結果。</p>
-            <div class="site-cases">
-                <article class="site-card">
-                    <h3 data-i18n="home.case1Title">Checksum 與 fallback</h3>
-                    <p data-i18n="home.case1Summary">不一致的 checksum 會觸發多餘的 fallback API。修好之後，這類每日呼叫從約 75,000 次降到少於 50 次。</p>
+                    <h3 data-i18n="home.result1Title">減少多餘的 fallback 呼叫</h3>
+                    <p data-i18n="home.result1Body">checksum 對不上時，同一個 fallback API 會再被呼叫一次。修好之後，這個 API 的每日呼叫從約 75,000 次降到 50 次以下。</p>
                     <a class="site-text-link" href="Portfolio.html#checksum" data-i18n="home.readCase">閱讀案例</a>
                 </article>
                 <article class="site-card">
-                    <h3 data-i18n="home.case2Title">API 回應時間</h3>
-                    <p data-i18n="home.case2Summary">部分 API 回應超過 2 秒。改善之後，這些 API 大約在 200 毫秒內回應。</p>
+                    <h3 data-i18n="home.result2Title">縮短部分 API 的回應時間</h3>
+                    <p data-i18n="home.result2Body">幾個回應超過 2 秒的 API，改善後大約是 200 毫秒。</p>
                     <a class="site-text-link" href="Portfolio.html#latency" data-i18n="home.readCase">閱讀案例</a>
                 </article>
                 <article class="site-card">
-                    <h3 data-i18n="home.case3Title">維修公告的可測試性</h3>
-                    <p data-i18n="home.case3Summary">把站點維修公告的計算和服務拆開，注入時間依賴，並用測試保護區間合併與快取。</p>
+                    <h3 data-i18n="home.result3Title">補上並修好既有測試</h3>
+                    <p data-i18n="home.result3Body">既有單元測試從 41 個補到 240 個，並修好原本會失敗的測試。</p>
                     <a class="site-text-link" href="Portfolio.html#notices" data-i18n="home.readCase">閱讀案例</a>
                 </article>
             </div>
@@ -143,7 +99,7 @@
                     <span class="site-when" data-i18n="home.gogoroWhen">2026/03–至今</span>
                 </div>
                 <p class="site-meta" data-i18n="home.gogoroRole">.NET 後端開發</p>
-                <p data-i18n="home.gogoroBody">從事 .NET 後端服務開發、既有系統改善，以及效能與可靠性相關工作。</p>
+                <p data-i18n="home.gogoroBody">.NET 後端服務，以及既有系統的效能和可靠性。</p>
             </article>
             <article class="site-card site-role">
                 <div class="site-role-top">
@@ -151,20 +107,19 @@
                     <span class="site-when" data-i18n="home.titansoftWhen">2020/08–2023/04</span>
                 </div>
                 <p class="site-meta" data-i18n="home.titansoftRole">Product Developer</p>
-                <p data-i18n="home.titansoftBody">參與 C#／.NET 後端與 REST／gRPC 微服務，使用 SQL Server、Redis、Kafka。與團隊成員共同導入 integration testing，並組織工程讀書會。2020 年的實習併入這段經歷。</p>
+                <p data-i18n="home.titansoftBody">C#／.NET 後端與 REST／gRPC 微服務，使用 SQL Server、Redis、Kafka。和團隊一起導入 integration testing，並辦過工程讀書會。含 2020 年實習。</p>
             </article>
             <article class="site-card site-role">
                 <div class="site-role-top">
                     <h3 data-i18n="home.schoolName">東海大學資訊工程學系</h3>
                     <span class="site-when" data-i18n="home.schoolWhen">2016–2020</span>
                 </div>
-                <p data-i18n="home.schoolBody">資訊工程學士。2019 International ICT Innovative Services Awards，資訊應用類第三名。那是大學專題，和同學一起做。</p>
+                <p data-i18n="home.schoolBody">資訊工程學士。2019 International ICT Innovative Services Awards，資訊應用類第三名（大學專題，與同學共同完成）。</p>
             </article>
-            <p class="site-note" style="margin-top:14px;" data-i18n="home.also">其他貢獻包括 WCF 測試工具、開發環境異常日誌告警、監控指標整理、GitLab Runner 與 PowerShell 流程，以及 N+1 查詢和程式碼品質修復。</p>
         </section>
 
         <section class="site-block" id="skills" aria-labelledby="skills-title">
-            <h2 id="skills-title" data-i18n="home.skillsTitle">核心能力</h2>
+            <h2 id="skills-title" data-i18n="home.skillsTitle">技術</h2>
             <div class="site-skill-grid">
                 <article class="site-card">
                     <h3 data-i18n="home.skillBackend">Backend</h3>
@@ -210,7 +165,7 @@
 
         <section class="site-block" id="contact" aria-labelledby="contact-title">
             <h2 id="contact-title" data-i18n="home.contactTitle">聯絡</h2>
-            <p class="site-note" data-i18n="home.contactLead">GitHub、LinkedIn 與 Email 都可以找到我。我也關注日本、海外與 remote 的合作可能。</p>
+            <p class="site-note" data-i18n="home.contactLead">GitHub、LinkedIn，或直接寫信。</p>
             <div class="site-contact-links">
                 <a class="site-btn" href="mailto:tim376755000@gmail.com">tim376755000@gmail.com</a>
                 <a class="site-btn ghost" href="https://github.com/Chenyuting0916" target="_blank" rel="noopener">GitHub</a>
