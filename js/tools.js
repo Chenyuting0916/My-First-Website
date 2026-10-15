@@ -10,6 +10,8 @@
     var state = {
         tool: 'timestamp',
         tsUnit: 'auto',
+        relDir: 'ago',
+        relUnit: 'day',
         jsonIndent: 2,
         file: null,
         jwt: null,
@@ -70,6 +72,8 @@
         'tools.errors.empty': '請先貼上內容',
         'tools.errors.invalid-number': '這不是時間戳。日期請用右邊的欄位。',
         'tools.errors.invalid-date': '沒辦法讀這個日期。可以試 2024-01-02 15:04:05',
+        'tools.errors.invalid-relative': '請輸入 0 以上的整數，並選擇單位。',
+        'tools.timestamp.offsetTitle': '相對時間',
         'tools.errors.invalid-hex': 'Hex 格式不對',
         'tools.errors.invalid-base64': 'Base64 格式不對',
         'tools.errors.invalid-utf8': '轉成文字時遇到不是 UTF-8 的位元組',
@@ -279,6 +283,7 @@
         byId('nowUtc').textContent = formatUtc(now);
         byId('nowIso').textContent = now.toISOString();
         byId('nowZone').textContent = zoneLabel(now);
+        if (byId('relAmount')) renderRelative();
     }
 
     function fillResult(el, rows) {
@@ -294,9 +299,27 @@
             button.type = 'button';
             button.className = 'tk-btn tiny';
             button.textContent = t('tools.copy');
-            button.addEventListener('click', function () { copyText(row.value); });
+            button.addEventListener('click', function () { copyText(value.textContent); });
             line.append(label, value, button);
             el.append(line);
+        });
+    }
+
+    function paintRows(el, rows) {
+        var existing = el.querySelectorAll('.tk-result-row');
+        var same = existing.length === rows.length;
+        if (same) {
+            existing.forEach(function (line, index) {
+                var label = line.querySelector('span');
+                if (!label || label.textContent !== rows[index].label) same = false;
+            });
+        }
+        if (!same) {
+            fillResult(el, rows);
+            return;
+        }
+        existing.forEach(function (line, index) {
+            line.querySelector('code').textContent = rows[index].value;
         });
     }
 
@@ -363,6 +386,41 @@
                 { label: t('tools.timestamp.utc'), value: formatUtc(date) },
                 { label: t('tools.timestamp.iso'), value: date.toISOString() }
             ]);
+        } catch (err) {
+            result.replaceChildren();
+            setBanner(error, 'err', errorText(err));
+        }
+    }
+
+    function syncRelPresets() {
+        var raw = byId('relAmount').value.trim();
+        var amount = Number(raw);
+        byId('relPresets').querySelectorAll('[data-rel]').forEach(function (button) {
+            var on = raw !== '' && Number(button.getAttribute('data-rel')) === amount
+                && button.getAttribute('data-unit') === state.relUnit
+                && button.getAttribute('data-dir') === state.relDir;
+            button.classList.toggle('is-on', on);
+        });
+    }
+
+    function renderRelative() {
+        var input = byId('relAmount');
+        var error = byId('relError');
+        var result = byId('relResult');
+        var dir = byId('relDir');
+        if (!input || !error || !result || !dir) return;
+        dir.setAttribute('aria-label', t('tools.timestamp.offsetTitle'));
+        syncRelPresets();
+        var raw = input.value.trim();
+        if (!raw) {
+            setBanner(error, '', '');
+            result.replaceChildren();
+            return;
+        }
+        try {
+            var ms = core.shiftRelative(state.nowMs || Date.now(), Number(raw), state.relUnit, state.relDir);
+            setBanner(error, '', '');
+            paintRows(result, timeRows(ms));
         } catch (err) {
             result.replaceChildren();
             setBanner(error, 'err', errorText(err));
@@ -987,6 +1045,32 @@
             byId('dateInput').value = formatLocal(now);
             syncPicker(byId('dateInput').value);
             renderDate();
+        });
+        byId('relDir').addEventListener('click', function (event) {
+            var button = event.target.closest('[data-dir]');
+            if (!button || !byId('relDir').contains(button)) return;
+            state.relDir = button.getAttribute('data-dir');
+            byId('relDir').querySelectorAll('[data-dir]').forEach(function (el) {
+                el.classList.toggle('is-on', el === button);
+            });
+            renderRelative();
+        });
+        byId('relAmount').addEventListener('input', renderRelative);
+        byId('relUnit').addEventListener('change', function () {
+            state.relUnit = byId('relUnit').value;
+            renderRelative();
+        });
+        byId('relPresets').addEventListener('click', function (event) {
+            var button = event.target.closest('[data-rel]');
+            if (!button) return;
+            state.relDir = button.getAttribute('data-dir');
+            state.relUnit = button.getAttribute('data-unit');
+            byId('relAmount').value = button.getAttribute('data-rel');
+            byId('relUnit').value = state.relUnit;
+            byId('relDir').querySelectorAll('[data-dir]').forEach(function (el) {
+                el.classList.toggle('is-on', el.getAttribute('data-dir') === state.relDir);
+            });
+            renderRelative();
         });
 
         byId('jsonFormat').addEventListener('click', function () { runJson('format'); });

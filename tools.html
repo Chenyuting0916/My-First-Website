@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title data-i18n="tools.pageTitle">開發工具 — Tim Chen</title>
+    <title data-i18n="tools.pageTitle">開發工具</title>
     <meta name="description" data-i18n-content="tools.pageDescription" content="在瀏覽器裡使用的時間戳、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異與命名轉換。輸入內容不會送到遠端計算。">
     <link rel="icon" type="image/x-icon" href="img/happy.ico">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -22,38 +22,14 @@
 
 <body class="tools-page">
     <a class="skip-link" href="#content" data-i18n="nav.skip">跳到內容</a>
-    <div id="nav">
-        <nav class="navbar navbar-expand-md navbar-custom">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">Tim Chen</a>
-                <button class="navbar-toggler ml-auto text-white" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav ml-md-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html" data-i18n="nav.about">關於</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Portfolio.html" data-i18n="nav.portfolio">作品集</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="tools.html" data-i18n="nav.tools" aria-current="page">工具</a>
-                        </li>
-                        <li class="nav-item align-items-center d-flex">
-                            <select id="langSelect" onchange="i18n.setLanguage(this.value)" aria-label="Language">
-                                <option value="zh" selected>中文</option>
-                                <option value="en">English</option>
-                                <option value="ja">日本語</option>
-                            </select>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+    <header class="tk-appbar">
+        <a class="tk-brand" href="#timestamp" data-i18n="tools.title">開發工具</a>
+        <select id="langSelect" onchange="i18n.setLanguage(this.value)" aria-label="Language">
+            <option value="zh" selected>中文</option>
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+        </select>
+    </header>
 
     <div class="tk-wrap" id="content">
         <header class="tk-hero">
@@ -221,6 +197,44 @@
                             <div class="tk-result" id="dateResult"></div>
                             <p class="tk-hint" data-i18n="tools.timestamp.dateHint">沒寫時區時，當成你電腦的本地時間。</p>
                         </div>
+                    </div>
+                    <div class="tk-card tk-offset">
+                        <h2 data-i18n="tools.timestamp.offsetTitle">相對時間</h2>
+                        <p class="tk-hint" data-i18n="tools.timestamp.offsetHint">以現在為準。選好數量和單位，下面會顯示對應的日期和時間戳。</p>
+                        <div class="tk-offset-controls">
+                            <div class="tk-seg" id="relDir" role="radiogroup" aria-label="相對時間">
+                                <button type="button" data-dir="ago" class="is-on" data-i18n="tools.timestamp.offsetAgo">之前</button>
+                                <button type="button" data-dir="in" data-i18n="tools.timestamp.offsetIn">之後</button>
+                            </div>
+                            <label class="tk-amount">
+                                <span class="tk-label" data-i18n="tools.timestamp.offsetAmount">數量</span>
+                                <input class="tk-field" id="relAmount" type="number" min="0" step="1" value="1" inputmode="numeric">
+                            </label>
+                            <label class="tk-amount">
+                                <span class="tk-label" data-i18n="tools.timestamp.unitLabel">單位</span>
+                                <select class="tk-select" id="relUnit">
+                                    <option value="second" data-i18n="tools.timestamp.offsetUnits.second">秒</option>
+                                    <option value="minute" data-i18n="tools.timestamp.offsetUnits.minute">分鐘</option>
+                                    <option value="hour" data-i18n="tools.timestamp.offsetUnits.hour">小時</option>
+                                    <option value="day" selected data-i18n="tools.timestamp.offsetUnits.day">天</option>
+                                    <option value="week" data-i18n="tools.timestamp.offsetUnits.week">週</option>
+                                    <option value="month" data-i18n="tools.timestamp.offsetUnits.month">個月</option>
+                                    <option value="year" data-i18n="tools.timestamp.offsetUnits.year">年</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="tk-presets" id="relPresets">
+                            <button type="button" class="tk-btn" data-rel="0" data-unit="day" data-dir="ago" data-i18n="tools.timestamp.presetNow">現在</button>
+                            <button type="button" class="tk-btn" data-rel="15" data-unit="minute" data-dir="ago" data-i18n="tools.timestamp.preset15m">15 分鐘前</button>
+                            <button type="button" class="tk-btn" data-rel="1" data-unit="hour" data-dir="ago" data-i18n="tools.timestamp.preset1hAgo">1 小時前</button>
+                            <button type="button" class="tk-btn is-on" data-rel="1" data-unit="day" data-dir="ago" data-i18n="tools.timestamp.preset1dAgo">1 天前</button>
+                            <button type="button" class="tk-btn" data-rel="7" data-unit="day" data-dir="ago" data-i18n="tools.timestamp.preset7dAgo">7 天前</button>
+                            <button type="button" class="tk-btn" data-rel="30" data-unit="day" data-dir="ago" data-i18n="tools.timestamp.preset30dAgo">30 天前</button>
+                            <button type="button" class="tk-btn" data-rel="1" data-unit="hour" data-dir="in" data-i18n="tools.timestamp.preset1hIn">1 小時後</button>
+                            <button type="button" class="tk-btn" data-rel="1" data-unit="day" data-dir="in" data-i18n="tools.timestamp.preset1dIn">1 天後</button>
+                        </div>
+                        <p class="tk-banner err" id="relError" hidden></p>
+                        <div class="tk-result" id="relResult"></div>
                     </div>
                 </div>
 
@@ -505,18 +519,9 @@
 
     <div class="tk-toast" id="tkToast" role="status" aria-live="polite"></div>
 
-    <nav id="footer" class="navbar">
-        <div class="container text-center justify-content-center">
-            <div>
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a title="GitHub" target="_blank" rel="noopener" href="https://github.com/Chenyuting0916"><i class="fab fa-github"></i></a></li>
-                    <li class="list-inline-item"><a title="LinkedIn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/yuting-chen-63738b135/"><i class="fab fa-linkedin"></i></a></li>
-                    <li class="list-inline-item"><a title="Email" href="mailto:tim376755000@gmail.com"><i class="far fa-envelope"></i></a></li>
-                </ul>
-                <p>Tim Chen</p>
-            </div>
-        </div>
-    </nav>
+    <footer class="tk-appfoot">
+        <p data-i18n="tools.privacy">輸入內容在這台瀏覽器裡處理，不會送到遠端計算</p>
+    </footer>
 </body>
 
 </html>

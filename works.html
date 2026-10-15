@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="site-root">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-i18n="works.pageTitle">其他作品 — Tim Chen</title>
+    <link rel="icon" type="image/x-icon" href="img/happy.ico">
+    <meta name="description" data-i18n-content="works.description" content="開發工具、Discipline App、TwStock、TimeMiner、Level 的連結。">
+    <meta name="author" content="Tim Chen">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/all.css">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/i18n.js"></script>
+</head>
+
+<body class="site-page">
+    <a class="skip-link" href="#content" data-i18n="nav.skip">跳到內容</a>
+    <div id="nav">
+        <nav class="navbar navbar-expand-md navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Tim Chen</a>
+                <button class="navbar-toggler ml-auto text-white" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-md-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html" data-i18n="nav.about">關於</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Portfolio.html" data-i18n="nav.portfolio">作品集</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="works.html" data-i18n="nav.works" aria-current="page">其他作品</a>
+                        </li>
+                        <li class="nav-item align-items-center d-flex">
+                            <select id="langSelect" onchange="i18n.setLanguage(this.value)" aria-label="Language">
+                                <option value="zh" selected>中文</option>
+                                <option value="en">English</option>
+                                <option value="ja">日本語</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main class="site-wrap" id="content">
+        <header class="site-hero">
+            <p class="site-kicker">Tim Chen</p>
+            <h1 data-i18n="works.title">其他作品</h1>
+            <p class="site-lead" data-i18n="works.lead">這裡放可以另外打開的作品。點進去之後是各自的 app。</p>
+            <p class="site-note" data-i18n="works.note">開發工具在這個網站裡，但那個頁面沒有回到這裡的連結。</p>
+        </header>
+
+        <div class="work-tree">
+            <div class="work-tree-root" data-i18n="works.root">作品</div>
+            <ul class="work-tree-list">
+                <li>
+                    <article class="site-card work-leaf">
+                        <p class="site-label" data-i18n="works.toolsKind">工具</p>
+                        <h2 data-i18n="works.toolsTitle">開發工具</h2>
+                        <p class="site-meta" data-i18n="works.toolsMeta">在瀏覽器裡計算</p>
+                        <p data-i18n="works.toolsBody">時間戳、JSON、YAML、雜湊、編碼、JWT，以及 URL、UUID、正規表示式、進位轉換、文字差異和命名轉換。計算在瀏覽器裡完成。</p>
+                        <div class="site-links">
+                            <a href="tools.html" data-i18n="works.open">打開</a>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="site-card work-leaf">
+                        <p class="site-label" data-i18n="works.appKind">App</p>
+                        <h2 data-i18n="works.disciplineTitle">Discipline App</h2>
+                        <p class="site-meta" data-i18n="works.disciplineMeta">ASP.NET Core · Blazor Server · .NET 7</p>
+                        <p data-i18n="works.disciplineBody">番茄鐘和每日任務。完成後累積經驗值，並接上 Google 日曆和 Google Tasks。</p>
+                        <div class="site-links">
+                            <a target="_blank" rel="noopener" href="https://disciplineapp.azurewebsites.net/" data-i18n="works.open">打開</a>
+                            <a target="_blank" rel="noopener" href="https://github.com/Chenyuting0916/DisciplineApp" data-i18n="works.source">原始碼</a>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="site-card work-leaf">
+                        <p class="site-label" data-i18n="works.dataKind">資料服務</p>
+                        <h2 data-i18n="works.twstockTitle">TwStock</h2>
+                        <p class="site-meta" data-i18n="works.twstockMeta">ASP.NET Core · SQL Server · Next.js</p>
+                        <p data-i18n="works.twstockBody">台股資料服務。資料來自證交所和 FinMind，存進 SQL Server，再用 API 查詢。</p>
+                        <div class="site-links">
+                            <a target="_blank" rel="noopener" href="https://github.com/Chenyuting0916/TwStock" data-i18n="works.source">原始碼</a>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="site-card work-leaf">
+                        <p class="site-label" data-i18n="works.appKind">App</p>
+                        <h2 data-i18n="works.timeminerTitle">TimeMiner</h2>
+                        <p class="site-meta" data-i18n="works.timeminerMeta">ASP.NET Core MVC · EF Core · Azure</p>
+                        <p data-i18n="works.timeminerBody">工時記錄。可以建立自訂表格，也可以記工作時間。</p>
+                        <div class="site-links">
+                            <a target="_blank" rel="noopener" href="https://timeminer.azurewebsites.net/" data-i18n="works.open">打開</a>
+                            <a target="_blank" rel="noopener" href="https://github.com/Chenyuting0916/MinerMVC" data-i18n="works.source">原始碼</a>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="site-card work-leaf">
+                        <p class="site-label" data-i18n="works.appKind">App</p>
+                        <h2 data-i18n="works.levelTitle">Level</h2>
+                        <p class="site-meta" data-i18n="works.levelMeta">Flutter · Firebase</p>
+                        <p data-i18n="works.levelBody">用 Flutter 和 Firebase 做的練習紀錄，曾上架 Google Play。</p>
+                        <div class="site-links">
+                            <a target="_blank" rel="noopener" href="https://github.com/Chenyuting0916/Level" data-i18n="works.source">原始碼</a>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <nav id="footer" class="navbar">
+        <div class="container text-center justify-content-center">
+            <div>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a title="GitHub" target="_blank" rel="noopener" href="https://github.com/Chenyuting0916"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a title="LinkedIn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/yuting-chen-63738b135/"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a title="Email" href="mailto:tim376755000@gmail.com"><i class="far fa-envelope"></i></a></li>
+                </ul>
+                <p>Tim Chen</p>
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>

@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const root = path.join(__dirname, '..');
-const pages = ['index.html', 'about.html', 'Portfolio.html', 'tools.html'];
+const personalPages = ['index.html', 'about.html', 'Portfolio.html', 'works.html'];
 
 function read(name) {
     return fs.readFileSync(path.join(root, name), 'utf8');
@@ -35,8 +35,8 @@ function flatten(value, prefix, out) {
     out.push(prefix);
 }
 
-test('the four pages share one navigation and one footer', () => {
-    const html = pages.map(read);
+test('the personal pages share one navigation and one footer', () => {
+    const html = personalPages.map(read);
     const navs = html.map(navSignature);
     for (const nav of navs) {
         assert.equal(nav, navs[0]);
@@ -50,6 +50,38 @@ test('the four pages share one navigation and one footer', () => {
         'https://www.linkedin.com/in/yuting-chen-63738b135/',
         'mailto:tim376755000@gmail.com'
     ]);
+    for (const name of ['index.html', 'about.html', 'Portfolio.html']) {
+        assert.equal(read(name).includes('tools.html'), false);
+    }
+});
+
+test('the works tree is the only personal page that opens the tools', () => {
+    const html = read('works.html');
+    assert.match(html, /href="tools\.html"/);
+    assert.match(html, /href="https:\/\/disciplineapp\.azurewebsites\.net\/"/);
+    assert.match(html, /href="https:\/\/github\.com\/Chenyuting0916\/DisciplineApp"/);
+    assert.match(html, /href="https:\/\/github\.com\/Chenyuting0916\/TwStock"/);
+    assert.match(html, /href="https:\/\/timeminer\.azurewebsites\.net\/"/);
+    assert.match(html, /href="https:\/\/github\.com\/Chenyuting0916\/MinerMVC"/);
+    assert.match(html, /href="https:\/\/github\.com\/Chenyuting0916\/Level"/);
+    const toolLink = html.match(/<a[^>]*href="tools\.html"[^>]*>/);
+    assert.ok(toolLink);
+    assert.equal(/target=/.test(toolLink[0]), false);
+});
+
+test('the tools page does not link back to the personal site', () => {
+    const html = read('tools.html');
+    assert.equal(html.includes('index.html'), false);
+    assert.equal(html.includes('about.html'), false);
+    assert.equal(html.includes('Portfolio.html'), false);
+    assert.equal(html.includes('works.html'), false);
+    assert.equal(html.includes('Tim Chen'), false);
+    assert.equal(html.includes('github.com/Chenyuting0916'), false);
+    assert.equal(html.includes('linkedin.com'), false);
+    assert.equal(html.includes('tim376755000'), false);
+    assert.equal(html.includes('id="footer"'), false);
+    assert.match(html, /class="tk-appbar"/);
+    assert.match(html, /id="relAmount"/);
 });
 
 test('zh, en, and ja use the same translation keys', () => {

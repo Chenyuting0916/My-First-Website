@@ -365,6 +365,35 @@
         return { key: 'now' };
     }
 
+    function shiftRelative(nowMs, amount, unit, direction) {
+        if (!Number.isSafeInteger(amount) || amount < 0 || amount > 100000) throw fail('invalid-relative');
+        if (direction !== 'ago' && direction !== 'in') throw fail('invalid-relative');
+        const date = new Date(nowMs);
+        if (Number.isNaN(date.getTime())) throw fail('out-of-range');
+        const sign = direction === 'ago' ? -1 : 1;
+        const day = date.getDate();
+        if (unit === 'year' || unit === 'month') {
+            date.setDate(1);
+            date.setMonth(date.getMonth() + sign * (unit === 'year' ? amount * 12 : amount));
+            const last = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+            date.setDate(Math.min(day, last));
+        } else if (unit === 'week') {
+            date.setDate(day + sign * amount * 7);
+        } else if (unit === 'day') {
+            date.setDate(day + sign * amount);
+        } else if (unit === 'hour') {
+            date.setHours(date.getHours() + sign * amount);
+        } else if (unit === 'minute') {
+            date.setMinutes(date.getMinutes() + sign * amount);
+        } else if (unit === 'second') {
+            date.setSeconds(date.getSeconds() + sign * amount);
+        } else {
+            throw fail('invalid-relative');
+        }
+        if (Number.isNaN(date.getTime())) throw fail('out-of-range');
+        return date.getTime();
+    }
+
     function sortJson(value) {
         if (Array.isArray(value)) return value.map(sortJson);
         if (value && typeof value === 'object') {
@@ -626,6 +655,7 @@
         parseTimestamp: parseTimestamp,
         parseDateInput: parseDateInput,
         relativeParts: relativeParts,
+        shiftRelative: shiftRelative,
         formatJson: formatJson,
         sortJson: sortJson,
         transformUrl: transformUrl,

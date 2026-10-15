@@ -3,6 +3,7 @@
 個人網站：後端工程師 Tim Chen（陳昱廷／Yu-Ting Chen）的介紹、工作案例，以及在瀏覽器裡運算的開發工具。
 
 Live site: [https://chenyuting0916.github.io/My-First-Website/](https://chenyuting0916.github.io/My-First-Website/)  
+Other work: [https://chenyuting0916.github.io/My-First-Website/works.html](https://chenyuting0916.github.io/My-First-Website/works.html)  
 Tools: [https://chenyuting0916.github.io/My-First-Website/tools.html](https://chenyuting0916.github.io/My-First-Website/tools.html)
 
 This repository is a static site. It introduces a C#/.NET backend engineer and hosts small developer utilities. The site itself is not a .NET application.
@@ -12,12 +13,13 @@ This repository is a static site. It introduces a C#/.NET backend engineer and h
 - **Home** (`index.html`): role, three scoped results, short case links, experience, skills, and contact.
 - **About** (`about.html`): work history, public programs, Japanese language study and JLPT N1, and an engineering reading group.
 - **Work** (`Portfolio.html`): de-identified work cases, then public programs (Discipline App, TwStock, TimeMiner, Level). The filename is case-sensitive.
-- **Tools** (`tools.html`): utilities that calculate in the browser after the page has loaded.
+- **Other work** (`works.html`): a tree of links to those programs and to the developer tools. This is the personal site’s index of other apps.
+- **Tools** (`tools.html`): utilities that calculate in the browser after the page has loaded. The page is in this repository, but its header and footer do not link back to the personal site.
 - **Languages**: Traditional Chinese (default), English, and Japanese. Copy lives in `js/translations/`.
 
 | Tool | What it does |
 | --- | --- |
-| Timestamp | Unix time and local/UTC dates. Units are inferred from digit length. |
+| Timestamp | Unix time and local/UTC dates. Units are inferred from digit length. A relative offset (before or after now) shows the matching date and Unix time. |
 | JSON | Format, minify, sort keys, and validate. |
 | YAML | Check a document and convert to or from JSON, using vendored js-yaml 4.1.0. |
 | Hash | MD5 (local implementation) and SHA-256 (`crypto.subtle`) for text and files. MD5 here is a checksum, not a password hash. |
@@ -50,7 +52,7 @@ On Windows, if `python3` is not on the path:
 py -m http.server 8000
 ```
 
-Open [http://localhost:8000/](http://localhost:8000/) and [http://localhost:8000/tools.html](http://localhost:8000/tools.html). Translations are loaded with `fetch`, so opening an HTML file directly will not switch languages reliably.
+Open [http://localhost:8000/](http://localhost:8000/), [http://localhost:8000/works.html](http://localhost:8000/works.html), and [http://localhost:8000/tools.html](http://localhost:8000/tools.html). Translations are loaded with `fetch`, so opening an HTML file directly will not switch languages reliably.
 
 ## Validation
 
@@ -60,13 +62,14 @@ Previewing the site needs Python (or any static file server). Running the tool t
 node --test js/tools-core.test.js
 ```
 
-When changing copy or layout, also check the four pages in Traditional Chinese, English, and Japanese, the collapsed navigation on a narrow viewport, the main links, and one action in each tool.
+When changing copy or layout, also check the personal pages and the tools page in Traditional Chinese, English, and Japanese, the collapsed navigation on a narrow viewport, the works tree, and one action in each tool. The tools page should not link to `index.html`, `about.html`, `Portfolio.html`, or `works.html`.
 
 ## Project structure
 
 | Path | Role |
 | --- | --- |
-| `index.html`, `about.html`, `Portfolio.html`, `tools.html` | Pages. Keep the `Portfolio.html` capitalization. |
+| `index.html`, `about.html`, `Portfolio.html`, `works.html` | Personal pages. They share one navigation and footer. Keep the `Portfolio.html` capitalization. |
+| `tools.html` | Standalone tools app in this repository. No personal navigation or footer. |
 | `css/site.css`, `css/tools.css`, `css/style.css` | Shared page chrome, tool layout, and older base styles. |
 | `js/i18n.js` | Loads a translation file and updates `data-i18n` nodes. |
 | `js/translations/zh.json`, `en.json`, `ja.json` | Visible copy. |
