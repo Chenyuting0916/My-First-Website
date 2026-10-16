@@ -216,6 +216,15 @@ test('identifier case conversion splits camel, acronyms, and separators', () => 
     assert.throws(() => core.convertCase('---'), (err) => err.code === 'empty');
 });
 
+test('letter case keeps words, apostrophes, and sentence breaks', () => {
+    const value = core.convertLetterCase("it's a well-known fact. yes!\nno");
+    assert.equal(value.upper, "IT'S A WELL-KNOWN FACT. YES!\nNO");
+    assert.equal(value.lower, "it's a well-known fact. yes!\nno");
+    assert.equal(value.title, "It's A Well-Known Fact. Yes!\nNo");
+    assert.equal(value.sentence, "It's a well-known fact. Yes!\nNo");
+    assert.throws(() => core.convertLetterCase('   '), (err) => err.code === 'empty');
+});
+
 test('vendored js-yaml loads and rejects broken documents', () => {
     const yaml = require('./vendor/js-yaml.min.js');
     const doc = yaml.load('name: Cyt\ntools:\n  - timestamp\n');

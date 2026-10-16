@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title data-i18n="tools.pageTitle">開發工具</title>
-    <meta name="description" data-i18n-content="tools.pageDescription" content="在瀏覽器裡使用的時間戳、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異與命名轉換。輸入內容不會送到遠端計算。">
+    <meta name="description" data-i18n-content="tools.pageDescription" content="在瀏覽器裡使用的時間戳、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異、大小寫與命名轉換。">
     <link rel="icon" type="image/x-icon" href="img/happy.ico">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -36,22 +36,17 @@
             <div>
                 <p class="tk-kicker" data-i18n="tools.kicker">瀏覽器內運算</p>
                 <h1 class="tk-title" data-i18n="tools.title">開發工具</h1>
-                <p class="tk-lead" data-i18n="tools.lead">時間戳、JSON、YAML、MD5、編碼、JWT，另外還有 URL、UUID、正規表示式、進位轉換、文字差異和命名轉換。頁面載入後，這些計算在這台瀏覽器裡完成。</p>
-            </div>
-            <div class="tk-privacy">
-                <i class="fas fa-lock" aria-hidden="true"></i>
-                <span data-i18n="tools.privacy">輸入內容在這台瀏覽器裡處理，不會送到遠端計算</span>
+                <p class="tk-lead" data-i18n="tools.lead">時間戳、JSON、YAML、MD5、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異、大小寫和命名轉換。頁面載入後，這些計算在這台瀏覽器裡完成。</p>
             </div>
         </header>
 
         <div class="tk-shell">
             <div class="tk-tabs" role="tablist" aria-label="tools">
-                <p class="tk-group-label" data-i18n="tools.group.common">常用</p>
-                <button type="button" class="tk-tab is-feature is-active" role="tab" id="tab-timestamp" data-tool="timestamp" aria-selected="true" aria-controls="panel-timestamp">
+                <button type="button" class="tk-tab is-active" role="tab" id="tab-timestamp" data-tool="timestamp" aria-selected="true" aria-controls="panel-timestamp">
                     <i class="fas fa-clock" aria-hidden="true"></i>
                     <span>
-                        <strong><span data-i18n="tools.nav.timestamp">時間戳</span><em class="tk-badge" data-i18n="tools.badge">常用</em></strong>
-                        <small data-i18n="tools.nav.timestampHint">Unix time ↔ 日期</small>
+                        <strong data-i18n="tools.nav.timestamp">時間戳</strong>
+                        <small data-i18n="tools.nav.timestampHint">Unix time、日期、相對時間</small>
                     </span>
                 </button>
                 <button type="button" class="tk-tab" role="tab" id="tab-json" data-tool="json" aria-selected="false" aria-controls="panel-json">
@@ -89,11 +84,6 @@
                         <small data-i18n="tools.nav.jwtHint">解碼與簽章驗證</small>
                     </span>
                 </button>
-                <button type="button" class="tk-more" id="moreTools" aria-expanded="false" aria-controls="moreToolsPanel">
-                    <span data-i18n="tools.more">其他工具</span>
-                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                </button>
-                <div id="moreToolsPanel" class="tk-more-panel is-collapsed">
                     <button type="button" class="tk-tab" role="tab" id="tab-url" data-tool="url" aria-selected="false" aria-controls="panel-url">
                         <i class="fas fa-link" aria-hidden="true"></i>
                         <span>
@@ -129,6 +119,13 @@
                             <small data-i18n="tools.nav.diffHint">比對兩段文字</small>
                         </span>
                     </button>
+                    <button type="button" class="tk-tab" role="tab" id="tab-letters" data-tool="letters" aria-selected="false" aria-controls="panel-letters">
+                        <i class="fas fa-heading" aria-hidden="true"></i>
+                        <span>
+                            <strong data-i18n="tools.nav.letters">大小寫</strong>
+                            <small data-i18n="tools.nav.lettersHint">大寫、小寫、字首</small>
+                        </span>
+                    </button>
                     <button type="button" class="tk-tab" role="tab" id="tab-case" data-tool="case" aria-selected="false" aria-controls="panel-case">
                         <i class="fas fa-font" aria-hidden="true"></i>
                         <span>
@@ -136,7 +133,6 @@
                             <small data-i18n="tools.nav.caseHint">駝峰、底線、連字號</small>
                         </span>
                     </button>
-                </div>
             </div>
 
             <div class="tk-stage">
@@ -499,6 +495,21 @@
                     </div>
                 </div>
 
+                <div id="panel-letters" data-panel="letters" role="tabpanel" aria-labelledby="tab-letters" hidden>
+                    <div class="tk-card">
+                        <h2 class="tk-panel-title" data-i18n="tools.nav.letters">大小寫</h2>
+                        <div class="tk-toolbar">
+                            <button type="button" class="tk-btn" id="lettersSample" data-i18n="tools.sample">範例</button>
+                            <button type="button" class="tk-btn" id="lettersClear" data-i18n="tools.clear">清空</button>
+                        </div>
+                        <label class="tk-label" for="lettersIn" data-i18n="tools.letters.input">英文</label>
+                        <textarea class="tk-area tk-area-short" id="lettersIn" spellcheck="false" data-i18n-placeholder="tools.letters.placeholder" placeholder="貼上英文，例如 the quick brown fox"></textarea>
+                        <p class="tk-hint" data-i18n="tools.letters.hint">大寫和小寫會保留原本的標點。字首大寫是每個詞的第一個字母。句首大寫是句子開頭。</p>
+                        <p class="tk-banner err" id="lettersBanner" hidden></p>
+                        <div class="tk-result is-letters" id="lettersResult"></div>
+                    </div>
+                </div>
+
                 <div id="panel-case" data-panel="case" role="tabpanel" aria-labelledby="tab-case" hidden>
                     <div class="tk-card">
                         <h2 class="tk-panel-title" data-i18n="tools.nav.case">命名轉換</h2>
@@ -518,10 +529,6 @@
     </div>
 
     <div class="tk-toast" id="tkToast" role="status" aria-live="polite"></div>
-
-    <footer class="tk-appfoot">
-        <p data-i18n="tools.privacy">輸入內容在這台瀏覽器裡處理，不會送到遠端計算</p>
-    </footer>
 </body>
 
 </html>
