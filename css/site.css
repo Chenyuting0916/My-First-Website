@@ -927,3 +927,137 @@ body.site-page .timeline-link:hover {
         transition: none;
     }
 }
+
+.work-tree {
+    position: relative;
+    margin: 8px 0 12px;
+}
+
+.work-tree::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    top: 46px;
+    bottom: 16px;
+    width: 2px;
+    background: var(--line-strong);
+}
+
+.work-tree-root {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0 18px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.work-tree-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.work-tree-list > li {
+    position: relative;
+    margin: 0 0 16px 32px;
+}
+
+.work-tree-list > li::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 26px;
+    width: 20px;
+    height: 2px;
+    background: var(--line-strong);
+}
+
+.work-tree-list > li::after {
+    content: "";
+    position: absolute;
+    left: -26px;
+    top: 21px;
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    background: var(--card);
+}
+
+.work-leaf h2 {
+    margin-bottom: 4px;
+}
+
+.work-leaf .site-meta {
+    margin-bottom: 8px;
+}
+
+.work-leaf p {
+    margin: 0;
+}
+
+@media (min-width: 860px) {
+    .work-tree {
+        max-width: 980px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .work-tree::before {
+        left: 50%;
+        top: 54px;
+        bottom: 28px;
+        transform: translateX(-1px);
+    }
+
+    .work-tree-root {
+        display: flex;
+        width: max-content;
+        margin: 0 auto 22px;
+    }
+
+    .work-tree-list > li {
+        width: calc(50% - 36px);
+        margin: 0 0 18px;
+    }
+
+    .work-tree-list > li:nth-child(odd) {
+        margin-left: calc(50% + 36px);
+    }
+
+    .work-tree-list > li:nth-child(even) {
+        margin-right: calc(50% + 36px);
+        margin-left: 0;
+    }
+
+    .work-tree-list > li:nth-child(odd)::before {
+        left: -36px;
+        width: 36px;
+        top: 28px;
+    }
+
+    .work-tree-list > li:nth-child(odd)::after {
+        left: -42px;
+        top: 23px;
+    }
+
+    .work-tree-list > li:nth-child(even)::before {
+        right: -36px;
+        left: auto;
+        width: 36px;
+        top: 28px;
+    }
+
+    .work-tree-list > li:nth-child(even)::after {
+        right: -42px;
+        left: auto;
+        top: 23px;
+    }
+}

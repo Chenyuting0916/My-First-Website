@@ -115,6 +115,46 @@ test('relative time buckets', () => {
     assert.deepEqual(core.relativeParts(7200000, 0), { key: 'in', unit: 'hour', n: 2 });
 });
 
+test('relative offset follows the local calendar', () => {
+    const now = new Date(2024, 2, 31, 15, 4, 5).getTime();
+    const monthAgo = new Date(core.shiftRelative(now, 1, 'month', 'ago'));
+    assert.equal(monthAgo.getFullYear(), 2024);
+    assert.equal(monthAgo.getMonth(), 1);
+    assert.equal(monthAgo.getDate(), 29);
+    assert.equal(monthAgo.getHours(), 15);
+    assert.equal(monthAgo.getMinutes(), 4);
+    assert.equal(monthAgo.getSeconds(), 5);
+
+    const nonLeap = new Date(2023, 2, 31, 8, 0, 0).getTime();
+    assert.equal(new Date(core.shiftRelative(nonLeap, 1, 'month', 'ago')).getDate(), 28);
+
+    const jan = new Date(2024, 0, 31, 10, 0, 0).getTime();
+    const feb = new Date(core.shiftRelative(jan, 1, 'month', 'in'));
+    assert.equal(feb.getMonth(), 1);
+    assert.equal(feb.getDate(), 29);
+    assert.equal(feb.getHours(), 10);
+
+    const ahead = new Date(core.shiftRelative(now, 1, 'year', 'in'));
+    assert.equal(ahead.getFullYear(), 2025);
+    assert.equal(ahead.getMonth(), 2);
+    assert.equal(ahead.getDate(), 31);
+
+    const week = new Date(core.shiftRelative(now, 2, 'week', 'in'));
+    assert.equal(week.getMonth(), 3);
+    assert.equal(week.getDate(), 14);
+    assert.equal(week.getHours(), 15);
+
+    const hour = new Date(core.shiftRelative(now, 3, 'hour', 'ago'));
+    assert.equal(hour.getDate(), 31);
+    assert.equal(hour.getHours(), 12);
+
+    assert.equal(core.shiftRelative(now, 0, 'day', 'ago'), now);
+    assert.throws(() => core.shiftRelative(now, -1, 'day', 'ago'), (err) => err.code === 'invalid-relative');
+    assert.throws(() => core.shiftRelative(now, 1.5, 'day', 'ago'), (err) => err.code === 'invalid-relative');
+    assert.throws(() => core.shiftRelative(now, 1, 'decade', 'in'), (err) => err.code === 'invalid-relative');
+    assert.throws(() => core.shiftRelative(now, 1, 'day', 'later'), (err) => err.code === 'invalid-relative');
+});
+
 test('url encode, decode, and query parse', () => {
     assert.equal(core.transformUrl('a b', 'encode'), 'a%20b');
     assert.equal(core.transformUrl('a%20b', 'decode'), 'a b');
