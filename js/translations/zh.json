@@ -27,7 +27,7 @@
         "source": "原始碼",
         "toolsKind": "工具",
         "toolsTitle": "開發工具",
-        "toolsBody": "時間戳、JSON、YAML、雜湊、編碼、JWT，以及 URL、UUID、正規表示式、進位轉換、文字差異和命名轉換。計算在瀏覽器裡完成。",
+        "toolsBody": "時間戳、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異、大小寫和命名轉換。計算在瀏覽器裡完成。",
         "toolsMeta": "在瀏覽器裡計算",
         "appKind": "App",
         "dataKind": "資料服務",
@@ -47,10 +47,9 @@
     "tools": {
         "pageTitle": "開發工具",
         "title": "開發工具",
-        "lead": "時間戳、JSON、YAML、MD5、編碼、JWT，另外還有 URL、UUID、正規表示式、進位轉換、文字差異和命名轉換。頁面載入後，這些計算在這台瀏覽器裡完成。",
+        "lead": "時間戳、JSON、YAML、MD5、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異、大小寫和命名轉換。頁面載入後，這些計算在這台瀏覽器裡完成。",
         "kicker": "瀏覽器內運算",
         "privacy": "輸入內容在這台瀏覽器裡處理，不會送到遠端計算",
-        "badge": "常用",
         "copy": "複製",
         "copied": "已複製",
         "copyEmpty": "沒有可以複製的內容",
@@ -81,6 +80,8 @@
             "radixHint": "二、八、十、十六進位",
             "diff": "文字差異",
             "diffHint": "比對兩段文字",
+            "letters": "大小寫",
+            "lettersHint": "大寫、小寫、字首",
             "case": "命名轉換",
             "caseHint": "駝峰、底線、連字號"
         },
@@ -244,10 +245,6 @@
             "invalid-regex": "這個正規表示式不正確",
             "too-large": "超過 400 行，請先縮短再比對"
         },
-        "more": "其他工具",
-        "group": {
-            "common": "常用"
-        },
         "url": {
             "encode": "編碼參數",
             "decode": "解碼",
@@ -278,7 +275,7 @@
             "dec": "十進位",
             "hex": "十六進位"
         },
-        "pageDescription": "在瀏覽器裡使用的時間戳、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異與命名轉換。輸入內容不會送到遠端計算。",
+        "pageDescription": "在瀏覽器裡使用的時間戳、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異、大小寫與命名轉換。輸入內容不會送到遠端計算。",
         "diff": {
             "left": "左邊",
             "right": "右邊",
@@ -287,6 +284,15 @@
             "summary": "多了 {added} 行，少了 {removed} 行",
             "same": "兩段一樣",
             "hint": "以行為單位比較。換行會先整理成同一種，最後一行後面的換行不算差異。"
+        },
+        "letters": {
+            "input": "英文",
+            "placeholder": "貼上英文，例如 the quick brown fox",
+            "hint": "大寫和小寫會保留原本的標點。字首大寫是每個詞的第一個字母。句首大寫是句子開頭。",
+            "upper": "大寫",
+            "lower": "小寫",
+            "title": "字首大寫",
+            "sentence": "句首大寫"
         },
         "case": {
             "input": "識別名稱",

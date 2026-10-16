@@ -30,6 +30,7 @@ This repository is a static site. It introduces a C#/.NET backend engineer and h
 | Regex | Find matches. The scan is always global; `i` and `m` can be toggled. |
 | Radix | Convert an integer among base 2, 8, 10, and 16 with `BigInt`. |
 | Text diff | Line diff of two texts. Newlines are normalized, a trailing newline is ignored, and inputs over 400 lines are refused. |
+| Letter case | Uppercase, lowercase, title case, and sentence case for English text. Punctuation stays in place. An apostrophe does not start a new word. |
 | Case | Convert an identifier among camelCase, PascalCase, snake_case, kebab-case, and CONSTANT_CASE. Acronyms stay one word. |
 
 Tool inputs are not sent to a remote calculator. Loading the site still requests HTML, CSS, JavaScript, and translation JSON. There is no service worker, so the first visit is not an offline or PWA experience.
