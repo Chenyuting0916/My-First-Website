@@ -49,7 +49,6 @@
         "title": "Developer tools",
         "lead": "Timestamp, JSON, YAML, MD5, encoding, JWT, URL, UUID, regex, base conversion, text diff, letter case, and identifier case. After the page loads, the calculations run in this browser.",
         "kicker": "Runs in the browser",
-        "privacy": "Inputs are processed in this browser and are not sent away for calculation",
         "copy": "Copy",
         "copied": "Copied",
         "copyEmpty": "Nothing to copy",
@@ -275,7 +274,7 @@
             "dec": "Decimal",
             "hex": "Hex"
         },
-        "pageDescription": "Timestamp, JSON, YAML, hashes, encoding, JWT, URL, UUID, regex, base conversion, text diff, letter case, and identifier case in the browser. Inputs are not sent away for processing.",
+        "pageDescription": "Timestamp, JSON, YAML, hashes, encoding, JWT, URL, UUID, regex, base conversion, text diff, letter case, and identifier case in the browser.",
         "diff": {
             "left": "Left",
             "right": "Right",

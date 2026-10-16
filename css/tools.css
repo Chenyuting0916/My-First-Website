@@ -19,8 +19,7 @@ body.tools-page {
     font-family: "Segoe UI", "PingFang TC", "Hiragino Sans", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
 }
 
-body.tools-page .tk-appbar,
-body.tools-page .tk-appfoot {
+body.tools-page .tk-appbar {
     flex: 0 0 auto;
 }
 
@@ -49,21 +48,6 @@ body.tools-page .tk-appfoot {
 .tk-brand:focus {
     color: #fff;
     text-decoration: none;
-}
-
-.tk-appfoot {
-    margin-top: 40px;
-    padding: 22px 16px 26px;
-    background: var(--nav);
-    text-align: center;
-}
-
-.tk-appfoot p {
-    max-width: 640px;
-    margin: 0 auto;
-    color: var(--nav-text);
-    font-size: 13px;
-    line-height: 1.6;
 }
 
 body.tools-page .container {
@@ -153,21 +137,6 @@ body.tools-page [hidden] {
     color: var(--muted);
     font-size: 15px;
     line-height: 1.6;
-}
-
-.tk-privacy {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    flex: 0 0 auto;
-    background: var(--card);
-    border: 1px solid var(--line);
-    color: var(--ink);
-    border-radius: 999px;
-    padding: 8px 12px;
-    font-size: 13px;
-    font-weight: 650;
-    box-shadow: var(--shadow);
 }
 
 .tk-shell {
