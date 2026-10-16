@@ -623,6 +623,24 @@
         };
     }
 
+    function convertLetterCase(text) {
+        const raw = String(text == null ? '' : text);
+        if (!raw.trim()) throw fail('empty');
+        const lower = raw.toLowerCase();
+        const title = lower.replace(/(^|[\s\-/])([a-z])/g, function (_, sep, ch) {
+            return sep + ch.toUpperCase();
+        });
+        const sentence = lower.replace(/(^|[.!?]+[ \t]*|\n+)([a-z])/g, function (_, sep, ch) {
+            return sep + ch.toUpperCase();
+        });
+        return {
+            upper: raw.toUpperCase(),
+            lower: lower,
+            title: title,
+            sentence: sentence
+        };
+    }
+
     async function verifyJwtHmac(decoded, secret) {
         const alg = decoded && decoded.header ? decoded.header.alg : '';
         const hashes = { HS256: 'SHA-256', HS384: 'SHA-384', HS512: 'SHA-512' };
@@ -663,6 +681,7 @@
         testRegex: testRegex,
         convertRadix: convertRadix,
         diffLines: diffLines,
-        convertCase: convertCase
+        convertCase: convertCase,
+        convertLetterCase: convertLetterCase
     };
 });

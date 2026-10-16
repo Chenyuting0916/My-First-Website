@@ -27,7 +27,7 @@
         "source": "Source",
         "toolsKind": "Tools",
         "toolsTitle": "Developer tools",
-        "toolsBody": "Timestamp, JSON, YAML, hashes, encoding, JWT, plus URL, UUID, regex, base conversion, text diff, and identifier case. The calculations run in the browser.",
+        "toolsBody": "Timestamp, JSON, YAML, hashes, encoding, JWT, URL, UUID, regex, base conversion, text diff, letter case, and identifier case. The calculations run in the browser.",
         "toolsMeta": "Calculated in the browser",
         "appKind": "App",
         "dataKind": "Data service",
@@ -47,10 +47,9 @@
     "tools": {
         "pageTitle": "Developer tools",
         "title": "Developer tools",
-        "lead": "Timestamp, JSON, YAML, MD5, encoding, JWT, plus URL, UUID, regex, base conversion, text diff, and identifier case. After the page loads, the calculations run in this browser.",
+        "lead": "Timestamp, JSON, YAML, MD5, encoding, JWT, URL, UUID, regex, base conversion, text diff, letter case, and identifier case. After the page loads, the calculations run in this browser.",
         "kicker": "Runs in the browser",
         "privacy": "Inputs are processed in this browser and are not sent away for calculation",
-        "badge": "Often",
         "copy": "Copy",
         "copied": "Copied",
         "copyEmpty": "Nothing to copy",
@@ -81,7 +80,9 @@
             "radixHint": "Bin, oct, dec, hex",
             "diff": "Text diff",
             "diffHint": "Compare two texts",
-            "case": "Case",
+            "letters": "Letter case",
+            "lettersHint": "Upper, lower, title",
+            "case": "Naming",
             "caseHint": "camel, snake, kebab"
         },
         "timestamp": {
@@ -244,10 +245,6 @@
             "invalid-regex": "That regular expression is invalid",
             "too-large": "More than 400 lines. Shorten the text before comparing."
         },
-        "more": "More tools",
-        "group": {
-            "common": "Often"
-        },
         "url": {
             "encode": "Encode component",
             "decode": "Decode",
@@ -278,7 +275,7 @@
             "dec": "Decimal",
             "hex": "Hex"
         },
-        "pageDescription": "Timestamp, JSON, YAML, hashes, encoding, JWT, URL, UUID, regex, base conversion, text diff, and identifier case in the browser. Inputs are not sent away for processing.",
+        "pageDescription": "Timestamp, JSON, YAML, hashes, encoding, JWT, URL, UUID, regex, base conversion, text diff, letter case, and identifier case in the browser. Inputs are not sent away for processing.",
         "diff": {
             "left": "Left",
             "right": "Right",
@@ -287,6 +284,15 @@
             "summary": "{added} added, {removed} removed",
             "same": "The two texts match",
             "hint": "Compared line by line. Newlines are normalized first, and a final newline does not count as a difference."
+        },
+        "letters": {
+            "input": "English",
+            "placeholder": "Paste English, for example the quick brown fox",
+            "hint": "Upper and lower case keep the original punctuation. Title case capitalizes each word. Sentence case capitalizes the start of each sentence.",
+            "upper": "UPPERCASE",
+            "lower": "lowercase",
+            "title": "Title Case",
+            "sentence": "Sentence case"
         },
         "case": {
             "input": "Identifier",

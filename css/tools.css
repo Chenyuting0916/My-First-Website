@@ -172,7 +172,7 @@ body.tools-page [hidden] {
 
 .tk-shell {
     display: grid;
-    grid-template-columns: 232px minmax(0, 1fr);
+    grid-template-columns: 252px minmax(0, 1fr);
     gap: 18px;
     align-items: start;
     min-width: 0;
@@ -181,16 +181,20 @@ body.tools-page [hidden] {
 .tk-tabs {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 2px;
     scrollbar-width: thin;
     scrollbar-color: var(--scroll) transparent;
     position: sticky;
-    top: 64px;
-    max-height: calc(100vh - 92px);
-    max-height: calc(100dvh - 92px);
+    top: 76px;
+    max-height: calc(100vh - 96px);
+    max-height: calc(100dvh - 96px);
     overflow-y: auto;
     overscroll-behavior: contain;
-    padding-right: 4px;
+    padding: 8px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
 }
 
 .tk-tabs::-webkit-scrollbar {
@@ -209,115 +213,64 @@ body.tools-page [hidden] {
     box-shadow: none;
 }
 
-.tk-group-label {
-    margin: 2px 8px 0;
-    color: var(--faint);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-}
-
-.tk-more {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 4px;
-    border: 0;
-    background: transparent;
-    color: var(--faint);
-    border-radius: 12px;
-    padding: 8px 12px;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.tk-more i {
-    transition: transform 0.15s ease;
-}
-
-.tk-more.is-open i {
-    transform: rotate(180deg);
-}
-
-.tk-more-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.tk-more-panel.is-collapsed {
-    display: none;
-}
-
 .tk-tab {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     width: 100%;
     text-align: left;
     border: 1px solid transparent;
-    background: rgba(255, 252, 247, 0.72);
+    background: transparent;
     color: var(--ink);
-    border-radius: 16px;
-    padding: 11px 12px;
+    border-radius: 12px;
+    padding: 7px 8px;
     cursor: pointer;
 }
 
 .tk-tab i {
-    width: 36px;
-    height: 36px;
-    border-radius: 12px;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
     display: grid;
     place-items: center;
-    background: var(--accent-soft);
-    color: var(--accent);
+    background: var(--wash);
+    color: var(--muted);
+    font-size: 13px;
     flex: 0 0 auto;
 }
 
 .tk-tab strong {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 14px;
+    display: block;
+    font-size: 13px;
     font-weight: 700;
+    line-height: 1.25;
     white-space: nowrap;
 }
 
 .tk-tab small {
     display: block;
-    margin-top: 2px;
+    margin-top: 1px;
     color: var(--faint);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
+    line-height: 1.3;
 }
 
 .tk-tab:hover {
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--wash);
 }
 
 .tk-tab.is-active {
-    background: var(--card);
-    border-color: var(--line-strong);
-    box-shadow: var(--shadow);
+    background: var(--accent-soft);
 }
 
-.tk-tab.is-active i,
-.tk-tab.is-feature.is-active i {
+.tk-tab.is-active i {
     background: var(--accent);
     color: #fff;
 }
 
-.tk-badge {
-    font-style: normal;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    color: var(--accent);
-    background: var(--accent-soft);
-    border-radius: 999px;
-    padding: 1px 6px;
+.tk-tab.is-active small {
+    color: var(--muted);
 }
 
 .tk-stage {
@@ -1063,22 +1016,21 @@ body.tools-page [hidden] {
         overflow-y: hidden;
         padding: 8px 0;
         background: rgba(243, 239, 230, 0.94);
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
         margin: 0;
-    }
-
-    .tk-group-label,
-    .tk-more {
-        display: none;
-    }
-
-    .tk-more-panel,
-    .tk-more-panel.is-collapsed {
-        display: contents;
     }
 
     .tk-tab {
         width: auto;
         min-width: max-content;
+        background: var(--card);
+        border-color: var(--line);
+    }
+
+    .tk-tab.is-active {
+        border-color: transparent;
     }
 
     .tk-tab small {
@@ -1113,8 +1065,18 @@ body.tools-page [hidden] {
     }
 }
 
-.tk-result.is-case .tk-result-row {
+.tk-result.is-case .tk-result-row,
+.tk-result.is-letters .tk-result-row {
     grid-template-columns: 7.5rem minmax(0, 1fr) auto;
+    align-items: start;
+}
+
+.tk-result.is-letters code {
+    white-space: pre-wrap;
+}
+
+.tk-area.tk-area-short {
+    min-height: 132px;
 }
 
 @media (prefers-reduced-motion: reduce) {
