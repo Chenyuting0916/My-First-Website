@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title data-i18n="work.pageTitle">作品集 — Tim Chen</title>
+    <title data-i18n="work.pageTitle">工作案例 — Tim Chen</title>
     <link rel="icon" type="image/x-icon" href="img/happy.ico">
-    <meta name="description" data-i18n-content="work.description" content="Tim Chen 的工作案例與公開程式。">
+    <meta name="description" data-i18n-content="work.description" content="Tim Chen 的工作案例：多餘的 fallback、API 回應時間，以及拆開之後可以驗證的計算。">
     <meta name="author" content="Tim Chen">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -34,10 +34,10 @@
                             <a class="nav-link" href="about.html" data-i18n="nav.about">關於</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="Portfolio.html" data-i18n="nav.portfolio" aria-current="page">作品集</a>
+                            <a class="nav-link" href="Portfolio.html" data-i18n="nav.portfolio" aria-current="page">工作案例</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="works.html" data-i18n="nav.works">其他作品</a>
+                            <a class="nav-link" href="works.html" data-i18n="nav.works">公開作品</a>
                         </li>
                         <li class="nav-item align-items-center d-flex">
                             <select id="langSelect" onchange="i18n.setLanguage(this.value)" aria-label="Language">
@@ -55,54 +55,57 @@
     <main class="site-wrap" id="content">
         <header class="site-hero">
             <p class="site-kicker">Tim Chen</p>
-            <h1 data-i18n="work.title">作品集</h1>
-            <p class="site-lead" data-i18n="work.lead">上面是工作案例。下面是可以公開的程式。</p>
+            <h1 data-i18n="work.title">工作案例</h1>
+            <p class="site-lead" data-i18n="work.lead">每一件都是既有系統上的修改：問題是什麼、我動了哪裡、數字變成多少。</p>
         </header>
 
         <section class="site-block" id="work" aria-labelledby="work-title">
-            <h2 id="work-title" data-i18n="work.casesTitle">工程成果</h2>
+            <h2 id="work-title" data-i18n="work.casesTitle">三件修改</h2>
 
             <article class="site-card site-role" id="checksum">
+                <p class="site-stat" data-i18n="home.result1Stat">75,000 → 50</p>
+                <h3 data-i18n="work.case1Title">Checksum 不一致，造成一天約七萬五千次多餘的 fallback</h3>
                 <p class="site-label" data-i18n="work.problem">問題</p>
-                <h3 data-i18n="work.case1Title">Checksum 不一致造成多餘的 fallback</h3>
-                <p data-i18n="work.case1Problem">checksum 對不上時，系統會再打一次 fallback API。這類呼叫每天大約 75,000 次，但其中多數並不是真的需要。</p>
-                <p class="site-label" data-i18n="work.action">行動</p>
-                <p data-i18n="work.case1Action">找出並修復 checksum 不一致，讓這些不必要的 fallback 不再發出。</p>
+                <p data-i18n="work.case1Problem">checksum 對不上時，系統會再打一次 fallback API。這類呼叫一天大約 75,000 次，其中多數並不是真的需要。</p>
+                <p class="site-label" data-i18n="work.action">做法</p>
+                <p data-i18n="work.case1Action">找出並修復 checksum 不一致，讓 fallback 只在真的需要時才發出。</p>
                 <p class="site-label" data-i18n="work.result">結果</p>
-                <p data-i18n="work.case1Result">這個 fallback API 的每日呼叫從約 75,000 次降到 50 次以下。</p>
+                <p data-i18n="work.case1Result">這個 fallback API 的每日呼叫從約 75,000 次降到 50 次以下，大約少了 99.9%。</p>
             </article>
 
             <article class="site-card site-role" id="latency">
+                <p class="site-stat" data-i18n="home.result2Stat">10×</p>
+                <h3 data-i18n="work.case2Title">回應超過 2 秒的 API，拉到大約 200 毫秒</h3>
                 <p class="site-label" data-i18n="work.problem">問題</p>
-                <h3 data-i18n="work.case2Title">部分 API 回應超過 2 秒</h3>
-                <p data-i18n="work.case2Problem">有些 API 的回應時間超過 2 秒，使用這些介面時會明顯等待。</p>
-                <p class="site-label" data-i18n="work.action">行動</p>
-                <p data-i18n="work.case2Action">針對這些實際變慢的 API 做效能改善。</p>
+                <p data-i18n="work.case2Problem">有些 API 要超過 2 秒才回應。使用這些介面的人會停下來等。</p>
+                <p class="site-label" data-i18n="work.action">做法</p>
+                <p data-i18n="work.case2Action">只改量測上真正超過 2 秒的那幾支。</p>
                 <p class="site-label" data-i18n="work.result">結果</p>
-                <p data-i18n="work.case2Result">這幾個 API 改善後，回應時間大約是 200 毫秒。</p>
+                <p data-i18n="work.case2Result">這幾支改善後大約 200 毫秒。以超過 2 秒對上大約 200 毫秒，大約快了十倍。</p>
             </article>
 
             <article class="site-card site-role" id="notices">
+                <p class="site-stat" data-i18n="home.result3Stat">改得動</p>
+                <h3 data-i18n="work.case3Title">維修公告的計算拆開之後，才敢改</h3>
                 <p class="site-label" data-i18n="work.problem">問題</p>
-                <h3 data-i18n="work.case3Title">維修公告的計算不好單獨測試</h3>
-                <p data-i18n="work.case3Problem">公告的計算和服務寫在一起，時間也不好替換，所以站點資料彙整、時間區間合併和快取不好單獨測。</p>
-                <p class="site-label" data-i18n="work.action">行動</p>
-                <p data-i18n="work.case3Action">把計算與服務分開、注入時間依賴，整理站點資料彙整、時間區間合併與快取，並補上測試。</p>
+                <p data-i18n="work.case3Problem">公告的計算和服務寫在一起，時間也不好替換，所以站點資料彙整、時間區間合併和快取不好單獨測。改這段邏輯幾乎只能靠手動對。</p>
+                <p class="site-label" data-i18n="work.action">做法</p>
+                <p data-i18n="work.case3Action">把計算和服務分開，注入時間，並為資料彙整、區間合併和快取補上測試。</p>
                 <p class="site-label" data-i18n="work.result">結果</p>
-                <p data-i18n="work.case3Result">區間合併和快取可以單獨測試。同一時期，既有單元測試從 41 個補到 240 個，並修好原本會失敗的測試。</p>
+                <p data-i18n="work.case3Result">區間合併和快取可以單獨測試，原本會失敗的測試也修好了。同一時期，這批單元測試從 41 個補到 400 個以上，覆蓋彙整、合併和快取。測試變多是拆開之後的結果，不是目標。</p>
             </article>
         </section>
 
         <section class="site-block" id="public" aria-labelledby="public-title">
             <h2 id="public-title" data-i18n="work.publicTitle">公開專案</h2>
-            <p class="site-note"><a class="site-text-link" href="works.html" data-i18n="work.treeNote">這些作品的連結收在其他作品。</a></p>
+            <p class="site-note"><a class="site-text-link" href="works.html" data-i18n="work.treeNote">這些作品的連結收在公開作品。</a></p>
 
             <article class="site-card site-role" id="discipline">
                 <div class="site-role-top">
                     <h3>Discipline App</h3>
                 </div>
                 <p class="site-meta">ASP.NET Core · Blazor Server · .NET 7 · EF Core · SQLite</p>
-                <p data-i18n="work.disciplineBody">番茄鐘和每日任務。完成後累積經驗值，並接上 Google 日曆和 Google Tasks。使用 ASP.NET Core Blazor Server、.NET 7、Entity Framework Core、SQLite，以 Google OAuth 登入，部署在 Azure App Service，用 GitHub Actions 發布。</p>
+                <p data-i18n="work.disciplineBody">可以每天打開的番茄鐘和每日任務。做完會累積經驗值，並接上 Google 日曆和 Google Tasks。登入是 Google OAuth，部署在 Azure App Service，用 GitHub Actions 發布。ASP.NET Core Blazor Server、.NET 7、Entity Framework Core、SQLite。</p>
                 <div class="site-links">
                     <a target="_blank" rel="noopener" href="https://disciplineapp.azurewebsites.net/" data-i18n="work.demo">演示</a>
                     <a target="_blank" rel="noopener" href="https://github.com/Chenyuting0916/DisciplineApp" data-i18n="work.source">原始碼</a>
@@ -114,7 +117,7 @@
                     <h3>TwStock</h3>
                 </div>
                 <p class="site-meta">ASP.NET Core · EF Core · SQL Server · Next.js</p>
-                <p data-i18n="work.twstockBody">台股資料服務，分成 Api、Application、Domain、Infrastructure。資料來自證交所和 FinMind，存進 SQL Server，再用 API 查詢。Domain 有單元測試，前端是 Next.js。</p>
+                <p data-i18n="work.twstockBody">台股資料從證交所和 FinMind 進來，落到 SQL Server，再由 API 查回去。服務分成 Api、Application、Domain、Infrastructure，Domain 有單元測試。前端是 Next.js。</p>
                 <div class="site-links">
                     <a target="_blank" rel="noopener" href="https://github.com/Chenyuting0916/TwStock" data-i18n="work.source">原始碼</a>
                 </div>

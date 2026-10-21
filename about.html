@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title data-i18n="about.title">關於 — Tim Chen</title>
     <link rel="icon" type="image/x-icon" href="img/happy.ico">
-    <meta name="description" data-i18n-content="about.description" content="Tim Chen，C#／.NET 後端工程師。經歷、東京語言學校與 JLPT N1，以及工程讀書會。">
+    <meta name="description" data-i18n-content="about.description" content="Tim Chen，C#／.NET 後端工程師。Gogoro、Titansoft、東京語言學校與 JLPT N1。">
     <meta name="author" content="Tim Chen">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -34,10 +34,10 @@
                             <a class="nav-link" href="about.html" data-i18n="nav.about" aria-current="page">關於</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Portfolio.html" data-i18n="nav.portfolio">作品集</a>
+                            <a class="nav-link" href="Portfolio.html" data-i18n="nav.portfolio">工作案例</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="works.html" data-i18n="nav.works">其他作品</a>
+                            <a class="nav-link" href="works.html" data-i18n="nav.works">公開作品</a>
                         </li>
                         <li class="nav-item align-items-center d-flex">
                             <select id="langSelect" onchange="i18n.setLanguage(this.value)" aria-label="Language">
@@ -56,18 +56,23 @@
         <header class="site-hero">
             <p class="site-kicker">Tim Chen</p>
             <h1 data-i18n="about.heading">關於</h1>
-            <p class="site-lead" data-i18n="about.lead">陳昱廷。用 C#／.NET 做後端，主要改既有系統的效能和可靠性。</p>
+            <p class="site-lead" data-i18n="about.lead">陳昱廷。我用 C#／.NET 處理已經在跑的後端：慢的拉回來，多餘的呼叫拿掉，不敢動的邏輯拆到可以驗證。</p>
+            <ul class="site-chips site-facts">
+                <li data-i18n="about.factNow">Gogoro · .NET 後端</li>
+                <li data-i18n="about.factBefore">Titansoft · 微服務</li>
+                <li data-i18n="about.factLang">JLPT N1</li>
+            </ul>
         </header>
         <article class="site-card site-prose">
-            <p data-i18n="about.engineering">2026 年 3 月起在 Gogoro 做 .NET 後端。2020 年 8 月到 2023 年 4 月在 Titansoft 擔任 Product Developer，參與 REST／gRPC 微服務，2020 年也在同一間公司實習。</p>
-            <p data-i18n="about.projects">公開的程式有 Discipline App、TimeMiner、Level，以及台股資料服務 TwStock。</p>
-            <p data-i18n="about.japan">2024 年 4 月到 2025 年 10 月在東京的 Eastwest 日本語學校讀書，JLPT N1。</p>
-            <p data-i18n="about.sharing">在 Titansoft 時辦過工程讀書會，把工作上的問題拿出來一起看。</p>
+            <p data-i18n="about.engineering">2026 年 3 月起在 Gogoro 做 .NET 後端，處理既有服務的效能和可靠性。2020 年 8 月到 2023 年 4 月在 Titansoft 擔任 Product Developer，做 REST／gRPC 微服務，並在 2020 年於同一間公司實習。</p>
+            <p data-i18n="about.projects">公開的程式裡，Discipline App 是接上 Google 日曆的番茄鐘，TwStock 是分成 Api、Application、Domain、Infrastructure 的台股資料服務。更早的 TimeMiner 和 Level 也還在。</p>
+            <p data-i18n="about.japan">日文可以工作。2024 年 4 月到 2025 年 10 月在東京 Eastwest 日本語學校讀書，JLPT N1。</p>
+            <p data-i18n="about.sharing">在 Titansoft 辦過工程讀書會，題目是當時工作上真正卡住的問題。</p>
             <p data-i18n="about.life">工作之外會騎車、爬山。</p>
             <div class="site-actions">
                 <a class="site-text-link" href="Portfolio.html#work" data-i18n="home.ctaWork">查看工程成果</a>
                 <a class="site-text-link" href="Portfolio.html#public" data-i18n="home.ctaPublic">公開專案</a>
-                <a class="site-text-link" href="works.html" data-i18n="nav.works">其他作品</a>
+                <a class="site-text-link" href="works.html" data-i18n="nav.works">公開作品</a>
             </div>
             <div class="site-contact-links">
                 <a class="site-btn" href="mailto:tim376755000@gmail.com">tim376755000@gmail.com</a>
