@@ -10,10 +10,10 @@ This repository is a static site. It introduces a C#/.NET backend engineer and h
 
 ## What is included
 
-- **Home** (`index.html`): role, three scoped results, short case links, experience, skills, and contact.
-- **About** (`about.html`): work history, public programs, Japanese language study and JLPT N1, and an engineering reading group.
-- **Work** (`Portfolio.html`): de-identified work cases, then public programs (Discipline App, TwStock, TimeMiner, Level). The filename is case-sensitive.
-- **Other work** (`works.html`): a tree of links to those programs and to the developer tools. This is the personal site’s index of other apps.
+- **Home** (`index.html`): positioning, three production results (fallback calls, API latency, testable calculation), experience, skills, and contact. The homepage leads with the before-and-after, not with a test count.
+- **About** (`about.html`): how he works, Gogoro and Titansoft, public programs, Japanese study and JLPT N1, and an engineering reading group.
+- **Cases** (`Portfolio.html`): de-identified work cases, then public programs (Discipline App, TwStock, TimeMiner, Level). The filename is case-sensitive.
+- **Projects** (`works.html`): a tree of links to those programs and to the developer tools. This is the personal site’s index of other apps.
 - **Tools** (`tools.html`): utilities that calculate in the browser after the page has loaded. The page is in this repository, but its header and footer do not link back to the personal site.
 - **Languages**: Traditional Chinese (default), English, and Japanese. Copy lives in `js/translations/`.
 

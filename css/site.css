@@ -472,9 +472,35 @@ body.site-page .site-label {
 }
 
 .site-hero .site-lead {
-    max-width: 720px;
-    margin: 8px 0 0;
+    max-width: 40rem;
+    margin: 14px 0 0;
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.65;
+}
+
+.site-facts {
+    margin-top: 18px;
+}
+
+body.site-page .site-stat {
+    margin: 0 0 8px;
+    color: var(--ink);
+    font-size: clamp(28px, 3vw, 36px);
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    line-height: 1.05;
+    font-variant-numeric: tabular-nums;
+    text-wrap: balance;
+}
+
+.site-metrics h3 {
     font-size: 16px;
+    line-height: 1.4;
+}
+
+.site-role .site-stat {
+    margin-bottom: 12px;
 }
 
 .site-grid {
