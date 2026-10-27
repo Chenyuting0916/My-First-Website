@@ -27,7 +27,7 @@
         "source": "原始碼",
         "toolsKind": "工具",
         "toolsTitle": "開發工具",
-        "toolsBody": "時間戳、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異、大小寫和命名轉換。計算在瀏覽器裡完成。",
+        "toolsBody": "時間戳、第幾週、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異、大小寫和命名轉換。計算在瀏覽器裡完成。",
         "toolsMeta": "在瀏覽器裡計算",
         "appKind": "App",
         "dataKind": "資料服務",
@@ -57,6 +57,8 @@
         "nav": {
             "timestamp": "時間戳",
             "timestampHint": "Unix time、日期、相對時間",
+            "week": "第幾週",
+            "weekHint": "今年、本月",
             "json": "JSON",
             "jsonHint": "格式化、壓縮、驗證",
             "yaml": "YAML",
@@ -81,6 +83,20 @@
             "lettersHint": "大寫、小寫、字首",
             "case": "命名轉換",
             "caseHint": "駝峰、底線、連字號"
+        },
+        "week": {
+            "live": "今天",
+            "unit": "今年第幾週",
+            "caption": "{year} 年第 {week} 週",
+            "copy": "複製週次",
+            "copyIso": "複製 ISO",
+            "iso": "ISO",
+            "range": "這一週",
+            "month": "本月",
+            "monthValue": "第 {week} 週",
+            "pick": "查某一天",
+            "today": "今天",
+            "hint": "星期一為一週的開始。今年第幾週用 ISO 8601。本月以 1 到 7 日為第 1 週。"
         },
         "timestamp": {
             "nowLabel": "現在",
@@ -272,7 +288,7 @@
             "dec": "十進位",
             "hex": "十六進位"
         },
-        "pageDescription": "在瀏覽器裡使用的時間戳、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異、大小寫與命名轉換。",
+        "pageDescription": "在瀏覽器裡使用的時間戳、第幾週、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異、大小寫與命名轉換。",
         "diff": {
             "left": "左邊",
             "right": "右邊",

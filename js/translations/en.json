@@ -27,7 +27,7 @@
         "source": "Source",
         "toolsKind": "Tools",
         "toolsTitle": "Developer tools",
-        "toolsBody": "Timestamp, JSON, YAML, hashes, encoding, JWT, URL, UUID, regex, base conversion, text diff, letter case, and identifier case. The calculations run in the browser.",
+        "toolsBody": "Timestamp, week number, JSON, YAML, hashes, encoding, JWT, URL, UUID, regex, base conversion, text diff, letter case, and identifier case. The calculations run in the browser.",
         "toolsMeta": "Calculated in the browser",
         "appKind": "App",
         "dataKind": "Data service",
@@ -57,6 +57,8 @@
         "nav": {
             "timestamp": "Timestamp",
             "timestampHint": "Unix time, dates, relative",
+            "week": "Week",
+            "weekHint": "Year and month",
             "json": "JSON",
             "jsonHint": "Format, minify, validate",
             "yaml": "YAML",
@@ -81,6 +83,20 @@
             "lettersHint": "Upper, lower, title",
             "case": "Naming",
             "caseHint": "camel, snake, kebab"
+        },
+        "week": {
+            "live": "Today",
+            "unit": "Week of the year",
+            "caption": "Week {week} of {year}",
+            "copy": "Copy week",
+            "copyIso": "Copy ISO",
+            "iso": "ISO",
+            "range": "This week",
+            "month": "This month",
+            "monthValue": "Week {week}",
+            "pick": "Check a date",
+            "today": "Today",
+            "hint": "Weeks start on Monday. The year week follows ISO 8601. In a month, days 1–7 are week 1."
         },
         "timestamp": {
             "nowLabel": "NOW",
@@ -272,7 +288,7 @@
             "dec": "Decimal",
             "hex": "Hex"
         },
-        "pageDescription": "Timestamp, JSON, YAML, hashes, encoding, JWT, URL, UUID, regex, base conversion, text diff, letter case, and identifier case in the browser.",
+        "pageDescription": "Timestamp, week number, JSON, YAML, hashes, encoding, JWT, URL, UUID, regex, base conversion, text diff, letter case, and identifier case in the browser.",
         "diff": {
             "left": "Left",
             "right": "Right",

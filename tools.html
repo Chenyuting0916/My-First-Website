@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title data-i18n="tools.pageTitle">開發工具</title>
-    <meta name="description" data-i18n-content="tools.pageDescription" content="在瀏覽器裡使用的時間戳、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異、大小寫與命名轉換。">
+    <meta name="description" data-i18n-content="tools.pageDescription" content="在瀏覽器裡使用的時間戳、第幾週、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異、大小寫與命名轉換。">
     <link rel="icon" type="image/x-icon" href="img/happy.ico">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -39,6 +39,13 @@
                     <span>
                         <strong data-i18n="tools.nav.timestamp">時間戳</strong>
                         <small data-i18n="tools.nav.timestampHint">Unix time、日期、相對時間</small>
+                    </span>
+                </button>
+                <button type="button" class="tk-tab" role="tab" id="tab-week" data-tool="week" aria-selected="false" aria-controls="panel-week">
+                    <i class="fas fa-calendar-week" aria-hidden="true"></i>
+                    <span>
+                        <strong data-i18n="tools.nav.week">第幾週</strong>
+                        <small data-i18n="tools.nav.weekHint">今年、本月</small>
                     </span>
                 </button>
                 <button type="button" class="tk-tab" role="tab" id="tab-json" data-tool="json" aria-selected="false" aria-controls="panel-json">
@@ -223,6 +230,44 @@
                         </div>
                         <p class="tk-banner err" id="relError" hidden></p>
                         <div class="tk-result" id="relResult"></div>
+                    </div>
+                </div>
+
+                <div id="panel-week" data-panel="week" role="tabpanel" aria-labelledby="tab-week" hidden>
+                    <div class="tk-now">
+                        <div class="tk-now-top">
+                            <div>
+                                <p class="tk-eyebrow"><span class="tk-live" id="weekLive" aria-hidden="true"></span><span id="weekEyebrow" data-i18n="tools.week.live">今天</span></p>
+                                <button type="button" class="tk-now-value" id="weekNumber" data-raw="" data-iso="">—</button>
+                                <p class="tk-now-unit" id="weekCaption" data-i18n="tools.week.unit">今年第幾週</p>
+                            </div>
+                            <div class="tk-now-actions">
+                                <button type="button" class="tk-btn ghost" id="weekCopy" data-i18n="tools.week.copy">複製週次</button>
+                                <button type="button" class="tk-btn ghost" id="weekCopyIso" data-i18n="tools.week.copyIso">複製 ISO</button>
+                            </div>
+                        </div>
+                        <div class="tk-meta">
+                            <span data-i18n="tools.week.iso">ISO</span>
+                            <code id="weekIso"></code>
+                            <button type="button" class="tk-btn ghost tk-icon-btn" data-copy-from="weekIso" aria-label="copy"><i class="fas fa-copy"></i></button>
+                            <span data-i18n="tools.week.range">這一週</span>
+                            <code id="weekRange"></code>
+                            <button type="button" class="tk-btn ghost tk-icon-btn" data-copy-from="weekRange" aria-label="copy"><i class="fas fa-copy"></i></button>
+                            <span data-i18n="tools.week.month">本月</span>
+                            <code id="weekMonth"></code>
+                            <button type="button" class="tk-btn ghost tk-icon-btn" data-copy-from="weekMonth" aria-label="copy"><i class="fas fa-copy"></i></button>
+                            <span data-i18n="tools.timestamp.local">本地</span>
+                            <code id="weekDay"></code>
+                            <button type="button" class="tk-btn ghost tk-icon-btn" data-copy-from="weekDay" aria-label="copy"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="tk-card">
+                        <h2 data-i18n="tools.week.pick">查某一天</h2>
+                        <div class="tk-row">
+                            <input class="tk-field" id="weekDate" type="date">
+                            <button type="button" class="tk-btn" id="weekToday" data-i18n="tools.week.today">今天</button>
+                        </div>
+                        <p class="tk-hint" data-i18n="tools.week.hint">星期一為一週的開始。今年第幾週用 ISO 8601。本月以 1 到 7 日為第 1 週。</p>
                     </div>
                 </div>
 

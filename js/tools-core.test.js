@@ -155,6 +155,34 @@ test('relative offset follows the local calendar', () => {
     assert.throws(() => core.shiftRelative(now, 1, 'day', 'later'), (err) => err.code === 'invalid-relative');
 });
 
+test('iso week starts on monday and follows the week of january 4', () => {
+    const oct = core.weekOf(new Date(2026, 9, 27, 12).getTime());
+    assert.equal(oct.isoYear, 2026);
+    assert.equal(oct.isoWeek, 44);
+    assert.equal(oct.monthWeek, 4);
+    assert.equal(oct.weekday, 2);
+    assert.equal(oct.date, '2026-10-27');
+    assert.equal(oct.monday, '2026-10-26');
+    assert.equal(oct.sunday, '2026-11-01');
+
+    const newYear = core.weekOf(new Date(2026, 0, 1, 12).getTime());
+    assert.equal(newYear.isoYear, 2026);
+    assert.equal(newYear.isoWeek, 1);
+    assert.equal(newYear.monday, '2025-12-29');
+    assert.equal(newYear.sunday, '2026-01-04');
+
+    const previousYear = core.weekOf(new Date(2021, 0, 1, 12).getTime());
+    assert.equal(previousYear.isoYear, 2020);
+    assert.equal(previousYear.isoWeek, 53);
+    assert.equal(previousYear.monday, '2020-12-28');
+    assert.equal(previousYear.sunday, '2021-01-03');
+
+    assert.equal(core.weekOf(new Date(2026, 9, 1, 12).getTime()).monthWeek, 1);
+    assert.equal(core.weekOf(new Date(2026, 9, 7, 12).getTime()).monthWeek, 1);
+    assert.equal(core.weekOf(new Date(2026, 9, 8, 12).getTime()).monthWeek, 2);
+    assert.throws(() => core.weekOf(Number.NaN), (err) => err.code === 'invalid-date');
+});
+
 test('url encode, decode, and query parse', () => {
     assert.equal(core.transformUrl('a b', 'encode'), 'a%20b');
     assert.equal(core.transformUrl('a%20b', 'decode'), 'a b');

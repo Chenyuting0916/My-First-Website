@@ -394,6 +394,41 @@
         return date.getTime();
     }
 
+    function utcDateText(date) {
+        const y = date.getUTCFullYear();
+        const m = String(date.getUTCMonth() + 1).padStart(2, '0');
+        const d = String(date.getUTCDate()).padStart(2, '0');
+        return y + '-' + m + '-' + d;
+    }
+
+    function weekOf(ms) {
+        const date = new Date(ms);
+        if (Number.isNaN(date.getTime())) throw fail('invalid-date');
+        const year = date.getFullYear();
+        const month = date.getMonth();
+        const day = date.getDate();
+        const utc = new Date(Date.UTC(year, month, day));
+        const weekday = utc.getUTCDay() || 7;
+        const thursday = new Date(utc);
+        thursday.setUTCDate(utc.getUTCDate() + 4 - weekday);
+        const isoYear = thursday.getUTCFullYear();
+        const yearStart = new Date(Date.UTC(isoYear, 0, 1));
+        const isoWeek = Math.ceil((((thursday - yearStart) / 86400000) + 1) / 7);
+        const monday = new Date(utc);
+        monday.setUTCDate(utc.getUTCDate() - weekday + 1);
+        const sunday = new Date(monday);
+        sunday.setUTCDate(monday.getUTCDate() + 6);
+        return {
+            isoYear: isoYear,
+            isoWeek: isoWeek,
+            monthWeek: Math.floor((day - 1) / 7) + 1,
+            weekday: weekday,
+            date: year + '-' + String(month + 1).padStart(2, '0') + '-' + String(day).padStart(2, '0'),
+            monday: utcDateText(monday),
+            sunday: utcDateText(sunday)
+        };
+    }
+
     function sortJson(value) {
         if (Array.isArray(value)) return value.map(sortJson);
         if (value && typeof value === 'object') {
@@ -674,6 +709,7 @@
         parseDateInput: parseDateInput,
         relativeParts: relativeParts,
         shiftRelative: shiftRelative,
+        weekOf: weekOf,
         formatJson: formatJson,
         sortJson: sortJson,
         transformUrl: transformUrl,

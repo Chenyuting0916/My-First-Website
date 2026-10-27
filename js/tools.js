@@ -1,6 +1,6 @@
 (function () {
     var core = window.ToolsCore;
-    var TOOLS = ['timestamp', 'json', 'yaml', 'md5', 'codec', 'jwt', 'url', 'uuid', 'regex', 'radix', 'diff', 'letters', 'case'];
+    var TOOLS = ['timestamp', 'week', 'json', 'yaml', 'md5', 'codec', 'jwt', 'url', 'uuid', 'regex', 'radix', 'diff', 'letters', 'case'];
     var JSON_SAMPLE = '{"name":"Ada","ok":true,"tools":["timestamp","json","yaml"]}';
     var YAML_SAMPLE = 'name: Ada\nrole: engineer\ntools:\n  - timestamp\n  - json\n  - yaml\nactive: true\n';
     var YAML_BAD = 'name: Ada\ntools: [\n';
@@ -277,6 +277,37 @@
         byId('nowIso').textContent = now.toISOString();
         byId('nowZone').textContent = zoneLabel(now);
         if (byId('relAmount')) renderRelative();
+        renderWeek();
+    }
+
+    function renderWeek() {
+        var number = byId('weekNumber');
+        var input = byId('weekDate');
+        if (!number || !input) return;
+        var live = !input.value;
+        var ms = state.nowMs || Date.now();
+        if (!live) {
+            var parts = input.value.split('-');
+            ms = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]), 12).getTime();
+        }
+        var info;
+        try {
+            info = core.weekOf(ms);
+        } catch (err) {
+            return;
+        }
+        var iso = info.isoYear + '-W' + pad(info.isoWeek);
+        number.textContent = String(info.isoWeek);
+        number.dataset.raw = String(info.isoWeek);
+        number.dataset.iso = iso;
+        byId('weekCaption').textContent = tf('tools.week.caption', { year: info.isoYear, week: info.isoWeek });
+        byId('weekEyebrow').textContent = live ? t('tools.week.live') : info.date;
+        byId('weekLive').hidden = !live;
+        byId('weekIso').textContent = iso;
+        byId('weekRange').textContent = info.monday + ' – ' + info.sunday;
+        byId('weekMonth').textContent = tf('tools.week.monthValue', { week: info.monthWeek });
+        var picked = live ? new Date(state.nowMs || Date.now()) : new Date(ms);
+        byId('weekDay').textContent = info.date + ' ' + weekday(picked);
     }
 
     function fillResult(el, rows) {
@@ -1017,6 +1048,14 @@
         byId('nowSec').addEventListener('click', function () { copyText(byId('nowSec').dataset.raw); });
         byId('copyNowSec').addEventListener('click', function () { copyText(byId('nowSec').dataset.raw); });
         byId('copyNowMs').addEventListener('click', function () { copyText(byId('nowSec').dataset.ms); });
+        byId('weekNumber').addEventListener('click', function () { copyText(byId('weekNumber').dataset.raw); });
+        byId('weekCopy').addEventListener('click', function () { copyText(byId('weekNumber').dataset.raw); });
+        byId('weekCopyIso').addEventListener('click', function () { copyText(byId('weekNumber').dataset.iso); });
+        byId('weekDate').addEventListener('input', renderWeek);
+        byId('weekToday').addEventListener('click', function () {
+            byId('weekDate').value = '';
+            renderWeek();
+        });
         document.body.addEventListener('click', function (event) {
             var button = event.target.closest('[data-copy-from]');
             if (!button) return;

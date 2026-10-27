@@ -27,7 +27,7 @@
         "source": "ソース",
         "toolsKind": "ツール",
         "toolsTitle": "開発ツール",
-        "toolsBody": "タイムスタンプ、JSON、YAML、ハッシュ、エンコード、JWT、URL、UUID、正規表現、進数変換、テキスト差分、大文字小文字、命名変換。計算はこのブラウザで行います。",
+        "toolsBody": "タイムスタンプ、第何週、JSON、YAML、ハッシュ、エンコード、JWT、URL、UUID、正規表現、進数変換、テキスト差分、大文字小文字、命名変換。計算はこのブラウザで行います。",
         "toolsMeta": "ブラウザで計算",
         "appKind": "App",
         "dataKind": "データサービス",
@@ -57,6 +57,8 @@
         "nav": {
             "timestamp": "時刻",
             "timestampHint": "Unix time、日時、相対",
+            "week": "第何週",
+            "weekHint": "今年と今月",
             "json": "JSON",
             "jsonHint": "整形、圧縮、検証",
             "yaml": "YAML",
@@ -81,6 +83,20 @@
             "lettersHint": "大文字、小文字、先頭",
             "case": "命名変換",
             "caseHint": "キャメル、スネーク、ケバブ"
+        },
+        "week": {
+            "live": "今日",
+            "unit": "今年の週",
+            "caption": "{year} 年第 {week} 週",
+            "copy": "週をコピー",
+            "copyIso": "ISO をコピー",
+            "iso": "ISO",
+            "range": "この週",
+            "month": "今月",
+            "monthValue": "第 {week} 週",
+            "pick": "日付を調べる",
+            "today": "今日",
+            "hint": "週の始まりは月曜日です。今年の週は ISO 8601 です。月の中では 1–7 日が第 1 週です。"
         },
         "timestamp": {
             "nowLabel": "いま",
@@ -272,7 +288,7 @@
             "dec": "10進数",
             "hex": "16進数"
         },
-        "pageDescription": "ブラウザで使うタイムスタンプ、JSON、YAML、ハッシュ、エンコード、JWT、URL、UUID、正規表現、進数変換、テキスト差分、大文字小文字、命名変換です。",
+        "pageDescription": "ブラウザで使うタイムスタンプ、第何週、JSON、YAML、ハッシュ、エンコード、JWT、URL、UUID、正規表現、進数変換、テキスト差分、大文字小文字、命名変換です。",
         "diff": {
             "left": "左",
             "right": "右",
