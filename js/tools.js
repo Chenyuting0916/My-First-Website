@@ -1,7 +1,6 @@
 (function () {
     var core = window.ToolsCore;
-    var TOOLS = ['timestamp', 'json', 'yaml', 'md5', 'codec', 'jwt', 'url', 'uuid', 'regex', 'radix', 'diff', 'case'];
-    var MORE_TOOLS = { url: true, uuid: true, regex: true, radix: true, diff: true, case: true };
+    var TOOLS = ['timestamp', 'json', 'yaml', 'md5', 'codec', 'jwt', 'url', 'uuid', 'regex', 'radix', 'diff', 'letters', 'case'];
     var JSON_SAMPLE = '{"name":"Ada","ok":true,"tools":["timestamp","json","yaml"]}';
     var YAML_SAMPLE = 'name: Ada\nrole: engineer\ntools:\n  - timestamp\n  - json\n  - yaml\nactive: true\n';
     var YAML_BAD = 'name: Ada\ntools: [\n';
@@ -100,6 +99,10 @@
         'tools.radix.oct': '八進位',
         'tools.radix.dec': '十進位',
         'tools.radix.hex': '十六進位',
+        'tools.letters.upper': '大寫',
+        'tools.letters.lower': '小寫',
+        'tools.letters.title': '字首大寫',
+        'tools.letters.sentence': '句首大寫',
         'tools.case.camel': '小駝峰',
         'tools.case.pascal': '大駝峰',
         'tools.case.snake': '底線',
@@ -232,15 +235,6 @@
         el.textContent = message;
     }
 
-    function setMoreOpen(open) {
-        var panel = byId('moreToolsPanel');
-        var button = byId('moreTools');
-        if (!panel || !button) return;
-        panel.classList.toggle('is-collapsed', !open);
-        button.classList.toggle('is-open', open);
-        button.setAttribute('aria-expanded', open ? 'true' : 'false');
-    }
-
     function scrollTabIntoView(tab) {
         if (!tab) return;
         var scroller = tab.closest('.tk-tabs');
@@ -255,7 +249,6 @@
 
     function selectTool(id) {
         if (TOOLS.indexOf(id) < 0) id = 'timestamp';
-        if (MORE_TOOLS[id]) setMoreOpen(true);
         state.tool = id;
         document.querySelectorAll('[data-tool]').forEach(function (btn) {
             var on = btn.getAttribute('data-tool') === id;
@@ -940,6 +933,30 @@
         }
     }
 
+    function renderLetters() {
+        var input = byId('lettersIn');
+        var banner = byId('lettersBanner');
+        var result = byId('lettersResult');
+        if (!input || !input.value.trim()) {
+            setBanner(banner, '', '');
+            result.replaceChildren();
+            return;
+        }
+        try {
+            var values = core.convertLetterCase(input.value);
+            setBanner(banner, '', '');
+            fillResult(result, [
+                { label: t('tools.letters.upper'), value: values.upper },
+                { label: t('tools.letters.lower'), value: values.lower },
+                { label: t('tools.letters.title'), value: values.title },
+                { label: t('tools.letters.sentence'), value: values.sentence }
+            ]);
+        } catch (err) {
+            result.replaceChildren();
+            setBanner(banner, 'err', errorText(err));
+        }
+    }
+
     function renderCase() {
         var input = byId('caseIn');
         var result = byId('caseResult');
@@ -1003,9 +1020,6 @@
             btn.addEventListener('click', function () {
                 selectTool(btn.getAttribute('data-tool'));
             });
-        });
-        byId('moreTools').addEventListener('click', function () {
-            setMoreOpen(byId('moreToolsPanel').classList.contains('is-collapsed'));
         });
         window.addEventListener('hashchange', function () {
             selectTool(location.hash.replace('#', ''));
@@ -1268,6 +1282,16 @@
             renderDiff();
         });
 
+        byId('lettersIn').addEventListener('input', debounce(renderLetters, 60));
+        byId('lettersSample').addEventListener('click', function () {
+            byId('lettersIn').value = "the quick brown fox. it's a well-known fact.";
+            renderLetters();
+        });
+        byId('lettersClear').addEventListener('click', function () {
+            byId('lettersIn').value = '';
+            renderLetters();
+        });
+
         byId('caseIn').addEventListener('input', debounce(renderCase, 60));
         byId('caseSample').addEventListener('click', function () {
             byId('caseIn').value = 'getHTTPResponseCode';
@@ -1306,6 +1330,7 @@
         renderRegex();
         renderRadix();
         renderDiff();
+        renderLetters();
         renderCase();
         var secretBtn = byId('jwtToggleSecret');
         if (secretBtn && byId('jwtSecret')) {
