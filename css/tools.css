@@ -76,12 +76,6 @@ body.tools-page h4 {
     font-weight: 700;
 }
 
-body.tools-page h1.tk-title {
-    margin: 0;
-    font-size: 36px;
-    letter-spacing: -0.04em;
-}
-
 body.tools-page .tk-card h2,
 body.tools-page h2.tk-panel-title {
     font-size: 18px;
@@ -109,34 +103,6 @@ body.tools-page [hidden] {
     margin: 28px auto 0;
     flex: 1 0 auto;
     min-width: 0;
-}
-
-.tk-hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 18px;
-    margin-bottom: 22px;
-}
-
-.tk-kicker {
-    margin: 0 0 8px;
-    color: var(--accent);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-}
-
-.tk-title {
-    color: var(--ink);
-}
-
-.tk-lead {
-    max-width: 680px;
-    margin: 8px 0 0;
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.6;
 }
 
 .tk-shell {
@@ -952,7 +918,6 @@ body.tools-page [hidden] {
 }
 
 @media (max-width: 900px) {
-    .tk-hero,
     .tk-now-top,
     .tk-shell,
     .tk-split,
