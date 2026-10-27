@@ -159,7 +159,7 @@
             "copy": "結果をコピー",
             "placeholder": "JSON を貼り付け",
             "valid": "正しい JSON です",
-            "shortcut": "JSON を貼り付けるとその場で整形します。Ctrl または ⌘ + Enter でもできます。"
+            "shortcut": "左を変えるたびに右へ整形します。原文はそのままです。"
         },
         "yaml": {
             "check": "チェック",

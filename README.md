@@ -20,7 +20,7 @@ This repository is a static site. It introduces a C#/.NET backend engineer and h
 | Tool | What it does |
 | --- | --- |
 | Timestamp | Unix time and local/UTC dates. Units are inferred from digit length. A relative offset (before or after now) shows the matching date and Unix time. |
-| JSON | Format, minify, sort keys, and validate. |
+| JSON | Format, minify, sort keys, and validate. Formatting updates only the result, and it runs again whenever the input changes. |
 | YAML | Check a document and convert to or from JSON, using vendored js-yaml 4.1.0. |
 | Hash | MD5 (local implementation) and SHA-256 (`crypto.subtle`) for text and files. MD5 here is a checksum, not a password hash. |
 | Encoding | Text, Base64, Base64URL, and hex. |
