@@ -47,8 +47,6 @@
     "tools": {
         "pageTitle": "Developer tools",
         "title": "Developer tools",
-        "lead": "Timestamp, JSON, YAML, MD5, encoding, JWT, URL, UUID, regex, base conversion, text diff, letter case, and identifier case. After the page loads, the calculations run in this browser.",
-        "kicker": "Runs in the browser",
         "copy": "Copy",
         "copied": "Copied",
         "copyEmpty": "Nothing to copy",
