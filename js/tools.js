@@ -426,36 +426,25 @@
         byId('datePicker').value = match[1] + '-' + match[2] + '-' + match[3] + 'T' + match[4] + ':' + match[5] + ':' + (match[6] || '00');
     }
 
-    function renderJsonStatus() {
+    function renderJson(mode) {
         var input = byId('jsonInput');
+        var output = byId('jsonOutput');
         var banner = byId('jsonBanner');
         if (!input.value.trim()) {
+            output.value = '';
             setBanner(banner, '', '');
             return;
         }
         try {
-            JSON.parse(input.value);
-            setBanner(banner, 'ok', t('tools.json.valid'));
-        } catch (err) {
-            setBanner(banner, 'err', errorText({ code: 'invalid-json', detail: err.message }));
-        }
-    }
-
-    function runJson(mode) {
-        var input = byId('jsonInput');
-        var output = byId('jsonOutput');
-        try {
-            var formatted = core.formatJson(input.value, {
+            output.value = core.formatJson(input.value, {
                 indent: state.jsonIndent,
                 sort: byId('jsonSort').checked,
                 minify: mode === 'minify'
             });
-            if (mode !== 'minify') input.value = formatted;
-            output.value = formatted;
-            setBanner(byId('jsonBanner'), 'ok', t('tools.json.valid'));
+            setBanner(banner, 'ok', t('tools.json.valid'));
         } catch (err) {
             output.value = '';
-            setBanner(byId('jsonBanner'), 'err', errorText(err));
+            setBanner(banner, 'err', errorText(err));
         }
     }
 
@@ -1087,9 +1076,9 @@
             renderRelative();
         });
 
-        byId('jsonFormat').addEventListener('click', function () { runJson('format'); });
-        byId('jsonMinify').addEventListener('click', function () { runJson('minify'); });
-        byId('jsonSort').addEventListener('change', renderJsonStatus);
+        byId('jsonFormat').addEventListener('click', function () { renderJson('format'); });
+        byId('jsonMinify').addEventListener('click', function () { renderJson('minify'); });
+        byId('jsonSort').addEventListener('change', function () { renderJson('format'); });
         byId('jsonIndent').addEventListener('click', function (event) {
             var button = event.target.closest('[data-indent]');
             if (!button) return;
@@ -1097,34 +1086,22 @@
             byId('jsonIndent').querySelectorAll('[data-indent]').forEach(function (el) {
                 el.classList.toggle('is-on', el === button);
             });
+            renderJson('format');
         });
         byId('jsonCopy').addEventListener('click', function () { copyText(byId('jsonOutput').value); });
         byId('jsonSample').addEventListener('click', function () {
             byId('jsonInput').value = JSON_SAMPLE;
-            runJson('format');
+            renderJson('format');
         });
         byId('jsonClear').addEventListener('click', function () {
             byId('jsonInput').value = '';
-            byId('jsonOutput').value = '';
-            renderJsonStatus();
+            renderJson('format');
         });
-        byId('jsonInput').addEventListener('paste', function (event) {
-            var clip = event.clipboardData || window.clipboardData;
-            if (!clip) return;
-            var text = clip.getData('text');
-            if (!text) return;
-            event.preventDefault();
-            var el = byId('jsonInput');
-            var start = el.selectionStart || 0;
-            var end = el.selectionEnd || 0;
-            el.value = el.value.slice(0, start) + text + el.value.slice(end);
-            runJson('format');
-        });
-        byId('jsonInput').addEventListener('input', debounce(renderJsonStatus, 120));
+        byId('jsonInput').addEventListener('input', debounce(function () { renderJson('format'); }, 80));
         byId('jsonInput').addEventListener('keydown', function (event) {
             if ((event.metaKey || event.ctrlKey) && event.key === 'Enter') {
                 event.preventDefault();
-                runJson('format');
+                renderJson('format');
             }
         });
 
@@ -1319,7 +1296,7 @@
         renderNow();
         renderTimestamp();
         renderDate();
-        renderJsonStatus();
+        renderJson('format');
         if (byId('yamlInput')) renderYamlStatus();
         renderMd5Text();
         renderFileHashes();

@@ -159,7 +159,7 @@
             "copy": "複製結果",
             "placeholder": "貼上 JSON",
             "valid": "JSON 正確",
-            "shortcut": "貼上 JSON 會直接排版。Ctrl 或 ⌘ + Enter 也可以。"
+            "shortcut": "左邊一有變動，右邊就會重新排版。原文不會被改掉。"
         },
         "yaml": {
             "check": "檢查",

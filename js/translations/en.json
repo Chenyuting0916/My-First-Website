@@ -159,7 +159,7 @@
             "copy": "Copy result",
             "placeholder": "Paste JSON",
             "valid": "Valid JSON",
-            "shortcut": "Pasting JSON formats it immediately. Ctrl or ⌘ + Enter works too."
+            "shortcut": "Any change on the left is formatted on the right. The original text stays as you typed it."
         },
         "yaml": {
             "check": "Check",
