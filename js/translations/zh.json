@@ -47,8 +47,6 @@
     "tools": {
         "pageTitle": "開發工具",
         "title": "開發工具",
-        "lead": "時間戳、JSON、YAML、MD5、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異、大小寫和命名轉換。頁面載入後，這些計算在這台瀏覽器裡完成。",
-        "kicker": "瀏覽器內運算",
         "copy": "複製",
         "copied": "已複製",
         "copyEmpty": "沒有可以複製的內容",
