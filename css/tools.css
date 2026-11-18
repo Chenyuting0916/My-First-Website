@@ -19,35 +19,17 @@ body.tools-page {
     font-family: "Segoe UI", "PingFang TC", "Hiragino Sans", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
 }
 
-body.tools-page .tk-appbar {
-    flex: 0 0 auto;
+body.tools-page .site-hero {
+    margin-bottom: 16px;
 }
 
-.tk-appbar {
-    position: sticky;
-    top: 0;
-    z-index: 1020;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    min-height: 64px;
-    padding: 10px 22px;
-    background: var(--nav);
+body.tools-page .site-hero h1 {
+    font-size: 32px;
 }
 
-.tk-brand {
-    color: #fff;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    text-decoration: none;
-}
-
-.tk-brand:hover,
-.tk-brand:focus {
-    color: #fff;
-    text-decoration: none;
+body.tools-page .site-hero p {
+    color: var(--muted);
+    line-height: 1.7;
 }
 
 body.tools-page .container {
@@ -939,7 +921,7 @@ body.tools-page [hidden] {
 
     .tk-tabs {
         position: sticky;
-        top: 64px;
+        top: 72px;
         z-index: 20;
         flex-direction: row;
         width: 100%;

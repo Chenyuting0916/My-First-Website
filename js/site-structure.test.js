@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const root = path.join(__dirname, '..');
-const personalPages = ['index.html', 'about.html', 'Portfolio.html', 'works.html'];
+const personalPages = ['index.html', 'about.html', 'Portfolio.html', 'works.html', 'tools.html'];
 
 function read(name) {
     return fs.readFileSync(path.join(root, name), 'utf8');
@@ -50,12 +50,51 @@ test('the personal pages share one navigation and one footer', () => {
         'https://www.linkedin.com/in/yuting-chen-63738b135/',
         'mailto:tim376755000@gmail.com'
     ]);
-    for (const name of ['index.html', 'about.html', 'Portfolio.html']) {
-        assert.equal(read(name).includes('tools.html'), false);
+    for (const name of personalPages) {
+        assert.match(read(name), /href="tools\.html"/);
+        assert.match(read(name), /data-i18n="nav\.tools"/);
     }
 });
 
-test('the works tree is the only personal page that opens the tools', () => {
+test('home, about, and the portfolio use one set of role facts', () => {
+    const home = read('index.html');
+    const about = read('about.html');
+    for (const key of ['home.gogoroBody', 'home.japanBody', 'home.titansoftBody', 'home.schoolBody']) {
+        assert.match(home, new RegExp(`data-i18n="${key}"`));
+        assert.match(about, new RegExp(`data-i18n="${key}"`));
+    }
+});
+
+test('home result titles match the portfolio case titles', () => {
+    for (const lang of ['zh', 'en', 'ja']) {
+        const data = JSON.parse(read('js/translations/' + lang + '.json'));
+        assert.equal(data.home.result1Title, data.work.case1Title);
+        assert.equal(data.home.result2Title, data.work.case2Title);
+        assert.equal(data.home.result3Title, data.work.case3Title);
+    }
+});
+
+const programIds = ['tools', 'discipline', 'twstock', 'timeminer', 'level'];
+
+test('the portfolio and the works tree list the same programs in the same order', () => {
+    function positions(html) {
+        return programIds.map((id) => {
+            const at = html.indexOf(`id="${id}"`);
+            assert.ok(at >= 0, id);
+            return at;
+        });
+    }
+    const portfolio = positions(read('Portfolio.html'));
+    const works = positions(read('works.html'));
+    assert.deepEqual(portfolio, [...portfolio].sort((a, b) => a - b));
+    assert.deepEqual(works, [...works].sort((a, b) => a - b));
+    const worksHtml = read('works.html');
+    for (const id of programIds) {
+        assert.match(worksHtml, new RegExp(`href="Portfolio\\.html#${id}"`));
+    }
+});
+
+test('the works tree opens each program, and the tools stay on this site', () => {
     const html = read('works.html');
     assert.match(html, /href="tools\.html"/);
     assert.match(html, /href="https:\/\/disciplineapp\.azurewebsites\.net\/"/);
@@ -69,19 +108,15 @@ test('the works tree is the only personal page that opens the tools', () => {
     assert.equal(/target=/.test(toolLink[0]), false);
 });
 
-test('the tools page does not link back to the personal site', () => {
+test('the tools page keeps its tool shell inside the shared site chrome', () => {
     const html = read('tools.html');
-    assert.equal(html.includes('index.html'), false);
-    assert.equal(html.includes('about.html'), false);
-    assert.equal(html.includes('Portfolio.html'), false);
-    assert.equal(html.includes('works.html'), false);
-    assert.equal(html.includes('Tim Chen'), false);
-    assert.equal(html.includes('github.com/Chenyuting0916'), false);
-    assert.equal(html.includes('linkedin.com'), false);
-    assert.equal(html.includes('tim376755000'), false);
-    assert.equal(html.includes('id="footer"'), false);
-    assert.match(html, /class="tk-appbar"/);
+    assert.match(html, /class="tk-shell"/);
     assert.match(html, /id="relAmount"/);
+    assert.match(html, /href="index\.html"/);
+    assert.match(html, /href="about\.html"/);
+    assert.match(html, /href="Portfolio\.html"/);
+    assert.match(html, /href="works\.html"/);
+    assert.equal(html.includes('tk-appbar'), false);
 });
 
 test('zh, en, and ja use the same translation keys', () => {

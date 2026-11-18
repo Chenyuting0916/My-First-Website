@@ -29,7 +29,7 @@
                 <a class="navbar-brand" href="index.html" aria-current="page">Tim Chen</a>
                 <button class="navbar-toggler ml-auto text-white" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    aria-label="展開導覽" data-i18n-aria-label="nav.menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -43,8 +43,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="works.html" data-i18n="nav.works">其他作品</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tools.html" data-i18n="nav.tools">工具</a>
+                        </li>
                         <li class="nav-item align-items-center d-flex">
-                            <select id="langSelect" onchange="i18n.setLanguage(this.value)" aria-label="Language">
+                            <select id="langSelect" onchange="i18n.setLanguage(this.value)" aria-label="語言" data-i18n-aria-label="nav.language">
                                 <option value="zh" selected>中文</option>
                                 <option value="en">English</option>
                                 <option value="ja">日本語</option>
@@ -63,8 +66,9 @@
             <p class="site-lead" data-i18n="home.lead">陳昱廷。目前在 Gogoro 用 C#／.NET 做後端，處理既有系統的效能和可靠性。</p>
             <div class="site-actions">
                 <a class="site-btn" href="Portfolio.html#work" data-i18n="home.ctaWork">工作案例</a>
-                <a class="site-btn ghost" href="Portfolio.html#public" data-i18n="home.ctaPublic">公開專案</a>
+                <a class="site-btn ghost" href="Portfolio.html#public" data-i18n="home.ctaPublic">公開程式</a>
                 <a class="site-btn ghost" href="works.html" data-i18n="home.ctaWorks">其他作品</a>
+                <a class="site-btn ghost" href="tools.html" data-i18n="home.ctaTools">開發工具</a>
                 <a class="site-btn ghost" href="#contact" data-i18n="home.ctaContact">聯絡我</a>
                 <a class="site-text-link" href="https://github.com/Chenyuting0916" target="_blank" rel="noopener">GitHub</a>
                 <a class="site-text-link" href="https://www.linkedin.com/in/yuting-chen-63738b135/" target="_blank" rel="noopener">LinkedIn</a>
@@ -85,8 +89,8 @@
                     <a class="site-text-link" href="Portfolio.html#latency" data-i18n="home.readCase">閱讀案例</a>
                 </article>
                 <article class="site-card">
-                    <h3 data-i18n="home.result3Title">補上並修好既有測試</h3>
-                    <p data-i18n="home.result3Body">既有單元測試從 41 個補到 240 個，並修好原本會失敗的測試。</p>
+                    <h3 data-i18n="home.result3Title">讓維修公告的計算可以單獨測試</h3>
+                    <p data-i18n="home.result3Body">把計算從服務拆開之後，區間合併和快取可以單獨測試。同一時期，既有單元測試從 41 個補到 240 個，並修好原本會失敗的測試。</p>
                     <a class="site-text-link" href="Portfolio.html#notices" data-i18n="home.readCase">閱讀案例</a>
                 </article>
             </div>
@@ -104,11 +108,19 @@
             </article>
             <article class="site-card site-role">
                 <div class="site-role-top">
+                    <h3 data-i18n="home.japanName">Eastwest 日本語學校</h3>
+                    <span class="site-when" data-i18n="home.japanWhen">2024/04–2025/10</span>
+                </div>
+                <p class="site-meta" data-i18n="home.japanRole">日語進修</p>
+                <p data-i18n="home.japanBody">在東京讀書，JLPT N1。</p>
+            </article>
+            <article class="site-card site-role">
+                <div class="site-role-top">
                     <h3><a href="https://www.titansoft.com/" target="_blank" rel="noopener">Titansoft</a></h3>
                     <span class="site-when" data-i18n="home.titansoftWhen">2020/08–2023/04</span>
                 </div>
-                <p class="site-meta" data-i18n="home.titansoftRole">Product Developer</p>
-                <p data-i18n="home.titansoftBody">C#／.NET 後端與 REST／gRPC 微服務，使用 SQL Server、Redis、Kafka。和團隊一起導入 integration testing，並辦過工程讀書會。含 2020 年實習。</p>
+                <p class="site-meta" data-i18n="home.titansoftRole">產品開發工程師</p>
+                <p data-i18n="home.titansoftBody">C#／.NET 後端與 REST／gRPC 微服務，使用 SQL Server、Redis、Kafka。和團隊一起導入整合測試，並辦過工程讀書會。含 2020 年實習。</p>
             </article>
             <article class="site-card site-role">
                 <div class="site-role-top">
@@ -123,7 +135,7 @@
             <h2 id="skills-title" data-i18n="home.skillsTitle">技術</h2>
             <div class="site-skill-grid">
                 <article class="site-card">
-                    <h3 data-i18n="home.skillBackend">Backend</h3>
+                    <h3 data-i18n="home.skillBackend">後端</h3>
                     <ul class="site-chips">
                         <li>C#</li>
                         <li>.NET 8</li>
@@ -135,7 +147,7 @@
                     </ul>
                 </article>
                 <article class="site-card">
-                    <h3 data-i18n="home.skillData">Data／Integration</h3>
+                    <h3 data-i18n="home.skillData">資料與整合</h3>
                     <ul class="site-chips">
                         <li>SQL Server</li>
                         <li>Entity Framework</li>
@@ -144,21 +156,21 @@
                     </ul>
                 </article>
                 <article class="site-card">
-                    <h3 data-i18n="home.skillQuality">Quality</h3>
+                    <h3 data-i18n="home.skillQuality">品質</h3>
                     <ul class="site-chips">
                         <li>xUnit／NUnit</li>
-                        <li data-i18n="home.skillIntegration">integration testing</li>
+                        <li data-i18n="home.skillIntegration">整合測試</li>
                         <li data-i18n="home.skillPerf">效能分析</li>
-                        <li>production troubleshooting</li>
+                        <li data-i18n="home.skillOps">正式環境除錯</li>
                     </ul>
                 </article>
                 <article class="site-card">
-                    <h3 data-i18n="home.skillDelivery">Delivery／Operations</h3>
+                    <h3 data-i18n="home.skillDelivery">交付與維運</h3>
                     <ul class="site-chips">
                         <li>GitLab CI/CD</li>
                         <li>PowerShell</li>
                         <li data-i18n="home.skillK8s">Docker／Kubernetes 使用經驗</li>
-                        <li>log／monitoring</li>
+                        <li data-i18n="home.skillLogs">日誌與監控</li>
                     </ul>
                 </article>
             </div>
