@@ -14,7 +14,7 @@ This repository is a static site. It introduces a C#/.NET backend engineer and h
 - **About** (`about.html`): work history, public programs, Japanese language study and JLPT N1, and an engineering reading group.
 - **Work** (`Portfolio.html`): de-identified work cases, then public programs (Discipline App, TwStock, TimeMiner, Level). The filename is case-sensitive.
 - **Other work** (`works.html`): a tree of links to those programs and to the developer tools. This is the personal site’s index of other apps.
-- **Tools** (`tools.html`): utilities that calculate in the browser after the page has loaded. The page is in this repository, but its header and footer do not link back to the personal site.
+- **Tools** (`tools.html`): utilities that calculate in the browser after the page has loaded. The page uses the same navigation and footer as the personal pages.
 - **Languages**: Traditional Chinese (default), English, and Japanese. Copy lives in `js/translations/`.
 
 | Tool | What it does |
@@ -64,14 +64,14 @@ Previewing the site needs Python (or any static file server). Running the tool t
 node --test js/tools-core.test.js
 ```
 
-When changing copy or layout, also check the personal pages and the tools page in Traditional Chinese, English, and Japanese, the collapsed navigation on a narrow viewport, the works tree, and one action in each tool. The tools page should not link to `index.html`, `about.html`, `Portfolio.html`, or `works.html`.
+When changing copy or layout, also check the personal pages and the tools page in Traditional Chinese, English, and Japanese, the collapsed navigation on a narrow viewport, the works tree, and one action in each tool. The tools page uses the same navigation and footer as the other pages. Home result titles match the portfolio case titles, and the public programs appear in the same order on `Portfolio.html` and `works.html`.
 
 ## Project structure
 
 | Path | Role |
 | --- | --- |
-| `index.html`, `about.html`, `Portfolio.html`, `works.html` | Personal pages. They share one navigation and footer. Keep the `Portfolio.html` capitalization. |
-| `tools.html` | Standalone tools app in this repository. No personal navigation or footer. |
+| `index.html`, `about.html`, `Portfolio.html`, `works.html`, `tools.html` | Site pages. They share one navigation and footer. Keep the `Portfolio.html` capitalization. |
+| `tools.html` | Developer tools in this repository, inside the shared navigation and footer. |
 | `css/site.css`, `css/tools.css`, `css/style.css` | Shared page chrome, tool layout, and older base styles. |
 | `js/i18n.js` | Loads a translation file and updates `data-i18n` nodes. |
 | `js/translations/zh.json`, `en.json`, `ja.json` | Visible copy. |

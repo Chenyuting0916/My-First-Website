@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title data-i18n="tools.pageTitle">開發工具</title>
+    <title data-i18n="tools.pageTitle">開發工具 — Tim Chen</title>
     <meta name="description" data-i18n-content="tools.pageDescription" content="在瀏覽器裡使用的時間戳、第幾週、JSON、YAML、雜湊、編碼、JWT、URL、UUID、正規表示式、進位轉換、文字差異、大小寫與命名轉換。">
+    <meta name="author" content="Tim Chen">
     <link rel="icon" type="image/x-icon" href="img/happy.ico">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -22,16 +23,48 @@
 
 <body class="tools-page">
     <a class="skip-link" href="#content" data-i18n="nav.skip">跳到內容</a>
-    <header class="tk-appbar">
-        <a class="tk-brand" href="#timestamp" data-i18n="tools.title">開發工具</a>
-        <select id="langSelect" onchange="i18n.setLanguage(this.value)" aria-label="Language">
-            <option value="zh" selected>中文</option>
-            <option value="en">English</option>
-            <option value="ja">日本語</option>
-        </select>
-    </header>
+    <div id="nav">
+        <nav class="navbar navbar-expand-md navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Tim Chen</a>
+                <button class="navbar-toggler ml-auto text-white" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="展開導覽" data-i18n-aria-label="nav.menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-md-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html" data-i18n="nav.about">關於</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Portfolio.html" data-i18n="nav.portfolio">作品集</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="works.html" data-i18n="nav.works">其他作品</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="tools.html" data-i18n="nav.tools" aria-current="page">工具</a>
+                        </li>
+                        <li class="nav-item align-items-center d-flex">
+                            <select id="langSelect" onchange="i18n.setLanguage(this.value)" aria-label="語言" data-i18n-aria-label="nav.language">
+                                <option value="zh" selected>中文</option>
+                                <option value="en">English</option>
+                                <option value="ja">日本語</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
 
-    <div class="tk-wrap" id="content">
+    <main class="tk-wrap" id="content">
+        <header class="site-hero">
+            <p class="site-kicker">Tim Chen</p>
+            <h1 data-i18n="tools.title">開發工具</h1>
+            <p class="site-lead" data-i18n="tools.lead">在瀏覽器裡換算、檢查和比對。輸入不會送出去。</p>
+        </header>
         <div class="tk-shell">
             <div class="tk-tabs" role="tablist" aria-label="tools">
                 <button type="button" class="tk-tab is-active" role="tab" id="tab-timestamp" data-tool="timestamp" aria-selected="true" aria-controls="panel-timestamp">
@@ -563,7 +596,20 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+
+    <nav id="footer" class="navbar">
+        <div class="container text-center justify-content-center">
+            <div>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a title="GitHub" target="_blank" rel="noopener" href="https://github.com/Chenyuting0916"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a title="LinkedIn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/yuting-chen-63738b135/"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a title="Email" href="mailto:tim376755000@gmail.com"><i class="far fa-envelope"></i></a></li>
+                </ul>
+                <p>Tim Chen</p>
+            </div>
+        </div>
+    </nav>
 
     <div class="tk-toast" id="tkToast" role="status" aria-live="polite"></div>
 </body>

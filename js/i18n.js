@@ -43,6 +43,10 @@ const i18n = {
             const value = this.t(element.getAttribute('data-i18n-alt'));
             if (typeof value === 'string') element.alt = value;
         });
+        document.querySelectorAll('[data-i18n-aria-label]').forEach(element => {
+            const value = this.t(element.getAttribute('data-i18n-aria-label'));
+            if (typeof value === 'string') element.setAttribute('aria-label', value);
+        });
         const htmlLang = { zh: 'zh-Hant', en: 'en', ja: 'ja' }[this.currentLang] || 'zh-Hant';
         document.documentElement.lang = htmlLang;
         document.dispatchEvent(new CustomEvent('i18n:updated'));

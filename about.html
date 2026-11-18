@@ -25,7 +25,7 @@
                 <a class="navbar-brand" href="index.html">Tim Chen</a>
                 <button class="navbar-toggler ml-auto text-white" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    aria-label="展開導覽" data-i18n-aria-label="nav.menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -39,8 +39,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="works.html" data-i18n="nav.works">其他作品</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tools.html" data-i18n="nav.tools">工具</a>
+                        </li>
                         <li class="nav-item align-items-center d-flex">
-                            <select id="langSelect" onchange="i18n.setLanguage(this.value)" aria-label="Language">
+                            <select id="langSelect" onchange="i18n.setLanguage(this.value)" aria-label="語言" data-i18n-aria-label="nav.language">
                                 <option value="zh" selected>中文</option>
                                 <option value="en">English</option>
                                 <option value="ja">日本語</option>
@@ -58,23 +61,64 @@
             <h1 data-i18n="about.heading">關於</h1>
             <p class="site-lead" data-i18n="about.lead">陳昱廷。用 C#／.NET 做後端，主要改既有系統的效能和可靠性。</p>
         </header>
-        <article class="site-card site-prose">
-            <p data-i18n="about.engineering">2026 年 3 月起在 Gogoro 做 .NET 後端。2020 年 8 月到 2023 年 4 月在 Titansoft 擔任 Product Developer，參與 REST／gRPC 微服務，2020 年也在同一間公司實習。</p>
-            <p data-i18n="about.projects">公開的程式有 Discipline App、TimeMiner、Level，以及台股資料服務 TwStock。</p>
-            <p data-i18n="about.japan">2024 年 4 月到 2025 年 10 月在東京的 Eastwest 日本語學校讀書，JLPT N1。</p>
-            <p data-i18n="about.sharing">在 Titansoft 時辦過工程讀書會，把工作上的問題拿出來一起看。</p>
-            <p data-i18n="about.life">工作之外會騎車、爬山。</p>
-            <div class="site-actions">
-                <a class="site-text-link" href="Portfolio.html#work" data-i18n="home.ctaWork">查看工程成果</a>
-                <a class="site-text-link" href="Portfolio.html#public" data-i18n="home.ctaPublic">公開專案</a>
-                <a class="site-text-link" href="works.html" data-i18n="nav.works">其他作品</a>
-            </div>
+        <section class="site-block" id="experience" aria-labelledby="experience-title">
+            <h2 id="experience-title" data-i18n="home.experienceTitle">經歷</h2>
+            <article class="site-card site-role">
+                <div class="site-role-top">
+                    <h3><a href="https://www.gogoro.com/" target="_blank" rel="noopener">Gogoro</a></h3>
+                    <span class="site-when" data-i18n="home.gogoroWhen">2026/03–至今</span>
+                </div>
+                <p class="site-meta" data-i18n="home.gogoroRole">.NET 後端開發</p>
+                <p data-i18n="home.gogoroBody">.NET 後端服務，以及既有系統的效能和可靠性。</p>
+            </article>
+            <article class="site-card site-role">
+                <div class="site-role-top">
+                    <h3 data-i18n="home.japanName">Eastwest 日本語學校</h3>
+                    <span class="site-when" data-i18n="home.japanWhen">2024/04–2025/10</span>
+                </div>
+                <p class="site-meta" data-i18n="home.japanRole">日語進修</p>
+                <p data-i18n="home.japanBody">在東京讀書，JLPT N1。</p>
+            </article>
+            <article class="site-card site-role">
+                <div class="site-role-top">
+                    <h3><a href="https://www.titansoft.com/" target="_blank" rel="noopener">Titansoft</a></h3>
+                    <span class="site-when" data-i18n="home.titansoftWhen">2020/08–2023/04</span>
+                </div>
+                <p class="site-meta" data-i18n="home.titansoftRole">產品開發工程師</p>
+                <p data-i18n="home.titansoftBody">C#／.NET 後端與 REST／gRPC 微服務，使用 SQL Server、Redis、Kafka。和團隊一起導入整合測試，並辦過工程讀書會。含 2020 年實習。</p>
+            </article>
+            <article class="site-card site-role">
+                <div class="site-role-top">
+                    <h3 data-i18n="home.schoolName">東海大學資訊工程學系</h3>
+                    <span class="site-when" data-i18n="home.schoolWhen">2016–2020</span>
+                </div>
+                <p data-i18n="home.schoolBody">資訊工程學士。2019 International ICT Innovative Services Awards，資訊應用類第三名（大學專題，與同學共同完成）。</p>
+            </article>
+        </section>
+
+        <section class="site-block" id="other" aria-labelledby="other-title">
+            <h2 id="other-title" data-i18n="about.otherTitle">其他</h2>
+            <article class="site-card site-prose">
+                <p data-i18n="about.sharing">在 Titansoft 時辦過工程讀書會，把工作上的問題拿出來一起看。</p>
+                <p data-i18n="about.life">工作之外會騎車、爬山。</p>
+                <div class="site-actions">
+                    <a class="site-text-link" href="Portfolio.html#work" data-i18n="home.ctaWork">工作案例</a>
+                    <a class="site-text-link" href="Portfolio.html#public" data-i18n="home.ctaPublic">公開程式</a>
+                    <a class="site-text-link" href="works.html" data-i18n="nav.works">其他作品</a>
+                    <a class="site-text-link" href="tools.html" data-i18n="nav.tools">工具</a>
+                </div>
+            </article>
+        </section>
+
+        <section class="site-block" id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title" data-i18n="home.contactTitle">聯絡</h2>
+            <p class="site-note" data-i18n="home.contactLead">GitHub、LinkedIn，或直接寫信。</p>
             <div class="site-contact-links">
                 <a class="site-btn" href="mailto:tim376755000@gmail.com">tim376755000@gmail.com</a>
                 <a class="site-btn ghost" href="https://github.com/Chenyuting0916" target="_blank" rel="noopener">GitHub</a>
                 <a class="site-btn ghost" href="https://www.linkedin.com/in/yuting-chen-63738b135/" target="_blank" rel="noopener">LinkedIn</a>
             </div>
-        </article>
+        </section>
     </main>
 
     <nav id="footer" class="navbar">
