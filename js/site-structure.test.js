@@ -84,6 +84,25 @@ test('the tools page does not link back to the personal site', () => {
     assert.match(html, /id="relAmount"/);
 });
 
+test('pages pin jQuery 3.7.1 and a script policy that blocks inline handlers', () => {
+    const pages = ['index.html', 'about.html', 'Portfolio.html', 'works.html', 'tools.html'];
+    const jquery = read('js/jquery-3.7.1.min.js');
+    assert.match(jquery, /jQuery v3\.7\.1/);
+    assert.equal(fs.existsSync(path.join(root, 'js/jquery-3.4.1.min.js')), false);
+    for (const name of pages) {
+        const html = read(name);
+        assert.equal(html.includes('jquery-3.4.1'), false, name);
+        assert.match(html, /src="js\/jquery-3\.7\.1\.min\.js"/);
+        assert.equal(/onchange\s*=/.test(html), false, name);
+        const csp = html.match(/http-equiv="Content-Security-Policy" content="([^"]+)"/);
+        assert.ok(csp, name);
+        assert.match(csp[1], /(?:^|; )script-src 'self'(?:;|$)/);
+        assert.equal(/script-src[^;]*unsafe-inline/.test(csp[1]), false, name);
+        assert.match(csp[1], /style-src 'self' 'unsafe-inline'/);
+        assert.match(csp[1], /connect-src 'self'/);
+    }
+});
+
 test('zh, en, and ja use the same translation keys', () => {
     const langs = ['zh', 'en', 'ja'].map((lang) => {
         const keys = [];

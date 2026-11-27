@@ -38,7 +38,7 @@ Tool inputs are not sent to a remote calculator. Loading the site still requests
 
 ## Tech stack
 
-HTML, CSS, and JavaScript, with local copies of Bootstrap 4, jQuery 3.4.1, and Font Awesome. YAML parsing uses `js/vendor/js-yaml.min.js` (MIT). There is no bundler and no `package.json`. Python is only a way to preview the files; it is not the site runtime.
+HTML, CSS, and JavaScript, with local copies of Bootstrap 4, jQuery 3.7.1, and Font Awesome. YAML parsing uses `js/vendor/js-yaml.min.js` (MIT). There is no bundler and no `package.json`. Python is only a way to preview the files; it is not the site runtime.
 
 ## Run locally
 
