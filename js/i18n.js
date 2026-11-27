@@ -8,7 +8,6 @@ const i18n = {
             const response = await fetch(`js/translations/${this.currentLang}.json`);
             this.translations = await response.json();
             this.updateContent();
-            this.updateImageTitles();
             this.updateSelectLanguage();
         } catch (error) {
             console.error('Failed to load translations:', error);
@@ -46,16 +45,6 @@ const i18n = {
         const htmlLang = { zh: 'zh-Hant', en: 'en', ja: 'ja' }[this.currentLang] || 'zh-Hant';
         document.documentElement.lang = htmlLang;
         document.dispatchEvent(new CustomEvent('i18n:updated'));
-    },
-
-    updateImageTitles() {
-        // Update lightbox image titles if they exist in translations
-        document.querySelectorAll('[data-lightbox]').forEach(element => {
-            const titleKey = element.getAttribute('data-title-key');
-            if (titleKey) {
-                element.setAttribute('data-title', this.t(titleKey));
-            }
-        });
     },
 
     updateSelectLanguage() {
