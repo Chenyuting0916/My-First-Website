@@ -69,7 +69,14 @@ const i18n = {
 // Initialize i18n
 document.addEventListener('DOMContentLoaded', () => {
     i18n.init();
-    
+
+    const langSelect = document.getElementById('langSelect');
+    if (langSelect) {
+        langSelect.addEventListener('change', () => {
+            i18n.setLanguage(langSelect.value);
+        });
+    }
+
     // Update URL if needed
     const currentPath = window.location.pathname;
     if (currentPath.includes('_en.html')) {

@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'">
     <title data-i18n="work.pageTitle">作品集 — Tim Chen</title>
     <link rel="icon" type="image/x-icon" href="img/happy.ico">
     <meta name="description" data-i18n-content="work.description" content="Tim Chen 的工作案例與公開程式。">
@@ -12,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/site.css">
     <link rel="stylesheet" href="fonts/fontawesome/css/all.css">
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/i18n.js"></script>
 </head>
@@ -40,7 +41,7 @@
                             <a class="nav-link" href="works.html" data-i18n="nav.works">其他作品</a>
                         </li>
                         <li class="nav-item align-items-center d-flex">
-                            <select id="langSelect" onchange="i18n.setLanguage(this.value)" aria-label="Language">
+                            <select id="langSelect" aria-label="Language">
                                 <option value="zh" selected>中文</option>
                                 <option value="en">English</option>
                                 <option value="ja">日本語</option>
