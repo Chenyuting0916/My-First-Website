@@ -180,7 +180,7 @@ hr {
     font-weight: 600;
 }
 
-.navbar-custom .navbar-brand:focus {
+.navbar-custom .navbar-brand:focus:not(:focus-visible) {
     outline: 0;
 }
 
@@ -190,7 +190,7 @@ hr {
     color: #fff;
 }
 
-.navbar-custom .navbar-brand .navbar-toggle:focus,
+.navbar-custom .navbar-brand .navbar-toggle:focus:not(:focus-visible),
 .navbar-custom .navbar-brand .navbar-toggle:active {
     outline: 0;
 }
@@ -216,9 +216,12 @@ hr {
 
 .navbar-custom .nav li a:focus,
 .navbar-custom .nav li a:active {
-    outline: 0;
     background-color: transparent;
     color: #526cbb;
+}
+
+.navbar-custom .nav li a:focus:not(:focus-visible) {
+    outline: 0;
 }
 
 .navbar-custom .nav li.active {
@@ -289,8 +292,8 @@ hr {
     box-shadow: none;
 }
 
-a:focus,
-.btn:focus,
+a:focus:not(:focus-visible),
+.btn:focus:not(:focus-visible),
 .btn:active:focus,
 .btn.active:focus,
 .btn.focus,

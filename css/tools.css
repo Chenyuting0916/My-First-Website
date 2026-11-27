@@ -50,6 +50,16 @@ body.tools-page .tk-appbar {
     text-decoration: none;
 }
 
+body.tools-page .tk-appbar h1 {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+}
+
 body.tools-page .container {
     max-width: 1440px;
 }

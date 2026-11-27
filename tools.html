@@ -23,7 +23,7 @@
 <body class="tools-page">
     <a class="skip-link" href="#content" data-i18n="nav.skip">跳到內容</a>
     <header class="tk-appbar">
-        <a class="tk-brand" href="#timestamp" data-i18n="tools.title">開發工具</a>
+        <h1><a class="tk-brand" href="#timestamp" data-i18n="tools.title">開發工具</a></h1>
         <select id="langSelect" onchange="i18n.setLanguage(this.value)" aria-label="Language">
             <option value="zh" selected>中文</option>
             <option value="en">English</option>
@@ -31,7 +31,7 @@
         </select>
     </header>
 
-    <div class="tk-wrap" id="content">
+    <main class="tk-wrap" id="content">
         <div class="tk-shell">
             <div class="tk-tabs" role="tablist" aria-label="tools">
                 <button type="button" class="tk-tab is-active" role="tab" id="tab-timestamp" data-tool="timestamp" aria-selected="true" aria-controls="panel-timestamp">
@@ -181,11 +181,11 @@
                             <p class="tk-hint" id="tsHint" data-i18n="tools.timestamp.pasteHint">貼上數字就會換算。10 位以內當成秒，13 位左右當成毫秒。</p>
                         </div>
                         <div class="tk-card">
-                            <h2 data-i18n="tools.timestamp.toUnix">日期 → 時間戳</h2>
+                            <h2 id="dateToUnixTitle" data-i18n="tools.timestamp.toUnix">日期 → 時間戳</h2>
                             <label class="tk-label" for="dateInput" data-i18n="tools.timestamp.local">本地</label>
                             <input class="tk-field" id="dateInput" autocomplete="off" spellcheck="false" data-i18n-placeholder="tools.timestamp.datePlaceholder" placeholder="2024-01-02 15:04:05">
                             <div class="tk-row">
-                                <input class="tk-field" id="datePicker" type="datetime-local" step="1">
+                                <input class="tk-field" id="datePicker" type="datetime-local" step="1" aria-labelledby="dateToUnixTitle">
                                 <button type="button" class="tk-btn" id="dateNow" data-i18n="tools.timestamp.useNow">填入現在</button>
                             </div>
                             <p class="tk-banner err" id="dateError" hidden></p>
@@ -262,9 +262,9 @@
                         </div>
                     </div>
                     <div class="tk-card">
-                        <h2 data-i18n="tools.week.pick">查某一天</h2>
+                        <h2 id="weekPickTitle" data-i18n="tools.week.pick">查某一天</h2>
                         <div class="tk-row">
-                            <input class="tk-field" id="weekDate" type="date">
+                            <input class="tk-field" id="weekDate" type="date" aria-labelledby="weekPickTitle">
                             <button type="button" class="tk-btn" id="weekToday" data-i18n="tools.week.today">今天</button>
                         </div>
                         <p class="tk-hint" data-i18n="tools.week.hint">星期一為一週的開始。今年第幾週用 ISO 8601。本月以 1 到 7 日為第 1 週。</p>
@@ -289,12 +289,12 @@
                         <p class="tk-banner" id="jsonBanner" hidden></p>
                         <div class="tk-editors">
                             <div>
-                                <div class="tk-editor-head"><span data-i18n="tools.input">輸入</span></div>
-                                <textarea class="tk-area" id="jsonInput" spellcheck="false" data-i18n-placeholder="tools.json.placeholder" placeholder="貼上 JSON"></textarea>
+                                <div class="tk-editor-head"><span id="jsonInputLabel" data-i18n="tools.input">輸入</span></div>
+                                <textarea class="tk-area" id="jsonInput" spellcheck="false" aria-labelledby="jsonInputLabel" data-i18n-placeholder="tools.json.placeholder" placeholder="貼上 JSON"></textarea>
                             </div>
                             <div>
-                                <div class="tk-editor-head"><span data-i18n="tools.output">結果</span></div>
-                                <textarea class="tk-area" id="jsonOutput" spellcheck="false" readonly></textarea>
+                                <div class="tk-editor-head"><span id="jsonOutputLabel" data-i18n="tools.output">結果</span></div>
+                                <textarea class="tk-area" id="jsonOutput" spellcheck="false" readonly aria-labelledby="jsonOutputLabel"></textarea>
                             </div>
                         </div>
                         <p class="tk-hint" data-i18n="tools.json.shortcut">左邊一有變動，右邊就會重新排版。原文不會被改掉。</p>
@@ -317,12 +317,12 @@
                         <p class="tk-banner" id="yamlBanner" hidden></p>
                         <div class="tk-editors">
                             <div>
-                                <div class="tk-editor-head"><span data-i18n="tools.input">輸入</span></div>
-                                <textarea class="tk-area" id="yamlInput" spellcheck="false" data-i18n-placeholder="tools.yaml.placeholder" placeholder="貼上 YAML。若要轉 YAML，也可以直接貼 JSON"></textarea>
+                                <div class="tk-editor-head"><span id="yamlInputLabel" data-i18n="tools.input">輸入</span></div>
+                                <textarea class="tk-area" id="yamlInput" spellcheck="false" aria-labelledby="yamlInputLabel" data-i18n-placeholder="tools.yaml.placeholder" placeholder="貼上 YAML。若要轉 YAML，也可以直接貼 JSON"></textarea>
                             </div>
                             <div>
-                                <div class="tk-editor-head"><span data-i18n="tools.output">結果</span></div>
-                                <textarea class="tk-area" id="yamlOutput" spellcheck="false" readonly></textarea>
+                                <div class="tk-editor-head"><span id="yamlOutputLabel" data-i18n="tools.output">結果</span></div>
+                                <textarea class="tk-area" id="yamlOutput" spellcheck="false" readonly aria-labelledby="yamlOutputLabel"></textarea>
                             </div>
                         </div>
                     </div>
@@ -332,8 +332,8 @@
                     <div class="tk-card">
                         <h2 class="tk-panel-title" data-i18n="tools.nav.md5">MD5</h2>
                         <label class="tk-check"><input type="checkbox" id="md5Upper"> <span data-i18n="tools.md5.upper">輸出大寫</span></label>
-                        <div class="tk-editor-head" style="margin-top:12px;"><span data-i18n="tools.md5.text">文字</span></div>
-                        <textarea class="tk-area" id="md5Text" spellcheck="false" data-i18n-placeholder="tools.md5.placeholder" placeholder="輸入文字，立刻算出 MD5"></textarea>
+                        <div class="tk-editor-head" style="margin-top:12px;"><span id="md5TextLabel" data-i18n="tools.md5.text">文字</span></div>
+                        <textarea class="tk-area" id="md5Text" spellcheck="false" aria-labelledby="md5TextLabel" data-i18n-placeholder="tools.md5.placeholder" placeholder="輸入文字，立刻算出 MD5"></textarea>
                         <div class="tk-hash" id="md5TextHashes"></div>
                         <div class="tk-drop" id="md5Drop" tabindex="0" role="button">
                             <strong data-i18n="tools.md5.drop">把檔案拖進來，或點這裡選擇</strong>
@@ -376,12 +376,12 @@
                         <p class="tk-banner err" id="codecBanner" hidden></p>
                         <div class="tk-editors">
                             <div>
-                                <div class="tk-editor-head"><span data-i18n="tools.input">輸入</span></div>
-                                <textarea class="tk-area" id="codecIn" spellcheck="false" data-i18n-placeholder="tools.codec.inPlaceholder" placeholder="貼上要轉換的內容"></textarea>
+                                <div class="tk-editor-head"><span id="codecInLabel" data-i18n="tools.input">輸入</span></div>
+                                <textarea class="tk-area" id="codecIn" spellcheck="false" aria-labelledby="codecInLabel" data-i18n-placeholder="tools.codec.inPlaceholder" placeholder="貼上要轉換的內容"></textarea>
                             </div>
                             <div>
-                                <div class="tk-editor-head"><span data-i18n="tools.output">結果</span><button type="button" class="tk-btn tiny" id="codecCopy" data-i18n="tools.copy">複製</button></div>
-                                <textarea class="tk-area" id="codecOut" spellcheck="false" readonly></textarea>
+                                <div class="tk-editor-head"><span id="codecOutLabel" data-i18n="tools.output">結果</span><button type="button" class="tk-btn tiny" id="codecCopy" data-i18n="tools.copy">複製</button></div>
+                                <textarea class="tk-area" id="codecOut" spellcheck="false" readonly aria-labelledby="codecOutLabel"></textarea>
                             </div>
                         </div>
                     </div>
@@ -389,8 +389,8 @@
 
                 <div id="panel-jwt" data-panel="jwt" role="tabpanel" aria-labelledby="tab-jwt" hidden>
                     <div class="tk-card">
-                        <h2 class="tk-panel-title" data-i18n="tools.nav.jwt">JWT</h2>
-                        <textarea class="tk-area" id="jwtInput" spellcheck="false" data-i18n-placeholder="tools.jwt.placeholder" placeholder="貼上 JWT。前面的 Bearer 會自動拿掉"></textarea>
+                        <h2 class="tk-panel-title" id="jwtTitle" data-i18n="tools.nav.jwt">JWT</h2>
+                        <textarea class="tk-area" id="jwtInput" spellcheck="false" aria-labelledby="jwtTitle" data-i18n-placeholder="tools.jwt.placeholder" placeholder="貼上 JWT。前面的 Bearer 會自動拿掉"></textarea>
                         <div class="tk-row">
                             <button type="button" class="tk-btn" id="jwtSample" data-i18n="tools.jwt.sample">有效範例</button>
                             <button type="button" class="tk-btn" id="jwtExpired" data-i18n="tools.jwt.expiredSample">過期範例</button>
@@ -451,12 +451,12 @@
                         <p class="tk-banner err" id="urlBanner" hidden></p>
                         <div class="tk-editors">
                             <div>
-                                <div class="tk-editor-head"><span data-i18n="tools.input">輸入</span></div>
-                                <textarea class="tk-area" id="urlIn" spellcheck="false" data-i18n-placeholder="tools.url.placeholder" placeholder="貼上文字、URL，或 a=1&amp;b=2"></textarea>
+                                <div class="tk-editor-head"><span id="urlInLabel" data-i18n="tools.input">輸入</span></div>
+                                <textarea class="tk-area" id="urlIn" spellcheck="false" aria-labelledby="urlInLabel" data-i18n-placeholder="tools.url.placeholder" placeholder="貼上文字、URL，或 a=1&amp;b=2"></textarea>
                             </div>
                             <div>
-                                <div class="tk-editor-head"><span data-i18n="tools.output">結果</span></div>
-                                <textarea class="tk-area" id="urlOut" spellcheck="false" readonly></textarea>
+                                <div class="tk-editor-head"><span id="urlOutLabel" data-i18n="tools.output">結果</span></div>
+                                <textarea class="tk-area" id="urlOut" spellcheck="false" readonly aria-labelledby="urlOutLabel"></textarea>
                             </div>
                         </div>
                         <div id="urlParts"></div>
@@ -495,7 +495,7 @@
 
                 <div id="panel-radix" data-panel="radix" role="tabpanel" aria-labelledby="tab-radix" hidden>
                     <div class="tk-card">
-                        <h2 class="tk-panel-title" data-i18n="tools.nav.radix">進位轉換</h2>
+                        <h2 class="tk-panel-title" id="radixTitle" data-i18n="tools.nav.radix">進位轉換</h2>
                         <label class="tk-label" data-i18n="tools.radix.from">來源進位</label>
                         <div class="tk-seg" id="radixFrom">
                             <button type="button" data-base="2" data-i18n="tools.radix.bin">二進位</button>
@@ -503,7 +503,7 @@
                             <button type="button" data-base="10" class="is-on" data-i18n="tools.radix.dec">十進位</button>
                             <button type="button" data-base="16" data-i18n="tools.radix.hex">十六進位</button>
                         </div>
-                        <input class="tk-field" id="radixIn" autocomplete="off" spellcheck="false" data-i18n-placeholder="tools.radix.placeholder" placeholder="貼上數字，例如 255 或 0xff">
+                        <input class="tk-field" id="radixIn" autocomplete="off" spellcheck="false" aria-labelledby="radixTitle" data-i18n-placeholder="tools.radix.placeholder" placeholder="貼上數字，例如 255 或 0xff">
                         <p class="tk-banner err" id="radixBanner" hidden></p>
                         <div class="tk-result" id="radixResult"></div>
                     </div>
@@ -563,7 +563,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <div class="tk-toast" id="tkToast" role="status" aria-live="polite"></div>
 </body>
