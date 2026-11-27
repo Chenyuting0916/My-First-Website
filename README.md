@@ -58,10 +58,10 @@ Open [http://localhost:8000/](http://localhost:8000/), [http://localhost:8000/wo
 
 ## Validation
 
-Previewing the site needs Python (or any static file server). Running the tool tests needs Node.js. No minimum version or coverage number is recorded here.
+Previewing the site needs Python (or any static file server). Running the tests needs Node.js. No minimum version or coverage number is recorded here.
 
 ```bash
-node --test js/tools-core.test.js
+node --test js/tools-core.test.js js/site-structure.test.js
 ```
 
 When changing copy or layout, also check the personal pages and the tools page in Traditional Chinese, English, and Japanese, the collapsed navigation on a narrow viewport, the works tree, and one action in each tool. The tools page should not link to `index.html`, `about.html`, `Portfolio.html`, or `works.html`.
